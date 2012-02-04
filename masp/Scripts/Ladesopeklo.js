@@ -1,4 +1,4 @@
-﻿	var Cache = function() {
+var Cache = function() {
 		var c = new Array();
 
 		var contains = function(key) {

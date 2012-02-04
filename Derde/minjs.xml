@@ -1,0 +1,13 @@
+<root>
+	<output path="Scripts/libs.min.js">
+	
+	<input path="Resources/Scripts/jquery-1.7.1.js"></input>
+	<input path="Plugin/jquerytools/src/scrollable/scrollable.js"></input>
+	<input path="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></input>
+	<input path="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></input>
+
+	</output>
+</root>
+
+
+	

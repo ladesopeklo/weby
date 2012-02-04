@@ -1,0 +1,24 @@
+<root>
+	<output path="Scripts/libs.min.js">
+		<input path="Scripts/jquery-1.7.1.js"></input>
+		<input path="Scripts/jquery.tmpl.js"></input>
+		<input path="Scripts/require.js"></input>
+	
+		<input path="Scripts/jquery-ui-1.8.16.custom.min.js"></input>
+		
+		<input path="Scripts/amplify.js"></input>
+		<input path="Scripts/jquery.address-1.4.min.js"></input>
+		<input path="Scripts/Groject.ImageSwitch.yui.js"></input>
+		<input path="Scripts/jquery.mousewheel.min.js"></input>
+		<input path="Scripts/Ladesopeklo.js"></input>
+		<input path="Plugins/reveal/jquery.reveal.js"></input>
+	</output>
+	<output path="Scripts/galleriffic.min.js">
+		<input path="Plugins/gallerific/js/jquery.galleriffic.js"></input>
+		<input path="Plugins/gallerific/js/jquery.history.js"></input>
+		<input path="Plugins/gallerific/js/jquery.opacityrollover.js"></input>
+	</output>
+</root>
+
+
+	

@@ -1,0 +1,228 @@
+<<<<<<< HEAD
+h1 {
+			font-family: 'GillSansCELight';
+			font-size: 1.9em;
+			margin-bottom: 0.5em;
+			color: #fff;
+			font-weight: 500;
+		}
+		.content h1 {
+			background-color: #999BA8;
+			text-align: right;
+			line-height: 2.0em;
+			font-size: 3em;
+			padding-right: 0.5em;
+			margin: 0px;
+		}	
+
+		body {
+			font-family: 'GillSansCERegular';
+			font-size: 0.8em;
+			line-height: 1.1em;
+			background-color: #fff;
+			color: #4e5370;
+			font-weight: 500;
+			margin: 0px;
+		}
+	
+		a {	color: #fff;			text-decoration: none;		}
+		a.current {
+			font-weight: 800;
+		}
+
+		.header  {
+			background: url(../images/head2.png) no-repeat #BEBFC3 right;
+			height: 94px;
+		}
+		.header h1 {
+			margin: 2.5em 0em 1em 15em;
+		}
+		.header img {
+			float: left;
+		}
+	
+		.mainleft,.rightb {
+			border-right: 1px solid #fff;
+		}
+		.leftb {
+			border-left: 1px solid #fff;
+		}
+		.nav.fst {
+			border: none;
+		}
+	
+		.content.main {
+			height: 369px;
+		}
+		.content.main .data, .content.bottom .data
+		{
+			padding-top: 1.5em;
+		}
+		.content.main{
+			background: url(../images/bgmain.png) repeat-x #BEBFC3 bottom;
+		}
+		.content.bottom{
+			background: url(../images/bgmainbottom.png) repeat-x #BEBFC3 bottom;
+		}
+
+		.navigation .nav {
+			text-align: center;
+			line-height: 27px;
+			height: 27px;
+			background: url(../images/bgnav.png) repeat-x;
+
+		}
+	
+		.navigation {
+			border-top: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+		}
+			
+		.spacer {
+			height: 25px;
+			background-color: #3D4363;
+		}
+		.headerspacer {
+			height: 4em;
+			background-color: #3D4363;
+		}
+		.footer {
+			background-color: #BEBFC3;
+			text-align: center;
+			line-height: 2.5em;
+			
+		}
+	.footer a {
+			color: #4e5370;
+	}
+		ul {
+			list-style-position:inside;
+			padding-left: 1.5em;
+			margin: 0px;
+		}
+
+		li {
+			margin: 0px 0px 1em 0px;
+		}			
+	
+		.content.bottom li {
+			margin: 0px 0px 1em 1em;
+		}
+		
+		
+		.container_12 {
+			background-color: #3D4363;
+		}
+		.disabled {
+			color: silver;
+		}
+		.data p {
+			margin: 0em 0em 1em 1em;
+			padding: 0px; 
+		}
+		
+.content_home .data img {
+margin: 0px;border: none;padding: 0px;float: left;
+margin-top: 50px;
+}
+.content_home  {			background-color: #fff;		}
+.content_home .data					
+{
+width: 811px;
+margin: 0px auto;
+}
+.content_home 	
+{
+height: 369px;	
+}
+.content_pecuje {
+display: block;
+}
+
+
+
+
+		/* override single pane */
+		.content.main 
+		{
+			position: relative;
+			overflow: hidden;
+			clear: both;
+			height: 369px;
+		}
+		.content.main .xxx {
+			float:left;
+			display:block;
+			width:901px;
+		}
+
+	/* our additional wrapper element for the items */
+		.content.main .items {
+			width:20000em;
+			position:absolute;
+			margin:0;
+			padding:0;
+		}
+		
+		.galnavi {
+		position: absolute;
+		top: 45%;
+		background-color: red;
+		cursor: pointer;
+		background-color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 55px;
+		-moz-border-radius: 55px;
+		border: 1px solid #EEE;
+		opacity: 0.3;
+		border-image: initial;
+	}
+	.galnavi.galprev
+	{
+		background: url(../images/icon/left.png) no-repeat #fff center;
+		left: 2px;
+	}
+	.galnavi.galnext
+	{
+		background: url(../images/icon/right.png) no-repeat #fff center;
+		left: 855px;
+	}
+	
+	.scrollxxx .items {
+		width: 20000em;
+		position: absolute;
+		clear: both;
+	}
+
+	.scrollxxx {
+		position: relative;
+		float: left;
+		overflow: hidden;
+		width: 900px;
+		height: 200px;
+		background-color: #4e5370;
+	
+	}
+	.scrollxxx .items img
+	{
+		margin-right: 1px;
+		float: left;
+	}
+	.items span{
+		display: inline-block;
+		width: 200px;
+	}
+=======
+@font-face {
+    font-family: 'GillSansCELight';
+    src: url('gillsanscelight-webfont.eot');
+    src: url('gillsanscelight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gillsanscelight-webfont.woff') format('woff'),
+         url('gillsanscelight-webfont.ttf') format('truetype'),
+         url('gillsanscelight-webfont.svg#GillSansCELight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+>>>>>>> bc7cea0b72a984dd41b92058f21f1a41506e5823

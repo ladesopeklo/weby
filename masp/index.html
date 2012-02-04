@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>masparti</title>
+	<meta name="description" content="Masparti, Pavel Martinka& Ondřej Spusta Architektonická Kancelář" />
+	<meta name="robots" content="all,index, follow" />
+	<meta name="language" content="cs" />
+	<meta name="author" content="Masparti" />
+	<meta name="description" lang="cs" content=""/>
+	<meta name="keywords" lang="cs" content="Masparti, Architekti, Olomouc" />
+	<link rel="shortcut icon" href="favicon.ico">
+
+	
+	<script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.tmpl.js"></script>
+	<script type="text/javascript" src="Scripts/require.js"></script>
+	
+	<script type="text/javascript" src="Scripts/jquery-ui-1.8.16.custom.min.js"></script>
+		
+	<script type="text/javascript" src="Scripts/amplify.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
+	<script type="text/javascript" src="Scripts/Groject.ImageSwitch.yui.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
+	<script type="text/javascript" src="Plugins/reveal/jquery.reveal.js"></script>
+
+	
+	<script type="text/javascript" src="Plugins/gallerific/js/jquery.galleriffic.js"></script>
+    <script type="text/javascript" src="Plugins/gallerific/js/jquery.history.js"></script>
+    <script type="text/javascript" src="Plugins/gallerific/js/jquery.opacityrollover.js"></script>
+
+
+<!--	<script src="Scripts/libs.min.js" type="text/javascript"></script>
+	<script src="Scripts/galleriffic.min.js" type="text/javascript"></script>
+-->
+	<link rel="stylesheet" href="Resources/css/galleriffic.css" type="text/css">
+	<link rel="stylesheet" href="Plugins/Scroll/jquery.mCustomScrollbar.css" type="text/css">
+	<link rel="stylesheet" href="Plugins/reveal/reveal.css">	
+	<link rel="stylesheet" href="Resources/css/basic.css" type="text/css">
+
+</head>
+
+<body>
+<div id="page">
+	<div id="container">
+	<div class="logo" style="position: relative; float:left; width: 282px; height: 100px;">
+		<a href="index.html"><img src="Resources/picts/masparti logo.jpg" border="0"></a>
+	</div>
+	<div class="head" style="position: relative; float: left; width: 760px; height: 100px">
+		<div class="language menu" style="position: relative; float: right; margin-top: 0px">
+			<a id="cs" class="cuff" href="#!culture/cs">CZE</a>
+			<a id="en" class="cuff" href="#!culture/en">ENG</a>
+		</div>
+	</div>
+</div>
+	
+	<div id="menu" class="menu" style="position: relative; float: left; width: 282px; height: 450px">
+
+	</div>
+
+	<div id="contentMain" >
+
+	</div>
+
+	<div id="contentFigures" style="position: relative; float: left; width: 278px; padding:2px;">
+
+	</div>
+
+	<div id="contentThumbs"  >
+
+	</div>
+
+</div>
+
+
+<script>
+
+	//defaultni nastaveni. tohle se pouzije jako vychozi hodnoty pri prichodu na index (na hlavni stranku, bez parametru, napr.:masparti.com)  
+	var options = {
+		controller: 'home',
+		action: 'index',
+		culture: 'cs',
+		activeMenuDefault: -1
+	};
+
+	var settings = new Settings(options);
+	
+	$(document).ready(function () {
+
+		var cache = true; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
+		
+		var main = new Core(cache);
+		main.Init();
+	
+	});
+</script>
+<br clear="all" />
+
+<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+
+
+
+
+</body>
+
+</html>

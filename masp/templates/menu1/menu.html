@@ -1,0 +1,53 @@
+<div id="accordion">	
+{{each( index, value ) items }} 
+	<h3 class="{{if (!value.items) }}disabled {{/if}}">
+		<a  href="${value.href}">${text[culture]}</a>
+	</h3>
+
+	<div id="mcs_container${index}" class="mcs_container {{if (!value.items) }}nula {{/if}} ${value.text['cs']}">
+	<div class="customScrollBox">
+		<div class="container" >
+    		<div class="scrollcontent">
+				<ul class="the_menu">
+				{{each( i, v ) value.items }} 
+					<li><a href="#!/${v.href}"  class="kkk" title="${v.title[culture]}" >${v.text[culture]}</a></li>
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+		<div class="dragger_container" style="display: none; ">
+    		<div class="dragger" ></div>
+		</div>
+<!--		<a href="#" class="scrollUpBtn" style="display: inline-block; "></a>
+		<a href="#" class="scrollDownBtn" style="display: inline-block; "></a>
+-->	</div>
+</div>
+
+
+
+{{/each}}
+</div>
+
+
+<script>
+	$(document).ready(function () {
+		var arr = $(".mcs_container");
+		$.each(arr, function (i, item) {
+			var id = "#" + $(item).attr("id");
+			$(id).mCustomScrollbar("vertical", 400, "easeOutCirc", 1.05, "auto", "yes", "yes", 10);
+
+		});
+
+	});
+
+
+	/* function to fix the -10000 pixel limit of jquery.animate */
+	$.fx.prototype.cur = function () {
+		if (this.elem[this.prop] != null && (!this.elem.style || this.elem.style[this.prop] == null)) {
+			return this.elem[this.prop];
+		}
+		var r = parseFloat(jQuery.css(this.elem, this.prop));
+		return typeof r == 'undefined' ? 0 : r;
+	};
+
+</script>

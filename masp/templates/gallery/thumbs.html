@@ -1,0 +1,46 @@
+﻿
+
+<div id="thumbs" class="navigation">
+	<ul class="thumbs noscript">
+		{{each( index, value ) images }} 
+		
+		<li class="img">
+			<a class="thumb"  href="${full}${value.name}" rel="#!/gallery/${location}/" title="${value.title[culture]}">
+				<img src="${thumb}${value.name}" alt="xx" />
+			</a>
+		</li>
+		{{/each}}
+		{{each( index, value ) vizualizace }} 
+		<div class="txt3d" title="VIRTUÁLNÍ POHLEDY">
+			<a href="${value}" onClick="window.open(this.href,'vizualizace','width=1000,height=770');return false" >
+				<img src="Resources/picts/ikona3D.jpg"/>
+			</a>
+		</div>
+		{{/each}}
+
+		{{if text}}
+		<div class="txt3d text" title="TEXT">
+			<a href="#"  data-reveal-id="myModal">
+				<img src="Resources/picts/ikonaText.jpg"/>
+			</a>	
+
+		</div>
+
+		<div id="myModalCont" style="display: none" >
+		</div>
+		<div id="myModal" class="reveal-modal">
+		{{html text}}
+		
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+		{{/if}}
+
+	</ul>
+</div>
+<div style="clear: both;"></div>
+<script>
+	$(document).ready(function () {
+		var a = $("#myModalCont").html();
+		$("#myModal").html();
+	})
+</script>				

@@ -215,7 +215,7 @@
 	
 
 		<script>
-			var switcher = function(a,b,c,d){
+			var switcher = function(a, b, c, d) {
 				var df = {
 					h1: "12px",
 					h2: "121px",
@@ -223,77 +223,82 @@
 					w1: "12px",
 					w2: 220,
 					w3: 460
-				}
+				};
 				var current = "x";
-				
-				var contentFor = function(a){
+
+				var contentFor = function(a) {
 					return a;
 					return a.find(".more");
-				}
-				var ccc = function(item){
+				};
+				var ccc = function(item) {
 					return item.closest(".xxx");
-				}
-				
-				
-				var reset = function(){
-					a.animate({height: df.h2},200); 
-					c.animate({height: df.h2},200); 
-					b.animate({height: df.h2},200); 
+				};
 
-					ccc(a).animate({width:df.w2},200); 
-					ccc(b).animate({width:df.w3},200); 
-					ccc(c).animate({width:df.w2},200); 
-			}
-				
-				
-				contentFor(a).hover(function(){
+
+				var reset = function() {
+					a.stop(true, true).animate({ height: df.h2 }, 200);
+					c.stop(true, true).animate({ height: df.h2 }, 200);
+					b.stop(true, true).animate({ height: df.h2 }, 200);
+
+					ccc(a).stop(true, true).animate({ width: df.w2 }, 200);
+					ccc(b).stop(true, true).animate({ width: df.w3 }, 200);
+					ccc(c).stop(true, true).animate({ width: df.w2 }, 200);
+				};
+
+
+				contentFor(a).hover(function() {
 					if (current == this) {
 						return;
 					}
 					reset();
 					current = this;
 
-					a.animate({height:df.h3 },500 );
-					c.animate({height:df.h1 },200 );
-					
-					ccc(a).animate({width:df.w3},200); 
-					ccc(b).animate({width:df.w2},200); 
+					a.stop(true, false).animate({ height: df.h3 }, 500);
+					c.stop(true, false).animate({ height: df.h1 }, 200);
+
+					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
+					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
+				}, function() {
 				}
-				,function(){}
-				
 				);
-				contentFor(b).hover(function(){
+				contentFor(b).hover(function() {
 					if (current != this) {
 						reset();
 						console.log("reset");
 					}
 					current = this;
-					b.animate({height:"290px" },200 );
-				}
-				,function(){}
-				);
-				
-				contentFor(c).hover(function(){
-					reset();
-					c.animate({height:df.h3 },500 );
-					a.animate({height:df.h1 },200 );
 
-					ccc(a).animate({width:df.w3},200); 
-					ccc(b).animate({width:df.w2},200); 
+					b.stop(true, false).animate({ height: "290px" }, 200);
+				}, function() {
 				}
-				,function(){}
 				);
-				
+
+				contentFor(c).hover(function() {
+					if (current != this) {
+						reset();
+						console.log("reset");
+					}
+					current = this;
+
+					c.stop(true, false).animate({ height: df.h3 }, 500);
+					a.stop(true, false).animate({ height: df.h1 }, 200);
+
+					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
+					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
+				}, function() {
+				}
+				);
+
 				return {
-				}
-			}
-			$(document).ready(function () {
-				
-				var aaa = new switcher(	$(".infotop"),$(".infoaaa"),$(".infob")			);
-				
-				
+					
+				};
+			};
+			$(document).ready(function() {
 
-			})
+				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"));
+
+
+			});
 
 		</script>
  	

@@ -44,8 +44,15 @@
 	
 	<script src="Scripts/jquery-1.7.1.js"></script>
 	
+	<script  type="text/javascript"  src="Plugins/vegas/jquery.vegas.js"></script>
+	<link rel="stylesheet"   type="text/css" href="Plugins/vegas/jquery.vegas.css" />
+	
 	<style>
-
+		.container_12{
+			position: relative;
+			z-index: 1;
+		}
+		
 		.inside {
 			height: 100%;
 			width: 100%;
@@ -103,17 +110,18 @@
 			height: 100%;
 			width: 100%;
 			left: 10%;
-			z-index:-999;
+			z-index:0;
 		}
 		.matousheader {
 			position: absolute;
-			z-index: -100;
+			z-index:2;
 			
 		}
 		
 		.content {
 			height: 121px;
 			overflow: hidden;
+			opacity:0.9;
 		}
 		.empty {
 			margin-top: 0px;
@@ -134,13 +142,18 @@
 	.matousheader h1{
 		font-family: 'eurofurencelightRegular';
 		font-weight: 400;
-		font-size: 420%;
+		font-size: 290%;
 		margin: 0em 23em -0.4em 0.6em;
 		line-height: 1.5em;
+			opacity:0.9;
+	}
+	.matousheader h1 .ha1{
+		background-color: #fff;
+
 	}
 	h1.white {
 		color: #553893;
-		font-size: 350%;
+		font-size: 270%;
 	}
 	
 	body {
@@ -154,9 +167,9 @@
 	<body>
 	
 		<div class="matousheader">
-			<h1>MATOUŠ</h1>
-			<h1>PELIKÁN</h1>
-			<h1 class="white">ADVOKÁT</h1>
+			<h1><span class="ha1">MATOUŠ</span></h1>
+			<h1><span class="ha1">PELIKÁN</span></h1>
+			<h1 class="white"><span class="ha1">ADVOKÁT</span></h1>
 		</div>
 		<div class="matous">&nbsp;</div>
 	
@@ -193,6 +206,23 @@
 					problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
 					obrátit po telefonu či na sídle mé advokátní kanceláře (..kontakt).				
 					<a class="more" href="#" >(...více o mě)</a>
+          <select>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+          </select>
 				</div>
 			
 			</div>
@@ -236,13 +266,13 @@
 
 
 				var reset = function() {
-					a.stop(true, true).animate({ height: df.h2 }, 200);
-					c.stop(true, true).animate({ height: df.h2 }, 200);
-					b.stop(true, true).animate({ height: df.h2 }, 200);
+					a.stop(true, false).animate({ height: df.h2 }, 200);
+					c.stop(true, false).animate({ height: df.h2 }, 200);
+					b.stop(true, false).animate({ height: df.h2 }, 200);
 
-					ccc(a).stop(true, true).animate({ width: df.w2 }, 200);
-					ccc(b).stop(true, true).animate({ width: df.w3 }, 200);
-					ccc(c).stop(true, true).animate({ width: df.w2 }, 200);
+					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
+					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
+					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
 				};
 
 
@@ -264,7 +294,6 @@
 				contentFor(b).hover(function() {
 					if (current != this) {
 						reset();
-						console.log("reset");
 					}
 					current = this;
 
@@ -276,7 +305,6 @@
 				contentFor(c).hover(function() {
 					if (current != this) {
 						reset();
-						console.log("reset");
 					}
 					current = this;
 
@@ -296,7 +324,31 @@
 			$(document).ready(function() {
 
 				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"));
+				
+  var f = 2000;
+$.vegas('slideshow', {
+  backgrounds:[
+	{ src:'Resources/background/kontakt.jpg', fade:f },
+    { src:'Resources/background/law_desk.jpg', fade:f},
+    { src:'Resources/background/smlouva.jpg', fade:f },
+    { src:'Resources/background/smlouva3.jpg', fade:f},
+    { src:'Resources/background/smlouva2.jpg', fade:f},
+    { src:'Resources/background/smlouva4.jpg', fade:f}
+	
+  ]
+})('overlay', {
+    src:'Plugins/vegas/overlays/02.png',
+    opacity:0.3
+});
 
+        var a = $.vegas('overlay');
+        console.log(a);
+
+				$("select").change(function(){
+           $.vegas( 'overlay', {
+              src: 'Plugins/vegas/overlays/'+ $(this).val() +'.png'
+          });
+				});
 
 			});
 

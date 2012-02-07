@@ -44,8 +44,6 @@
 	
 	<script src="Scripts/jquery-1.7.1.js"></script>
 	
-	<script  type="text/javascript"  src="Plugins/vegas/jquery.vegas.js"></script>
-	<link rel="stylesheet"   type="text/css" href="Plugins/vegas/jquery.vegas.css" />
 	
 	<style>
 		.container_12{
@@ -139,17 +137,23 @@
 		font-size: 2em;
 		margin-bottom: 0.5em;
 	}
+	.matousheader {
+	width: 200px;
+
+	}
 	.matousheader h1{
 		font-family: 'eurofurencelightRegular';
 		font-weight: 400;
 		font-size: 290%;
 		margin: 0em 23em -0.4em 0.6em;
 		line-height: 1.5em;
-			opacity:0.9;
+		opacity:0.9;
 	}
 	.matousheader h1 .ha1{
-		background-color: #fff;
-
+		display: none;
+	}
+	.matousheader .img {
+		margin: 1em;
 	}
 	h1.white {
 		color: #553893;
@@ -160,16 +164,29 @@
 		font-family: 'MyriadProCondensed';
 		font-size: 1em;
 		line-height: 1.1em;
+		background: url(Resources/images/back.png);
+	}
+	.more:hover {
+		cursor: pointer;
+	}
+	.showOnMore {
+		display: none;
 	}
 </style>
 
 </head>
 	<body>
 	
+	
+
 		<div class="matousheader">
 			<h1><span class="ha1">MATOUŠ</span></h1>
 			<h1><span class="ha1">PELIKÁN</span></h1>
 			<h1 class="white"><span class="ha1">ADVOKÁT</span></h1>
+			<div class="img">
+			<img src="Resources/images/matoustext.png" alt="matous pelikan advokat"/>
+				
+			</div>
 		</div>
 		<div class="matous">&nbsp;</div>
 	
@@ -195,13 +212,29 @@
 			<div class="grid_3 xxx">
 				
 				<div class="infotop info1 content">
-					Po absolování právnické fakulty v Olomouci, povinné tříleté
-					koncipientské praxe a složení advokátních zkoušek působím od března
-					2011 v Olomouci jako samostatný advokát. (...více o mě)
-					<a class="more" href="#" >(...více o mě)</a>
+					<h2 class="more">o mě</h2>
+					<span class="hideOnMinimalize">
+						<p>Po absolování právnické fakulty v Olomouci, povinné tříleté
+							<!--					koncipientské praxe a složení advokátních zkoušek působím od března
+								-->					2011 v Olomouci jako samostatný advokát.</p>
+						<span class="hideOnMore"><a class="more" href="#" >(...více o mě)</a></span>
+					
+						<p class="showOnMore">
+						
+							lasndlkanskldnasklndsa
+						</p>
+						<p class="showOnMore">
+						
+							XXXXX
+						</p>
+					
+					</span>
+
+
 				</div>
 				<div class="clear">&nbsp;</div>
 				<div class="infob info1 content">
+					<h2 class="more">kontakt</h2>
 					Potřebujete-li zastupování u soudu, poradit s řešením právního
 					problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
 					obrátit po telefonu či na sídle mé advokátní kanceláře (..kontakt).				
@@ -229,6 +262,7 @@
 			<div class="grid_6 xxx">
 			
 				<div class="infoaaa content">
+					<h2 class="more">poskytované služby</h2>
 					Klientům jsem schopen poskytnout právní pomoc odpovídající generální
 					praxi, což znamená, že okruh právních věcí není nijak omezen. Přesto
 					se dá konstatovat, že převládajícími okruhy práva, na které se
@@ -245,7 +279,7 @@
 	
 
 		<script>
-			var switcher = function(a, b, c, d) {
+			var switcher = function (a, b, c, d) {
 				var df = {
 					h1: "12px",
 					h2: "121px",
@@ -256,16 +290,29 @@
 				};
 				var current = "x";
 
-				var contentFor = function(a) {
-					return a;
-					return a.find(".more");
+				var trigger = function (aaa) {
+					return aaa.find(".more");
 				};
-				var ccc = function(item) {
+
+
+				var handlecontent = function (trigg) {
+					var box = ccc($(trigg));
+					box.find(".hideOnMinimalize").show();
+					box.find(".showOnMore").fadeIn();
+					box.find(".hideOnMore").hide();
+				};
+				var minimalizeHeight = function (element) {
+					element.find(".hideOnMinimalize").hide();
+					element.stop(true, false).animate({ height: df.h1 }, 200);
+				};
+
+				//container
+				var ccc = function (item) {
 					return item.closest(".xxx");
 				};
 
 
-				var reset = function() {
+				var reset = function () {
 					a.stop(true, false).animate({ height: df.h2 }, 200);
 					c.stop(true, false).animate({ height: df.h2 }, 200);
 					b.stop(true, false).animate({ height: df.h2 }, 200);
@@ -276,81 +323,56 @@
 				};
 
 
-				contentFor(a).hover(function() {
+				trigger(a).click(function () {
+					//console.log("askjbsad");
 					if (current == this) {
 						return;
 					}
 					reset();
+					handlecontent(this);
 					current = this;
 
 					a.stop(true, false).animate({ height: df.h3 }, 500);
-					c.stop(true, false).animate({ height: df.h1 }, 200);
+					minimalizeHeight(c);
 
 					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
 					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
-				}, function() {
-				}
-				);
-				contentFor(b).hover(function() {
+				});
+				trigger(b).click(function () {
 					if (current != this) {
 						reset();
 					}
+					handlecontent(this);
 					current = this;
 
 					b.stop(true, false).animate({ height: "290px" }, 200);
-				}, function() {
 				}
 				);
 
-				contentFor(c).hover(function() {
+				trigger(c).click(function () {
 					if (current != this) {
 						reset();
 					}
+					handlecontent(this);
 					current = this;
 
 					c.stop(true, false).animate({ height: df.h3 }, 500);
-					a.stop(true, false).animate({ height: df.h1 }, 200);
+					minimalizeHeight(a);
 
 					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
 					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
-				}, function() {
 				}
 				);
 
 				return {
-					
+
 				};
 			};
-			$(document).ready(function() {
+			$(document).ready(function () {
 
 				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"));
-				
-  var f = 2000;
-$.vegas('slideshow', {
-  backgrounds:[
-	{ src:'Resources/background/kontakt.jpg', fade:f },
-    { src:'Resources/background/law_desk.jpg', fade:f},
-    { src:'Resources/background/smlouva.jpg', fade:f },
-    { src:'Resources/background/smlouva3.jpg', fade:f},
-    { src:'Resources/background/smlouva2.jpg', fade:f},
-    { src:'Resources/background/smlouva4.jpg', fade:f}
-	
-  ]
-})('overlay', {
-    src:'Plugins/vegas/overlays/02.png',
-    opacity:0.3
-});
-
-        var a = $.vegas('overlay');
-        console.log(a);
-
-				$("select").change(function(){
-           $.vegas( 'overlay', {
-              src: 'Plugins/vegas/overlays/'+ $(this).val() +'.png'
-          });
-				});
-
 			});
+
 
 		</script>
  	

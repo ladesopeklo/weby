@@ -35,8 +35,8 @@ h6 {
   line-height: 1;
 }
 
-a {
-  color: #06c;
+a, a:visited {
+  color: #553893
 }
 
 a:hover {

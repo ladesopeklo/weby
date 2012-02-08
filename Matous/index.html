@@ -7,7 +7,9 @@
 	
 	<meta name="author" content="Masparti & Vladimir Talas" />
 	<meta name="description" lang="cs" content=""/>
-
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	
 	<title>Matous</title>
 	
 	
@@ -44,8 +46,18 @@
 	
 	<script src="Scripts/jquery-1.7.1.js"></script>
 	
+	<link href="Plugins/Scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="Plugins/Scroll/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="Plugins/Scroll/jquery.mousewheel.min.js" type="text/javascript"></script>
+	
+	
+	<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+
+
 	
 	<style>
+		
 		.container_12{
 			position: relative;
 			z-index: 1;
@@ -61,7 +73,6 @@
 		 }
 		
 		.info1 {
-			padding: 1em;
 			background-color: #ecebf9;
 			color: #7f7e8e;
 			border-radius: 10px 10px 10px 10px;
@@ -87,9 +98,9 @@
 			-moz-border-:0px 0px 0px 10px;
 			background-color: #000;
 			color: #fff;
+			font-size:0.9em;
 		}
 		.infoaaa  {
-			padding: 1em;
 			border-radius: 10px 10px 10px 0px;
 			-moz-border-:10px 10px 10px 0px; 
 			background-color: #fff;
@@ -117,9 +128,15 @@
 		}
 		
 		.content {
-			height: 121px;
+			height: 200px;
 			overflow: hidden;
 			opacity:0.9;
+			width:100%
+		}
+		.content p{
+			margin-bottom:0.5em;
+			margin-top:0.5em;
+			text-align:justify;
 		}
 		.empty {
 			margin-top: 0px;
@@ -169,8 +186,20 @@
 	.more:hover {
 		cursor: pointer;
 	}
+	h2.more
+	{
+		font-size:1.2em;
+	}
+	h2.more:hover
+	{
+		color:#553893;
+	}
+	
 	.showOnMore {
 		display: none;
+	}
+	.contentborder{
+		margin:1em;
 	}
 </style>
 
@@ -184,7 +213,9 @@
 			<h1><span class="ha1">PELIKÁN</span></h1>
 			<h1 class="white"><span class="ha1">ADVOKÁT</span></h1>
 			<div class="img">
-			<img src="Resources/images/matoustext.png" alt="matous pelikan advokat"/>
+			<a href=".">
+				<img src="Resources/images/matoustext.png" alt="matous pelikan advokat"/>
+			</a>
 				
 			</div>
 		</div>
@@ -212,12 +243,15 @@
 			<div class="grid_3 xxx">
 				
 				<div class="infotop info1 content">
+					<div class ="contentborder">
+
 					<h2 class="more">o mě</h2>
 					<span class="hideOnMinimalize">
 						<p>Po absolování právnické fakulty v Olomouci, povinné tříleté
-							<!--					koncipientské praxe a složení advokátních zkoušek působím od března
-								-->					2011 v Olomouci jako samostatný advokát.</p>
-						<span class="hideOnMore"><a class="more" href="#" >(...více o mě)</a></span>
+							koncipientské praxe a složení advokátních zkoušek působím od března
+							2011 v Olomouci jako samostatný advokát.
+							<a class="more hideOnMore" href="#" >(...více o mě)</a>
+							</p>
 					
 						<p class="showOnMore">
 						
@@ -229,49 +263,91 @@
 						</p>
 					
 					</span>
+					</div>
 
 
 				</div>
 				<div class="clear">&nbsp;</div>
 				<div class="infob info1 content">
-					<h2 class="more">kontakt</h2>
-					Potřebujete-li zastupování u soudu, poradit s řešením právního
-					problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
-					obrátit po telefonu či na sídle mé advokátní kanceláře (..kontakt).				
-					<a class="more" href="#" >(...více o mě)</a>
-          <select>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-          </select>
+					<div class ="contentborder">
+						
+						<h2 class="more">kontakt</h2>
+						<span class="hideOnMinimalize">
+						<p>Potřebujete-li zastupování u soudu, poradit s řešením právního
+						problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
+						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
+						<a class="hideOnMore more" href="#" >(...kontakt)</a>
+						<p class="showOnMore">				
+							details 
+						</p>
+					
+					
+						</span>
+					</div>
 				</div>
 			
 			</div>
 			<div class="grid_6 xxx">
 			
-				<div class="infoaaa content">
-					<h2 class="more">poskytované služby</h2>
-					Klientům jsem schopen poskytnout právní pomoc odpovídající generální
-					praxi, což znamená, že okruh právních věcí není nijak omezen. Přesto
-					se dá konstatovat, že převládajícími okruhy práva, na které se
-					poskytování právních služeb vztahuje, jsou zejména právo občanské,
-					právo trestní, právo obchodní, rodinné právo, pracovní právo a
-					správní právo. 			
-					<a class="more" href="#" >(...více o poskytovaných službách)</a>
+				<div class="infoaaa content" >
+					<div class ="contentborder " id="mcs_container" >
+
+<div class="customScrollBox">
+<div class="container">
+<div class="scrollcontent">
+	<h2 class="more">poskytované služby</h2>
+						<div class="hideOnMinimalize">
+
+						<p>Klientům jsem schopen poskytnout právní pomoc odpovídající generální
+						praxi, což znamená, že okruh právních věcí není nijak omezen. Přesto
+						se dá konstatovat, že převládajícími okruhy práva, na které se
+						poskytování právních služeb vztahuje, jsou zejména právo občanské,
+						právo trestní, právo obchodní, rodinné právo, pracovní právo a
+						správní právo. </p>
+						<a class="hideOnMore more" href="#" >(...více o poskytovaných službách)</a>
+																														<div class="showOnMore">				
+<p>V oblasti <b>občanského práva</b> poskytuji právní služby v celém rozsahu tohoto odvětví. Jedná se
+zejména o sepis podání, smluv (zejména týkajících se nemovitostí, a to včetně zřízení advokátní
+úschovy) a vymáhání pohledávek, a to jak v nalézacím řízení, tak také v řízení exekučním a v případě
+potřeby v řízení insolvenčním. Současně poskytuji právní rady při řešení sporů ve věci věcných
+břemen, vlastnických práv, náhrady škod, reklamací, nájemních vztahů, dědictví…</p>
+
+<p>V oblasti <b>pracovního práva</b> sepisuji pracovněprávní a manažerské smlouvy a dohody. Poskytuji
+poradenství ve věcech změn a ukončení pracovního poměru. Klienty zastupuji ve sporech o neplatné
+rozvázání pracovního poměru a tak i v případných sporech o náhradu škody. Zaměstnavatelům
+nabízí vypracování či revizi pracovněprávních vnitřních předpisů.</p>
+
+<p>V rámci <b>rodinného práva</b> řeším zejména problematiku rozvodů, smluv o vypořádání mezi manžely
+(vypořádání společného jmění manželů, vypořádání práv a povinností společného bydlení a
+stanovení vyživovací povinnosti), dohod o úpravě poměrů k nezletilým dětem během rozvodu a po
+rozvodu. Klienty zastupuji v řízeních o rozvod manželství, při vymáhání dlužného výživného a také ve
+sporech o úpravu poměrů k nezletilým dětem a o stanovení vyživovací povinnosti, a to jak v případě
+rodičů ve vztahu k dětem, tak pro případ jejího neplnění ze strany manželů navzájem.</p>
+
+<p>V oblasti <b>obchodního práva</b> se věnuji posuzování a sepisování obchodněprávních smluv a současně
+poskytuji kompletní právní servis jak pro začínající podnikatele, tak pro společnosti v různých
+fázích jejich existence. Mám zkušenosti týkající se zakládání všech forem obchodních společností a
+družstev, sepisu zakladatelských dokumentů a zápisů do obchodního rejstříku.</p>
+
+<p>Klientům zajišťuji obhajobu v rámci <b>trestního práva</b>, a to během celého řízení (od sdělení obvinění až
+po případné odvolání). V oblasti správního práva pomáhám našim klientům s přípravou podkladů pro
+správní řízení, a to zejména pro územní a stavební řízení a dále je zastupuji v řízeních před správními
+orgány, v přestupkovém řízení a při soudním přezkumu správních rozhodnutí. </p>
+</div>
+						</div>
+
+
+
+</div>
+</div>
+<div class="dragger_container">
+<div class="dragger"></div>
+</div>
+</div>
+
 				</div>
-				<div class="infok">info@matouspelikan.com | tel. 776709306 | facebook</div>
+				</div>
+				<div class="infok">info@matouspelikan.com <span class="hideOnMinimalize">&nbsp;|&nbsp;tel. 776709306&nbsp;</span> <div style="float:right">facebook</div></div>
 
 			</div>
 
@@ -279,14 +355,24 @@
 	
 
 		<script>
+			function scroller(){
+			    $("#mcs_container").mCustomScrollbar("vertical",400,"easeOutCirc",1.05,"auto","yes","yes",10);
+			}
+			function fixScroll(){
+			    $("#mcs_container .container").animate({ top: 0 }, 500);
+
+			}
+
 			var switcher = function (a, b, c, d) {
 				var df = {
-					h1: "12px",
-					h2: "121px",
+					h1: 50,
+					h2: 200,
 					h3: "300px",
-					w1: "12px",
+					w1: 140,
 					w2: 220,
-					w3: 460
+					w3: 460,
+					w4: 540,
+					w8: 620,
 				};
 				var current = "x";
 
@@ -295,15 +381,20 @@
 				};
 
 
-				var handlecontent = function (trigg) {
-					var box = ccc($(trigg));
+				var unMinimalize = function (contentEl) {
+					contentEl.find(".hideOnMinimalize").show();
+				}
+				var handlecontent = function (contentEl) {
+					var box = contentEl;
 					box.find(".hideOnMinimalize").show();
 					box.find(".showOnMore").fadeIn();
 					box.find(".hideOnMore").hide();
 				};
 				var minimalizeHeight = function (element) {
 					element.find(".hideOnMinimalize").hide();
-					element.stop(true, false).animate({ height: df.h1 }, 200);
+					if (element.height() >= df.h1){
+						element.stop(true, true).animate({ height: df.h1 }, 200);
+					}
 				};
 
 				//container
@@ -313,53 +404,65 @@
 
 
 				var reset = function () {
-					a.stop(true, false).animate({ height: df.h2 }, 200);
-					c.stop(true, false).animate({ height: df.h2 }, 200);
-					b.stop(true, false).animate({ height: df.h2 }, 200);
+//					a.stop(true, false).animate({ height: df.h2 }, 200);
+//					c.stop(true, false).animate({ height: df.h2 }, 200);
+//					b.stop(true, false).animate({ height: df.h2 }, 200);
 
-					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
-					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
-					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
+//					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
+//					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
+//					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
 				};
 
 
 				trigger(a).click(function () {
-					//console.log("askjbsad");
 					if (current == this) {
 						return;
 					}
-					reset();
-					handlecontent(this);
+					handlecontent(a);
 					current = this;
 
 					a.stop(true, false).animate({ height: df.h3 }, 500);
 					minimalizeHeight(c);
+					minimalizeHeight(b);
+					minimalizeHeight(d);
+					
+
 
 					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
-					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
+					ccc(b).stop(true, false).animate({ width: df.w2 }, 200, fixScroll);
 				});
 				trigger(b).click(function () {
-					if (current != this) {
-						reset();
+					if (current == this) {
+						return;
 					}
-					handlecontent(this);
+					handlecontent(b);
+					minimalizeHeight(c);
+					minimalizeHeight(a);
+					unMinimalize(d);
 					current = this;
 
-					b.stop(true, false).animate({ height: "290px" }, 200);
+					b.stop(true, false).animate({ height: "400px" }, 200);
+					ccc(a).stop(true, false).animate({ width: df.w1 }, 200);
+					ccc(b).stop(true, false).animate({ width: df.w4 }, 200, scroller );
+
+
 				}
 				);
 
 				trigger(c).click(function () {
-					if (current != this) {
-						reset();
+					if (current == this) {
+						return;
 					}
-					handlecontent(this);
+					handlecontent(c);
+					minimalizeHeight(a);
+					minimalizeHeight(b);
+					minimalizeHeight(d);
+					
 					current = this;
 
 					c.stop(true, false).animate({ height: df.h3 }, 500);
-					minimalizeHeight(a);
 
-					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
+					ccc(a).stop(true, false).animate({ width: df.w3 }, fixScroll);
 					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
 				}
 				);
@@ -370,13 +473,16 @@
 			};
 			$(document).ready(function () {
 
-				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"));
+				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"),$(".infok"));
+				scroller();
 			});
 
 
 		</script>
  	
 
+	
+	
 	</body>
 
 </html>

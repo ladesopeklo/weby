@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+﻿<style>
+	.nahled
+	{
+		background-color:#eee;
+		height:104px;
+		margin:1px;
+	}
+	.nahledbig
+	{
+		background-color:#eee;
+		height:210px;
+		margin:1px;
+	}
+</style>
+<div class="grid_6">
+	<div class="grid_2">
+		<div class="nahled">.</div>
+	</div>
+	<div class="grid_2">
+		<div class="nahled">.</div>
+	</div>
+	<div class="grid_2">
+		<div class="nahled">.</div>
+	</div>
+
+	<div class="grid_2">
+		<div class="nahled">.</div>
+	</div>
+	<div class="grid_2">
+		<div class="nahled">.</div>
+	</div>
+	<div class="grid_2">
+		<div class="nahled">.</div>
+=======
 ﻿<div class="grid_6">
 	<div class="mainthumbs"> 
 	<div class="grid_2">
@@ -19,6 +54,7 @@
 		<div class="grid_2">
 			<div class="nahled bottom">.</div>
 		</div>
+>>>>>>> 7c0d79fe682a162144ac2c8ff84ee7cfc9223467
 	</div>
 </div>
 <div class="grid_6">

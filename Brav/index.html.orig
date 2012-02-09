@@ -13,12 +13,11 @@
 	
 
 	
-
-	
 	<link rel="stylesheet" href="Plugins/ADAPT/assets/css/master.css" />
 	<link rel="stylesheet" href="Res/css/style.css" />
 	<link rel="stylesheet" href="Res/css/grid.css" />
 	
+<<<<<<< HEAD
 	
 
 	<script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
@@ -28,6 +27,17 @@
 	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
 	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
 	
+=======
+	
+
+	<script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.tmpl.js"></script>
+	<script type="text/javascript" src="Scripts/require.js"></script>
+	<script type="text/javascript" src="Scripts/amplify.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
+	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
+	
+>>>>>>> 7c0d79fe682a162144ac2c8ff84ee7cfc9223467
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
@@ -48,14 +58,25 @@
 				<div class="right topright">
 					<h1> Atelier Polách & Bravenec s.r.o.</h1>
 					<p style="text-align: justify;width: 100%">
-				architektura 
-				<span class="red">|</span>
-				studie
-				<span class="red">|</span>
-				komplexní projektová činnost
-				<span class="red">|</span>
-				interiéry
-				<span class="red">|</span>
+<<<<<<< HEAD
+					architektura 
+					<span class="red">|</span>
+					studie
+					<span class="red">|</span>
+					komplexní projektová činnost
+					<span class="red">|</span>
+					interiéry
+					<span class="red">|</span>
+=======
+						architektura 
+						<span class="red">|</span>
+						studie
+						<span class="red">|</span>
+						komplexní projektová činnost
+						<span class="red">|</span>
+						interiéry
+						<span class="red">|</span>
+>>>>>>> 7c0d79fe682a162144ac2c8ff84ee7cfc9223467
 						inženýrská a investorská činnost
 					</p>
 				</div>

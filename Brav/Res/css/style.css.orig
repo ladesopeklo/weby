@@ -23,10 +23,13 @@ body {
 }
 .topright h1  {
 	margin: 0.5em 0em 0em 0em;
+<<<<<<< HEAD
+=======
 }
 
 .menu {
 	height: 480px;
+>>>>>>> 7c0d79fe682a162144ac2c8ff84ee7cfc9223467
 }
 .left {
 	border-right: 1px solid red;
@@ -47,6 +50,8 @@ a:hover {
 a,a:visited {
 	color: #fff;
 	text-decoration: none;
+<<<<<<< HEAD
+=======
 }
 
 /*thumbslist*/
@@ -92,6 +97,7 @@ a,a:visited {
 	
 }
 .mainthumbs {
+>>>>>>> 7c0d79fe682a162144ac2c8ff84ee7cfc9223467
 }
 /*------*/
 	

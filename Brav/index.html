@@ -11,75 +11,66 @@
 	<title>Matous</title>
 	
 	
+
+	
 	<link rel="stylesheet" href="Plugins/ADAPT/assets/css/master.css" />
 	<link rel="stylesheet" href="Res/css/style.css" />
-	<noscript>
-		<link rel="stylesheet" href="Plugins/ADAPT/assets/css/mobile.min.css" />
-	</noscript>
-	<script>
-// Edit to suit your needs.
-		var ADAPT_CONFIG = {
-		// Where is your CSS?
-			path: 'Plugins/ADAPT/assets/css/',
-
-			// false = Only run once, when page first loads.
-			// true = Change on window resize and page tilt.
-			dynamic: true,
-
-			// First range entry is the minimum.
-			// Last range entry is the maximum.
-			// Separate ranges by "to" keyword.
-			range: [
-				'0px    to 760px  = mobile.min.css',
-				'760px  to 980px  = 720.min.css',
-				'980px			 = 960.min.css',
-//				'1280px to 1600px = 1200.min.css',
-//				'1600px to 1940px = 1560.min.css',
-//				'1940px to 2540px = 1920.min.css',
-//				'2540px           = 2520.min.css'
-			]
-		};
-	</script>
+	<link rel="stylesheet" href="Res/css/grid.css" />
 	
-	<script src="Plugins/ADAPT/assets/js/adapt.min.js"></script>
-	<script src="Scripts/jquery-1.7.1.js"></script>
+	
+
+	<script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.tmpl.js"></script>
+	<script type="text/javascript" src="Scripts/require.js"></script>
+	<script type="text/javascript" src="Scripts/amplify.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
+	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
+	
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
+
+
 	
 
 </head>
 	<body>
 	
-		<div class="container_12">
-			<div class="grid_3 ">
+		<div class="container_18">
+			<div class="grid_6 ">
 				<div class="left topleft">
 				architektonicko - stavební kancelář				
 				</div>
 			</div>
-			<div class="grid_9">
-				
-				<h1> Atelier Polách & Bravenec s.r.o.</h1>
-				architektura 
-				<span class="red">|</span>
-				studie
-				<span class="red">|</span>
-				komplexní projektová činnost
-				<span class="red">|</span>
-				interiéry
-				<span class="red">|</span>
-				inženýrská a investorská činnost
-
+			<div class="grid_12">
+				<div class="right topright">
+					<h1> Atelier Polách & Bravenec s.r.o.</h1>
+					<p style="text-align: justify;width: 100%">
+					architektura 
+					<span class="red">|</span>
+					studie
+					<span class="red">|</span>
+					komplexní projektová činnost
+					<span class="red">|</span>
+					interiéry
+					<span class="red">|</span>
+						inženýrská a investorská činnost
+					</p>
+				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="grid_3 ">
+			<div class="grid_6 ">
 				<div class="left menu">
 					<ul>
 						<li>
-							profil
+							<a href="#!/content/profil"> profil</a>
 						</li>
 						<li>
-							certifikace
+							<a href="#!/content/certifikace">certifikace</a>
 						</li>
 						<li>
-							kontakt
+							<a href="#!/content/kontakt">kontakt</a>
+							
 						</li>
 					</ul>
 					<br />
@@ -87,7 +78,7 @@
 					<br />
 					<ul>
 						<li>
-							oceněné stavby
+							<a href="#!/galerycontent/ocenenestavby">oceněné stavby</a>
 						</li>
 						<li>
 							stavby pro bydlení
@@ -101,12 +92,38 @@
 					</ul>
 				</div>
 			</div>
-			<div class="grid_9 ">
-			asd
+			<div class="grid_12 ">
+				<div id="contentMain" >
+					
+				</div>
 			</div>
 
 		</div>
  	
+	
+<script>
+
+	//defaultni nastaveni. tohle se pouzije jako vychozi hodnoty pri prichodu na index (na hlavni stranku, bez parametru, napr.:masparti.com)  
+	var options = {
+		controller: 'content',
+		action: 'xxx',
+		culture: 'cs',
+		activeMenuDefault: -1
+	};
+
+	var settings = new Settings(options);
+
+	$(document).ready(function () {
+
+		console.log(settings.culture());
+		var cache = false; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
+
+		var main = new Core(cache, settings);
+		main.Init();
+
+	});
+</script>
+	
 
 	</body>
 

@@ -1,8 +1,15 @@
 body {
 	background-color: #000;
 	color: #fff;
-	font-family: "Century Gothic",	 /* Windows (HP printer) */ "Avant Garde Gothic",	/* HP font name */ "Avant Garde",	 /* MacOS */ "URW Gothic L",	 /* Unix+X+FontConfig */ /* Fallback options */ helvetica,	 /* Unix+X, MacOS */ sans-serif;
-	font-size: 12px;
+	font-family: Century Gothic;
+/*	, "Avant Garde Gothic", "Avant Garde",	 "URW Gothic L",		 helvetica,	 	 sans-serif;*/
+	font-size: 0.9em;
+	
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'BahamasNormal';
+	font-family: verdana;
+	font-family: 'Didact Gothic', sans-serif;
+
 }
 .red {
 	color: red;
@@ -12,13 +19,28 @@ body {
 .topleft {
 	height: 5em;
 	line-height: 1em;
+	padding-top: 2em;
+}
+.topright h1  {
+	margin: 0.5em 0em 0em 0em;
 }
 .left {
 	border-right: 1px solid red;
 	text-align: right;
 	padding-right: 1em;
 }
+.right {
+	padding-left: 1em;
+}
 
 h1 {
-	font-size: 200%;
+	font-size: 2em;
+	font-weight:  300;
+}
+a:hover {
+	font-weight: bold;
+}
+a,a:visited {
+	color: #fff;
+	text-decoration: none;
 }

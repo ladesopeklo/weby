@@ -1,8 +1,15 @@
 body {
 	background-color: #000;
 	color: #fff;
-	font-family: "Century Gothic",	 /* Windows (HP printer) */ "Avant Garde Gothic",	/* HP font name */ "Avant Garde",	 /* MacOS */ "URW Gothic L",	 /* Unix+X+FontConfig */ /* Fallback options */ helvetica,	 /* Unix+X, MacOS */ sans-serif;
-	font-size: 12px;
+	font-family: Century Gothic;
+/*	, "Avant Garde Gothic", "Avant Garde",	 "URW Gothic L",		 helvetica,	 	 sans-serif;*/
+	font-size: 0.9em;
+	
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'BahamasNormal';
+	font-family: verdana;
+	font-family: 'Didact Gothic', sans-serif;
+
 }
 .red {
 	color: red;
@@ -12,13 +19,79 @@ body {
 .topleft {
 	height: 5em;
 	line-height: 1em;
+	padding-top: 2em;
+}
+.topright h1  {
+	margin: 0.5em 0em 0em 0em;
+}
+
+.menu {
+	height: 480px;
 }
 .left {
 	border-right: 1px solid red;
 	text-align: right;
 	padding-right: 1em;
 }
+.right {
+	padding-left: 1em;
+}
 
 h1 {
-	font-size: 200%;
+	font-size: 2em;
+	font-weight:  300;
 }
+a:hover {
+	font-weight: bold;
+}
+a,a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*thumbslist*/
+
+.thumslist {
+	height: 5em;
+	background-color: darkslategray;
+	opacity: 0.2;
+	margin-top: -110px;
+	overflow: hidden;
+	padding-left: 4.8em;
+}
+.nah
+{
+	background-color:#fff;
+	height:5em;
+	width: 5em;
+	
+	
+}
+
+
+/*galerie*/
+.nahled
+{
+	background-color:#fff;
+	height:6em;
+}
+.nahledbig
+{
+	background-color:#eee;
+	height:13em;
+	margin: 0px 0px 1em 1em;
+
+}
+.nahled {
+}
+.nahled.top {
+	margin: 0px 0px 1em 1em;
+}
+.nahled.bottom {
+	margin: 0px 0px 1em 1em;
+	
+}
+.mainthumbs {
+}
+/*------*/
+	

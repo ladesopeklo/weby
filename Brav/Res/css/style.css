@@ -3,13 +3,22 @@ body {
 	color: #fff;
 	font-family: Century Gothic;
 /*	, "Avant Garde Gothic", "Avant Garde",	 "URW Gothic L",		 helvetica,	 	 sans-serif;*/
-	font-size: 0.9em;
+	font-size: 0.8em;
 	
 	font-family: 'Open Sans', sans-serif;
 	font-family: 'BahamasNormal';
 	font-family: verdana;
 	font-family: 'Didact Gothic', sans-serif;
 
+}
+
+h3 {
+	margin: 0px 0px 0.4em 0em;
+}
+#contentMain h4 {
+	margin: 0px 0px 2em 0em;
+	font-size: 90%;
+	
 }
 .red {
 	color: red;

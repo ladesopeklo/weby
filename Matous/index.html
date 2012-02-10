@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 	
 	<meta name="author" content="Masparti & Vladimir Talas" />
 	<meta name="description" lang="cs" content=""/>
@@ -54,7 +54,9 @@
 	
 	<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
 
-	<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAH0HeeeI9JzOX5ntFS-LBBVlfQuXUFsqY&sensor=false"></script>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAH0HeeeI9JzOX5ntFS-LBBVlfQuXUFsqY&sensor=false">
+    </script>
 
 
 	
@@ -160,8 +162,8 @@
 	</style>
 
 
-<link rel="stylesheet" href="Resources\font\eurof36\stylesheet.css" />
-<link rel="stylesheet" href="Resources\font\MyriadPro-Cond\stylesheet.css" />
+<link rel="stylesheet" href="Resources/font/eurof36/stylesheet.css" />
+<link rel="stylesheet" href="Resources/font/MyriadPro-Cond/stylesheet.css" />
 <style type="text/css">
 	h1 {
 		font-size: 2em;
@@ -216,6 +218,9 @@
 		margin:1em;
 
 	}
+	p.top {
+		margin-top: 0px;
+	}
 </style>
 
 </head>
@@ -244,7 +249,7 @@
 				<div class="">&nbsp;</div>
 			</div>
 			<div class="grid_9" style="margin-top: 100px;">
-				<h1>... příjemně profesionální přístup</h1>
+				<!--<h1>... příjemně profesionální přístup</h1>-->
 			</div>
 			<div class="clear"></div>
 		 
@@ -282,17 +287,27 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 					<div class ="contentborder">
 						
 						<h2 class="more">kontakt</h2>
-						<span class="hideOnMinimalize">
+						<div class="hideOnMinimalize">
 						<p>Potřebujete-li zastupování u soudu, poradit s řešením právního
 						problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
 						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
 						<a class="hideOnMore more" href="#" >(...kontakt)</a>
 						<div class="showOnMore">				
-							    <div id="map_canvas" style="width:400px; height:200px"></div>
+							<div class="grid_3 alpha">
+								<div id="map_canvas" style="width:100%; height:200px;border: 1px solid #eee;"></div>
+							</div>
+							<div class="grid_2 omega">
+								<p class="top"><b>Matouš Pelikán</b></p>
+								<p>Na Vozovce 21<br />
+									779 00 Olomouc
+								</p>
+								<p>776709306</p>
+								<p>info@matouspelikan.com</p>
+							</div>
 						</div>
 					
 					
-						</span>
+						</div>
 					</div>
 				</div>
 			
@@ -365,15 +380,6 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 	
 
 		<script>
-			      function initialize() {
-        var myOptions = {
-        	center: new google.maps.LatLng(17.240295, 49.592993),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            myOptions);
-      }
 
 			function scroller(){
 			    $("#mcs_container").mCustomScrollbar("vertical",400,"easeOutCirc",1.05,"auto","yes","yes",10);
@@ -387,7 +393,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 				var df = {
 					h1: 50,
 					h2: 200,
-					h3: "300px",
+					h3: "20em",
 					w1: 140,
 					w2: 220,
 					w3: 460,
@@ -400,10 +406,29 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					return aaa.find(".more");
 				};
 
+				var initializeMap = function () {
+					var latlng = new google.maps.LatLng(49.592548, 17.24021);
+					var myOptions = {
+						center: latlng,
+						zoom: 16,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+
+					var map = new google.maps.Map(document.getElementById("map_canvas"),
+						myOptions);
+
+					var marker = new google.maps.Marker({
+						position: latlng,
+						map: map,
+						title: "Matouš Pelikán, Na Vozovce 21, 779 00 Olomouc "
+					});
+
+				};
+
 
 				var unMinimalize = function (contentEl) {
 					contentEl.find(".hideOnMinimalize").show();
-				}
+				};
 				var handlecontent = function (contentEl) {
 					var box = contentEl;
 					box.find(".hideOnMinimalize").show();
@@ -412,7 +437,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 				};
 				var minimalizeHeight = function (element) {
 					element.find(".hideOnMinimalize").hide();
-					if (element.height() >= df.h1){
+					if (element.height() >= df.h1) {
 						element.stop(true, true).animate({ height: df.h1 }, 200);
 					}
 				};
@@ -424,13 +449,13 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 
 
 				var reset = function () {
-//					a.stop(true, false).animate({ height: df.h2 }, 200);
-//					c.stop(true, false).animate({ height: df.h2 }, 200);
-//					b.stop(true, false).animate({ height: df.h2 }, 200);
+					//					a.stop(true, false).animate({ height: df.h2 }, 200);
+					//					c.stop(true, false).animate({ height: df.h2 }, 200);
+					//					b.stop(true, false).animate({ height: df.h2 }, 200);
 
-//					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
-//					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
-//					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
+					//					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
+					//					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
+					//					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
 				};
 
 
@@ -445,7 +470,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					minimalizeHeight(c);
 					minimalizeHeight(b);
 					minimalizeHeight(d);
-					
+
 
 
 					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
@@ -463,7 +488,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 
 					b.stop(true, false).animate({ height: "400px" }, 200);
 					ccc(a).stop(true, false).animate({ width: df.w1 }, 200);
-					ccc(b).stop(true, false).animate({ width: df.w4 }, 200, scroller );
+					ccc(b).stop(true, false).animate({ width: df.w4 }, 200, scroller);
 
 
 				}
@@ -477,10 +502,10 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					minimalizeHeight(a);
 					minimalizeHeight(b);
 					minimalizeHeight(d);
-					
+
 					current = this;
 
-					c.stop(true, false).animate({ height: df.h3 }, 500);
+					c.stop(true, false).animate({ height: df.h3 }, initializeMap);
 
 					ccc(a).stop(true, false).animate({ width: df.w3 }, fixScroll);
 					ccc(b).stop(true, false).animate({ width: df.w2 }, 200);
@@ -493,9 +518,8 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 			};
 			$(document).ready(function () {
 
-				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"),$(".infok"));
+				new switcher($(".infotop"), $(".infoaaa"), $(".infob"),$(".infok"));
 				scroller();
-				initialize();
 			});
 
 

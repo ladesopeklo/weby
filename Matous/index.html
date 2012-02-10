@@ -33,7 +33,7 @@
 			range: [
 				'0px    to 760px  = mobile.min.css',
 				'760px  to 980px  = 720.min.css',
-				'980px			 = 960.min.css',
+				'980px			 = 960.css',
 //				'1280px to 1600px = 1200.min.css',
 //				'1600px to 1940px = 1560.min.css',
 //				'1940px to 2540px = 1920.min.css',
@@ -95,7 +95,7 @@
 
 		}
 		.infotop , .infoaaa {
-			margin-bottom: 1em;
+			margin-bottom: 10px;
 			
 		}
 		.infotop {
@@ -119,26 +119,27 @@
 			border-radius: 10px 10px 10px 0px;
 			-moz-border-:10px 10px 10px 0px; 
 			background-color: #fff;
-			color: #000;
 
 		}
 		
 		.infoaaa a {
-			color: #000;
+			color: #7f7e8e;
+		}
+		.infoaaa a:hover {
+			color: #C60;
 		}
 		.infoqq {
 			text-align: right;
 		}
 		.matous {
 			background: url(Resources/images/matous.png) no-repeat;
-			position: fixed;
-			height: 100%;
+			position: absolute;
+			height: 640px;
 			width: 100%;
-			left: 10%;
-			z-index:0;
+			left: -10%;
+			z-index:-2;
 		}
 		.matousheader {
-			position: absolute;
 			z-index:2;
 			
 		}
@@ -185,8 +186,8 @@
 		display: none;
 	}
 	.matousheader .img {
-		margin: 1em;
-		margin-top: 1.3em;
+		margin: 0px;
+		margin-top: 0.5em;
 	}
 	h1.white {
 		color: #553893;
@@ -215,7 +216,7 @@
 		display: none;
 	}
 	.contentborder{
-		margin:1em;
+		margin:0.6em;
 
 	}
 	p.top {
@@ -228,39 +229,48 @@
 	
 	
 
-		<div class="matousheader">
-			<h1><span class="ha1">MATOUŠ</span></h1>
-			<h1><span class="ha1">PELIKÁN</span></h1>
-			<h1 class="white"><span class="ha1">ADVOKÁT</span></h1>
-			<div class="img">
-			<a href=".">
-				<img src="Resources/images/matoustext.png" alt="matous pelikan advokat"/>
-			</a>
-				
-			</div>
-		</div>
-		<div class="matous">&nbsp;</div>
+		<div class="matousxx">&nbsp;</div>
 	
-		<div class="container_12">
-		
+		<div class="container_10">
+
+			<div class="grid_2 matousheader">
+				<h1><span class="ha1">MATOUŠ</span></h1>
+				<h1><span class="ha1">PELIKÁN</span></h1>
+				<h1 class="white"><span class="ha1">ADVOKÁT</span></h1>
+				<div class="img">
+				<a href=".">
+					<img src="Resources/images/matoustext.png" alt="matous pelikan advokat"/>
+				</a>
+				</div>
+			</div>
+			<div class="grid_8 ">
+				<div class="matous">&nbsp;</div>
+			</div>
+		 
+			<div class="clear"></div>
 		
 
-			<div class="grid_3">
+			<div class="grid_6">
 				<div class="">&nbsp;</div>
 			</div>
-			<div class="grid_9" style="margin-top: 100px;">
-				<!--<h1>... příjemně profesionální přístup</h1>-->
+			<div class="grid_4" style="">
+				<h1>... příjemně profesionální přístup</h1>
 			</div>
 			<div class="clear"></div>
 		 
-			<div class="grid_3">
+		 
+			<div class="grid_2">.
+			</div>
+		 
+
+			<div class="grid_2">
 				<div class="infoqq">
 					<img src="Resources/images/logomatous.png" alt="logo" />
 				</div>
 			</div>
 			
 			
-			<div class="grid_3 xxx">
+			<div class="grid_2 xxx">
 				
 				<div class="infotop info1 content">
 					<div class ="contentborder">
@@ -293,11 +303,11 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
 						<a class="hideOnMore more" href="#" >(...kontakt)</a>
 						<div class="showOnMore">				
-							<div class="grid_3 alpha">
+							<div class="grid_2 alpha">
 								<div id="map_canvas" style="width:100%; height:200px;border: 1px solid #eee;"></div>
 							</div>
-							<div class="grid_2 omega">
-								<p class="top"><b>Matouš Pelikán</b></p>
+							<div style="float: left">
+								<p class="top"><b>Mgr. Matouš Pelikán</b></p>
 								<p>Na Vozovce 21<br />
 									779 00 Olomouc
 								</p>
@@ -312,9 +322,9 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 				</div>
 			
 			</div>
-			<div class="grid_6 xxx">
+			<div class="grid_4 xxx">
 			
-				<div class="infoaaa content" >
+				<div class="infoaaa content info1" >
 					<div class ="contentborder " id="mcs_container" >
 
 <div class="customScrollBox">
@@ -394,10 +404,10 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					h1: 50,
 					h2: 200,
 					h3: "20em",
-					w1: 140,
-					w2: 220,
-					w3: 460,
-					w4: 540,
+					w1: 96,
+					w2: 202,
+					w3: 414,
+					w4: 520,
 					w8: 620
 				};
 				var current = "x";

@@ -1,0 +1,30 @@
+<meta name="google-site-verification" content="AIzaSyCNe-YK0sbO9TQ4wuYwSBionJGy-976U5w" />
+ <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+
+<div id="mojeMapa" style="width: 99%; height: 200px; border: 1px solid gray;">
+	&nbsp;</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        try {
+            var myLatlng = new google.maps.LatLng(49.592323, 17.250991);
+            var myOptions = {
+                zoom: 18,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById("mojeMapa"), myOptions);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: "oční centrum Tana"
+            });   
+
+        }
+        catch (err) {
+            alert(err);
+        }
+    });
+    </script><p>
+	<a href="http://maps.google.cz/maps/place?oe=utf-8&amp;rls=org.mozilla:cs:official&amp;client=firefox-a&amp;um=1&amp;ie=UTF-8&amp;q=TANA+o%C4%8Dn%C3%AD+centrum,&amp;fb=1&amp;gl=cz&amp;hq=TANA+o%C4%8Dn%C3%AD+centrum,&amp;hnear=Olomouc&amp;cid=10485038649524331870" target="_blank">Velk&aacute; mapa </a></p>

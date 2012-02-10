@@ -54,6 +54,8 @@
 	
 	<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
 
+	<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAH0HeeeI9JzOX5ntFS-LBBVlfQuXUFsqY&sensor=false"></script>
+
 
 	
 	<style>
@@ -182,6 +184,7 @@
 	}
 	.matousheader .img {
 		margin: 1em;
+		margin-top: 1.3em;
 	}
 	h1.white {
 		color: #553893;
@@ -284,9 +287,9 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 						problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
 						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
 						<a class="hideOnMore more" href="#" >(...kontakt)</a>
-						<p class="showOnMore">				
-							details 
-						</p>
+						<div class="showOnMore">				
+							    <div id="map_canvas" style="width:400px; height:200px"></div>
+						</div>
 					
 					
 						</span>
@@ -362,6 +365,16 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 	
 
 		<script>
+			      function initialize() {
+        var myOptions = {
+        	center: new google.maps.LatLng(17.240295, 49.592993),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+      }
+
 			function scroller(){
 			    $("#mcs_container").mCustomScrollbar("vertical",400,"easeOutCirc",1.05,"auto","yes","yes",10);
 			}
@@ -379,7 +392,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					w2: 220,
 					w3: 460,
 					w4: 540,
-					w8: 620,
+					w8: 620
 				};
 				var current = "x";
 
@@ -482,6 +495,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 
 				var aaa = new switcher($(".infotop"), $(".infoaaa"), $(".infob"),$(".infok"));
 				scroller();
+				initialize();
 			});
 
 

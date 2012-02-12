@@ -9,6 +9,7 @@ body {
 	font-family: 'BahamasNormal';
 	font-family: verdana;
 	font-family: 'Didact Gothic', sans-serif;
+	font-family: Helvetica;
 
 }
 
@@ -82,12 +83,12 @@ a,a:visited {
 .nahled
 {
 	background-color:#fff;
-	height:6em;
+	height:94px;
 }
 .nahledbig
 {
 	background-color:#eee;
-	height:13em;
+	height:200px;
 	margin: 0px 0px 1em 1em;
 
 }

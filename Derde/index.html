@@ -12,12 +12,11 @@
 
 
 
-	<link rel="stylesheet" href="Resources/css/basic.min.css" />
+	<!--<link rel="stylesheet" href="Resources/css/basic.min.css" />
 	<link rel="stylesheet" href="Resources/font/stylesheet.min.css" type="text/css" charset="utf-8" />
-
 	<script src="Scripts/libs.min.js"></script>
-	
-	<!--	
+	-->
+		
 	<link rel="stylesheet" href="Resources/font/stylesheet.css" type="text/css" charset="utf-8" />
 	<link rel="stylesheet" href="Resources/css/grid.css" />
 	<link rel="stylesheet" href="Resources/css/style.css" />
@@ -26,7 +25,10 @@
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.js"></script>
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></script>
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></script>
-	-->
+	
+	<script src="Plugin/intro/Groject.ImageSwitch.yui.js"></script>
+	<script src="Plugin/intro/slider.js"></script>
+	
 		
 			
 	<link rel="shortcut icon" href="favicon.ico">
@@ -36,64 +38,37 @@
 	
 	<div class="container_12">
 		
-		<div class="grid_12 header">
+		<div class="grid_4 headerB">
 			<a id="home" href="#home"><img src="Resources/images/head1.png" alt="Derde Leven logo" /></a>
-			<h1>Tvůrce aktivního odpočinku</h1>
+		</div>
+		<div class="grid_4 headerB">
+			<!--<h1>Tvůrce aktivního odpočinku</h1>-->
+		</div>
+		<div class="grid_4 header">
+			<a class="kontakt goto" href="#kontakt">Kontakt</a>
 		</div>
 		<div class="clear"></div>
 		<div class="grid_12 headerspacer">&nbsp;</div>
 		<div class="clear"></div>
 		
 		
-	<div class="navigation mainmenu">
-
-		<div class="grid_2">
-			<div class=" nav mainleft">&nbsp;</div>
-		</div>
-		<div class="grid_2 ">
-			<div class="nav rightb">
-				<span class="disabled" > Reference</span>
-			</div>
-		</div>
-		<div class="grid_2 ">
-			<!--<div class="nav">Pečuje o vás</div>-->
-			<div class="nav rightb">
-				<a href="#aaa">Pečuje o vás</a>
-			</div>
-		</div>
-		<div class="grid_2 ">
-			<!--<div class="nav">Novinky</div>-->
-			<div class="nav rightb">
-				<a href="#bbb">Novinky</a>
-			</div>
-		</div>
-		<div class="grid_2 ">
-			<!--<div class="nav">Kontakt</div>-->
-			<div class="nav ">
-				<a href="#cc">Kontakt</a>
-			</div>
-		</div>
-		<div class="grid_2">
-			<div class="nav leftb ">&nbsp;</div>
-		</div>
-		<div class="clear"></div>
-	</div>
-		 
-		
 	<div class="content main" id="">
 		<div class="content_home xxx">
 			<div class="grid_12 ">
-				<div class="data">
-					<img src="Resources/images/main1.jpg" alt="koule1" />
-					<img src="Resources/images/main2.png" alt="koule2" />
-					<img src="Resources/images/main3.png" alt="koule3" />
+				<img class="intro" src="Resources/images/intro/intro.jpg" alt="koule1" />
+				<div class="introbox" >
+					<div class="introboxcontent">
+						<h1>Tvůrce aktivního odpočinku</h1>
+						<ul>
+							<li>Tajemstvi kjbsafdkjba jkbaskd jk asdkj sakj dkjas dkj ask dka skjd askjdkajs jkajkd jkakdj askj dkjdkj aksj dkjadkj akj djkas djka sjk ajk dkj akj gkj frjkg ekjtr gkj skcj rkjg jklsb jkf sjkdfks </li>
+						</ul>
+					</div>
 				</div>
-
 			</div>
 			<div class="clear"></div>
 			</div>
 		<div class="items" style="display:none">
-			<div class="content_pecuje xxx">
+		<!--	<div class="content_pecuje xxx">
 				<div class="grid_2 ">
 					<div class="rightb">
 					<img src="Resources/images/pic3.jpg" alt="image 1" />
@@ -132,19 +107,20 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 				</div>
 				<div class="clear"></div>
 
-			</div>
-			<div class="content_novinky xxx">
-				<div class="grid_2 ">
-					<div class="rightb">
-						<img src="Resources/images/pic1.jpg" alt="image 1" />
-					</div>
-				</div>
-				<div class="grid_6 ">
+			</div>-->
+			<div class="content_novinky xxx" id="novinky">
+				<div class="grid_9 ">
 					<div class="nav data">
 						<h1>Novinky</h1>
 					</div>
-					<div class="grid_4 data ">
+					<div class="grid_7 data ">
+						
+						<h2>Co je Derde Leven</h2>
+						
 						<ul>
+							<li> ksms sf kj sfdkj ks df jjsj jksngoioin oinsfo sjkjbsdf jbksbf kjbsdkjfb jksbdfkj bskdjfb kjs</li>
+							<li> ksms sf kj sfdkj ks df jjsj jksngoioin oinsfo sjkjbsdf jbksbf kjbsdkjfb jksbdfkj bskdjfb kjs</li>
+							<li> ksms sf kj sfdkj ks df jjsj jksngoioin oinsfo sjkjbsdf jbksbf kjbsdkjfb jksbdfkj bskdjfb kjs</li>
 						</ul>
 					</div>
 					<div class="grid_2 data">
@@ -152,16 +128,16 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 					</div>
 
 				</div>
-				<div class="grid_2 ">&nbsp;</div>
+				<div class="grid_1 ">&nbsp;</div>
 				<div class="grid_2">
 					<div class="nav leftb" >
-						<img src="Resources/images/pic5.jpg" alt="image 1" />
+						<img src="Resources/images/pic2.jpg" alt="image 1" />
 					</div>
 				</div>
 				<div class="clear"></div>
 
 			</div>
-			<div class="content_kontakt xxx">
+			<div class="content_kontakt xxx" id="kontakt">
 				<div class="grid_2 ">
 					<div class="rightb">
 						<img src="Resources/images/pic6.jpg" alt="image 1" />
@@ -200,26 +176,27 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 				<div class="clear"></div>
 
 			</div>
+			
 		</div>
 
 	</div>
 
 	<div class="navigation">
 		<div class="grid_2">
-			<div class="mainleft nav">&nbsp;</div>
+			<div class=" nav">&nbsp;</div>
 		</div>
 		<div class="grid_4 ">
-			<div class="nav rightb">
+			<div class="nav rightb leftb">
 				<span class="disabled" > Co je Derde Leven</span>
 			</div>
 		</div>
 		<div class="grid_4 ">
-			<div class="nav">
-				<span class="disabled" > Programy pro Vás</span>
+			<div class="nav rightb ">
+				<a href="#novinky" class="goto" >Novinky</a>
 			</div>
 		</div>
 		<div class="grid_2">
-			<div class="nav leftb">&nbsp;</div>
+			<div class="nav">&nbsp;</div>
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -230,19 +207,37 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 			<div class="">&nbsp;</div>
 		</div>
 		<div class="grid_4 ">
-			<div class="data">
+			<div class="data leftb rightb" >
 				<ul>
 					<li>
-						lknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd
+					Tajemství třetího života
+					</li>
+					<li>
+						Pohodu a uvolnění
+					</li>
+					<li>
+						Pečlivost ochotu empatii
+					</li>
+					<li>
+						Prohlédněte si video
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="grid_4 ">
-			<div class="data">
+			<div class="data rightb" >
 				<ul>
 					<li>
-						lknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd klsdnf klnsdklflknsd
+					Tajemství třetího života
+					</li>
+					<li>
+						Pohodu a uvolnění
+					</li>
+					<li>
+						Pečlivost ochotu empatii
+					</li>
+					<li>
+						Prohlédněte si video
 					</li>
 				</ul>
 
@@ -250,7 +245,7 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 			</div>
 		</div>
 		<div class="grid_2">
-			<div class="">&nbsp;</div>
+			<div class="" >&nbsp;</div>
 		</div>
 		<div class="clear"></div>
 		</div>
@@ -366,13 +361,32 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 				}
 
 			});
+			var xxx = $(".content.main").data("scrollable");
+			console.log(xxx);
 
+			$(".goto").click(function (e) {
+				//var id = $(this).prop("href");
+
+				var id = $(this).attr("href");
+				xxx.seekTo($(id).index() - 1);
+				return false;
+			});
 			// a dedicated click event for the intro thumbnail
 			$("#home").click(function () {
 				$(".mainmenu .current").removeClass("current");
 				$(".content.main .items").hide();
 				$(".content_home").fadeIn("slow");
 			});
+
+
+			var introimages = [
+				"Resources/images/intro/intro.jpg",
+				"Resources/images/intro/intro1.jpg",
+				"Resources/images/intro/intro3.jpg",
+				"Resources/images/intro/intro5.jpg"
+			];
+			Intro(".intro", introimages);
+
 		});
 
 

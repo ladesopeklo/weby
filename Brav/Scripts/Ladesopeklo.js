@@ -203,77 +203,82 @@ var Loader = function (cache,settings) {
 
 };
 
-	
 
-	var Core = function (cache, settings) {
-		var loader = new Loader(cache, settings);
-		var currentController,
+
+var Core = function (cache, settings) {
+	var loader = new Loader(cache, settings);
+	var currentController,
 		currentAction,
 		currenthash;
 
-		function refreshPage() {
-			loader.menu();
-			$.address.path(currenthash);
-			load(currentController, currentAction);
+	function refreshPage() {
+		loader.menu();
+		$.address.path(currenthash);
+		load(currentController, currentAction);
+	}
+	function saveState(c, a) {
+		currentController = c; currentAction = a;
+		currenthash = $.address.path();
+
+		settings.action(a);
+		settings.controller(c);
+	}
+
+	function load(c, a) {
+		switch (c) {
+			case "home":
+				loader.home(a);
+				saveState(c, a);
+				break;
+			case "gallery":
+				loader.gallery(a);
+				saveState(c, a);
+				break;
+			case "content":
+				loader.content(a);
+				saveState(c, a);
+				break;
+			case "galerycontent":
+				loader.galerycontent(a);
+				saveState(c, a);
+				break;
+			case "culture":
+				settings.culture(a);
+				loader.culture(a);
+				refreshPage();
+				break;
+			default: refreshPage();
 		}
-		function saveState(c, a) {
-			currentController = c; currentAction = a;
+
+	}
+
+	var ccc;
+	var aaa;
+	function loadContent() {
+
+
+		if (ccc == settings.controller() && aaa == settings.action()) {
 			currenthash = $.address.path();
-
-			settings.action(a);
-			settings.controller(c);
+			return;
 		}
-
-		function load(c, a) {
-			switch (c) {
-				case "home":
-					loader.home(a);
-					saveState(c, a);
-					break;
-				case "gallery":
-					loader.gallery(a);
-					saveState(c, a);
-					break;
-				case "content":
-					loader.content(a);
-					saveState(c, a);
-					break;
-				case "galerycontent":
-					loader.galerycontent(a);
-					saveState(c, a);
-					break;
-				case "culture":
-					settings.culture(a);
-					loader.culture(a);
-					refreshPage();
-					break;
-				default: refreshPage();
-			}
-
-		}
-
-		var ccc;
-		var aaa;
-		function loadContent() {
-
-
-			if (ccc == settings.controller() && aaa == settings.action()) {
-				currenthash = $.address.path();
-				return;
-			}
-			load(settings.controller(), settings.action());
-			ccc = settings.controller();
-			aaa = settings.action();
-
-		};
-
-		return {
-			Init: function () {
-				loader.culture();
-				$.address.change(function (event) {
-					loadContent();
-				});
-			}
-		};
+		load(settings.controller(), settings.action());
+		ccc = settings.controller();
+		aaa = settings.action();
 
 	};
+
+	return {
+		Init: function () {
+			loader.culture();
+			$.address.change(function (e) {
+				var selected = "addressSelected";
+				$(".address ."+selected).removeClass(selected);
+				var s = $("a[href='#!" + this.path() + "']").parent().addClass(selected);
+
+				console.log(s);
+				loadContent();
+			});
+		}
+	};
+
+};

@@ -47,23 +47,14 @@
 			<div class="grid_12">
 				<div class="right topright">
 					<h1> Atelier Polách & Bravenec s.r.o.</h1>
-					<p style="text-align: justify;width: 100%">
-				architektura 
-				<span class="red">|</span>
-				studie
-				<span class="red">|</span>
-				komplexní projektová činnost
-				<span class="red">|</span>
-				interiéry
-				<span class="red">|</span>
-						inženýrská a investorská činnost
-					</p>
+					<p style="text-align: justify;width: 100%">architektura<span class="red">|</span>studie<span class="red">|</span>komplexní projektová činnost<span class="red">|</span>interiéry<span class="red">|</span>inženýrská a investorská činnost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</p>
 				</div>
 			</div>
 			<div class="clear"></div>
 			<div class="grid_6 ">
 				<div class="left menu">
-					<ul>
+					<ul class="list address" >
 						<li>
 							<a href="#!/content/profil"> profil</a>
 						</li>
@@ -72,13 +63,12 @@
 						</li>
 						<li>
 							<a href="#!/content/kontakt">kontakt</a>
-							
 						</li>
 					</ul>
 					<br />
 					<br />
 					<br />
-					<ul>
+					<ul class="list address">
 						<li>
 							<a href="#!/galerycontent/ocenenestavby">oceněné stavby</a>
 						</li>
@@ -145,7 +135,6 @@
 
 	$(document).ready(function () {
 
-		console.log(settings.culture());
 		var cache = false; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
 
 		var main = new Core(cache, settings);

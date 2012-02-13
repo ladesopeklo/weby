@@ -12,7 +12,9 @@
 
 body {
 	background-color: #000;
+	background-color: #0D0C0C;
 	color: #fff;
+	color: #D9D2D2;
 	font-size: 0.8em;
 	
 	font-family: 'BahamasNormal';
@@ -26,12 +28,20 @@ body {
 
 }
 a,a:visited {
-	color: #fff;
+	color: #D9D2D2;
 	text-decoration: none;
 }
 
+h1 
+{
+	color: #fff;
+}
 h3 {
 	margin: 0px 0px 0.4em 0em;
+}
+h2 {
+	font-weight: normal;
+	font-size: 1.4em;
 }
 #contentMain p 
 {
@@ -44,6 +54,9 @@ h3 {
 }
 .red {
 	color: red;
+}
+div.detail {
+	font-size: 90%;
 }
 
 

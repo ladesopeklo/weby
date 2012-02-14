@@ -45,6 +45,25 @@ h1 {
 		.headerB h1 {
 			margin: 2em 0em 1em 0em;
 		}
+		
+		.h1kolca,.h2kolca{
+		height: 32px;
+		display: inline-block;
+		vertical-align: top;
+		line-height: 0.5em;
+		}
+		.h1kolca {
+		background: url(../images/logosmallwhite.png) no-repeat;
+		height: 32px;
+		width: 100px;
+		margin-top: 11px;
+		}
+		.h2kolca {
+		background: url(../images/logosmallwhite24.png) no-repeat;
+		height: 24px;
+		width: 75px;
+		margin-top: 7px;
+		}
 		.header img {
 			float: left;
 		}
@@ -173,7 +192,7 @@ background: rgba(190, 191, 195, 0.6);
 }
 .introboxcontent 
 {
-	width: 350px;
+	width: 450px;
 	float: right;
 	background-color: #BEBFC3;
 	background: rgba(190, 191, 195, 0.6);
@@ -261,7 +280,7 @@ background: rgba(190, 191, 195, 0.6);
 		margin-right: 1px;
 		float: left;
 	}
-	.items span{
+	XXXXXXXXX.items span{
 		display: inline-block;
 		width: 200px;
 	}

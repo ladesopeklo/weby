@@ -2,15 +2,6 @@
 require  '../config.php';
 require  'libs.php';
 
-if (!function_exists("preprint")) { 
-    function preprint($s, $return=false) { 
-        $x = "<pre>"; 
-        $x .= print_r($s, 1); 
-        $x .= "</pre>"; 
-        if ($return) return $x; 
-        else print $x; 
-    } 
-} 
 ?> 
 
 
@@ -40,16 +31,6 @@ function isContent($file,$culture,$filename,$ext){
 function titlefile($base,$imgfile){
 	$p = pathinfo($imgfile);
 	return $base.$p['filename'];
-}
-function curPageURL() {
- $pageURL = 'http';
- $pageURL .= "://";
- if ($_SERVER["SERVER_PORT"] != "80") {
-  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
- } else {
-  $pageURL .= $_SERVER["SERVER_NAME"];
- }
- return $pageURL;
 }
 
 
@@ -92,7 +73,7 @@ function vizualizace($path,$location,$baseurl){
 	return $arr;
 }
 $location = isset($_POST["location"]) ? $_POST["location"] : "exalt" ;
-$culture = isset($_POST["culture"]) ? $_POST["culture"] : "cz" ;
+$culture = isset($_POST["culture"]) ? $_POST["culture"] : "cs" ;
 
 
 $list = getfiles("../Content/".$location."/slides/",$culture );

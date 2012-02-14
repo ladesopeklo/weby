@@ -1,3 +1,4 @@
+
 var Settings = function (options) {
 	var defaults = {
 		controller: 'home',
@@ -93,9 +94,33 @@ var Cache = function() {
 			}
 
 		};
-	};
+};
 
-var Loader = function (cache,settings) {
+var url = {
+
+	// http://axx/ #controler/action - > [controler, action]
+	pathnames: function () {
+		return $.address.pathNames();
+	},
+
+	// http://axx/ #controler/action/param1 
+	p1: function () {
+		return $.address.pathNames().length > 2 ? $.address.pathNames()[2] : null;
+	},
+	p2: function () {
+		return $.address.pathNames().length > 3 ? $.address.pathNames()[3] : null;
+	}
+
+
+};
+
+var galerycontentHelper = {
+	
+	
+
+};
+
+var Loader = function (cache, settings) {
 	var c = new Cache();
 
 	var template = function (url) {
@@ -115,11 +140,11 @@ var Loader = function (cache,settings) {
 		return ret.responseText;
 	};
 
-	var jsonData = function (action, url) {
+	var jsonData = function (controller, action, url) {
 		try {
 			var ret = $.ajax({
 				type: "POST",
-				data: { location: action, culture: settings.culture() },
+				data: { action: action, controller: controller, culture: settings.culture() },
 				url: url,
 				async: false,
 				success: function (data) {
@@ -147,7 +172,7 @@ var Loader = function (cache,settings) {
 			$("#contentThumbs").html(t);
 			$("#contentMain").html(m);
 			$("#contentFigures").html("");
-				
+
 			require(["templates/intro/slider.js"]);
 		},
 		menu: function () {
@@ -166,13 +191,26 @@ var Loader = function (cache,settings) {
 		},
 		content: function (action) {
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
-			$("#contentMain").html('<div class="right">'+t+'</div>');
-//			$("#contentThumbs").html("");
-	//		$("#contentFigures").html("");
+			$("#contentMain").html('<div class="right">' + t + '</div>');
+			//			$("#contentThumbs").html("");
+			//		$("#contentFigures").html("");
 		},
 		galerycontent: function (action) {
-			var t = template("Content/" + action + "." + settings.culture() + ".html");
+			var galery = url.p1();
+			var image = url.p2() != null ? url.p2() : 1;
+			var galerylist = jsonData("galerycontent", action, "Service/gallerylist.php");
+			if (!galery) {
+				galery = galerylist.galleries[0].name;
+			}
+			var t = template("Content/galerycontent/" + action + "/" + galery + "/index." + settings.culture() + ".html");
+			var tlist = template("Content/galerycontent/thumbslist.html");
+
+			var thumbshtml = $.tmpl(tlist, galerylist);
+			$(".thumslist").html(thumbshtml);
 			$("#contentMain").html(t);
+
+
+
 		},
 		gallery: function (action) {
 			require(["templates/gallery/gallery.js"], function () {
@@ -203,8 +241,6 @@ var Loader = function (cache,settings) {
 
 };
 
-
-
 var Core = function (cache, settings) {
 	var loader = new Loader(cache, settings);
 	var currentController,
@@ -212,7 +248,7 @@ var Core = function (cache, settings) {
 		currenthash;
 
 	function refreshPage() {
-		loader.menu();
+		//	loader.menu();
 		$.address.path(currenthash);
 		load(currentController, currentAction);
 	}
@@ -239,7 +275,7 @@ var Core = function (cache, settings) {
 				saveState(c, a);
 				break;
 			case "galerycontent":
-				loader.galerycontent(a);
+				loader.galerycontent(a, url.pathnames());
 				saveState(c, a);
 				break;
 			case "culture":
@@ -255,12 +291,7 @@ var Core = function (cache, settings) {
 	var ccc;
 	var aaa;
 	function loadContent() {
-
-
-		if (ccc == settings.controller() && aaa == settings.action()) {
-			currenthash = $.address.path();
-			return;
-		}
+		
 		load(settings.controller(), settings.action());
 		ccc = settings.controller();
 		aaa = settings.action();
@@ -271,11 +302,11 @@ var Core = function (cache, settings) {
 		Init: function () {
 			loader.culture();
 			$.address.change(function (e) {
+
 				var selected = "addressSelected";
-				$(".address ."+selected).removeClass(selected);
+				$(".address ." + selected).removeClass(selected);
 				var s = $("a[href='#!" + this.path() + "']").parent().addClass(selected);
 
-				console.log(s);
 				loadContent();
 			});
 		}

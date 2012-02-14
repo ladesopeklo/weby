@@ -107,7 +107,7 @@ a:hover {
 .thumslist {
 	height: 5em;
 	background-color: darkslategray;
-	opacity: 0.2;
+	opacity: 0.9;
 	margin-top: -110px;
 	overflow: hidden;
 	padding-left: 4.8em;
@@ -117,8 +117,7 @@ a:hover {
 	background-color:#fff;
 	height:5em;
 	width: 5em;
-	
-	
+	overflow: hidden;
 }
 
 

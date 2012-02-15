@@ -135,6 +135,7 @@ a:hover {
 
 }
 .nahled {
+	overflow: hidden;
 }
 .nahled.top {
 	margin: 0px 0px 1em 1em;

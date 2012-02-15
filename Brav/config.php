@@ -1,6 +1,6 @@
 <?php 
 $baseurl = "/weby/Brav";
-$debug = false;
+$debug = true;
 //$baseurl = "/_beta/x";
 
 ?>

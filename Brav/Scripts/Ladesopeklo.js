@@ -123,7 +123,6 @@ var url = {
 			str = $.address.path();
 		}
 		var x = str.split("/");
-		//console.log(x);
 
 		// link /a/b
 		if (x.length > 2) {

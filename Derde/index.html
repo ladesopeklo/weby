@@ -10,8 +10,6 @@
 
 	<title>Derde Leven</title>
 
-
-
 	<!--<link rel="stylesheet" href="Resources/css/basic.min.css" />
 	<link rel="stylesheet" href="Resources/font/stylesheet.min.css" type="text/css" charset="utf-8" />
 	<script src="Scripts/libs.min.js"></script>
@@ -25,12 +23,7 @@
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.js"></script>
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></script>
 	<script src="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></script>
-	
-	<script src="Plugin/intro/Groject.ImageSwitch.yui.js"></script>
-	<script src="Plugin/intro/slider.js"></script>
-	
-		
-			
+	<script type="text/javascript" src="Resources/Scripts/jquery.bgpos.js"></script>
 	<link rel="shortcut icon" href="favicon.ico">
 
 </head>
@@ -55,14 +48,29 @@
 	<div class="content main" id="">
 		<div class="content_home xxx">
 			<div class="grid_12 ">
-				<img class="intro" src="Resources/images/intro/intro.jpg" alt="koule1" />
+				<div class="intro">
+					<div class="items">
+						<img src="Content/Intro/intro1.jpg" alt="koule1" />
+						<img src="Content/Intro/intro2.jpg" alt="koule1" />
+						<img src="Content/Intro/intro3.jpg" alt="koule1" />
+					</div>
+				</div>
 				<div class="introbox" >
 					<div class="introboxcontent">
-						<h1> Tvůrce aktivního odpočinku <span class="h2kolca"></span></h1>
-
-						<ul>
-							<li>Tajemstvi kjbsafdkjba jkbaskd jk asdkj sakj dkjas dkj ask dka skjd askjdkajs jkajkd jkakdj askj dkjdkj aksj dkjadkj akj djkas djka sjk ajk dkj akj gkj frjkg ekjtr gkj skcj rkjg jklsb jkf sjkdfks </li>
-						</ul>
+					
+						<h1> Tvůrce aktivního odpočinku 
+							<div class="h2kolca">
+								<img src="Resources/images/logosmallwhite24.png"/>
+								<div class="navi">
+									<a href="0" class="active"></a>
+									<a href="1" class="" ></a>
+									<a href="2" class="" ></a>
+								</div>
+							</div>
+						</h1>
+							<ul>
+								<li>Tajemstvi kjbsafdkjba jkbaskd jk asdkj sakj dkjas dkj ask dka skjd askjdkajs jkajkd jkakdj askj dkjdkj aksj dkjadkj akj djkas djka sjk ajk dkj akj gkj frjkg ekjtr gkj skcj rkjg jklsb jkf sjkdfks </li>
+							</ul>
 					</div>
 				</div>
 			</div>
@@ -178,7 +186,6 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 			</div>
 			
 		</div>
-
 	</div>
 
 	<div class="navigation">
@@ -305,13 +312,43 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 	
 		<script>
 			$(function () {
+
+
+				var a = $(".intro").scrollable({
+					circular: true
+
+				}).navigator();
+				a.autoscroll({
+					autoplay: true,
+					autopause: true,
+					interval: 3000
+
+				});
+				var api = a.data("scrollable");
+				api.onBeforeSeek(function (p, i) {
+					var newx = i * 23;
+					if (i > 2) {
+						newx = 0;
+					}
+					$(".h2kolca").animate({ "backgroundPosition": newx + "px 0px" }, 200);
+				});
+
+				$(".navi a").click(function () {
+					api.stop();
+					return false;
+				});
+
+			});
+		</script>
+		<script>
+			$(function () {
 				var a = $(".scrollxxx").scrollable({
 					circular: true,
 					next: ".galnext",
 					prev: ".galprev",
 					size: 1
 				});
-				a.autoscroll({ autoplay: false });
+				a.autoscroll({ autoplay: true });
 
 
 				var navi = $(".galnavi"),
@@ -342,55 +379,52 @@ Studio Derde Leven respektuje přání svých klientů na individuální péči 
 	<script>
 		$(function () {
 
-			$(".galnavi a").click(function (e) {
-				e.preventDefault();
-			});
+//			$(".galnavi a").click(function (e) {
+//				e.preventDefault();
+//			});
 
-			var api = $(".content.main").scrollable({ circular: true, mousewheel: false }).navigator({
-				navi: ".mainmenu",
-				naviItem: 'a',
-				activeClass: 'current',
-				disabledClass: "dis",
-				history: false
-			}).data("scrollable");
 
-			// this callback does the special handling of our "intro page"
-			api.onBeforeSeek(function (e, i) {
-				var home = $(".content_home");
+//			var api = $(".centercontent").scrollable({ circular: true, mousewheel: false }).navigator({
+//				naviItem: 'xxxx',
+//				activeClass: 'current',
+//				disabledClass: "dis",
+//				history: false
+//			}).data("scrollable");
 
-				home.hide();
-				$(".content.main .items").show();
+//			// this callback does the special handling of our "intro page"
+//			api.onBeforeSeek(function (e, i) {
+//				var home = $(".content_home");
 
-				if ($.browser.msie && $.browser.version < 8) {
-					home.hide();
-				}
+//				home.hide();
+//				$(".content.main .items").show();
 
-			});
-			var xxx = $(".content.main").data("scrollable");
-			console.log(xxx);
+//				if ($.browser.msie && $.browser.version < 8) {
+//					home.hide();
+//				}
 
-			$(".goto").click(function (e) {
-				//var id = $(this).prop("href");
+//			});
+//			var mainApi = $(".content.main").data("scrollable");
 
-				var id = $(this).attr("href");
-				xxx.seekTo($(id).index() - 1);
-				return false;
-			});
-			// a dedicated click event for the intro thumbnail
+//			$(".goto").click(function (e) {
+//				var id = $(this).attr("href");
+//				mainApi.seekTo($(id).index() - 1);
+//				return false;
+//			});
 			$("#home").click(function () {
 				$(".mainmenu .current").removeClass("current");
 				$(".content.main .items").hide();
 				$(".content_home").fadeIn("slow");
+				$(".content_home .items").fadeIn("slow");
 			});
 
 
-			var introimages = [
-				"Resources/images/intro/intro.jpg",
-				"Resources/images/intro/intro1.jpg",
-				"Resources/images/intro/intro3.jpg",
-				"Resources/images/intro/intro5.jpg"
-			];
-			Intro(".intro", introimages);
+//			var introimages = [
+//				"Resources/images/intro/intro.jpg",
+//				"Resources/images/intro/intro1.jpg",
+//				"Resources/images/intro/intro3.jpg",
+//				"Resources/images/intro/intro5.jpg"
+//			];
+//			//Intro(".intro", introimages);
 
 		});
 

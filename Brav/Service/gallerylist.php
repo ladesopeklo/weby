@@ -43,12 +43,19 @@ function getfiles($path, $culture){
 	}
 }
 
-$ret = getfiles($path,$culture);
-$ret["url"] = $url;
-$ret["controller"] = $controller;
-$ret["action"] = $action;
+$list = getfiles($path,$culture);
+$list["url"] = $url;
+$list["controller"] = $controller;
+$list["action"] = $action;
 
-echo json_encode($ret);
+$urlimagesFullsize = $url."/slides/";
+$urlimagesThumbs = $url."/thumbs/";
+
+$list["urlimgfullsize"] = $urlimagesFullsize;
+$list["urlimgthumbs"] = $urlimagesThumbs;
+
+
+echo json_encode($list);
 
 
 

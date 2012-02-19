@@ -2,6 +2,24 @@
 require  '../config.php';
 require  'libs.php';
 
+////check
+$culture = isset($_POST["culture"]) ? $_POST["culture"] : "cs" ;
+$controller=null;
+if ($debug){
+	$controller = isset($_POST["controller"]) ? $_POST["controller"] : "galerycontent/ocenenestavby" ;
+	$action = isset($_POST["action"]) ? $_POST["action"] : "abc" ;
+}
+else{
+	$controller = isset($_POST["controller"]) ? $_POST["controller"] : "" ;
+	$action = isset($_POST["action"]) ? $_POST["action"] : "" ;
+}
+
+if (!$controller){	fatal("neni nastavena lokace");}
+if (!$action){	fatal("neni nastavena lokace");}
+///globals
+$url = $baseurl."/Content/".$controller."/".$action;
+$path	 = "../Content/".$controller."/".$action;
+
 ?> 
 
 
@@ -28,9 +46,17 @@ function isContent($file,$culture,$filename,$ext){
 	}
 	return false;
 }
-function titlefile($base,$imgfile){
-	$p = pathinfo($imgfile);
-	return $base.$p['filename'];
+
+function getproperties($path){
+	$f = $path."/properties.php";
+	if (file_exists($f)){
+		include $f;
+		return $data;
+		
+	}
+	
+	$data["text"]= "";
+	return $data;
 }
 
 
@@ -41,18 +67,17 @@ function getfiles($path, $culture){
 			if ($file != "." && $file != "..") {
 				if(isimage($file)){
 					$xxx["name"] =  $file;
-					$tit = titlefile($path, $file);
-					$xxx["title"] = "";
-					if (file_exists($tit.".cz.txt")) $xxx["title"]["cz"] =  file_get_contents($tit.".cz.txt",true);
-					if (file_exists($tit.".en.txt")) $xxx["title"]["en"] =  file_get_contents($tit.".en.txt",true);
+					//$xxx["title"] = "";
+					//if (file_exists($tit.".cz.txt")) $xxx["title"]["cz"] =  file_get_contents($tit.".cz.txt",true);
+					//if (file_exists($tit.".en.txt")) $xxx["title"]["en"] =  file_get_contents($tit.".en.txt",true);
 					$arr["images"][] = $xxx;
 				}
-				if (isContent($file, $culture,$culture."_figure","txt")){
+/*				if (isContent($file, $culture,$culture."_figure","txt")){
 					$arr["figure"] =  file_get_contents($path.$file,true);
 				}
 				if (isContent($file, $culture,$culture."_text","html")){
 					$arr["text"] =  file_get_contents($path.$file,true);
-				}
+				}*/
 			}
 		}
 		closedir($handle);
@@ -66,24 +91,52 @@ function vizualizace($path,$location,$baseurl){
 		$arr = null;
 		while (false !== ($file = readdir($handle))) {
 			if(ishtml($file)){
-				$arr[] = curPageURL().$baseurl."/Content/".$location."/3d/".$file;
+				$arr[] = $url."/3d/".$file;
 			}
 		}
 	}
 	return $arr;
 }
-$location = isset($_POST["location"]) ? $_POST["location"] : "exalt" ;
-$culture = isset($_POST["culture"]) ? $_POST["culture"] : "cs" ;
+$pathimagesFullsize = $path."/slides/";
+$pathimagesThumbs = $path."/thumbs/";
+$path3d = $path."/3d/";
+
+$urlimagesFullsize = $url."/slides/";
+$urlimagesThumbs = $url."/thumbs/";
 
 
-$list = getfiles("../Content/".$location."/slides/",$culture );
-$list["vizualizace"] = vizualizace("../Content/".$location."/3d/",$location,$baseurl );
-$list["full"] = curPageURL().$baseurl."/Content/".$location."/slides/";
-$list["thumb"] = curPageURL().$baseurl."/Content/".$location."/thumbs/";
-$list["location"] = $location;
+$list = getfiles($pathimagesFullsize,$culture);
+$list["url"] = $url;
+$list["controller"] = $controller;
+$list["action"] = $action;
+
+
+//$list = getfiles("../Content/".$location."/slides/",$culture );
+$list["vizualizace"] = vizualizace($path3d,$action,$url );
+$list["urlimgfullsize"] = $urlimagesFullsize;
+$list["urlimgthumbs"] = $urlimagesThumbs;
+
+
+$list["properties"] = getproperties($path);
+$list["culture"] = $culture;
+
+//stejny jak actio
+//$list["location"] = $location;
 
 //preprint($list);
 
 echo json_encode($list);
+exit;
+$constants = get_defined_constants(true);
+$json_errors = array();
+foreach ($constants["json"] as $name => $value) {
+    if (!strncmp($name, "JSON_ERROR_", 11)) {
+        $json_errors[$value] = $name;
+    }
+}
+var_dump(json_decode(getproperties($path), true));
+echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
+
+
 
 ?>

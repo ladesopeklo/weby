@@ -54,32 +54,41 @@
 			<div class="clear"></div>
 			<div class="grid_6 ">
 				<div class="left menu">
-					<ul class="list address" >
+					<ul class="list ab" >
 						<li>
-							<a href="#!/content/profil"> profil</a>
+							<a href="#!content/profil"> profil</a>
 						</li>
 						<li>
-							<a href="#!/content/certifikace">certifikace</a>
+							<a href="#!content/certifikace">certifikace</a>
 						</li>
 						<li>
-							<a href="#!/content/kontakt">kontakt</a>
+							<a href="#!content/kontakt">kontakt</a>
 						</li>
 					</ul>
 					<br />
 					<br />
 					<br />
-					<ul class="list address">
+					<ul class="list ab">
 						<li>
-							<a href="#!/galerycontent/ocenenestavby">oceněné stavby</a>
+							<a href="#!galerycontent/ocenenestavby">oceněné stavby</a>
 						</li>
 						<li>
-							<a href="#!/galerycontent/bydleni">stavby pro bydlení</a>
+							<a href="#!galerycontent/bydleni">stavby pro bydlení</a>
 						</li>
 						<li>
 							veřejné stavby
 						</li>
 						<li>
 							rekonstrukce a obnova
+						</li>
+						<li>
+							stavby pro průmysl
+						</li>
+						<li>
+							interiéry
+						</li>
+						<li>
+							urbanismus
 						</li>
 					</ul>
 				</div>
@@ -143,50 +152,56 @@
 </div>
 </script>
 		
-		<script id="templateImages" type="text/x-jquery-tmpl"> 			
+		<script id="templateGalleryContent" type="text/x-jquery-tmpl"> 			
 			<div class="grid_6">
 				<div class="mainthumbs"> 
 					<div class="grid_2">
 						<div class="nahled top">
-							<img src="${url}/${gallery}/01.jpg"/>
+							<img src="${urlimgthumbs}/${images[0].name}"/>
 						</div>
 					</div>
 					<div class="grid_2">
 						<div class="nahled top ">
-							<img src="${url}/${gallery}/02.jpg"/>
+							<img src="${urlimgthumbs}/${images[1].name}"/>
 						</div>
 					</div>
 					<div class="grid_2">
 						<div class="nahled top">
-							<img src="${url}/${gallery}/03.jpg"/>
+							<img src="${urlimgthumbs}/${images[2].name}"/>
 						</div>
 					</div>
 
 					<div class="grid_2">
 						<div class="nahled bottom">
-							<img src="${url}/${gallery}/04.jpg"/>
+							<img src="${urlimgthumbs}/${images[3].name}"/>
 						</div>
 					</div>
 					
 					<div class="grid_2">
 						<div class="nahled bottom">
-							<img src="${url}/${gallery}/05.jpg"/>
+							<img src="${urlimgthumbs}/${images[4].name}"/>
 						</div>
 					</div>
 
 					<div class="grid_2">
 						<div class="nahled bottom">
-							<img src="${url}/${gallery}/06.jpg"/>
+							<img src="${urlimgthumbs}/${images[5].name}"/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="grid_6">
 				<div class="nahledbig">
-					<img src="${url}/${gallery}/06.jpg"/>
+					<img src="${urlimgfullsize}/${images[6].name}"/>
 				</div>
 			</div>
-	<div class="clear"></div>
+			<div class="clear"></div>
+			<div class="grid_12">
+				<div class="right">
+				{{html properties.text[culture]}}
+				</div>
+			</div>
+
 </script>
 		
 	</body>

@@ -109,7 +109,34 @@ var url = {
 	},
 	p2: function () {
 		return $.address.pathNames().length > 3 ? $.address.pathNames()[3] : null;
+	},
+
+	selected: function (path) {
+		function handleselect(s, p) {
+			$(s).removeClass("selected");
+			$("a[href='#!" + p + "']").addClass("selected");
+			//console.log($("a[href='#!" + p + "']"));
+		}
+
+		var str = path;
+		if (str == undefined) {
+			str = $.address.path();
+		}
+		var x = str.split("/");
+		//console.log(x);
+
+		// link /a/b
+		if (x.length > 2) {
+			handleselect(".ab .selected", x[1] + "/" + x[2]);
+		}
+		// link /a/b/c
+		if (x.length > 3) {
+			handleselect(".abc .selected", x[1] + "/" + x[2] + "/" + x[3]);
+		}
+
+
 	}
+
 
 
 };
@@ -192,9 +219,9 @@ var Loader = function (cache, settings) {
 		content: function (action) {
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
 			$("#contentMain").html('<div class="right">' + t + '</div>');
-			//			$("#contentThumbs").html("");
-			//		$("#contentFigures").html("");
+			url.selected();
 		},
+		//#!/galerycontent/<galerySection>/<gallery>/<image>
 		galerycontent: function (action) {
 
 			function renderThumbs(thumbs) {
@@ -204,20 +231,25 @@ var Loader = function (cache, settings) {
 
 			contentMain.html("loading...");
 
-			var galery = url.p1();
+			var galerySection = url.p1();
 			var image = url.p2() != null ? url.p2() : 1;
+			//vsechny galerie 
 			var galerylist = jsonData("galerycontent", action, "Service/gallerylist.php");
-			if (!galery) {
-				galery = galerylist.galleries[0].name;
+			if (!galerySection) {
+				galerySection = galerylist.galleries[0].name;
 			}
 
-			var img = $.tmpl($("#templateImages"), { url: galerylist.url, gallery : galery });
-			contentMain.html(img);
 
-			var text = template("Content/galerycontent/" + action + "/" + galery + "/index." + settings.culture() + ".html");
-			$.tmpl($("#templateText"), { data: text }).appendTo(contentMain);
+			//data ke konkretni galerii
+			var gallerydata = jsonData("galerycontent/" + action, galerySection, "Service/gallery.php");
+
 
 			renderThumbs(galerylist);
+
+			var img = $.tmpl($("#templateGalleryContent"), gallerydata);
+			contentMain.html(img);
+
+			url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
 
 
 		},
@@ -300,7 +332,7 @@ var Core = function (cache, settings) {
 	var ccc;
 	var aaa;
 	function loadContent() {
-		
+
 		load(settings.controller(), settings.action());
 		ccc = settings.controller();
 		aaa = settings.action();
@@ -312,11 +344,9 @@ var Core = function (cache, settings) {
 			loader.culture();
 			$.address.change(function (e) {
 
-				var selected = "addressSelected";
-				$(".address ." + selected).removeClass(selected);
-				var s = $("a[href='#!" + this.path() + "']").parent().addClass(selected);
-
 				loadContent();
+
+
 			});
 		}
 	};

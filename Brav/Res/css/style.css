@@ -78,9 +78,12 @@ div.detail {
 	margin-bottom: 0.8em;
 
 }
-.addressSelected a{
+.ab  a.selected{
 	color: red;
 	font-weight: bold;
+}
+.abc .selected img{
+	border: 1px solid red;
 }
 
 .left {
@@ -132,6 +135,7 @@ a:hover {
 	background-color:#eee;
 	height:200px;
 	margin: 0px 0px 1em 1em;
+	overflow: hidden;
 
 }
 .nahled {

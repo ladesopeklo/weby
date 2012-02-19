@@ -1,5 +1,5 @@
 <?php 
-$baseurl = "/Proj/masp";
+$baseurl = "/weby/masp";
 //$baseurl = "/_beta/x";
 
 ?>

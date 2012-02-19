@@ -41,16 +41,6 @@ function titlefile($base,$imgfile){
 	$p = pathinfo($imgfile);
 	return $base.$p['filename'];
 }
-function curPageURL() {
- $pageURL = 'http';
- $pageURL .= "://";
- if ($_SERVER["SERVER_PORT"] != "80") {
-  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
- } else {
-  $pageURL .= $_SERVER["SERVER_NAME"];
- }
- return $pageURL;
-}
 
 
 function getfiles($path, $culture){

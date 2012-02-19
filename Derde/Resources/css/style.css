@@ -142,18 +142,6 @@ h1 {
 		padding: 0px; 
 	}
 		
-.content_home .data img {
-margin: 0px;border: none;padding: 0px;float: left;
-}
-.content_home  {			background-color: #fff;		}
-.content_home .data					
-{
-margin: 0px auto;
-}
-.content_home 	
-{
-height: 369px;	
-}
 .content_pecuje {
 display: block;
 }
@@ -299,7 +287,7 @@ XXXXXXXXX.items span{
 	background: url(../images/logosmallwhite.png) no-repeat;
 	height: 32px;
 	width: 100px;
-	margin-top: 11px;
+	margin-top: 0.4em;
 }
 .h2kolca {
 	background: url(../images/logokolecko24.png) no-repeat ;
@@ -308,4 +296,8 @@ XXXXXXXXX.items span{
 	height: 24px;
 	width: 75px;
 	margin-top: 0.4em;
+}
+/*navi*/
+.ab .selected{
+	color: red;
 }

@@ -65,19 +65,18 @@
 				<div class="introbox" >
 					<div class="introboxcontent">
 					
-						<h1> Tvůrce aktivního odpočinku 
+						<h1> <span class="intrheader"></span>
 							<div class="h2kolca">
 								<img src="Resources/images/logosmallwhite24.png"/>
 								<div class="navi">
-									<a href="0" class="active"></a>
-									<a href="1" class="" ></a>
-									<a href="2" class="" ></a>
+									<a href="#super" class="active"></a>
+									<a href="#super2" class="" ></a>
+									<a href="#super3" class="" ></a>
 								</div>
 							</div>
 						</h1>
-							<ul>
-								<li>Tajemstvi kjbsafdkjba jkbaskd jk asdkj sakj dkjas dkj ask dka skjd askjdkajs jkajkd jkakdj askj dkjdkj aksj dkjadkj akj djkas djka sjk ajk dkj akj gkj frjkg ekjtr gkj skcj rkjg jklsb jkf sjkdfks </li>
-							</ul>
+						<div class="intrcontent">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -96,8 +95,8 @@
 			</div>
 		</div>
 		<div class="grid_4 ">
-			<div class="nav rightb ab">
-				<a href="#!content/novinky" class="goto" >Novinky</a>
+			<div class="nav rightb a">
+				<a href="#!novinky" >Novinky</a>
 			</div>
 		</div>
 		<div class="grid_2">
@@ -218,16 +217,21 @@
 					autoplay: true,
 					autopause: true,
 					interval: 3000
-
 				});
 				var api = a.data("scrollable");
+				
+				var ac = api.getNaviButtons().find("a")[0];
+				loadNovinka($(ac).attr("href").substr(1));
+
 				api.onBeforeSeek(function (p, i) {
+					var action = this.getNaviButtons().find("a")[i];
 					var newx = i * 24;
 					if (i > 2) {
 						newx = 0;
 					}
 					$(".h2kolca").animate({ "backgroundPosition": newx + "px 0px" }, 200);
-					loadNovinka(i);
+					if ($(action).attr("href") != undefined)
+						loadNovinka($(action).attr("href").substr(1));
 				});
 
 				$(".navi a").click(function () {
@@ -292,9 +296,10 @@
 			var cache = false; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
 			var loader = new Loader(cache, settings);
 
-			setupIntro(function (index) {
-				loader.novinka(index);
+			setupIntro(function (name) {
+				loader.intronovinka(name, $(".introboxcontent"));
 			});
+			
 
 
 			var main = new Core(settings, loader);

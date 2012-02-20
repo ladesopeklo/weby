@@ -37,9 +37,9 @@ var Settings = function (options) {
 				save(a);
 				return 0;
 			}
-			if ($.address.pathNames().length < 2) {
+			/*if ($.address.pathNames().length < 2) {
 				return settings.controller;
-			}
+			}*/
 			return $.address.pathNames()[0];
 
 		},
@@ -111,25 +111,29 @@ var url = {
 		return $.address.pathNames().length > 3 ? $.address.pathNames()[3] : null;
 	},
 
-	selected: function (path) {
+	selected: function (path, reset) {
 		function handleselect(s, p) {
 			$(s).removeClass("selected");
 			$("a[href='#!" + p + "']").addClass("selected");
-			console.log($("a[href='#!" + p + "']"));
+			//console.log($("a[href='#!" + p + "']"));
 		}
 
 		var str = path;
-		if (str == undefined) {
+		if (str == undefined || str == null) {
 			str = $.address.path();
 		}
 		var x = str.split("/");
 
+		// link /a
+		if (x.length > 1 || reset) {
+			handleselect(".a .selected", x[1]);
+		}
 		// link /a/b
-		if (x.length > 2) {
+		if (x.length > 2 || reset) {
 			handleselect(".ab .selected", x[1] + "/" + x[2]);
 		}
 		// link /a/b/c
-		if (x.length > 3) {
+		if (x.length > 3 || reset) {
 			handleselect(".abc .selected", x[1] + "/" + x[2] + "/" + x[3]);
 		}
 
@@ -187,6 +191,28 @@ var Loader = function (cache, settings) {
 	};
 	var contentMain = $("#contentMain");
 	var contentIntro = $("#contentIntro");
+	var displayIntro = function (t) {
+		contentMain.hide();
+		contentIntro.fadeIn();
+	};
+	var displayContent = function (t) {
+		contentIntro.hide();
+		contentMain.show();
+		if (t) {
+			contentMain.html(t);
+		}
+	};
+
+	var getnovinka = function (name) {
+		var nka = template("Content/Novinky/" + name + "." + settings.culture() + ".html");
+		var ret = {
+			header: $(nka).find("header").html(),
+			contentheader: $(nka).find("contentheader").html(),
+			contentmain: $(nka).find("contentmain").html()
+		};
+		return ret;
+	};
+
 	return {
 		culture: function () {
 			var a = "#" + settings.culture();
@@ -194,21 +220,50 @@ var Loader = function (cache, settings) {
 			$(a).addClass("selected");
 		},
 		home: function () {
-			contentMain.hide();
-			contentIntro.fadeIn();
-			url.selected();
+			displayIntro();
+			url.selected(null, true);
 		},
 		content: function (action) {
-			contentIntro.hide();
-			contentMain.show();
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
-			contentMain.html(t);
+			displayContent(t);
 			url.selected();
 		},
-		novinka: function (index) {
-			var t = template("Content/Novinky/novinky." + settings.culture() + ".html");
-			console.log($(t).index("novinka"));
+		novinky: function () {
+			displayContent();
+			contentMain.html("loading..");
+			var t = template("Content/template_novinkylistItem.html");
+			var list = [
+				"super",
+				"super2",
+				"super3"
+			];
+			contentMain.html("");
+			$.each(list, function (i, value) {
+				$.tmpl(t, getnovinka(value)).appendTo(contentMain);
+			});
 
+
+			url.selected(null,true);
+
+		},
+		novinka: function (name) {
+
+			var t = template("Content/template_novinky.html");
+			var xxx = $.tmpl(t, getnovinka(name));
+
+			displayContent(xxx);
+		},
+
+		intronovinka: function (name, context) {
+			var nov = getnovinka(name);
+
+			context.find(".intrheader").stop(false, true).fadeOut(100, function () {
+				$(this).html(nov.header).fadeIn("slow");
+			});
+			context.find(".intrcontent").stop(false, true).fadeOut(100, function () {
+				$(this).html(nov.contentheader).fadeIn(1000);
+			});
+			return false;
 		}
 
 	};
@@ -216,7 +271,7 @@ var Loader = function (cache, settings) {
 };
 
 var Core = function (settings, loader) {
-	
+
 	var currentController,
 		currentAction,
 		currenthash;
@@ -239,6 +294,18 @@ var Core = function (settings, loader) {
 				loader.home(a);
 				saveState(c, a);
 				break;
+			case "novinka":
+				loader.novinka(a);
+				saveState(c, a);
+				break;
+			case "novinky":
+				loader.novinky(a);
+				saveState(c, a);
+				break;
+			case "intronovinka":
+				loader.intronovinka(a);
+				saveState(c, a);
+				break;
 			case "content":
 				loader.content(a);
 				saveState(c, a);
@@ -256,7 +323,6 @@ var Core = function (settings, loader) {
 	var ccc;
 	var aaa;
 	function loadContent() {
-
 		load(settings.controller(), settings.action());
 		ccc = settings.controller();
 		aaa = settings.action();
@@ -267,10 +333,7 @@ var Core = function (settings, loader) {
 		Init: function () {
 			loader.culture();
 			$.address.change(function (e) {
-
 				loadContent();
-
-
 			});
 		}
 	};

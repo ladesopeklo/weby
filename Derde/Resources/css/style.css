@@ -20,6 +20,7 @@ h1 {
 	}	
 
 	body {
+		background-image: url(../images/back.png);
 		font-family: 'GillSansCERegular';
 		font-size: 1em;
 		line-height: 1.1em;
@@ -146,11 +147,13 @@ h1 {
 display: block;
 }
 
+/*INTRO*/
+
 .introbox h1 {
 font-size: 2em;
 color: #3D4363;
 background-color: #BEBFC3;
-background: rgba(190, 191, 195, 0.6);
+background: rgba(190, 191, 195, 0.8);
 border-top-left-radius: 5px;
 -moz-border-radius-topleft: 5px;
 	position: relative;
@@ -165,11 +168,11 @@ position: relative;
 }
 .introboxcontent 
 {
-height: 10em;overflow: hidden;
+overflow: hidden;
 width: 60%;
 float: right;
 background-color: #BEBFC3;
-background: rgba(190, 191, 195, 0.6);
+background: rgba(190, 191, 195, 0.7);
 margin: 4em 0em 0em 0em;
 border-bottom-left-radius: 5px;
 -moz-border-radius-bottomleft: 5px;
@@ -185,6 +188,10 @@ z-index: 1000;
 width: 100%;
 }
 
+.introboxcontent p {
+	margin: 1em;
+	text-align: justify;	
+}
 
 
 	/* override single pane */
@@ -301,3 +308,49 @@ XXXXXXXXX.items span{
 .ab .selected{
 	color: red;
 }
+.a .selected{
+	color: red;
+}
+
+/*CONTENTMAIN*/
+
+.content_novinky .more {
+	display: none;
+}
+.content_novinky h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.content_novinky p {
+	margin: 1em;
+	margin-left: 20px;
+}
+
+
+/*content_novinky_list*/
+
+.content_novinky_list {
+	padding-bottom: 0.1em;	
+	padding-top: 0.1em;	
+}
+
+.content_novinky_list h2
+{
+	margin-left: 20px;
+	line-height: 1.2em;
+	margin-bottom: 0px;
+}
+.content_novinky_list p {
+	margin: 1em;
+	margin-left: 20px;
+}
+.content_novinky_list .more {
+	display: block;
+	color: #3D4363;
+	font-weight: bold;
+}
+.content_novinky_list:hover {
+	background: rgba(190, 191, 195, 0.3);
+
+}
+

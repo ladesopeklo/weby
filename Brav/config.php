@@ -1,5 +1,5 @@
 <?php 
-$baseurl = "/weby/Brav";
+$baseurl = "/_bravenec";
 $debug = true;
 //$baseurl = "/_beta/x";
 

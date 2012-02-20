@@ -315,7 +315,10 @@ var Core = function (settings, loader) {
 				loader.culture(a);
 				refreshPage();
 				break;
-			default: refreshPage();
+			default:
+				loader.home(a);
+				saveState(c, a);
+				;
 		}
 
 	}

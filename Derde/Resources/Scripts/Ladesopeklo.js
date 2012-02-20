@@ -204,13 +204,19 @@ var Loader = function (cache, settings) {
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
 			contentMain.html(t);
 			url.selected();
+		},
+		novinka: function (index) {
+			var t = template("Content/Novinky/novinky." + settings.culture() + ".html");
+			console.log($(t).index("novinka"));
+
 		}
+
 	};
 
 };
 
-var Core = function (cache, settings) {
-	var loader = new Loader(cache, settings);
+var Core = function (settings, loader) {
+	
 	var currentController,
 		currentAction,
 		currenthash;

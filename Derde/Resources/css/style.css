@@ -112,8 +112,8 @@ h1 {
 	.navigation .nav {
 
 		text-align: center;
-		line-height: 57px;
-		height: 57px;
+		line-height: 2em;
+		height: 2em;
 
 	}
 	.navigation .nav a:hover 
@@ -129,7 +129,7 @@ h1 {
 
 	.navigation .nav a,.navigation .nav .disabled
 	{
-		font-size: 160%;
+		font-size: 130%;
 		
 	}
 	
@@ -145,6 +145,8 @@ h1 {
 	.headerspacer {
 		height: 2em;
 		background-color: #3D4363;
+		border-bottom: 1px solid #fff;
+		
 	}
 	.footer {
 		background-color: #BEBFC3;

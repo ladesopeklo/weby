@@ -232,18 +232,23 @@ var Loader = function (cache, settings) {
 			displayContent();
 			contentMain.html("loading..");
 			var t = template("Content/template_novinkylistItem.html");
+
+
 			var list = [
 				"super",
 				"super2",
 				"super3"
 			];
+			list = jsonData(null, "Novinky", "Service/listCulture.php");
+			console.log(list);
+			
 			contentMain.html("");
 			$.each(list, function (i, value) {
 				$.tmpl(t, getnovinka(value)).appendTo(contentMain);
 			});
 
 
-			url.selected(null,true);
+			url.selected(null, true);
 
 		},
 		novinka: function (name) {

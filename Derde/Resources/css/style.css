@@ -3,13 +3,18 @@ h1 {
 		font-size: 1.9em;
 		margin-bottom: 0.5em;
 		color: #fff;
+	
 		font-weight: 500;
+		
+
 	}
 	h2 {
 		font-family: 'GillSansCELight';
-		color: #fff;
+		color: #3D4363;
 		margin-left: 1em;
 	}
+	
+	
 	.content h1 {
 		background-color: #999BA8;
 		text-align: right;
@@ -30,7 +35,15 @@ h1 {
 		margin: 0px;
 	}
 	
-	a {	color: #fff;			text-decoration: none;		}
+	a 	
+	{
+		color: #fff;			
+	   	text-decoration: none;		
+    }
+	a:hover 
+	{
+	    color: #fe4902;
+    }
 	a.current {
 		font-weight: 800;
 	}
@@ -66,6 +79,10 @@ h1 {
 	.mainleft,.rightb {
 		border-right: 1px solid #fff;
 	}
+	.bottomb 
+	{
+		border-bottom: 1px solid #fff;
+	}
 	.leftb {
 		border-left: 1px solid #fff;
 	}
@@ -76,9 +93,14 @@ h1 {
 	.content.main {
 		height: 369px;
 	}
-	.content.main .data, .content.bottom .data
+	.content.main .data
 	{
 		padding-top: 1.5em;
+	}
+	.content.bottom .data
+	{
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
 	}
 	.content.main{
 		background: url(../images/bgmain.png) repeat-x #BEBFC3 bottom;
@@ -88,11 +110,27 @@ h1 {
 	}
 
 	.navigation .nav {
-		text-align: center;
-		line-height: 27px;
-		height: 27px;
-		background: url(../images/bgnav.png) repeat-x;
 
+		text-align: center;
+		line-height: 57px;
+		height: 57px;
+
+	}
+	.navigation .nav a:hover 
+	{
+		color: #fff;
+	}
+	/*navi*/
+.ab .selected{
+	color: red;
+}
+.a .selected{
+}
+
+	.navigation .nav a,.navigation .nav .disabled
+	{
+		font-size: 160%;
+		
 	}
 	
 	.navigation {
@@ -101,7 +139,7 @@ h1 {
 	}
 			
 	.spacer {
-		height: 25px;
+		height: 1px;
 		background-color: #3D4363;
 	}
 	.headerspacer {
@@ -117,31 +155,31 @@ h1 {
 .footer a {
 		color: #4e5370;
 }
-	ul {
-		list-style-position:inside;
-		padding-left: 1.5em;
-		margin: 0px;
-	}
+ul {
+	list-style-position:inside;
+	padding-left: 1.5em;
+	margin: 0px;
+}
 
-	li {
-		margin: 0px 0px 1em 0px;
-	}			
+li {
+	margin: 0px 0px 1em 0px;
+}			
 	
-	.content.bottom li {
-		margin: 0px 0px 1em 1em;
-	}
+.content.bottom li {
+	margin: 0px 0px 1em 1em;
+}
 		
 		
-	.container_12 {
-		background-color: #3D4363;
-	}
-	.disabled {
-		color: silver;
-	}
-	.data p {
-		margin: 0em 0em 1em 1em;
-		padding: 0px; 
-	}
+.container_12 {
+	background-color: #3D4363;
+}
+.disabled {
+	color: silver;
+}
+.data p {
+	margin: 0em 0em 1em 1em;
+	padding: 0px; 
+}
 		
 .content_pecuje {
 display: block;
@@ -150,13 +188,14 @@ display: block;
 /*INTRO*/
 
 .introbox h1 {
-font-size: 2em;
-color: #3D4363;
-background-color: #BEBFC3;
-background: rgba(190, 191, 195, 0.8);
-border-top-left-radius: 5px;
--moz-border-radius-topleft: 5px;
+	font-size: 2em;
+	color: #3D4363;
+	background-color: #BEBFC3;
+	background: rgba(190, 191, 195, 0.8);
+	border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
 	position: relative;
+	text-shadow:  0px 1px 2px #3D4363
 }
 
 .introboxcontent  li {
@@ -261,18 +300,12 @@ width: 100%;
 	margin-right: 1px;
 	float: left;
 }
-XXXXXXXXX.items span{
-	display: inline-block;
-	width: 200px;
-}
-
-
 
 /*NOVINKY*/
 .navi {
 	position: absolute;
 	width: 75px;
-	top: 0.4em;
+	top: 0em;
 	
 
 }
@@ -304,13 +337,6 @@ XXXXXXXXX.items span{
 	width: 75px;
 	margin-top: 0.4em;
 }
-/*navi*/
-.ab .selected{
-	color: red;
-}
-.a .selected{
-	color: red;
-}
 
 /*CONTENTMAIN*/
 
@@ -322,8 +348,11 @@ XXXXXXXXX.items span{
 	margin-bottom: 10px;
 }
 .content_novinky p {
-	margin: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	margin-left: 20px;
+	margin-right: 0px;
+	text-align: justify;
 }
 
 
@@ -346,7 +375,6 @@ XXXXXXXXX.items span{
 }
 .content_novinky_list .more {
 	display: block;
-	color: #3D4363;
 	font-weight: bold;
 }
 .content_novinky_list:hover {

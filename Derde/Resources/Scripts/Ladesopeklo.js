@@ -227,6 +227,7 @@ var Loader = function (cache, settings) {
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
 			displayContent(t);
 			url.selected();
+			$("#mcs_container").mCustomScrollbar("vertical", 260, "easeOutCirc", 1.05, "auto", "yes", "yes", 10);
 		},
 		novinky: function () {
 			displayContent();
@@ -234,12 +235,7 @@ var Loader = function (cache, settings) {
 			var t = template("Content/template_novinkylistItem.html");
 
 
-			var list = [
-				"super",
-				"super2",
-				"super3"
-			];
-			list = jsonData(null, "Novinky", "Service/listCulture.php");
+			var list = jsonData(null, "Novinky", "Service/listCulture.php");
 			console.log(list);
 			
 			contentMain.html("");

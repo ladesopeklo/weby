@@ -1,14 +1,21 @@
 <style>
-		.content.main 
+	.content.main 
 	{
 		min-height: 369px;
-			height: auto;
+		height: auto;
 	}
-
-	
 </style>
 
 <div class="content_novinky_list">
-<h2> ${header}</h2>
-{{html contentheader}}
+	
+	<h2> ${header}</h2>
+	<div class="grid_2">
+		<p>Ikonka ? datum ?</p>
+	</div>
+	<div class="grid_10">
+		{{html contentheader}}
+	</div>
+	<div class="clear"></div>
+
+
 </div>

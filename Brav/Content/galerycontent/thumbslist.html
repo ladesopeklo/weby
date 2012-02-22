@@ -1,8 +1,11 @@
 {{each( index, value ) galleries }} 
 <div class="grid_2">
 	<div class="nah top abc">
-		<a href="#!${controller}/${action}/${value.name}">
-			<img src="${url}/${value.name}/thumbs/01.jpg"/>			</a>
+			<a href="#!${controller}/${action}/${value.name}">
+				<div class="wrap ">
+					<img class="opacityrollover" src="${url}/${value.name}/thumbs/01.jpg"/>			
+				</div>
+			</a>
 	</div>
 </div>
 {{/each}}

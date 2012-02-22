@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="Scripts/amplify.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
 	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.opacityrollover.js"></script>
 	
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -141,6 +142,8 @@
 		var main = new Core(cache, settings);
 		main.Init();
 
+
+
 	});
 </script>
 	
@@ -156,42 +159,44 @@
 			<div class="grid_6">
 				<div class="mainthumbs"> 
 					<div class="grid_2">
-						<div class="nahled top">
+						<div class="nahled top opacityrollover_min">
 							<img src="${urlimgthumbs}/${images[0].name}"/>
 						</div>
 					</div>
 					<div class="grid_2">
-						<div class="nahled top ">
+						<div class="nahled top opacityrollover_min">
 							<img src="${urlimgthumbs}/${images[1].name}"/>
 						</div>
 					</div>
 					<div class="grid_2">
-						<div class="nahled top">
+						<div class="nahled top opacityrollover_min">
 							<img src="${urlimgthumbs}/${images[2].name}"/>
 						</div>
 					</div>
 
 					<div class="grid_2">
-						<div class="nahled bottom">
+						<div class="nahled bottom opacityrollover_min">
 							<img src="${urlimgthumbs}/${images[3].name}"/>
 						</div>
 					</div>
 					
 					<div class="grid_2">
-						<div class="nahled bottom">
-							<img src="${urlimgthumbs}/${images[4].name}"/>
+						<div class="nahled bottom opacityrollover_min">
+							<a href="#!${controller}/${action}/${images[0].name}">
+								<img src="${urlimgthumbs}/${images[4].name}"/>
+							</a>
 						</div>
 					</div>
 
 					<div class="grid_2">
-						<div class="nahled bottom">
+						<div class="nahled bottom opacityrollover_min">
 							<img src="${urlimgthumbs}/${images[5].name}"/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="grid_6">
-				<div class="nahledbig">
+				<div class="nahledbig ">
 					<img src="${urlimgfullsize}/${images[6].name}"/>
 				</div>
 			</div>

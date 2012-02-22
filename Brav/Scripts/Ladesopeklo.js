@@ -140,6 +140,21 @@ var url = {
 
 };
 
+var bravenecHelpers = {
+	opacity: function (selector,opacity) {
+		if (opacity == null)
+			opacity = 0.37;
+		if (selector == null)
+			selector = '.opacityrollover';
+		$(selector).opacityrollover({
+			mouseOutOpacity: opacity,
+			mouseOverOpacity: 1.0,
+			fadeSpeed: 'fast',
+			exemptionSelector: '.selected'
+		});
+	}
+};
+
 var galerycontentHelper = {
 	
 	
@@ -196,7 +211,7 @@ var Loader = function (cache, settings) {
 			var t = template("templates/intro/contentThumbs.html");
 			var m = template("templates/intro/contentMain.html");
 			$("#contentThumbs").html(t);
-			$("#contentMain").html(m);
+			contentMain.html(m);
 			$("#contentFigures").html("");
 
 			require(["templates/intro/slider.js"]);
@@ -249,6 +264,9 @@ var Loader = function (cache, settings) {
 			contentMain.html(img);
 
 			url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
+			bravenecHelpers.opacity();
+			bravenecHelpers.opacity();
+			bravenecHelpers.opacity(".opacityrollover_min", 0.8);
 
 
 		},

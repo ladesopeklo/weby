@@ -82,9 +82,22 @@ div.detail {
 	color: red;
 	font-weight: bold;
 }
-.abc .selected img{
-	border: 1px solid red;
+.abc .selected  .opacityrollover
+{
+	opacity: 1 !important;
 }
+
+.abc .selected .wrap{
+	border: 1px solid red;
+	overflow: hidden;
+	height: 63px;
+}
+.abc .wrap{
+	height: 65px;
+	background-color: #282E33;
+}
+
+
 
 .left {
 	border-right: 1px solid red;
@@ -108,18 +121,16 @@ a:hover {
 /*thumbslist*/
 
 .thumslist {
-	height: 5em;
-	background-color: darkslategray;
-	opacity: 0.9;
+	height: 65px;
 	margin-top: -110px;
 	overflow: hidden;
 	padding-left: 4.8em;
+	border: 1px solid dimgray;
 }
 .nah
 {
 	background-color:#fff;
-	height:5em;
-	width: 5em;
+	width: 65px;
 	overflow: hidden;
 }
 

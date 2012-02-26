@@ -30,12 +30,8 @@ function getfiles($path, $culture){
 				
 				if (is_dir($path."/".$file)){
 					$tmp["name"] = $file;
-					
-					//$tmp["images"] = array("01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg") ;
 					$arr["galleries"][] = $tmp;
 				}
-				
-				
 			}
 		}
 		closedir($handle);
@@ -44,6 +40,8 @@ function getfiles($path, $culture){
 }
 
 $list = getfiles($path,$culture);
+
+
 $list["url"] = $url;
 $list["controller"] = $controller;
 $list["action"] = $action;

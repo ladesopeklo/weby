@@ -119,18 +119,36 @@ a:hover {
 
 
 /*thumbslist*/
-
-.thumslist {
-	height: 65px;
+.thumbswrap{
 	margin-top: -110px;
+}
+.thumbswrap .naviright{
+	text-align: right;
+}
+.thumslist {
 	overflow: hidden;
 	padding-left: 4.8em;
+	padding-left: 0em;
+	position: relative;
 	border: 1px solid dimgray;
+}
+.thumbsitem{
+	height: 70px;
+	width: 70px;
+	float:left;
+	margin-left: 4.4em;
+
+}
+.thumbsitems:first-child .thumbsitem{
+	margin-left: 0px;
+	margin-right: 0.1em;
+}
+.thumbsitems:last-child .thumbsitem{
+	margin-left: 4.3em;
 }
 .nah
 {
-	background-color:#fff;
-	width: 65px;
+	background-color:red;
 	overflow: hidden;
 }
 

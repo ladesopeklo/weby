@@ -10,11 +10,6 @@
 
 	<title>Atelier Polách & Bravenec s.r.o.</title>
 	
-	
-
-	
-
-	
 	<link rel="stylesheet" href="Plugins/ADAPT/assets/css/master.css" />
 	<link rel="stylesheet" href="Res/css/style.css" />
 	<link rel="stylesheet" href="Res/css/grid.css" />
@@ -32,9 +27,6 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
-
-
-	
 
 </head>
 	<body>
@@ -114,8 +106,22 @@
 		</div>
 		<div class="container_18">
 			<div class="grid_18">
-				<div class="thumslist">
-				
+				<div class="thumbswrap">
+					<div class="grid_1">
+						<<
+					</div>
+					<div class="grid_16">
+						&nbsp;
+					</div>
+					<div class="grid_1 naviright">
+						>>
+					</div>
+					<div class="clear"></div>
+					<div class="grid_18">
+						<div class="thumslist">
+						
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -136,13 +142,9 @@
 	var settings = new Settings(options);
 
 	$(document).ready(function () {
-
 		var cache = false; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
-
 		var main = new Core(cache, settings);
 		main.Init();
-
-
 
 	});
 </script>

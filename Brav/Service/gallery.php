@@ -67,17 +67,8 @@ function getfiles($path, $culture){
 			if ($file != "." && $file != "..") {
 				if(isimage($file)){
 					$xxx["name"] =  $file;
-					//$xxx["title"] = "";
-					//if (file_exists($tit.".cz.txt")) $xxx["title"]["cz"] =  file_get_contents($tit.".cz.txt",true);
-					//if (file_exists($tit.".en.txt")) $xxx["title"]["en"] =  file_get_contents($tit.".en.txt",true);
 					$arr["images"][] = $xxx;
 				}
-/*				if (isContent($file, $culture,$culture."_figure","txt")){
-					$arr["figure"] =  file_get_contents($path.$file,true);
-				}
-				if (isContent($file, $culture,$culture."_text","html")){
-					$arr["text"] =  file_get_contents($path.$file,true);
-				}*/
 			}
 		}
 		closedir($handle);

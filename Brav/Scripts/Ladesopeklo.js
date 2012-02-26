@@ -15,7 +15,6 @@ var Settings = function (options) {
 		return amplify.store("brav", value);
 	};
 
-
 	return {
 		activeMenu: function (c) {
 			if (c != null) {
@@ -253,18 +252,25 @@ var Loader = function (cache, settings) {
 				galerySection = galerylist.galleries[0].name;
 			}
 
-
 			//data ke konkretni galerii
 			var gallerydata = jsonData("galerycontent/" + action, galerySection, "Service/gallery.php");
-
-
+			
+			if (galerylist['galleries']){
+				var len = galerylist['galleries'].length;
+	//	//			galerylist['galleries'][len+1] = {name:"aaa"};	
+				var x = 8, i=0;
+				while( i < x-len){
+					galerylist['galleries'].push( {name:null});	
+					i++;
+				}
+			}
+			
 			renderThumbs(galerylist);
 
 			var img = $.tmpl($("#templateGalleryContent"), gallerydata);
 			contentMain.html(img);
 
 			url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
-			bravenecHelpers.opacity();
 			bravenecHelpers.opacity();
 			bravenecHelpers.opacity(".opacityrollover_min", 0.8);
 

@@ -138,11 +138,11 @@ a:hover {
 	margin-left: 55px;
 
 }
-.thumbsitems:first-child .thumbsitem{
+.thumbsitem:first-child{
 	margin-left: 0px;
 	margin-right: 0.1em;
 }
-.thumbsitems:last-child .thumbsitem{
+.thumbsitem:last-child{
 	float: right;
 }
 .nah

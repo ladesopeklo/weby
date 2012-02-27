@@ -236,42 +236,64 @@ var Loader = function (cache, settings) {
 		},
 		//#!/galerycontent/<galerySection>/<gallery>/<image>
 		galerycontent: function (action) {
+			var navR = $(".thumbswrap .naviright"),
+			    navL = $(".thumbswrap .navleft"),
+			    thbList = $(".thumslist");
 
-			function renderThumbs(thumbs) {
-				var tlist = template("Content/galerycontent/thumbslist.html");
-				$(".thumslist").html($.tmpl(tlist, thumbs));
+			function renderThumnsNavi(thumbsList) {
+				var current = thbList.find(".selected"),
+				    parent = current.closest(".thumbsitem");
+
+				//rotace
+				//var next = parent.next().find("a").length > 0 ? parent.next().find("a").attr("href") : thbList.find("a").attr("href");
+				var next = parent.next().find("a").length > 0 ? parent.next().find("a").attr("href") : current.attr("href");
+				var prev = parent.prev().find("a").length > 0 ? parent.prev().find("a").attr("href") : current.attr("href");
+
+				navL.html($.tmpl("<a href='${href}' title=''><<</a>", { "href": prev }));
+				navR.html($.tmpl("<a href='${href}' title=''>>></a>", { "href": next }));
 
 			}
 
-			contentMain.html("loading...");
+			function renderThumbs(thumbsList) {
+
+				if (thumbsList['galleries']) {
+					var len = thumbsList['galleries'].length;
+					var x = 8, i = 0;
+					while (i < x - len) {
+						thumbsList['galleries'].push({ name: null });
+						i++;
+					}
+				}
+
+				var templatelist = template("Content/galerycontent/thumbslist.html");
+
+				thbList.html($.tmpl(templatelist, thumbsList));
+				url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
+
+				renderThumnsNavi(thumbsList);
+			}
+
+			contentMain.html("<p>loading...</p>");
 
 			var galerySection = url.p1();
 			var image = url.p2() != null ? url.p2() : 1;
 			//vsechny galerie 
 			var galerylist = jsonData("galerycontent", action, "Service/gallerylist.php");
+
 			if (!galerySection) {
 				galerySection = galerylist.galleries[0].name;
 			}
 
 			//data ke konkretni galerii
 			var gallerydata = jsonData("galerycontent/" + action, galerySection, "Service/gallery.php");
-
-			if (galerylist['galleries']) {
-				var len = galerylist['galleries'].length;
-				//	//			galerylist['galleries'][len+1] = {name:"aaa"};	
-				var x = 8, i = 0;
-				while (i < x - len) {
-					galerylist['galleries'].push({ name: null });
-					i++;
-				}
-			}
-
 			renderThumbs(galerylist);
+
+
 
 			var img = $.tmpl($("#templateGalleryContent"), gallerydata);
 			contentMain.html(img);
 
-			url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
+
 			bravenecHelpers.opacity();
 			bravenecHelpers.opacity(".opacityrollover_min", 0.8);
 

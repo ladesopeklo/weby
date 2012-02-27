@@ -1,13 +1,13 @@
-{{each( index, value ) galleries }} 
 <div class="thumbsitems">
+{{each( index, value ) galleries }} 
 	<div class="nah thumbsitem abc">
 	{{if value.name !=null}}	
-		<a href="#!${controller}/${action}/${value.name}">
+		<a href="#!${controller}/${action}/${value.name}" >
 				<div class="wrap ">
 					<img class="opacityrollover" src="${url}/${value.name}/thumbs/01.jpg"/>			
 				</div>
 			</a>
 	{{/if}}
 	</div>
-</div>
 {{/each}}
+</div>

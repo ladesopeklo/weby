@@ -240,6 +240,7 @@ var Loader = function (cache, settings) {
 			function renderThumbs(thumbs) {
 				var tlist = template("Content/galerycontent/thumbslist.html");
 				$(".thumslist").html($.tmpl(tlist, thumbs));
+
 			}
 
 			contentMain.html("loading...");
@@ -254,17 +255,17 @@ var Loader = function (cache, settings) {
 
 			//data ke konkretni galerii
 			var gallerydata = jsonData("galerycontent/" + action, galerySection, "Service/gallery.php");
-			
-			if (galerylist['galleries']){
+
+			if (galerylist['galleries']) {
 				var len = galerylist['galleries'].length;
-	//	//			galerylist['galleries'][len+1] = {name:"aaa"};	
-				var x = 8, i=0;
-				while( i < x-len){
-					galerylist['galleries'].push( {name:null});	
+				//	//			galerylist['galleries'][len+1] = {name:"aaa"};	
+				var x = 8, i = 0;
+				while (i < x - len) {
+					galerylist['galleries'].push({ name: null });
 					i++;
 				}
 			}
-			
+
 			renderThumbs(galerylist);
 
 			var img = $.tmpl($("#templateGalleryContent"), gallerydata);

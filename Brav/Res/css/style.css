@@ -130,13 +130,12 @@ a:hover {
 	padding-left: 4.8em;
 	padding-left: 0em;
 	position: relative;
-	border: 1px solid dimgray;
 }
 .thumbsitem{
 	height: 70px;
 	width: 70px;
 	float:left;
-	margin-left: 4.4em;
+	margin-left: 55px;
 
 }
 .thumbsitems:first-child .thumbsitem{
@@ -144,7 +143,7 @@ a:hover {
 	margin-right: 0.1em;
 }
 .thumbsitems:last-child .thumbsitem{
-	margin-left: 4.3em;
+	float: right;
 }
 .nah
 {

@@ -160,8 +160,9 @@ var galerycontentHelper = {
 
 };
 
-var Loader = function (cache, settings) {
+var Loader = function (cache, settings, callbacks) {
 	var c = new Cache();
+	var self = this;
 
 	var template = function (url) {
 		if (cache)
@@ -292,7 +293,7 @@ var Loader = function (cache, settings) {
 
 			var img = $.tmpl($("#templateGalleryContent"), gallerydata);
 			contentMain.html(img);
-
+			callbacks.gallerycontentCallback();
 
 			bravenecHelpers.opacity();
 			bravenecHelpers.opacity(".opacityrollover_min", 0.8);
@@ -328,8 +329,8 @@ var Loader = function (cache, settings) {
 
 };
 
-var Core = function (cache, settings) {
-	var loader = new Loader(cache, settings);
+var Core = function (settings, loader) {
+
 	var currentController,
 		currentAction,
 		currenthash;
@@ -389,10 +390,7 @@ var Core = function (cache, settings) {
 		Init: function () {
 			loader.culture();
 			$.address.change(function (e) {
-
 				loadContent();
-
-
 			});
 		}
 	};

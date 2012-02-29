@@ -162,7 +162,7 @@ a:hover {
 {
 	background-color:#eee;
 	height:200px;
-	margin: 0px 0px 1em 1em;
+	margin: 0px 0px 0.8em 1em;
 	overflow: hidden;
 
 }
@@ -173,7 +173,7 @@ a:hover {
 	margin: 0px 0px 1em 1em;
 }
 .nahled.bottom {
-	margin: 0px 0px 1em 1em;
+	margin: 0px 0px 0.8em 1em;
 	
 }
 .mainthumbs {

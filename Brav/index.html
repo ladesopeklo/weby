@@ -22,9 +22,16 @@
 	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.opacityrollover.js"></script>
 	
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
+	
+	<link href="Plugins/pirobox/css_pirobox/style_3/style.css" rel="stylesheet" type="text/css" />
+	<!--<script type="text/javascript" src="Plugins/pirobox/js/pirobox_extended_feb_2011.js"></script>-->
+	<script type="text/javascript" src="Plugins/pirobox/js/jquery_ui.min.js"></script>
+	<script type="text/javascript" src="Plugins/pirobox/js/pirobox_extended_def_08_2011.js"></script>
+
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
 
 </head>
 	<body>
@@ -142,8 +149,28 @@
 		</div>
 
  	
+	<script>
+		var Callbacks = function () {
+			var self = this;
+
+			self.gallerycontentCallback = function () {
+				$.pirobox_ext({
+					piro_speed: 700,
+					zoom_mode: true,
+					move_mode: 'mousemove',
+					bg_alpha: 0.5,
+					piro_scroll: false,
+					share: true
+				});
+			};
+		};		
+
+	</script>	
+
 	
-<script>
+		<script>
+
+
 
 
 	//defaultni nastaveni. tohle se pouzije jako vychozi hodnoty pri prichodu na index (na hlavni stranku, bez parametru, napr.:masparti.com)  
@@ -157,9 +184,12 @@
 	var settings = new Settings(options);
 
 	$(document).ready(function () {
-		var cache = false; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
-		var main = new Core(cache, settings);
+		var cache = true; //cachovani templates (!!! pokud je na true tak zmeny v templatach se neprojevi!!! - zmeny v souborech /templates/*)
+		var loader = new Loader(cache, settings, new Callbacks());
+
+		var main = new Core(settings, loader);
 		main.Init();
+
 
 	});
 </script>
@@ -177,52 +207,67 @@
 				<div class="mainthumbs"> 
 					<div class="grid_2">
 						<div class="nahled top opacityrollover_min">
-							<img src="${urlimgthumbs}/${images[0].name}"/>
-						</div>
-					</div>
-					<div class="grid_2">
-						<div class="nahled top opacityrollover_min">
-							<img src="${urlimgthumbs}/${images[1].name}"/>
-						</div>
-					</div>
-					<div class="grid_2">
-						<div class="nahled top opacityrollover_min">
-							<img src="${urlimgthumbs}/${images[2].name}"/>
-						</div>
-					</div>
+							<a href="${urlimgfullsize}/${images[0].name}"   media="gallery"  class="pirobox_gall" >								<img src="${urlimgthumbs}/${images[0].name}"/>
+							</a>
 
-					<div class="grid_2">
-						<div class="nahled bottom opacityrollover_min">
-							<img src="${urlimgthumbs}/${images[3].name}"/>
-						</div>
-					</div>
+					<a href="${urlimgfullsize}/${images[0].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[0].name}"/>
+					</a>
+				</div>
+			</div>
+			<div class="grid_2">
+				<div class="nahled top opacityrollover_min">
+					<a href="${urlimgfullsize}/${images[1].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[1].name}"/>
+					</a>
+				</div>
+			</div>
+			<div class="grid_2">
+				<div class="nahled top opacityrollover_min">
+					<a href="${urlimgfullsize}/${images[2].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[2].name}"/>
+					</a>
+				</div>
+			</div>
+
+			<div class="grid_2">
+				<div class="nahled bottom opacityrollover_min">
+					<a href="${urlimgfullsize}/${images[3].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[3].name}"/>
+					</a>
+				</div>
+			</div>
 					
-					<div class="grid_2">
-						<div class="nahled bottom opacityrollover_min">
-							<a href="#!${controller}/${action}/${images[0].name}">
-								<img src="${urlimgthumbs}/${images[4].name}"/>
-							</a>
-						</div>
-					</div>
+			<div class="grid_2">
+				<div class="nahled bottom opacityrollover_min">
+					<a href="${urlimgfullsize}/${images[4].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[4].name}"/>
+					</a>
+				</div>
+			</div>
 
-					<div class="grid_2">
-						<div class="nahled bottom opacityrollover_min">
-							<img src="${urlimgthumbs}/${images[5].name}"/>
-						</div>
-					</div>
+			<div class="grid_2">
+				<div class="nahled bottom opacityrollover_min">
+					<a href="${urlimgfullsize}/${images[5].name}" media="gallery"  class="pirobox_gall" title="">
+						<img src="${urlimgthumbs}/${images[5].name}"/>
+					</a>
 				</div>
 			</div>
-			<div class="grid_6">
-				<div class="nahledbig ">
-					<img src="${urlimgfullsize}/${images[6].name}"/>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="grid_12">
-				<div class="right">
-				{{html properties.text[culture]}}
-				</div>
-			</div>
+		</div>
+	</div>
+	<div class="grid_6">
+		<div class="nahledbig ">
+			<a href="${urlimgfullsize}/${images[6].name}" media="gallery"  class="pirobox_gall" title="">
+				<img src="${urlimgthumbs}/${images[6].name}"/>
+			</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_12">
+		<div class="right">
+		{{html properties.text[culture]}}
+		</div>
+	</div>
 
 </script>
 		

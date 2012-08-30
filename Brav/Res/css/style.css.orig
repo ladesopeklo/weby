@@ -14,6 +14,12 @@ body {
 	background-color: #231f20;
     color: #fff;
 	font-size: 13px;
+<<<<<<< HEAD
+	
+
+=======
+>>>>>>> 2d268f68e752471b28d3a69a354b5b42f64e9795
+	font-family: Century Gothic, 'CenturyGothic', 'Open Sans', sans-serif;
 	font-family: Century Gothic, 'CenturyGothic', 'Open Sans', sans-serif;
 
 }
@@ -27,7 +33,11 @@ h1
 	color: #fff;
 }
 h3 {
+<<<<<<< HEAD
 	margin: 0px 0px 4px 0px;
+=======
+	margin: 0px 0px 5px 0em;
+>>>>>>> 2d268f68e752471b28d3a69a354b5b42f64e9795
 }
 h2 {
 	font-weight: normal;
@@ -192,14 +202,12 @@ a:hover {
 .mainthumbs {
 }
 /*------*/
-	.logodole{
+	
+
+.logodole{
 	border-right: 1px solid red;
 	text-align: right;
 }
 .logodole img{
 	margin-right: -77px;
-}
-
-.iso h2 {
-	font-size: 18px;
 }

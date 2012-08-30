@@ -11,10 +11,10 @@
 
 
 body {
-	background-color: #000;
-	background-color: #0D0C0C;
-	color: #fff;
-	color: #D9D2D2;
+	background-color: #3c3c3b;
+	background-color: #231f20;
+    color: #D9D2D2;
+    color: #fff;
 	font-size: 0.8em;
 	
 	font-family: 'BahamasNormal';
@@ -28,7 +28,7 @@ body {
 
 }
 a,a:visited {
-	color: #D9D2D2;
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -48,15 +48,16 @@ h2 {
 	text-align: justify;
 }
 #contentMain h4 {
-	margin: 0px 0px 2em 0em;
-	font-size: 90%;
-	
+	margin: 0px 0px 35px 0em;
+    vertical-align: top;
+	font-size: 13px;
 }
 .red {
 	color: red;
 }
 div.detail {
-	font-size: 90%;
+	font-size: 13px;
+	margin-bottom: 0.8em;
 }
 
 
@@ -69,18 +70,38 @@ div.detail {
 	margin: 0.5em 0em 0em 0em;
 }
 
+#contentMain {
+	height: 480px;
+}
 /*MENU*/
 
 .menu {
 	height: 480px;
 }
+.absolutebottom
+ {
+    position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 100px;
+}
+
+.menuDown{
+
+	margin-right: 1em;
+}
+
+
 .list li{
 	margin-bottom: 0.8em;
 
 }
+.ab  a.selected:hover
+{
+}
+
 .ab  a.selected{
 	color: red;
-	font-weight: bold;
 }
 .abc .selected  .opacityrollover
 {
@@ -89,12 +110,16 @@ div.detail {
 
 .abc .selected .wrap{
 	border: 1px solid red;
+	height: 67px;
 	overflow: hidden;
-	height: 63px;
 }
 .abc .wrap{
-	height: 65px;
-	background-color: #282E33;
+	background-color: #3c3c3b;
+	height: 68px;
+	border: 1px solid #3c3c3b;
+}
+.redback .wrap {
+	background-color: red;
 }
 
 
@@ -113,14 +138,14 @@ h1 {
 	font-weight:  300;
 }
 a:hover {
-	font-weight: bold;
+	color:  red;
 }
 
 
 
 /*thumbslist*/
 .thumbswrap{
-	margin-top: -110px;
+	margin-top: -150px;
 }
 .thumbswrap .naviright{
 	text-align: right;
@@ -135,7 +160,7 @@ a:hover {
 	height: 70px;
 	width: 70px;
 	float:left;
-	margin-left: 55px;
+	margin-left: 16px;
 
 }
 .thumbsitem:first-child{
@@ -147,20 +172,21 @@ a:hover {
 }
 .nah
 {
-	background-color:red;
 	overflow: hidden;
 }
 
 
 /*galerie*/
+.nahledbig, .nahled
+{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQIW2Ncu3ZtfXBwcCMDFDDCGBgCMJUYKgBZLQgF9OtfogAAAABJRU5ErkJggg==);
+}
 .nahled
 {
-	background-color:#fff;
 	height:94px;
 }
 .nahledbig
 {
-	background-color:#eee;
 	height:200px;
 	margin: 0px 0px 0.8em 1em;
 	overflow: hidden;

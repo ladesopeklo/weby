@@ -1,11 +1,8 @@
 <root>
-	<output path="Resources/css/basic.min.css">
-    <input path="Resources/css/grid.css" />
-    <input path="Resources/css/style.css" />
-
-	</output>
 	<output path="Resources/font/stylesheet.min.css">
     <input path="Resources/font/stylesheet.css"/>
+    <input path="Resources/css/grid.css" />
+    <input path="Resources/css/style.css" />
 
 	</output>
 </root>

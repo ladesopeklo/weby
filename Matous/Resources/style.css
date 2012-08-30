@@ -1,0 +1,161 @@
+.container_12{
+			position: relative;
+			z-index: 1;
+		}
+		
+		.inside {
+			height: 100%;
+			width: 100%;
+			border: 1px solid red;
+		}body {
+		 	background-color: #7e77df;
+		 	background-color: #fff;
+		 }
+		
+		.info1, .infoaaa {
+			border:1px #00004a;
+			border:1px #00004a;
+			opacity: 0.8;
+		}
+		.info1:hover, .infoaaa:hover {
+			opacity: 1;
+		}
+		
+		
+		.info1 {
+			background-color: #00004a;
+			background-color: #00004a;
+			color: white;
+			border-radius: 10px 10px 10px 10px;
+			-moz-border-:10px 10px 10px 10px; 
+
+		}
+		.infotop , .infoaaa {
+			margin-bottom: 10px;
+			
+		}
+		.infotop {
+			border-bottom-left-radius: 0px;
+			-moz-border-bottom-left:0px; 
+			float: right;
+		}
+		.infob {
+			border-top-left-radius: 0px;
+			-moz-border-top-left-: 0px; 
+		}
+		
+		.infok {
+			padding: 0.4em 1em ;
+			border-radius: 0px 0px 0px 10px ;
+			-moz-border-:0px 0px 0px 10px;
+			background-color: #00004a;
+			color: #fff;
+			font-size:0.9em;
+		}
+		.infoaaa  {
+			border-radius: 10px 10px 10px 0px;
+			-moz-border-:10px 10px 10px 0px; 
+			background-color: #00004a;
+		}
+		.infoaaa a {
+			color: white;
+		}
+		.infoaaa a:hover {
+			color: grey;
+		}
+		.infoqq {
+			text-align: right;
+			margin-bottom:  1em;
+		}
+		.matous {
+			background: url(images/matous.png) no-repeat;
+			position: absolute;
+			height: 640px;
+			width: 100%;
+			left: -10%;
+			z-index:-2;
+			opacity: 1.0;
+		}
+		.matousheader {
+			z-index:2;
+			
+		}
+		
+		.content {
+			height: 200px;
+			overflow: hidden;
+			width:100%
+		}
+		.content p{
+			margin-bottom:0.5em;
+			margin-top:0.5em;
+			text-align:justify;
+		}
+		.empty {
+			margin-top: 0px;
+			height: 1px;
+		}
+		.infob p {
+			margin-bottom: 0px;
+			margin-top: 2px;
+		}
+		.infob {
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+		}
+	h1 {
+		font-size: 2em;
+		margin-bottom: 0.5em;
+	}
+	.matousheader {
+	width: 200px;
+
+	}
+	.matousheader h1{
+		font-family: 'eurofurencelightRegular';
+		font-weight: 400;
+		font-size: 290%;
+		margin: 0em 23em -0.4em 0.6em;
+		line-height: 1.5em;
+		opacity:0.9;
+	}
+	.matousheader h1 .ha1{
+		display: none;
+	}
+	.matousheader .img {
+		margin: 0px;
+		margin-top: 0.5em;
+	}
+	h1.white {
+		color: #00004a;
+		font-size: 270%;
+	}
+	
+	body {
+		font-family: 'MyriadProCondensed';
+		font-size: 1em;
+		line-height: 1.1em;
+		background: url(images/back.png);
+	}
+	.more:hover {
+		cursor: pointer;
+	}
+	h2.more
+	{
+		font-size:1em;
+	}
+	h2.more:hover
+	{
+		color:#553893;
+	}
+	
+	.showOnMore {
+		display: none;
+	}
+	.contentborder{
+		margin:0.6em;
+
+	}
+	p.top {
+		margin-top: 0px;
+	}

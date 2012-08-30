@@ -3,5 +3,9 @@ masp/.svn/*
 Matous/temp/*
 Derde/temp/*
 Brav/nbproject/*
-Brav/Res/font/AdobeFnt13.lst
 *.psd
+Brav/temp/*
+Brav/Content/.picasa.ini
+_beta/*
+Brav/.idea/*
+Brav/Content/galerycontent/*

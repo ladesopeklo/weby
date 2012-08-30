@@ -328,3 +328,14 @@ body {
 .clearfix {
   zoom: 1;
 }
+
+
+.mapka {
+	width: 200px;
+	float: left;
+	padding-right: 15px;
+}
+.mapkapopis {
+	float: left;
+	width: 175px;
+}

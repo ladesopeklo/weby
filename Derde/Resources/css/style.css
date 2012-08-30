@@ -27,7 +27,7 @@ h1 {
 	body {
 		background-image: url(../images/back.png);
 		font-family: 'GillSansCELight', hevletika;
-		font-size: 0.8em;
+		font-size: 1em;
 		line-height: 1.1em;
 		background-color: #fff;
 		color: #4e5370;
@@ -124,6 +124,7 @@ a.current {
 		
 .content.bottom li {
 	margin: 0px 0px 1em 1em;
+	text-align: justify;
 }
 		
 
@@ -182,6 +183,7 @@ a.current {
 ul {
 	list-style-position:inside;
 	padding-left: 1.5em;
+	padding-right: 1.5em;
 	margin: 0px;
 }
 
@@ -207,7 +209,7 @@ display: block;
 /*INTRO*/
 
 .introbox h1 {
-	font-size: 2em;
+	font-size: 1.5em;
 	color: #3D4363;
 	background-color: #BEBFC3;
 	background: rgba(190, 191, 195, 0.8);
@@ -226,7 +228,7 @@ position: relative;
 .introboxcontent 
 {
 overflow: hidden;
-width: 45%;
+width: 49%;
 float: right;
 background-color: #BEBFC3;
 background: rgba(190, 191, 195, 0.7);
@@ -388,7 +390,17 @@ width: 100%;
 {
 	display: block;
 }
-#contentMain p,#contentMain i,#contentMain h2{
+
+#contentMain img.imgright
+{
+	float: right;
+	margin: 20px 0px 20px 20px;
+}
+
+#contentMain p,#contentMain i,
+#contentMain h2,
+#contentMain h3,
+#contentMain h4{
 	margin-left: 20px;
 	text-align: justify;
 }

@@ -1,229 +1,58 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-	
 	<meta name="author" content="Masparti & Vladimir Talas" />
 	<meta name="description" lang="cs" content=""/>
-	
 	<link rel="shortcut icon" href="favicon.ico">
 	
 	<title>Matous</title>
 	
-	
 	<link rel="stylesheet" href="Plugins/ADAPT/assets/css/master.css" />
+	<link rel="stylesheet" href="Resources/font/MyriadPro-Cond/stylesheet.css" />
+	<link rel="stylesheet" href="Resources/style.css" />
+	<link rel="stylesheet" href="Plugins/Scroll/jquery.mCustomScrollbar.css"  type="text/css" />
+
+	
+	<script>
+
+	var CURRENT = 2;
+	var ADAPT_CONFIG = {
+				path: 'Plugins/ADAPT/assets/css/',
+
+				dynamic: true,
+				index: 0,
+				callback: function (i, width) {
+					CURRENT = i;
+				},
+				range: [
+		'0px    to 760px  = mobile.min.css',
+		'760px  to 980px  = 720.min.css',
+		'980px			 = 960.css'
+	]
+	};
+	</script>
 	<noscript>
 		<link rel="stylesheet" href="Plugins/ADAPT/assets/css/mobile.min.css" />
 	</noscript>
-	<script>
-// Edit to suit your needs.
-		var ADAPT_CONFIG = {
-		// Where is your CSS?
-			path: 'Plugins/ADAPT/assets/css/',
 
-			// false = Only run once, when page first loads.
-			// true = Change on window resize and page tilt.
-			dynamic: true,
+	<!--	<script src="Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+		<script src="Scripts/jquery-ui.min.js" type="text/javascript" ></script>
+	
+		<script src="Plugins/Scroll/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="Plugins/Scroll/jquery.mousewheel.min.js" type="text/javascript"></script>
+		<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+		<script type="text/javascript" src="Plugins/ADAPT/assets/js/adapt.js"></script>
+		-->
 
-			// First range entry is the minimum.
-			// Last range entry is the maximum.
-			// Separate ranges by "to" keyword.
-			range: [
-				'0px    to 760px  = mobile.min.css',
-				'760px  to 980px  = 720.min.css',
-				'980px			 = 960.css',
-//				'1280px to 1600px = 1200.min.css',
-//				'1600px to 1940px = 1560.min.css',
-//				'1940px to 2540px = 1920.min.css',
-//				'2540px           = 2520.min.css'
-			]
-		};
-	</script>
-	
-	<script src="Plugins/ADAPT/assets/js/adapt.min.js"></script>
-	
-	<script src="Scripts/jquery-1.7.1.js"></script>
-	
-	<link href="Plugins/Scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="Plugins/Scroll/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="Plugins/Scroll/jquery.mousewheel.min.js" type="text/javascript"></script>
-	
-	
-	<script src="Plugins/Scroll/jquery.mCustomScrollbar.js" type="text/javascript"></script>
-
-    <script type="text/javascript"
+	<script src="Scripts/libs.min.js" type="text/javascript" ></script>
+	<script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAH0HeeeI9JzOX5ntFS-LBBVlfQuXUFsqY&sensor=false">
     </script>
-
-
 	
-	<style>
-		
-		.container_12{
-			position: relative;
-			z-index: 1;
-		}
-		
-		.inside {
-			height: 100%;
-			width: 100%;
-			border: 1px solid red;
-		}body {
-		 	background-color: #7e77df;
-		 	background-color: #fff;
-		 }
-		
-		.info1, .infoaaa {
-			border:1px solid #553893;
-			border:1px solid #ecebf9;
-			opacity: 0.8;
-		}
-		.info1:hover, .infoaaa:hover {
-			opacity: 1;
-		}
-		
-		
-		.info1 {
-			background-color: #ecebf9;
-			background-color: #fff;
-			color: #7f7e8e;
-			border-radius: 10px 10px 10px 10px;
-			-moz-border-:10px 10px 10px 10px; 
 
-		}
-		.infotop , .infoaaa {
-			margin-bottom: 10px;
-			
-		}
-		.infotop {
-			border-bottom-left-radius: 0px;
-			-moz-border-bottom-left:0px; 
-			float: right;
-		}
-		.infob {
-			border-top-left-radius: 0px;
-			-moz-border-top-left-: 0px; 
-		}
-		.infok {
-			padding: 0.4em 1em ;
-			border-radius: 0px 0px 0px 10px ;
-			-moz-border-:0px 0px 0px 10px;
-			background-color: #000;
-			color: #fff;
-			font-size:0.9em;
-		}
-		.infoaaa  {
-			border-radius: 10px 10px 10px 0px;
-			-moz-border-:10px 10px 10px 0px; 
-			background-color: #fff;
-
-		}
-		
-		.infoaaa a {
-			color: #7f7e8e;
-		}
-		.infoaaa a:hover {
-			color: #C60;
-		}
-		.infoqq {
-			text-align: right;
-		}
-		.matous {
-			background: url(Resources/images/matous.png) no-repeat;
-			position: absolute;
-			height: 640px;
-			width: 100%;
-			left: -10%;
-			z-index:-2;
-			opacity: 0.4;
-		}
-		.matousheader {
-			z-index:2;
-			
-		}
-		
-		.content {
-			height: 200px;
-			overflow: hidden;
-			width:100%
-		}
-		.content p{
-			margin-bottom:0.5em;
-			margin-top:0.5em;
-			text-align:justify;
-		}
-		.empty {
-			margin-top: 0px;
-			height: 1px;
-		}
-		
-		
-	</style>
-
-
-<link rel="stylesheet" href="Resources/font/eurof36/stylesheet.css" />
-<link rel="stylesheet" href="Resources/font/MyriadPro-Cond/stylesheet.css" />
-<style type="text/css">
-	h1 {
-		font-size: 2em;
-		margin-bottom: 0.5em;
-	}
-	.matousheader {
-	width: 200px;
-
-	}
-	.matousheader h1{
-		font-family: 'eurofurencelightRegular';
-		font-weight: 400;
-		font-size: 290%;
-		margin: 0em 23em -0.4em 0.6em;
-		line-height: 1.5em;
-		opacity:0.9;
-	}
-	.matousheader h1 .ha1{
-		display: none;
-	}
-	.matousheader .img {
-		margin: 0px;
-		margin-top: 0.5em;
-	}
-	h1.white {
-		color: #553893;
-		font-size: 270%;
-	}
-	
-	body {
-		font-family: 'MyriadProCondensed';
-		font-size: 1em;
-		line-height: 1.1em;
-		background: url(Resources/images/back.png);
-	}
-	.more:hover {
-		cursor: pointer;
-	}
-	h2.more
-	{
-		font-size:1em;
-	}
-	h2.more:hover
-	{
-		color:#553893;
-	}
-	
-	.showOnMore {
-		display: none;
-	}
-	.contentborder{
-		margin:0.6em;
-
-	}
-	p.top {
-		margin-top: 0px;
-	}
-</style>
 
 </head>
 	<body>
@@ -255,7 +84,7 @@
 				<div class="">&nbsp;</div>
 			</div>
 			<div class="grid_4" style="">
-				<h1>... příjemně profesionální přístup</h1>
+				<h1>...příjemně profesionální přístup</h1>
 			</div>
 			<div class="clear"></div>
 		 
@@ -276,13 +105,13 @@
 				<div class="infotop info1 content">
 					<div class ="contentborder">
 
-					<h2 class="more">o mě</h2>
+					<h2 class="more">o mně</h2>
 					<span class="hideOnMinimalize">
 						<p>Po absolování právnické fakulty v Olomouci, povinné tříleté
 							koncipientské praxe a složení advokátních zkoušek působím od března
-							2011 v Olomouci jako samostatný advokát.
-							<a class="more hideOnMore" href="#" >(...více o mě)</a>
-							</p>
+							2011 v Olomouci jako samostatný advokát.          </p>
+							<a class="more hideOnMore" href="#" >(...více o mně)</a>
+							
 					
 						<p class="showOnMore">
 Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 2006). Koncipientskou praxí jsem prošel v advokátní kanceláři Paroulek, Zrůstek, Lůdl v.o.s. (2007 – 2010). Od března 2011, po úspěšném složení advokátních zkoušek, jsem zapsán u České advokátní komory jako samostatný advokát, se sídlem v Olomouci. Spolupracuji jako externí právník s Charitou Olomouc. Hovořím anglicky a německy						
@@ -294,30 +123,31 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 
 				</div>
 				<div class="clear">&nbsp;</div>
-				<div class="infob info1 content">
+				<div class="infob info1 content" style="height:185px">
 					<div class ="contentborder">
 						
 						<h2 class="more">kontakt</h2>
 						<div class="hideOnMinimalize">
-						<p>Potřebujete-li zastupování u soudu, poradit s řešením právního
-						problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
-						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
-						<a class="hideOnMore more" href="#" >(...kontakt)</a>
-						<div class="showOnMore">				
-							<div class="grid_2 alpha">
-								<div id="map_canvas" style="width:100%; height:200px;border: 1px solid #eee;"></div>
-							</div>
-							<div style="float: left">
-								<p class="top"><b>Mgr. Matouš Pelikán</b></p>
+							<p style="margin-top: 10px"><b>Mgr. Matouš Pelikán</b></p>
 								<p>Na Vozovce 21<br />
 									779 00 Olomouc
 								</p>
-								<p>776709306</p>
-								<p>info@matouspelikan.com</p>
+								<p style="margin-top: 10px">776709306</p>
+								<p style="margin-bottom: 10px">info@matouspelikan.com</p>
+							
+						<a class="hideOnMore more" href="#" >(...kontakt)</a>
+						<div class="showOnMore">				
+							<div class="mapka" style="">
+								<div id="map_canvas" style="width:100%; height:200px;border: 1px solid #eee;"></div>
+							</div>
+							<div class="mapkapopis">
+								<p class="top">Potřebujete-li zastupování u soudu, poradit s řešením právního
+						problému či např. sepsat kupní smlouvu, můžete se na mě kdykoliv
+						obrátit po telefonu či na sídle mé advokátní kanceláře.				</p>
 							</div>
 						</div>
 					
-					
+					    
 						</div>
 					</div>
 				</div>
@@ -342,11 +172,11 @@ Jsem absolvent Právnické fakulty Univerzity Palackého v Olomouci (promoce 200
 						správní právo. </p>
 						<a class="hideOnMore more" href="#" >(...více o poskytovaných službách)</a>
 																														<div class="showOnMore">				
-<p>V oblasti <b>občanského práva</b> poskytuji právní služby v celém rozsahu tohoto odvětví. Jedná se
+<p>V oblasti <b>občanského práva</b> poskytuji právní služby v celém rozsahu tohoto odvětví. <font color: "gray">Jedná se
 zejména o sepis podání, smluv (zejména týkajících se nemovitostí, a to včetně zřízení advokátní
 úschovy) a vymáhání pohledávek, a to jak v nalézacím řízení, tak také v řízení exekučním a v případě
 potřeby v řízení insolvenčním. Současně poskytuji právní rady při řešení sporů ve věci věcných
-břemen, vlastnických práv, náhrady škod, reklamací, nájemních vztahů, dědictví…</p>
+břemen, vlastnických práv, náhrady škod, reklamací, nájemních vztahů, dědictví…</font></p>
 
 <p>V oblasti <b>pracovního práva</b> sepisuji pracovněprávní a manažerské smlouvy a dohody. Poskytuji
 poradenství ve věcech změn a ukončení pracovního poměru. Klienty zastupuji ve sporech o neplatné
@@ -393,7 +223,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 		<script>
 
 			function scroller(){
-			    $("#mcs_container").mCustomScrollbar("vertical",400,"easeOutCirc",1.05,"auto","yes","yes",10);
+			    $("#mcs_container").mCustomScrollbar("vertical",900,"easeOutCirc",1.05,"fixed","yes","yes",10);
 			}
 			function fixScroll(){
 			    $("#mcs_container .container").animate({ top: 0 }, 500);
@@ -404,7 +234,7 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 				var df = {
 					h1: 50,
 					h2: 200,
-					h3: "20em",
+					h3: "23em",
 					w1: 96,
 					w2: 202,
 					w3: 414,
@@ -440,7 +270,13 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 				var unMinimalize = function (contentEl) {
 					contentEl.find(".hideOnMinimalize").show();
 				};
-				var handlecontent = function (contentEl) {
+				var handlecontent = function (contentEl, event) {
+					event.preventDefault();
+
+					if (current == this) {
+						return;
+					}
+
 					var box = contentEl;
 					box.find(".hideOnMinimalize").show();
 					box.find(".showOnMore").fadeIn();
@@ -453,28 +289,23 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					}
 				};
 
-				//container
 				var ccc = function (item) {
 					return item.closest(".xxx");
 				};
-
-
-				var reset = function () {
-					//					a.stop(true, false).animate({ height: df.h2 }, 200);
-					//					c.stop(true, false).animate({ height: df.h2 }, 200);
-					//					b.stop(true, false).animate({ height: df.h2 }, 200);
-
-					//					ccc(a).stop(true, false).animate({ width: df.w2 }, 200);
-					//					ccc(b).stop(true, false).animate({ width: df.w3 }, 200);
-					//					ccc(c).stop(true, false).animate({ width: df.w2 }, 200);
+				var ismobile = function () {
+					return CURRENT < 2;
 				};
 
 
-				trigger(a).click(function () {
-					if (current == this) {
+				// o me 
+				trigger(a).click(function (e) {
+					handlecontent(a, e);
+
+					if (ismobile()) {
+						a.height("auto");
 						return;
 					}
-					handlecontent(a);
+
 					current = this;
 
 					a.stop(true, false).animate({ height: df.h3 }, 500);
@@ -482,16 +313,17 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 					minimalizeHeight(b);
 					minimalizeHeight(d);
 
-
-
 					ccc(a).stop(true, false).animate({ width: df.w3 }, 200);
 					ccc(b).stop(true, false).animate({ width: df.w2 }, 200, fixScroll);
 				});
-				trigger(b).click(function () {
-					if (current == this) {
+				trigger(b).click(function (e) {
+					handlecontent(b, e);
+
+					if (ismobile()) {
+						b.height("auto");
 						return;
 					}
-					handlecontent(b);
+
 					minimalizeHeight(c);
 					minimalizeHeight(a);
 					unMinimalize(d);
@@ -504,12 +336,15 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 
 				}
 				);
-
-				trigger(c).click(function () {
-					if (current == this) {
+				//kontakt
+				trigger(c).click(function (e) {
+					handlecontent(c, e);
+					if (ismobile()) {
+						c.height("auto");
+						initializeMap();
 						return;
 					}
-					handlecontent(c);
+
 					minimalizeHeight(a);
 					minimalizeHeight(b);
 					minimalizeHeight(d);
@@ -523,12 +358,8 @@ orgány, v přestupkovém řízení a při soudním přezkumu správních rozhod
 				}
 				);
 
-				return {
-
-				};
 			};
 			$(document).ready(function () {
-
 				new switcher($(".infotop"), $(".infoaaa"), $(".infob"),$(".infok"));
 				scroller();
 			});

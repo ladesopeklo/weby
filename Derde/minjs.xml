@@ -1,10 +1,18 @@
 <root>
 	<output path="Scripts/libs.min.js">
 	
-	<input path="Resources/Scripts/jquery-1.7.1.js"></input>
-	<input path="Plugin/jquerytools/src/scrollable/scrollable.js"></input>
-	<input path="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></input>
-	<input path="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></input>
+    <input path="Resources/Scripts/jquery-1.7.1.js"></input>
+    <input path="Resources/Scripts/jquery.tmpl.js"></input>
+    <input path="Resources/Scripts/require.js"></input>
+    <input path="Resources/Scripts/amplify.js"></input>
+    <input path="Resources/Scripts/jquery.address-1.4.min.js"></input>
+    <input path="Resources/Scripts/Ladesopeklo.js"></input>
+    <input path="Resources/Scripts/jquery.opacityrollover.js"></input>
+
+    <input path="Plugin/jquerytools/src/scrollable/scrollable.js"></input>
+    <input path="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></input>
+    <input path="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></input>
+    <input path="Resources/Scripts/jquery.bgpos.js"></input>
 
 	</output>
 </root>

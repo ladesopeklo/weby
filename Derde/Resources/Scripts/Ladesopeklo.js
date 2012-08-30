@@ -288,7 +288,6 @@ var Loader = function (cache, settings, callbacks) {
 
 
 			url.selected(null, true);
-
 		},
 
 		novinkyThumbs: function () {
@@ -301,6 +300,9 @@ var Loader = function (cache, settings, callbacks) {
 			var xxx = $.tmpl(t, getnovinka(name));
 			displayContent(xxx);
 			url.selected(null);
+
+			$(document).scrollTop(0);
+
 		}
 
 

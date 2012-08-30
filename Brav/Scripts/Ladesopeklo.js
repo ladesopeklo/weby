@@ -1,3 +1,7 @@
+/// <reference path="ThumbsList.js" />
+/// <reference path="require.js" />
+ 
+
 
 var Settings = function (options) {
 	var defaults = {
@@ -102,7 +106,7 @@ var url = {
 		return $.address.pathNames();
 	},
 
-	// http://axx/ #controler/action/param1 
+	// http://axx/ #controler/action/p1 
 	p1: function () {
 		return $.address.pathNames().length > 2 ? $.address.pathNames()[2] : null;
 	},
@@ -111,7 +115,7 @@ var url = {
 	},
 
 	selected: function (path) {
-		function handleselect(s, p) {
+		function handleselected(s, p) {
 			$(s).removeClass("selected");
 			$("a[href='#!" + p + "']").addClass("selected");
 			//console.log($("a[href='#!" + p + "']"));
@@ -121,26 +125,22 @@ var url = {
 		if (str == undefined) {
 			str = $.address.path();
 		}
-		var x = str.split("/");
+		var urlPath = str.split("/");
 
 		// link /a/b
-		if (x.length > 2) {
-			handleselect(".ab .selected", x[1] + "/" + x[2]);
+		if (urlPath.length > 2) {
+			handleselected(".ab .selected", urlPath[1] + "/" + urlPath[2]);
 		}
 		// link /a/b/c
-		if (x.length > 3) {
-			handleselect(".abc .selected", x[1] + "/" + x[2] + "/" + x[3]);
+		if (urlPath.length > 3) {
+			handleselected(".abc .selected", urlPath[1] + "/" + urlPath[2] + "/" + urlPath[3]);
 		}
-
-
 	}
-
-
-
 };
 
 var bravenecHelpers = {
-	opacity: function (selector,opacity) {
+
+    opacity: function (selector, opacity) {
 		if (opacity == null)
 			opacity = 0.37;
 		if (selector == null)
@@ -148,17 +148,18 @@ var bravenecHelpers = {
 		$(selector).opacityrollover({
 			mouseOutOpacity: opacity,
 			mouseOverOpacity: 1.0,
-			fadeSpeed: 'fast',
+			fadeSpeed: '100',
 			exemptionSelector: '.selected'
+		});
+	},
+	lazyload: function () {
+        var x = $(".lazy[src^='Res']");
+        x.lazyload({
+			skip_invisible: false
 		});
 	}
 };
 
-var galerycontentHelper = {
-	
-	
-
-};
 
 var Loader = function (cache, settings, callbacks) {
 	var c = new Cache();
@@ -201,6 +202,16 @@ var Loader = function (cache, settings, callbacks) {
 		return null;
 	};
 	var contentMain = $("#contentMain");
+	//var contentMainDolni = $("#contentMainDolni");
+	var getCurrenGallery = function (galleryList) {
+		var current = url.p1();
+		if (!current) {
+			current = galleryList.galleries[0].name;
+		}
+		return current;
+	};
+    var xxx;
+
 	return {
 		culture: function () {
 			var a = "#" + settings.culture();
@@ -219,7 +230,6 @@ var Loader = function (cache, settings, callbacks) {
 		menu: function () {
 			require(["templates/menu1/menu.js"], function () {
 				var t = template("templates/menu1/menu.html");
-
 				var data = jsonData(null, "Content/menu.json");
 
 				data.culture = settings.culture();
@@ -233,96 +243,34 @@ var Loader = function (cache, settings, callbacks) {
 		content: function (action) {
 			var t = template("Content/" + action + "." + settings.culture() + ".html");
 			$("#contentMain").html('<div class="right">' + t + '</div>');
+
+			var galerylist = jsonData("galerycontent", "ocenenestavby", "Service/gallerylist.php");
+
+			new ThumbsList(template("Content/galerycontent/thumbslist.html")).renderThumbs(galerylist, "/galerycontent/ocenenestavby", null);
+
 			url.selected();
 		},
 		//#!/galerycontent/<galerySection>/<gallery>/<image>
 		galerycontent: function (action) {
-			var navR = $(".thumbswrap .naviright"),
-			    navL = $(".thumbswrap .navleft"),
-			    thbList = $(".thumslist");
-
-			function renderThumnsNavi(thumbsList) {
-				var current = thbList.find(".selected"),
-				    parent = current.closest(".thumbsitem");
-
-				//rotace
-				//var next = parent.next().find("a").length > 0 ? parent.next().find("a").attr("href") : thbList.find("a").attr("href");
-				var next = parent.next().find("a").length > 0 ? parent.next().find("a").attr("href") : current.attr("href");
-				var prev = parent.prev().find("a").length > 0 ? parent.prev().find("a").attr("href") : current.attr("href");
-
-				navL.html($.tmpl("<a href='${href}' title=''><<</a>", { "href": prev }));
-				navR.html($.tmpl("<a href='${href}' title=''>>></a>", { "href": next }));
-
-			}
-
-			function renderThumbs(thumbsList) {
-
-				if (thumbsList['galleries']) {
-					var len = thumbsList['galleries'].length;
-					var x = 8, i = 0;
-					while (i < x - len) {
-						thumbsList['galleries'].push({ name: null });
-						i++;
-					}
-				}
-
-				var templatelist = template("Content/galerycontent/thumbslist.html");
-
-				thbList.html($.tmpl(templatelist, thumbsList));
-				url.selected("/galerycontent/" + action + "/" + galerySection + "/" + image);
-
-				renderThumnsNavi(thumbsList);
-			}
-
 			contentMain.html("<p>loading...</p>");
 
-			var galerySection = url.p1();
-			var image = url.p2() != null ? url.p2() : 1;
-			//vsechny galerie 
-			var galerylist = jsonData("galerycontent", action, "Service/gallerylist.php");
 
-			if (!galerySection) {
-				galerySection = galerylist.galleries[0].name;
-			}
+            //vsechny galerie
+			var galerylist = jsonData("galerycontent", action, "Service/gallerylist.php");
+            var currentGallery = getCurrenGallery(galerylist);
+            var galleryParentPath = "/galerycontent/" + action;
+
+            new ThumbsList(template("Content/galerycontent/thumbslist.html"))
+                .renderThumbs(galerylist, galleryParentPath, currentGallery);
+
 
 			//data ke konkretni galerii
-			var gallerydata = jsonData("galerycontent/" + action, galerySection, "Service/gallery.php");
-			renderThumbs(galerylist);
-
-
-
+			var gallerydata = jsonData(galleryParentPath, currentGallery, "Service/gallery.php");
 			var img = $.tmpl($("#templateGalleryContent"), gallerydata);
+
 			contentMain.html(img);
 			callbacks.gallerycontentCallback();
-
-			bravenecHelpers.opacity();
 			bravenecHelpers.opacity(".opacityrollover_min", 0.8);
-
-
-		},
-		gallery: function (action) {
-			require(["templates/gallery/gallery.js"], function () {
-				$("#contentFigures").html("");
-				var cont = template("templates/gallery/content.html");
-				var th = template("templates/gallery/thumbs.html");
-
-				var data = jsonData(action, "Service/gallery.php");
-				if (!data) return;
-				data.culture = settings.culture();
-
-				var xxx = $.tmpl(th, data);
-				$("#contentMain").html(cont);
-				$("#contentThumbs").html(xxx);
-				$("#contentFigures").html(data.figure);
-
-				var x = "a[href='#!" + $.address.path() + "']";
-
-				$("#accordion").find("a.selected").removeClass("selected");
-				$(x).addClass("selected");
-
-				bindevents();
-			});
-
 		}
 
 	};
@@ -373,17 +321,15 @@ var Core = function (settings, loader) {
 				break;
 			default: refreshPage();
 		}
-
 	}
 
 	var ccc;
 	var aaa;
 	function loadContent() {
-
 		load(settings.controller(), settings.action());
 		ccc = settings.controller();
 		aaa = settings.action();
-
+		bravenecHelpers.lazyload();
 	};
 
 	return {

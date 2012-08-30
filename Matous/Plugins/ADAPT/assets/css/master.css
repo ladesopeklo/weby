@@ -36,11 +36,11 @@ h6 {
 }
 
 a, a:visited {
-  color: #553893
+  color: white
 }
 
 a:hover {
-  color: #c60;
+  color: grey;
 }
 
 small {

@@ -19,7 +19,10 @@
 	<script type="text/javascript" src="Scripts/require.js"></script>
 	<script type="text/javascript" src="Scripts/amplify.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.address-1.4.min.js"></script>
+	<script type="text/javascript" src="Scripts/ThumbsList.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.lazyload.js"></script>
 	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
+
 	<script type="text/javascript" src="Scripts/jquery.opacityrollover.js"></script>
 	
 	
@@ -29,14 +32,13 @@
 	<script type="text/javascript" src="Plugins/pirobox/js/pirobox_extended_def_08_2011.js"></script>
 
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="Res/font/Bahamas/web/stylesheet.css" />
+	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+	<!--<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
 
 </head>
 	<body>
 		<style>
-			.center {
+			.centerxxxx {
 				position: absolute;
 				height: 630px; 
 				top:50%;
@@ -47,8 +49,8 @@
 			}
 		</style>
 	
-		<div class="container_18 center" >
-			<div class="grid_6 ">
+		<div class="container_16 center" >
+			<div class="grid_4 ">
 				<div class="left topleft">
 					<img src="Res/kancl.png"/>
 					<!--architektonicko - stavební kancelář				-->
@@ -56,7 +58,7 @@
 			</div>
 			<div class="grid_12">
 				<div class="right topright">
-					<h1> Atelier Polách & Bravenec s.r.o.</h1>
+					<h1><a href="."> Atelier Polách & Bravenec s.r.o.</a></h1>
 					<!--					<p style="text-align: justify;width: 100%">architektura<span class="red">|</span>studie<span class="red">|</span>komplexní projektová činnost<span class="red">|</span>interiéry<span class="red">|</span>inženýrská a investorská činnost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    					</p>
 						-->
@@ -64,7 +66,7 @@
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="grid_6 ">
+			<div class="grid_4 ">
 				<div class="left menu">
 					<ul class="list ab" >
 						<li>
@@ -77,33 +79,33 @@
 							<a href="#!content/kontakt">kontakt</a>
 						</li>
 					</ul>
-					<br />
-					<br />
-					<br />
-					<br />
-					<ul class="list ab">
-						<li>
-							<a href="#!galerycontent/ocenenestavby">oceněné stavby</a>
-						</li>
-						<li>
-							<a href="#!galerycontent/bydleni">stavby pro bydlení</a>
-						</li>
-						<li>
-							veřejné stavby
-						</li>
-						<li>
-							rekonstrukce a obnova
-						</li>
-						<li>
-							stavby pro průmysl
-						</li>
-						<li>
-							interiéry
-						</li>
-						<li>
-							urbanismus
-						</li>
-					</ul>
+					<div class="absolutebottom" >
+						<ul class="list ab menuDown ">
+							<li>
+								<a href="#!galerycontent/ocenenestavby">oceněné stavby</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/bydleni">stavby pro bydlení</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/verejne_stavby">veřejné stavby</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/rekonstrukce_a_obnova">rekonstrukce a obnova</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/stavby_pro_prumysl">stavby pro průmysl</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/interiery">interiéry</a>
+							</li>
+							<li>
+								<a href="#!galerycontent/urbanismus">urbanismus</a>
+								
+							</li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
 			<div class="grid_12 ">
@@ -112,25 +114,27 @@
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="grid_6 ">
-				<div class="left">logo
+			<div class="grid_4 ">
+
+				<div class="left">
+					<img src="Content/logo_PB.png" style="position: relative; left: 90px;">
 				</div>
 			</div>
 			
-			<div class="grid_12">logo
+			<div class="grid_12">
 				<div style="float: right"><h2>ISO 9001</h2></div>
 			</div>
 
 			
 
-			<div class="grid_18">
+			<div class="grid_16">
 				<div class="thumbswrap">
 					<div class="grid_1" >
 						<div class="navleft">
 						<<
 						</div>
 					</div>
-					<div class="grid_16">
+					<div class="grid_14">
 						&nbsp;
 					</div>
 					<div class="grid_1 " >
@@ -139,7 +143,7 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-					<div class="grid_18">
+					<div class="grid_16">
 						<div class="thumslist">
 						
 						</div>
@@ -155,10 +159,10 @@
 
 			self.gallerycontentCallback = function () {
 				$.pirobox_ext({
-					piro_speed: 700,
+					piro_speed: 200,
 					zoom_mode: true,
 					move_mode: 'mousemove',
-					bg_alpha: 0.5,
+					bg_alpha: 0.1,
 					piro_scroll: false,
 					share: true
 				});
@@ -176,7 +180,7 @@
 	//defaultni nastaveni. tohle se pouzije jako vychozi hodnoty pri prichodu na index (na hlavni stranku, bez parametru, napr.:masparti.com)  
 	var options = {
 		controller: 'content',
-		action: 'xxx',
+		action: 'home',
 		culture: 'cs',
 		activeMenuDefault: -1
 	};
@@ -189,8 +193,6 @@
 
 		var main = new Core(settings, loader);
 		main.Init();
-
-
 	});
 </script>
 	
@@ -207,70 +209,74 @@
 				<div class="mainthumbs"> 
 					<div class="grid_2">
 						<div class="nahled top opacityrollover_min">
-							<a href="${urlimgfullsize}/${images[0].name}"   media="gallery"  class="pirobox_gall" >								<img src="${urlimgthumbs}/${images[0].name}"/>
-							</a>
+							<a href="${urlimgfullsize}${images[0].name}"   media="gallery"  class="pirobox_gall" >
+								<img class="lazy" data-original="${urlimgthumbs}${images[0].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
 
-					<a href="${urlimgfullsize}/${images[0].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[0].name}"/>
-					</a>
-				</div>
-			</div>
-			<div class="grid_2">
-				<div class="nahled top opacityrollover_min">
-					<a href="${urlimgfullsize}/${images[1].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[1].name}"/>
-					</a>
-				</div>
-			</div>
-			<div class="grid_2">
-				<div class="nahled top opacityrollover_min">
-					<a href="${urlimgfullsize}/${images[2].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[2].name}"/>
-					</a>
-				</div>
-			</div>
-
-			<div class="grid_2">
-				<div class="nahled bottom opacityrollover_min">
-					<a href="${urlimgfullsize}/${images[3].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[3].name}"/>
-					</a>
-				</div>
-			</div>
+					<div class="grid_2">
+						<div class="nahled top opacityrollover_min">
+							<a href="${urlimgfullsize}${images[1].name}" media="gallery"  class="pirobox_gall" title="">
+								<img class="lazy" data-original="${urlimgthumbs}${images[1].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
 					
-			<div class="grid_2">
-				<div class="nahled bottom opacityrollover_min">
-					<a href="${urlimgfullsize}/${images[4].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[4].name}"/>
-					</a>
-				</div>
-			</div>
+					<div class="grid_2">
+						<div class="nahled top opacityrollover_min">
+							<a href="${urlimgfullsize}${images[2].name}" media="gallery"  class="pirobox_gall" title="">
+								<img class="lazy" data-original="${urlimgthumbs}${images[2].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
 
-			<div class="grid_2">
-				<div class="nahled bottom opacityrollover_min">
-					<a href="${urlimgfullsize}/${images[5].name}" media="gallery"  class="pirobox_gall" title="">
-						<img src="${urlimgthumbs}/${images[5].name}"/>
-					</a>
-				</div>
-			</div>
+					<div class="grid_2">
+						<div class="nahled bottom opacityrollover_min">
+							<a href="${urlimgfullsize}${images[3].name}" media="gallery"  class="pirobox_gall" title="">
+								<img class="lazy" data-original="${urlimgthumbs}${images[3].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
+					
+					<div class="grid_2">
+						<div class="nahled bottom opacityrollover_min">
+							<a href="${urlimgfullsize}${images[4].name}" media="gallery"  class="pirobox_gall" title="">
+								<img class="lazy" data-original="${urlimgthumbs}${images[4].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
+
+					<div class="grid_2">
+						<div class="nahled bottom opacityrollover_min">
+							<a href="${urlimgfullsize}${images[5].name}" media="gallery"  class="pirobox_gall" title="">
+								<img class="lazy" data-original="${urlimgthumbs}${images[5].name}" src="Res/blank.png"  />
+							</a>
+						</div>
+					</div>
 		</div>
 	</div>
 	<div class="grid_6">
 		<div class="nahledbig ">
-			<a href="${urlimgfullsize}/${images[6].name}" media="gallery"  class="pirobox_gall" title="">
-				<img src="${urlimgthumbs}/${images[6].name}"/>
+			<a href="${urlimgfullsize}${images[6].name}" media="gallery"  class="pirobox_gall" title="">
+				<img class="lazy" data-original="${urlimgthumbs}${images[6].name}" src="Res/blank.png"  />
 			</a>
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div class="grid_12">
-		<div class="right">
+
+	<div class="right" style="padding-top:10px;">
+		{{html properties.header[culture]}}
+	</div>
+	<div class="absolutebottom">
+		<div class="right ">
 		{{html properties.text[culture]}}
 		</div>
 	</div>
 
 </script>
-		
+	
+	<div class="piroPlaceholder"> </div>	
 	</body>
 
 </html>

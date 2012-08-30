@@ -1,0 +1,16 @@
+<root>
+	<output path="Scripts/libs.min.js">
+
+		<input path="Scripts/jquery-1.7.1.js"></input>
+		<input path="Scripts/jquery-ui-1.8.16.custom.min.js"></input>
+		
+		<input path="Plugins/Scroll/jquery.easing.1.3.js"></input>
+		<input path="Plugins/Scroll/jquery.mousewheel.min.js"></input>
+		<input path="Plugins/Scroll/jquery.mCustomScrollbar.js"></input>
+		<input path="Plugins/ADAPT/assets/js/adapt.js"></input>
+
+	</output>
+</root>
+
+
+	

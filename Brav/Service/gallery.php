@@ -2,17 +2,27 @@
 require  '../config.php';
 require  'libs.php';
 
+//input
+/*
+ * controller
+ * action
+ * culture
+ */
+
+//RETURN
+/*
+ * 
+ */
+
+
 ////check
-$culture = isset($_POST["culture"]) ? $_POST["culture"] : "cs" ;
+$source = $debug ? $_REQUEST : $_POST; 
+$culture = isset($source["culture"]) ? $source["culture"] : $defaultCulture ;
 $controller=null;
-if ($debug){
-	$controller = isset($_POST["controller"]) ? $_POST["controller"] : "galerycontent/ocenenestavby" ;
-	$action = isset($_POST["action"]) ? $_POST["action"] : "abc" ;
-}
-else{
-	$controller = isset($_POST["controller"]) ? $_POST["controller"] : "" ;
-	$action = isset($_POST["action"]) ? $_POST["action"] : "" ;
-}
+
+$controller = isset($source["controller"]) ? urldecode ($source["controller"]) : "" ;
+$action = isset($source["action"]) ? urldecode($source["action"]) : "" ;
+
 
 if (!$controller){	fatal("neni nastavena lokace");}
 if (!$action){	fatal("neni nastavena lokace");}
@@ -21,7 +31,6 @@ $url = $baseurl."/Content/".$controller."/".$action;
 $path	 = "../Content/".$controller."/".$action;
 
 ?> 
-
 
 <?php
 function ishtml($file){
@@ -52,9 +61,7 @@ function getproperties($path){
 	if (file_exists($f)){
 		include $f;
 		return $data;
-		
 	}
-	
 	$data["text"]= "";
 	return $data;
 }
@@ -72,6 +79,7 @@ function getfiles($path, $culture){
 			}
 		}
 		closedir($handle);
+		sort($arr["images"]);
 		return $arr;
 	}
 }
@@ -107,16 +115,13 @@ $list["vizualizace"] = vizualizace($path3d,$action,$url );
 $list["urlimgfullsize"] = $urlimagesFullsize;
 $list["urlimgthumbs"] = $urlimagesThumbs;
 
-
 $list["properties"] = getproperties($path);
 $list["culture"] = $culture;
 
-//stejny jak actio
-//$list["location"] = $location;
-
-//preprint($list);
 
 echo json_encode($list);
+
+
 exit;
 $constants = get_defined_constants(true);
 $json_errors = array();

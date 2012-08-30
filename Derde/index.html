@@ -12,27 +12,28 @@
 
 	<title>Derde Leven</title>
 
-	<!--<link rel="stylesheet" href="Resources/css/basic.min.css" />
 	<link rel="stylesheet" href="Resources/font/stylesheet.min.css" type="text/css" charset="utf-8" />
 	<script src="Scripts/libs.min.js"></script>
-	-->
+	
 		
-	<link rel="stylesheet" href="Resources/font/stylesheet.css" type="text/css" charset="utf-8" />
-	<link rel="stylesheet" href="Resources/css/grid.css" />
-	<link rel="stylesheet" href="Resources/css/style.css" />
+	<!--	<link rel="stylesheet" href="Resources/font/stylesheet.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="Resources/css/grid.css" />
+		<link rel="stylesheet" href="Resources/css/style.css" />
 
-	<script type="text/javascript" src="Resources/Scripts/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/jquery.tmpl.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/require.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/amplify.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/jquery.address-1.4.min.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/Ladesopeklo.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/jquery.opacityrollover.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/jquery-1.7.1.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/jquery.tmpl.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/require.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/amplify.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/jquery.address-1.4.min.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/Ladesopeklo.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/jquery.opacityrollover.js"></script>
 
-	<script src="Plugin/jquerytools/src/scrollable/scrollable.js"></script>
-	<script src="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></script>
-	<script src="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></script>
-	<script type="text/javascript" src="Resources/Scripts/jquery.bgpos.js"></script>
+		<script src="Plugin/jquerytools/src/scrollable/scrollable.js"></script>
+		<script src="Plugin/jquerytools/src/scrollable/scrollable.autoscroll.js"></script>
+		<script src="Plugin/jquerytools/src/scrollable/scrollable.navigator.js"></script>
+		<script type="text/javascript" src="Resources/Scripts/jquery.bgpos.js"></script>
+		-->
+	
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
@@ -96,10 +97,12 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 			</div>
 			<div class="grid_2">
 				<div class="content_ikonky" >
-					<a href="http://www.facebook.com" class="opacityrollover"> <img src="Resources/images/icon/facebook32.png"/></a>
-					<a href="http://www.facebook.com" class="opacityrollover" ><img src="Resources/images/icon/twitter32.png"/></a>
-					<a href="#" class="opacityrollover"><img src="Resources/images/icon/youtube32.png"/></a>
-				</div>
+					
+						<a href="http://www.facebook.com/derdeleven" class="opacityrollover"> <img src="Resources/images/icon/facebook32.png"/></a>
+					<!--	<a href="http://www.facebook.com" class="opacityrollover" ><img src="Resources/images/icon/twitter32.png"/></a>
+						<a href="#" class="opacityrollover"><img src="Resources/images/icon/youtube32.png"/></a>
+						-->
+					</div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -191,6 +194,7 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 					circular: true
 
 				}).navigator();
+
 				a.autoscroll({
 					autoplay: true,
 					autopause: true,
@@ -229,7 +233,7 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 			prev: ".galprev",
 			size: 1
 		});
-		a.autoscroll({ autoplay: true });
+		//a.autoscroll({ autoplay: true });
 
 
 		var navi = $(".galnavi"),
@@ -281,7 +285,7 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 
 		$.each($(".contentOnLoad"), function (i, value) {
 			var ref = $(this).attr("rel");
-			main.LoadTo(ref, null, $(this), $("#template_" + ref) );
+			main.LoadTo(ref, null, $(this), $("#template_" + ref));
 		});
 
 		$(".opacityrollover").opacityrollover({
@@ -290,7 +294,6 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 			fadeSpeed: 'fast',
 			exemptionSelector: '.selected'
 		});
-
 
 
 
@@ -332,7 +335,7 @@ Ve Vámi zvoleném čase patří studio pouze Vám a všichni jsou tady jen pro 
 		<ul>
 			{{each(i, value) data}}
 			<li class="ab">
-				<a href="#!novinka/${value.linkname}">${value.header}</a>
+				<a href="#!novinka/${value.linkname}" >${value.header}</a>
 			</li>
 			{{/each}}
 		</ul>

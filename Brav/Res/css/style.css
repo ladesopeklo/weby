@@ -11,19 +11,9 @@
 
 
 body {
-	background-color: #3c3c3b;
 	background-color: #231f20;
-    color: #D9D2D2;
     color: #fff;
-	font-size: 0.8em;
-	
-	font-family: 'BahamasNormal';
-	font-family: verdana;
-	font-family: 'Didact Gothic', sans-serif;
-	font-family: Helvetica;
-	font-family: 'Open Sans', sans-serif;
-	font-family:'CenturyGothic';
-
+	font-size: 13px;
 	font-family: Century Gothic, 'CenturyGothic', 'Open Sans', sans-serif;
 
 }
@@ -37,7 +27,7 @@ h1
 	color: #fff;
 }
 h3 {
-	margin: 0px 0px 0.4em 0em;
+	margin: 0px 0px 5px 0em;
 }
 h2 {
 	font-weight: normal;
@@ -50,13 +40,11 @@ h2 {
 #contentMain h4 {
 	margin: 0px 0px 35px 0em;
     vertical-align: top;
-	font-size: 13px;
 }
 .red {
 	color: red;
 }
 div.detail {
-	font-size: 13px;
 	margin-bottom: 0.8em;
 }
 
@@ -206,3 +194,11 @@ a:hover {
 }
 /*------*/
 	
+
+.logodole{
+	border-right: 1px solid red;
+	text-align: right;
+}
+.logodole img{
+	margin-right: -77px;
+}

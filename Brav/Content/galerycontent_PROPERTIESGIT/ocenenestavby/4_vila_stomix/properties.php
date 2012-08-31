@@ -2,7 +2,7 @@
 
 
 $headercs = "<h3>VILA STOMIX - REKONSTRUKCE A PŘÍSTAVBA BÝVALÉ FRANKEHO VILY V ŽULOVÉ</h3>
-	<h4>STAVBA ROKU 2008 Olomouckého kraje v kategorii rekonstrukce a obnova</h4>";
+	<h3>STAVBA ROKU 2008 Olomouckého kraje v kategorii rekonstrukce a obnova</h3>";
 		
 $textcs = "
 

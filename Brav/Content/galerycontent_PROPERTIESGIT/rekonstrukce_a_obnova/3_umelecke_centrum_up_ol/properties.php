@@ -1,6 +1,6 @@
 <?php 
 $headercs = "<h3>UMĚLECKÉ CENTRUM UNIVERZITY PALACKÉHO V OLOMOUCI</h3>
-	<h4>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2004 Olomouckého kraje v kategorii občanské stavby</h4>";
+	<h3>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2004 Olomouckého kraje v kategorii občanské stavby</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> bývalý jezuitský konvikt - Univerzitní 3. a 5., Olomouc</div>

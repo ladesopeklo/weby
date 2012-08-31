@@ -1,5 +1,5 @@
 <?php 
-$headercs = "<h3>INTERIÉR RODINNÉHO DOMU</h3><h4>3. místo v hodnocení odborné poroty v soutěži iDNES.cz o NEJLEPŠÍ BYDLENÍ V PODKROVÍ</h4>";
+$headercs = "<h3>INTERIÉR RODINNÉHO DOMU</h3><h3>3. místo v hodnocení odborné poroty v soutěži iDNES.cz o NEJLEPŠÍ BYDLENÍ V PODKROVÍ</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Olomouc</div>

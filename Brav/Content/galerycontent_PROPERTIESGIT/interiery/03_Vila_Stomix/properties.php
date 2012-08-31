@@ -1,5 +1,5 @@
 <?php 
-$headercs = "<h3>INTERIÉR BÝVALÉ FRANKEHO VILY V ŽULOVÉ</h3><h3>STAVBA ROKU 2008 Olomouckého kraje v kategorii rekonstrukce a obnova</h3>";
+$headercs = "<h3>&nbsp;</h3><h3>INTERIÉR BÝVALÉ FRANKEHO VILY V ŽULOVÉ</h3><h3>STAVBA ROKU 2008 Olomouckého kraje v kategorii rekonstrukce a obnova</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Žulová</div>

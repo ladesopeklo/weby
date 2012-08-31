@@ -1,5 +1,5 @@
 <?php 
-$headercs = "<h3>&nbsp;</h3><h4>INTERIÉR PRODEJNÍHO A SERVISNÍHO CENTRA AUTO HLAVÁČEK a.s. V OLOMOUCI</h4>";
+$headercs = "<h3>&nbsp;</h3><h3>INTERIÉR PRODEJNÍHO A SERVISNÍHO CENTRA AUTO HLAVÁČEK a.s. V OLOMOUCI</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Olomouc</div>

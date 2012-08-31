@@ -1,6 +1,6 @@
 <?php 
 $headercs = "<h3>PŮDNÍ VESTAVBA RODINNÉHO DOMU V OLOMOUCI</h3>
-	<h4>3. místo v hodnocení odborné poroty v soutěži iDNES.cz o NEJLEPŠÍ BYDLENÍ V PODKROVÍ</h4>";
+	<h3>3. místo v hodnocení odborné poroty v soutěži iDNES.cz o NEJLEPŠÍ BYDLENÍ V PODKROVÍ</h3>";
 		
 $textcs = "
 

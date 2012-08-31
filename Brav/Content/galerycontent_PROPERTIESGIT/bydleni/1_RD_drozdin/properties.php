@@ -1,7 +1,7 @@
 <?php 
 
 $headercs = "<h3>NOVOSTAVBA RODINNÉHO DOMU V DROŽDÍNĚ U OLOMOUCE</h3>
-	<h4>Zvláštní ocenění v soutěžní přehlídce POROTHERM DŮM BRICK AWARD 2011-2012 - Cihla v 21.století</h4>
+	<h3>Zvláštní ocenění v soutěžní přehlídce POROTHERM DŮM BRICK AWARD 2011-2012 - Cihla v 21.století</h3>
 ";
 		
 $textcs = "

@@ -1,5 +1,5 @@
 <?php 
-$headercs = "<h3>INTERIÉR UMĚLECKÉHO CENTRA UNIVERZITY PALACKÉHO V OLOMOUCI</h3><h4>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2004 Olomouckého kraje v kategorii občanské stavby</h4>";
+$headercs = "<h3>INTERIÉR UMĚLECKÉHO CENTRA UNIVERZITY PALACKÉHO V OLOMOUCI</h3><h3>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2004 Olomouckého kraje v kategorii občanské stavby</h3>";
 
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Olomouc, Univerzitní 3,5</div>

@@ -1,6 +1,5 @@
 <?php 
-$headercs = "<h3>AAA</h3>
-	<h4>aaa</h4>";
+$headercs = "<h3>AAA</h3><h3>aaa</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> xxx</div>

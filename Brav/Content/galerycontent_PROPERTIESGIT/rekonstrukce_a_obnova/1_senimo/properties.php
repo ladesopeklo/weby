@@ -1,9 +1,9 @@
 <?php 
 
 $headercs = "<h3>REKONVERZE BÝVALÝCH JATEK NA OBCHODNÍ DŮM SENIMO</h3>
-	<h4>ČESTNÉ UZNÁNÍ OBCE ARCHITEKTŮ v kategorii rekonstrukce 1994<br />
+	<h3>ČESTNÉ UZNÁNÍ OBCE ARCHITEKTŮ v kategorii rekonstrukce 1994<br />
 	ČESTNÉ UZNÁNÍ za rekonstrukci v soutěžní přehlídce STAVBA DESETILETÍ 1989-1999 OLOMOUCKA
-	</h4>";
+	</h3>";
 		
 $textcs = "
 	<div class='detail'>

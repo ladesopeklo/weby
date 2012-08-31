@@ -1,7 +1,7 @@
 <?php 
 
 $headercs = "<h3>REKONSTRUKCE VODNÍCH KASÁREN V OLOMOUCI</h3>
-	<h4>ČESTNÉ UZNÁNÍ pro investora v soutěžní přehlídce STAVBA DESETILETÍ 1989 - 1999 OLOMOUCKA</h4>";
+	<h3>ČESTNÉ UZNÁNÍ pro investora v soutěžní přehlídce STAVBA DESETILETÍ 1989 - 1999 OLOMOUCKA</h3>";
 		
 $textcs = "
 

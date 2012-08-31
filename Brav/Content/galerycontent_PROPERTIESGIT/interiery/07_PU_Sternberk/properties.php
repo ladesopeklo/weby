@@ -1,5 +1,5 @@
 <?php 
-$headercs = "<h3>&nbsp;</h3><h4>INTERIÉR POVĚŘENÉHO ÚŘADU VE ŠTERNBERKU</h4>";
+$headercs = "<h3>&nbsp;</h3><h3>INTERIÉR POVĚŘENÉHO ÚŘADU VE ŠTERNBERKU</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Šternberk</div>

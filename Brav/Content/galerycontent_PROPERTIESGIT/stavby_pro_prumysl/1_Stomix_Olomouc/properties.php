@@ -1,6 +1,6 @@
 <?php 
 $headercs = "<h3>LOGISTICKÉ CENTRUM STOMIX OLOMOUC</h3>
-	<h4>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2010 Olomouckého kraje v kategorii stavby pro průmysl <br />ocenění KABÁT ROKU 2009 společnosti STOMIX</h4>";
+	<h3>ČESTNÉ UZNÁNÍ v soutěži STAVBA ROKU 2010 Olomouckého kraje v kategorii stavby pro průmysl <br />ocenění KABÁT ROKU 2009 společnosti STOMIX</h3>";
 		
 $textcs = "	<div class='detail'>
 	<div>místo stavby <span class='red'>|</span> Olomouc</div>

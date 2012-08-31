@@ -1,6 +1,6 @@
 <?php 
 $headercs = "<h3>EXPOZICE ČASU VE ŠTERNBERKU</h3>
-	<h4>ČESTNÉ UZNÁNÍ v soutěžní přehlídce STAVBA ROKU 2010 Olomouckého kraje v kategorii rekonstrukce a obnava</h4>";
+	<h3>ČESTNÉ UZNÁNÍ v soutěžní přehlídce STAVBA ROKU 2010 Olomouckého kraje v kategorii rekonstrukce a obnava</h3>";
 		
 $textcs = "
 

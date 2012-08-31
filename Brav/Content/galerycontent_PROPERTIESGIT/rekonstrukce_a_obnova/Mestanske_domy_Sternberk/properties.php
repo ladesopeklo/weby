@@ -1,12 +1,11 @@
 <?php 
-$headercs = "<h3>AAA</h3>
-	<h4>aaa</h4>";
+$headercs = "<h3>&nbsp;</h3><h3>MĚŠŤANSKÉ DOMY VE ŠTERNBERKU - HORNÍ NÁM., HLAVNÍ NÁM., RADNIČNÍ, PARTYZÁNSKÁ,...</h3>";
 		
 $textcs = "	<div class='detail'>
-	<div>místo stavby <span class='red'>|</span> xxx</div>
-	<div>investor <span class='red'>|</span> xxx</div>
-	<div>autor <span class='red'>|</span> xxx</div>
-	<div>realizace <span class='red'>|</span> 1999-2005</div>
+	<div>místo stavby <span class='red'>|</span> Šternberk</div>
+	<div>investor <span class='red'>|</span> Město Šternberk</div>
+	<div>autor <span class='red'>|</span> Polách, Bravenec</div>
+	<div>realizace <span class='red'>|</span> 2000-2005</div>
 	</div>";
 
 //preg_replace - oddela zbytecne bile znaky (uspora prenesenych dat)

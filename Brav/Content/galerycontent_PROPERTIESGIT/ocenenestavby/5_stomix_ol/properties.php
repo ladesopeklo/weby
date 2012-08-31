@@ -1,8 +1,7 @@
 <?php 
 
 $headercs = "<h3>LOGISTICKÉ CENTRUM STOMIX OLOMOUC</h3>
-	<h4>ČESTNÉ UZNÁNÍ v soutěžní přehlídce STAVBA ROKU 2010 Olomouckého kraje v kategorii
-průmyslové stavby</h4>";
+	<h3>ČESTNÉ UZNÁNÍ v soutěžní přehlídce STAVBA ROKU 2010 Olomouckého kraje v kategorii průmyslové stavby</h3>";
 		
 $textcs = "
 

@@ -1,15 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
+	<title>Atelier Polách & Bravenec s.r.o.</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-	
 	<meta name="author" content="Masparti & Vladimir Talas" />
 	<meta name="description" lang="cs" content=""/>
-
-	<title>Atelier Polách & Bravenec s.r.o.</title>
-	
 	<link rel="stylesheet" href="Plugins/ADAPT/assets/css/master.css" />
 	<link rel="stylesheet" href="Res/css/style.css" />
 	<link rel="stylesheet" href="Res/css/grid.css" />
@@ -22,16 +19,12 @@
 	<script type="text/javascript" src="Scripts/ThumbsList.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.lazyload.js"></script>
 	<script type="text/javascript" src="Scripts/Ladesopeklo.js"></script>
-
 	<script type="text/javascript" src="Scripts/jquery.opacityrollover.js"></script>
-	
 	
 	<link href="Plugins/pirobox/css_pirobox/style_3/style.css" rel="stylesheet" type="text/css" />
 	<!--<script type="text/javascript" src="Plugins/pirobox/js/pirobox_extended_feb_2011.js"></script>-->
 	<script type="text/javascript" src="Plugins/pirobox/js/jquery_ui.min.js"></script>
 	<script type="text/javascript" src="Plugins/pirobox/js/pirobox_extended_def_08_2011.js"></script>
-
-
 </head>
 	<body>
 		<style>
@@ -206,7 +199,7 @@
 				<div class="mainthumbs"> 
 					<div class="grid_2">
 						<div class="nahled top opacityrollover_min">
-							<a href="${urlimgfullsize}${images[0].name}"   media="gallery"  class="pirobox_gall" >
+							<a href="${urlimgfullsize}${images[0].name}"  media="gallery"  class="pirobox_gall" >
 								<img class="lazy" data-original="${urlimgthumbs}${images[0].name}" src="Res/blank.png"  />
 							</a>
 						</div>
@@ -214,50 +207,62 @@
 
 					<div class="grid_2">
 						<div class="nahled top opacityrollover_min">
+							{{if images[1]}}
 							<a href="${urlimgfullsize}${images[1].name}" media="gallery"  class="pirobox_gall" title="">
 								<img class="lazy" data-original="${urlimgthumbs}${images[1].name}" src="Res/blank.png"  />
 							</a>
+							{{/if}}
 						</div>
 					</div>
 					
 					<div class="grid_2">
 						<div class="nahled top opacityrollover_min">
+							{{if images[2]}}
 							<a href="${urlimgfullsize}${images[2].name}" media="gallery"  class="pirobox_gall" title="">
 								<img class="lazy" data-original="${urlimgthumbs}${images[2].name}" src="Res/blank.png"  />
 							</a>
+							{{/if}}
 						</div>
 					</div>
 
 					<div class="grid_2">
 						<div class="nahled bottom opacityrollover_min">
+							{{if images[3]}}
 							<a href="${urlimgfullsize}${images[3].name}" media="gallery"  class="pirobox_gall" title="">
 								<img class="lazy" data-original="${urlimgthumbs}${images[3].name}" src="Res/blank.png"  />
 							</a>
+							{{/if}}
 						</div>
 					</div>
 					
 					<div class="grid_2">
 						<div class="nahled bottom opacityrollover_min">
+							{{if images[4]}}
 							<a href="${urlimgfullsize}${images[4].name}" media="gallery"  class="pirobox_gall" title="">
 								<img class="lazy" data-original="${urlimgthumbs}${images[4].name}" src="Res/blank.png"  />
 							</a>
+							{{/if}}
 						</div>
 					</div>
 
 					<div class="grid_2">
 						<div class="nahled bottom opacityrollover_min">
+							{{if images[5]}}
 							<a href="${urlimgfullsize}${images[5].name}" media="gallery"  class="pirobox_gall" title="">
 								<img class="lazy" data-original="${urlimgthumbs}${images[5].name}" src="Res/blank.png"  />
 							</a>
+							{{/if}}
 						</div>
 					</div>
 		</div>
 	</div>
 	<div class="grid_6">
 		<div class="nahledbig ">
+			{{if images[4]}}
 			<a href="${urlimgfullsize}${images[6].name}" media="gallery"  class="pirobox_gall" title="">
 				<img class="lazy" data-original="${urlimgthumbs}${images[6].name}" src="Res/blank.png"  />
 			</a>
+			{{/if}}
 		</div>
 	</div>
 	<div class="clear"></div>

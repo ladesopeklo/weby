@@ -6,7 +6,7 @@ $textcs = "	<div class='detail'>
 	<div>investor <span class='red'>|</span> Město Šternberk</div>
 	<div>autor <span class='red'>|</span> Polách, Bravenec</div>
 	<div>projekt <span class='red'>|</span> Atelier Polách & Bravenec s.r.o. 2001-04</div>
-	<div>realizace <span class='red'>|</span> 2004-2005</div>
+	<div>realizace <span class='red'>|</span> 2004-5</div>
 	</div>";
 
 //preg_replace - oddela zbytecne bile znaky (uspora prenesenych dat)

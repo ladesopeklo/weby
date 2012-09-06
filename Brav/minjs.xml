@@ -1,0 +1,17 @@
+<root>
+	<output path="Scripts/libs.min.js">
+		<input path="Scripts/jquery-1.7.1.js"></input>
+		<input path="Scripts/jquery.tmpl.js"></input>
+		<input path="Scripts/require.js"></input>
+		<input path="Scripts/amplify.js"></input>
+		<input path="Scripts/jquery.address-1.4.min.js"></input>
+
+		<input path="Scripts/ThumbsList.js"></input>
+		<input path="Scripts/jquery.lazyload.js"></input>
+		<input path="Scripts/Ladesopeklo.js"></input>
+		<input path="Scripts/jquery.opacityrollover.js"></input>
+	</output>
+</root>
+
+
+	

@@ -1,0 +1,6 @@
+<root>
+	<output path="Res/css/basic.min.css">
+		<input path="Res/css/style.css"></input>
+		<input path="Res/css/grid.css"></input>
+	</output>
+</root>

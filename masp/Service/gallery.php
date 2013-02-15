@@ -1,6 +1,5 @@
 <?php 
 require  '../config.php';
-require  'libs.php';
 
 if (!function_exists("preprint")) { 
     function preprint($s, $return=false) { 
@@ -15,6 +14,15 @@ if (!function_exists("preprint")) {
 
 
 <?php
+function isimage($file){
+	$p = pathinfo($file);
+	if (isset($p['extension']))
+	{
+		$e = strtolower($p['extension']);
+		return 	($e == 'jpg'||$e == 'jpeg' || $e== 'gif' ||	$e == 'png');
+	}
+	return false;
+}
 function ishtml($file){
 	$p = pathinfo($file);
 	if (isset($p['extension']))
@@ -41,6 +49,16 @@ function titlefile($base,$imgfile){
 	$p = pathinfo($imgfile);
 	return $base.$p['filename'];
 }
+function curPageURL() {
+ $pageURL = 'http';
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"];
+ }
+ return $pageURL;
+}
 
 
 function getfiles($path, $culture){
@@ -65,6 +83,7 @@ function getfiles($path, $culture){
 			}
 		}
 		closedir($handle);
+		sort($arr["images"]);
 		return $arr;
 	}
 }

@@ -1,37 +1,37 @@
 {"items":[ 
 		{
-		"text":{"cs":"REALIZACE","en":"REALIZATIONS"},
+		"text":{"cs":"realizace","en":"realizations"},
 		"href":"content/realizace",
 		"title":{"cs":"Realizace","en":"Realizace"},
 		"items":[
+      {
+				"text":{"cs":"12 rekonstrukce bytu (ve výstavbě)","en":"12 apartment renovation (under construction)"},
+				"href":"gallery/nadrazni",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},
 			{
-				"text":{"cs":"[2011] dům na Vyhlídce","en":"[2011] Family house at Vyhlídka"},
+				"text":{"cs":"11 dům s výhledem (ve výstavbě)","en":"11 house with a view (under construction)"},
 				"href":"gallery/vyhlidka",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2010] dům v Radzewicích","en":"[2010] House in Radzewice"},
+				"text":{"cs":"10 dům v Radzewicích","en":"10 house in Radzewice"},
 				"href":"gallery/radzewice",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2009] chata u jezera","en":"[2009] summer house by a lake "},
+				"text":{"cs":"09 chata u jezera v Dálově","en":"09 summer house by a lake in Dalov"},
 				"href":"gallery/dalov",
 				"title":{"cs":"Realizace","en":"Realizace"}
 			},
 			{
-				"text":{"cs":"[2007] úprava vrcholu Bradlo","en":"[2007] viewing platform at the Bradlo Peak "},
+				"text":{"cs":"07 úprava vrcholu Bradlo","en":"07 viewing platform at the Bradlo Peak "},
 				"href":"gallery/bradlo",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
-			{
-				"text":{"cs":"[2006] Bergen wood festival","en":"[2006] Bergen wood festival"},
+      {
+				"text":{"cs":"06 Bergen","en":"06 Bergen"},
 				"href":"gallery/bergen",
-				"title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2006] ekologické WC na ostrově","en":"[2006] outhouse on Tamo"},
-				"href":"gallery/tamo",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			}
 		]
@@ -39,131 +39,172 @@
 	},
 	
   {
-		"text":{"cs":"PROJEKTY","en":"PROJECTS"},
+		"text":{"cs":"projekty","en":"projects"},
 		"href":"gallery/exalt",
 		"title":{"cs":"Projekty","en":"Projects"},
 		"items":[
-		
-			{
-				"text":{"cs":"[2011] územní studie Chelčického","en":"[2011] urban study Chelčického"},
-				"href":"gallery/chelcickeho",
+                       	  	{
+				"text":{"cs":"13 jednopodlažní dům","en":"13 single storey house"},
+				"href":"gallery/lipina",
+				"title":{"cs":"Realizace","en":"Realizace"}
+			},  
+                       	  	{
+				"text":{"cs":"12 zahradní dům","en":"12 garden house"},
+				"href":"gallery/litovel",
+				"title":{"cs":"Realizace","en":"Realizace"}
+			},  
+       	  	{
+				"text":{"cs":"12 interiér bytu","en":"12 apartment interior"},
+				"href":"gallery/komentskeho",
+				"title":{"cs":"Realizace","en":"Realizace"}
+			},                 
+        	  {
+				"text":{"cs":"12 podkrovní byt s terasou","en":"12 attic apartment with a terrace"},
+				"href":"gallery/schweitzerova",
+				"title":{"cs":"Realizace","en":"Realizace"}
+      		},
+    	 		  {
+				"text":{"cs":"12 rozšíření historického sálu","en":"12 historical dance hall extension"},
+				"href":"gallery/dup",
+				"title":{"cs":"Realizace","en":"Realizace"}
+			},
+		 		  {
+				"text":{"cs":"12 bydlení pro seniory","en":"12 senior living"},
+				"href":"gallery/opava",
+				"title":{"cs":"Realizace","en":"Realizace"}
+			},
+      		{
+				"text":{"cs":"12 rodinný dům v kopcích","en":"12 family house in the hills"},
+				"href":"gallery/hlasnice",
 				"title":{"cs":"Realizace","en":"Realizace"}
 			},
 			{
-				"text":{"cs":"[2011] úpravy rodinného domu","en":"[2011] family house adaptation"},
-				"href":"gallery/sadova",
-				"title":{"cs":"Realizace","en":"Realizace"}
-			},
-			{
-				"text":{"cs":"[2011] areál firmy Exalt a.s.","en":"[2011] Exalt company headquarters"},
+				"text":{"cs":"11 dřevěná vzorkovna","en":"11 wooden show-room"},
 				"href":"gallery/exalt",
 				"title":{"cs":"Realizace","en":"Realizace"}
 			},
 			{
-				"text":{"cs":"[2011] rekonstrukce domu v Hodolanech","en":"[2011] reconstruction of a family house"},"href":"gallery/praslavska","title":{"cs":"Kontakt","en":"Contact"}
+				"text":{
+				"cs":"11 úprava podkroví činžovního domu",
+				"en":"11 rental house´s attic conversion"},"href":"gallery/kozinova","title":{"cs":"Kontakt","en":"Contact"}
+			},
+      		{
+				"text":{
+				"cs":"11 předměstský dům var.II",
+				"en":"11 uptown family house II"},"href":"gallery/repcinI","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
 				"text":{
-				"cs":"[2011] úprava podkroví činžovního domu",
-				"en":"[2011] attic conversion"},"href":"gallery/kozinova","title":{"cs":"Kontakt","en":"Contact"}
+				"cs":"11 předměstský dům var.I",
+				"en":"11 uptown family house I"},"href":"gallery/repcin","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
 				"text":{
-				"cs":"[2011] rodinný dům Olomouc",
-				"en":"[2011] family house in Olomouc"},"href":"gallery/repcin","title":{"cs":"Kontakt","en":"Contact"}
+				"cs":"10 gynekologická ordinace",
+				"en":"10 gynecologist´s office "},"href":"gallery/topic","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
 				"text":{
-				"cs":"[2010] gynekologická ordinace",
-				"en":"[2010] gynecologist´s office "},"href":"gallery/topic","title":{"cs":"Kontakt","en":"Contact"}
+				"cs":"09 úprava podkroví rodinného domu",
+				"en":"09 family house´s attic conversion"},"href":"gallery/novakovi","title":{"cs":"Kontakt","en":"Contact"}
 			},
-			{
+      {
 				"text":{
-				"cs":"[2010] rozšíření typového domu",
-				"en":"[2010] type-house extension"},"href":"gallery/klosovi","title":{"cs":"Kontakt","en":"Contact"}
+				"cs":"09 plovoucí lázně",
+				"en":"09 floating spa"},"href":"gallery/diplomka os","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{
-				"cs":"[2009] renovace domu a podkroví",
-				"en":"[2009] house renovation and attic conversion"},"href":"gallery/novakovi","title":{"cs":"Kontakt","en":"Contact"}
+				"text":{"cs":"08 přístavba bazénu","en":"08 family house extension: swimming pool"},"href":"gallery/poznan","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2008] přístavba bazénu k RD, Poznań","en":"[2008] swimming pool, Poznań"},"href":"gallery/poznan","title":{"cs":"Kontakt","en":"Contact"}
+				"text":{"cs":"08 polyfunkční dům v proluce","en":"08 polyfunctional house at the gap site"},"href":"gallery/diplomka","title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2008] škola Srebrna Gora","en":"[2008] school in Srebrna Gora"},"href":"gallery/tamo","title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2008] polyfunkční dům, Olomouc","en":"[2008] polyfunctional house Olomouc"},"href":"gallery/diplomka","title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2007] multifunkční objekt, Dědinka","en":"[2007] multifunctional structure, Dědinka"},"href":"gallery/dedinka","title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2007] plavecký bazén, Sczeczin","en":"[2007] swimming pool, Sczeczin"},"href":"gallery/bazen","title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2005] administrativní dům Zlín","en":"[2005] administrative house in Zlín"},"href":"gallery/bakalarka","title":{"cs":"Kontakt","en":"Contact"}
-			},
-			{
-				"text":{"cs":"[2005] minimální podzemní dům","en":"[2005] minimal subterranean housing"},"href":"gallery/podzemni","title":{"cs":"Kontakt","en":"Contact"}
+				"text":{"cs":"07 plavecký bazén","en":"07 swimming pool"},"href":"gallery/bazen","title":{"cs":"Kontakt","en":"Contact"}
 			}
 		]
 	},
   
 	{
-		"text":{"cs":"DESIGN","en":"DESIGN"},
+		"text":{"cs":"design","en":"design"},
 		"href":"content/design",
 		"title":{"cs":"Kontakt","en":"Contact"},
 		"items":[
 			{
-				"text":{"cs":"[2011] pf 2012","en":"[2011] pf 2012"},
+				"text":{"cs":"11 pf 2012","en":"11 pf 2012"},
 				"href":"gallery/pf2012",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
+      			{
+				"text":{"cs":"11 Bullhorn design competition","en":"11 Bullhorn design competition"},
+				"href":"gallery/bullhorn",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},
 			{
-				"text":{"cs":"[2011] ci Matouš Pelikán, Advokát ","en":"[2011] CI Matouš Pelikán, Advocate "},
+				"text":{"cs":"11 Matouš Pelikán, Advokát","en":"11 Matouš Pelikán, Advocate"},
 				"href":"gallery/matouspelikan",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2011] ci Masparti ","en":"[2011] CI Masparti"},
-				"href":"gallery/masparti",
-				"title":{"cs":"Realizace","en":"Realizace"}
+				"text":{"cs":"09 Nissan","en":"09 Nissan"},
+				"href":"gallery/nissan",
+				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2009] gril","en":"[2009] grill"},
-				"href":"gallery/grill",
-				"title":{"cs":"Realizace","en":"Realizace"}
+				"text":{"cs":"08 Prefab","en":"08 Prefab"},
+				"href":"gallery/prefab",
+				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"[2009] veletržní prezentace","en":"[2009] fair stands"},
-				"href":"gallery/stands",
-				"title":{"cs":"Realizace","en":"Realizace"}
+				"text":{"cs":"07 Rally Jeseníky","en":"07 Rally Jeseníky"},
+				"href":"gallery/jeseniky",
+				"title":{"cs":"Kontakt","en":"Contact"}
 			}
 		]
 	},
   
 	{
-		"text":{"cs":"VIZUALIZACE","en":"VIZUALIZATIONS"},
+		"text":{"cs":"vizualizace","en":"vizualizations"},
 		"href":"content/vizualizace",
 		"title":{"cs":"Kontakt","en":"Contact"},
-		"items":[
-			{
-				"text":{"cs":"exteriér","en":"exterier"},
-				"href":"gallery/exterier",
+		"items":[ 
+ 	
+          {
+				"text":{"cs":"12 Drzymaly+Grodziska","en":"12 Drzymaly+Grodziska"},
+				"href":"gallery/12 polsko",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},		
+    {
+				"text":{"cs":"12 Munkkiniemi+Lautasaari","en":"12 Munkkiniemi+Lautasaari"},
+				"href":"gallery/12 munkkiniemi",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
-				"text":{"cs":"interér","en":"interior"},
-				"href":"gallery/interier",
+				"text":{"cs":"11 Zlín","en":"11 Zlín"},
+				"href":"gallery/11 zlin",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},
+      			{
+				"text":{"cs":"11 Lošov","en":"11 Lošov"},
+				"href":"gallery/11 losov",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},
+          	{
+				"text":{"cs":"10 Praha","en":"10 Praha"},
+				"href":"gallery/10 praha",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},  
+
+      			{
+				"text":{"cs":"09 Opole","en":"09 Opole"},
+				"href":"gallery/09 opole",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			}
 			]
 	},
 
 	  	{
-		"text":{"cs":"KANCELÁŘ","en":"THE OFFICE"},
+		"text":{"cs":"o nás","en":"about us"},
 		"title":{"cs":"Kontakt","en":"Contact"},
     "items":[
 			{
@@ -173,12 +214,17 @@
 			},
 						{
 		"text":{"cs":"ocenění","en":"awards"},
-		"href":"content/profil",
+		"href":"content/oceneni",
 		"title":{"cs":"Kontakt","en":"Contact"}
 			},
 			{
 				"text":{"cs":"kontakt","en":"contact"},
 		"href":"content/kontakt",
+				"title":{"cs":"Kontakt","en":"Contact"}
+			},
+			{
+				"text":{"cs":"facebook","en":"facebook"},
+		"href":"http://www.facebook.com/pages/MASPARTI/211737095508321",
 				"title":{"cs":"Kontakt","en":"Contact"}
 			}
 			]

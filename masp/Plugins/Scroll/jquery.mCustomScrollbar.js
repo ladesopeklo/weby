@@ -198,7 +198,7 @@
 
 					function AdjustDraggerHeight() {
 						if (draggerDimType == "auto") {
-							var adjDraggerHeight = Math.round(totalContent - ((totalContent - visibleHeight) * 2.0)); //adjust dragger height analogous to content
+							var adjDraggerHeight = Math.round(totalContent - ((totalContent - visibleHeight) * 3.5)); //adjust dragger height analogous to content
 							if (adjDraggerHeight <= minDraggerHeight) { //minimum dragger height
 								$dragger.css("height", minDraggerHeight + "px").css("line-height", minDraggerHeight + "px");
 							} else if (adjDraggerHeight >= draggerContainerHeight) {

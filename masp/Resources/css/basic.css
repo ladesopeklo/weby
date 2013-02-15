@@ -4,9 +4,9 @@ html, body {
 }
 body{
 	text-align: center;
-	font-family: Helvetica, "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	font-family: Arial, Verdana, sans-serif, Helvetica, "Lucida Grande";
 	background-color: white;
-	color: grey;
+	color: dimgray;
 	font-size: 12px;
 	-webkit-font-smoothing: antialiased;
 }
@@ -18,23 +18,28 @@ ul, li {
     list-style:none;
 }
 a{
-	color: silver;
+	color: #A9A9A9;
 	text-decoration: none;
 }
 h1 {
 	font-weight: normal;
+  font-size: 190%;
+  font-weight: normal;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 h3 a {
 	color: black;
 	font-size: 130%;
-	font-family: 'MyriadProSemibold';
+  font-weight: normal;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+
 }
 h3 {
 	margin: 0px;
 }
 a:focus, a:hover, a:active {
-	text-decoration: none;
-	color: dimgray;
+	text-decoration: line-through;
+	color: black;
 
 }
 a:focus, a:active ,h3
@@ -75,12 +80,12 @@ div#page {
 }
 .language a
 {
-	color: #e9e9e9;	
+	color: #A9A9A9;	
 }
 #accordion .selected
 {
 	color: #3f3f3f;
-	font-weight: bold;
+	font-weight: none;
 }
 
 
@@ -97,17 +102,17 @@ div#page {
 	height: 0px !important;
 	padding-bottom: 0px !important;
 }
-.DESIGN
+.design
 {
-	height: 150px;
+	height: 300px;
 }
-.VIZUALIZACE 
+.vizualizace 
 {
-	height:50px ;
+	height:300px ;
 }
-.REALIZACE
+.realizace
 {
-	height:150px ;
+	height:300px ;
 }
 
 

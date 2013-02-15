@@ -344,7 +344,7 @@ angular.module('ngResource', ['ng']).
         action.method = angular.uppercase(action.method);
         var hasBody = action.method == 'POST' || action.method == 'PUT' || action.method == 'PATCH';
         Resource[name] = function(a1, a2, a3, a4) {
-          var params = {};
+			var params = {};
           var data;
           var success = noop;
           var error = null;
@@ -381,7 +381,7 @@ angular.module('ngResource', ['ng']).
             throw "Expected between 0-4 arguments [params, data, success, error], got " +
               arguments.length + " arguments.";
           }
-
+		console.log(data);
           var value = this instanceof Resource ? this : (action.isArray ? [] : new Resource(data));
           $http({
             method: action.method,

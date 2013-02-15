@@ -1,0 +1,16 @@
+<root>
+	<output path="Scripts/libs.min.js">
+		<input path="Scripts/jquery.js"></input>
+
+		<input path="Scripts/angular.js"></input>
+		<input path="Scripts/angular-resource.js"></input>
+		<input path="Scripts/module.appConfig.js"></input>
+		<input path="Scripts/module.apiModule.js"></input>
+        <input path="Scripts/module.masparti.js"></input>
+	</output>
+	<output path="Scripts/galleriffic.min.js">
+	</output>
+</root>
+
+
+	

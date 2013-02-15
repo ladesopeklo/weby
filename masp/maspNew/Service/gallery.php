@@ -1,6 +1,7 @@
 <?php 
 require  '../config.php';
 require  'libs.php';
+header('Content-Type: application/json');
 
 if (!function_exists("preprint")) { 
     function preprint($s, $return=false) { 
@@ -82,7 +83,12 @@ function vizualizace($path,$location,$baseurl){
 	return $arr;
 }
 $location = isset($_POST["location"]) ? $_POST["location"] : "exalt" ;
+
 $culture = isset($_POST["culture"]) ? $_POST["culture"] : "cz" ;
+
+$data = json_decode(file_get_contents('php://input'));
+
+$location = $data->{"location"};
 
 
 $list = getfiles("../Content/".$location."/slides/",$culture );

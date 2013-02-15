@@ -1,61 +1,34 @@
-var xxx = ['$scope', 'galleryApi', function ($scope, galleryApi) {
-	var resolved;
+/*global apiWrapper*/
+var xxx = ['$scope', 'galleryApi', '$http', function ($scope, galleryApi, $http) {
+	var api = new ApiWrapper(galleryApi);
 
-	function xxx(name) {
-		return galleryApi.gallery({xxsa: name}, function (data) {
-			//return data;
-		});
-	}
+//	$.ajax({
+//		method: "POST",
+//		url: "/weby/masp/maspnew/service/gallery.php",
+//		data: {location: "dalov"}
+//	}).then(function(response) {
+//		console.log(response)
+//		});
 
-	function ddd(name, $q) {
-		var deferred = $q.defer();
 
-		galleryApi.gallery({xxsa: name}, function (data) {
-			console.log("---", data);
-			deferred.resolve(data);
-		});
+	var waitsForJqPromise = function (promise) {
+		waitsFor(function () {
+			return promise.state() == "resolved" || promise.state() === "rejected";
+		})
+	};
 
-		return deferred.promise;
-	}
-	var uuu = function(fnc) {
+	describe("jasmine run in angular controller ", function () {
+		it('promise ', function () {
+			var promise = api.gallery("dalov");
 
-	}
-
-	beforeEach(function () {
-		resolved = false;
-	});
-
-	describe("jamsmine run in angular controller ", function () {
-
-		it("aaa", function () {
-			//console.log(xxx("aaaaaaaaa").images);
-		});
-
-		it('should simulate promise', inject(function ($q, $rootScope) {
-//			var a = ddd("kljasbdjkasd", $q);
-//			var resolvedValue;
-//
-//			a.then(function(value) { resolvedValue = value; });
-//
-//			$rootScope.$apply();
-//			console.log(resolvedValue)
-
-		}));
-
-		it('should simulate promise', inject(function ($q, $rootScope) {
-			var a = ddd("xbjiasdjkas666", $q);
-
-			waitsFor(function (x){
-				console.log(x)
-				return resolved;
+			promise.done(function (data) {
+				expect(data).toBeDefined();
+				expect(data.images.length).toBeGreaterThan(5);
+				console.log(data);
 			});
 
-			uuu(ddd())
-
-			runs(function () {
-				console.log("-----", resolved)
-			})
-		}));
+			waitsForJqPromise(promise);
+		});
 	})
 
 }];

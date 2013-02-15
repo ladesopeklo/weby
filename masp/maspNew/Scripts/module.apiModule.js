@@ -5,7 +5,7 @@
 			{
 				aaa: { method: 'GET', isArray: false, params: { action: "grids" } },
 				grids: { method: 'GET', isArray: true, params: { action: "grids" } },
-                gallery: { method: 'POST', params: { action: "GetGrid" } }
+                gallery: { method: 'POST', }
 			}
 		);
 	}]);

@@ -1,15 +1,6 @@
 /*global apiWrapper*/
-var xxx = ['$scope', 'galleryApi', '$http', function ($scope, galleryApi, $http) {
-	var api = new ApiWrapper(galleryApi);
-
-//	$.ajax({
-//		method: "POST",
-//		url: "/weby/masp/maspnew/service/gallery.php",
-//		data: {location: "dalov"}
-//	}).then(function(response) {
-//		console.log(response)
-//		});
-
+var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menuApi) {
+	var api = new ApiWrapper(galleryApi, menuApi);
 
 	var waitsForJqPromise = function (promise) {
 		waitsFor(function () {
@@ -18,13 +9,22 @@ var xxx = ['$scope', 'galleryApi', '$http', function ($scope, galleryApi, $http)
 	};
 
 	describe("jasmine run in angular controller ", function () {
-		it('promise ', function () {
+		it('gallery.php - gallery ', function () {
 			var promise = api.gallery("dalov");
 
 			promise.done(function (data) {
 				expect(data).toBeDefined();
 				expect(data.images.length).toBeGreaterThan(5);
-				console.log(data);
+				console.log(data)
+			});
+
+			waitsForJqPromise(promise);
+		});
+		it('get menu', function () {
+			var promise = api.menu();
+
+			promise.done(function (data) {
+				console.log(data)
 			});
 
 			waitsForJqPromise(promise);

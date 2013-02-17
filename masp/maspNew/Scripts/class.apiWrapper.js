@@ -1,16 +1,28 @@
-var ApiWrapper = (function (){
+var ApiWrapper = (function () {
 
-	function ApiWrapper (apiModule) {
-		this.api = apiModule;
+	function ApiWrapper(galleryApi, menuApi) {
+		this.galleryApi = galleryApi;
+		this.menuApi = menuApi;
+		this.converter = new RawDataConverter();
 	}
 
 	ApiWrapper.prototype.gallery = function (name) {
-		var deferred = $.Deferred();
+		var self = this,
+			deferred = $.Deferred();
 
-		this.api.gallery({location:name, culture: "en"} , function (data) {
-			deferred.resolve(data);
+		this.galleryApi.gallery({location: name, culture: "cz"}, function (data) {
+			deferred.resolve(self.converter.rawDataToGallery(data));
 		});
+		return deferred;
+	};
 
+	ApiWrapper.prototype.menu = function () {
+		var self = this,
+			deferred = $.Deferred();
+
+		this.menuApi.getAll(function (data) {
+			deferred.resolve(self.converter.rawDataToMenu(data));
+		});
 		return deferred;
 	};
 

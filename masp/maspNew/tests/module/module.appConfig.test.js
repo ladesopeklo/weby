@@ -6,8 +6,9 @@ describe("App Config module Tests", function () {
 		})
 	}));
 
-	it('should alert on $window', inject(function (appConfig) {
+	it('api config module init', inject(function (appConfig) {
 		expect(appConfig.baseUrl).toBeDefined();
 		expect(appConfig.debug).toBeDefined();
 	}));
+
 });

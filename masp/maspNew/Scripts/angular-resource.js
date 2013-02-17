@@ -381,7 +381,6 @@ angular.module('ngResource', ['ng']).
             throw "Expected between 0-4 arguments [params, data, success, error], got " +
               arguments.length + " arguments.";
           }
-		console.log(data);
           var value = this instanceof Resource ? this : (action.isArray ? [] : new Resource(data));
           $http({
             method: action.method,

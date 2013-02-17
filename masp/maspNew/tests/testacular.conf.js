@@ -13,18 +13,22 @@ files = [
 	"Scripts/angular-loader.js",
 	"Scripts/angular-sanitize.js",
 	"Scripts/angular-cookies.js",
+	"Scripts/JSLINQ.js",
 
 	"Scripts/module.appConfig.js",
 	"Scripts/module.apiModule.js",
 	"Scripts/module.masparti.js",
-
+	"Scripts/class.Gallery.js",
+	"Scripts/class.GalleryImage.js",
+	"Scripts/class.GalleryList.js",
+	"Scripts/class.rawDataConverter.js",
+	"Scripts/class.apiWrapper.js",
 
 	JASMINE,
 	JASMINE_ADAPTER,
-	"tests/libs/angular-scenario.js",
+	//"tests/libs/angular-scenario.js",
 	"tests/libs/angular-mocks.js",
 	"tests/libs/jquery.js",
-	"tests/api/*.js",
 	"tests/module/*.js"
 ];
 

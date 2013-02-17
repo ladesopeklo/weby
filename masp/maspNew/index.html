@@ -3,29 +3,42 @@
 <html lang="cs">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>masparti</title>
 
+	<script type="text/javascript" src="Scripts/JSLINQ.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/angular.js"></script>
 	<script type="text/javascript" src="Scripts/angular-resource.js"></script>
+
 	<script type="text/javascript" src="Scripts/module.masparti.js"></script>
 	<script type="text/javascript" src="Scripts/module.apiModule.js"></script>
 	<script type="text/javascript" src="Scripts/module.appConfig.js"></script>
-	<script type="text/javascript" src="Scripts/controller.test.js"></script>
-	<script type="text/javascript" src="Scripts/class.apiWrapper.js"></script>
-</head>
 
+	<script type="text/javascript" src="Scripts/class.Gallery.js"></script>
+	<script type="text/javascript" src="Scripts/class.GalleryImage.js"></script>
+	<script type="text/javascript" src="Scripts/class.GalleryList.js"></script>
+	<script type="text/javascript" src="Scripts/class.rawDataConverter.js"></script>
+	<script type="text/javascript" src="Scripts/class.apiWrapper.js"></script>
+
+	<script type="text/javascript" src="Scripts/controller.test.js"></script>
+
+	<link rel="stylesheet" href="Resources/css/fluid_grid.css"/>
+	<link rel="stylesheet" href="Resources/css/masparti-responsive.css"/>
+
+
+</head>
 <body>
 
 <div ng-app="masparti">
-	sds I can add: {{ 1+2 }}.
 
-	ssds
 
-    <div ng-controller="test">
+	<div ng-controller="test">
+		<h1 ng-repeat="menuitem in menu">
+			{{menuitem.text.cs}}
+		</h1>
 
-asdasd
-    </div>
+	</div>
 </div>
 
 </body>

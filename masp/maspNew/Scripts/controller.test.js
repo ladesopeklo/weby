@@ -1,9 +1,12 @@
-function test($scope, $q, galleryApi) {
-	var api = new ApiWrapper(galleryApi);
+function test($scope, galleryApi, menuApi) {
+	var api = new ApiWrapper(galleryApi, menuApi);
+	$scope.menu = [];
 
-
-	api.test().then(function (data) {
-		console.log(data)
+	api.menu().then(function (data) {
+		console.log(data);
+		$scope.menu = data;
 	});
+
+
 
 }

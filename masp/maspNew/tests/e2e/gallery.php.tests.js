@@ -29,6 +29,16 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 
 			waitsForJqPromise(promise);
 		});
+
+		it('gallerylist', function () {
+			var promise = api.galleryList(["exalt", "dalov"]);
+
+			promise.done(function (data) {
+				console.log(data)
+			});
+
+			waitsForJqPromise(promise);
+		});
 	})
 
 }];

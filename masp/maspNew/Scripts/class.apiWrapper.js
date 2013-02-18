@@ -10,8 +10,19 @@ var ApiWrapper = (function () {
 		var self = this,
 			deferred = $.Deferred();
 
-		this.galleryApi.gallery({location: name, culture: "cz"}, function (data) {
+		this.galleryApi.gallery({service: "gallery.php"}, {location: name, culture: "cz"}, function (data) {
 			deferred.resolve(self.converter.rawDataToGallery(data));
+		});
+		return deferred;
+	};
+
+	ApiWrapper.prototype.galleryList = function (gallerynames) {
+		var self = this,
+			deferred = $.Deferred();
+
+		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
+			///deferred.resolve(self.converter.rawDataToGallery(data));
+			deferred.resolve(data);
 		});
 		return deferred;
 	};

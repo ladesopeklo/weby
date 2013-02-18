@@ -11,7 +11,11 @@ $data = json_decode(file_get_contents('php://input'));
 
 $location = $data->{"location"};
 
+$xxx; 
+foreach ($location as $key => $value) {
+	$xxx[$value] = $x->getGallery($value, $culture);
+}
 
-echo json_encode($x->getGallery($location, $culture));
+echo json_encode($xxx);
 
 ?>

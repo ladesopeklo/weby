@@ -12,11 +12,8 @@ function test($scope, galleryApi, menuApi) {
 		$scope.menu = data;
 
 		for (var i = 0; i < $scope.menu.length; i++) {
-			if ($scope.menu[i].items) {
-				var links = JSLINQ($scope.menu[i].items).Select(function (menuitem) {
-					return menuitem.link;
-				});
-
+			if ($scope.menu[i]) {
+				var links = $scope.menu[i].childrenItemsLinks();
 				loadGalleries(i, links)
 			}
 		}

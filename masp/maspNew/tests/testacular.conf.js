@@ -20,7 +20,7 @@ files = [
 	"Scripts/module.masparti.js",
 	"Scripts/class.Gallery.js",
 	"Scripts/class.GalleryImage.js",
-	"Scripts/class.GalleryList.js",
+	"Scripts/class.MenuItem.js",
 	"Scripts/class.rawDataConverter.js",
 	"Scripts/class.apiWrapper.js",
 

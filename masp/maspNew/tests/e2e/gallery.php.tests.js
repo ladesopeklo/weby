@@ -30,11 +30,51 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			waitsForJqPromise(promise);
 		});
 
-		it('gallerylist', function () {
-			var promise = api.galleryList(["exalt", "dalov"]);
+		it('gallerymap', function () {
+			var promise = api.galleryMap(["exalt", "dalov"]);
 
 			promise.done(function (data) {
-				console.log(data)
+				expect(data).toBeDefined();
+				expect(data["exalt"] instanceof Gallery).toBeTruthy();
+				expect(data["dalov"] instanceof Gallery).toBeTruthy();
+				expect(data["xxx"]).toBeUndefined();
+
+				console.log("gallerymap", data);
+			});
+
+			waitsForJqPromise(promise);
+		});
+
+		it('gallerylist', function () {
+			var promise = api.galleryList(["exalt", "dalov", "chuj"]);
+
+			promise.done(function (data) {
+				expect(data).toBeDefined();
+				expect(data instanceof Array).toBeTruthy();
+				expect(data.length).toBeGreaterThan(0);
+
+				console.log("gallerylist", data);
+			});
+
+			waitsForJqPromise(promise);
+		});
+		it('wrong params - gallerylist, gallerymap', function () {
+			var promise = api.galleryList();
+
+			promise.done(function (data) {
+				expect(data).toBeDefined();
+				expect(data instanceof Array).toBeTruthy();
+
+				console.log("gallerylist empty", data);
+			});
+
+			var list = api.galleryMap();
+
+			list.done(function (data) {
+				expect(data).toBeDefined();
+				expect(data instanceof Array).toBeTruthy();
+
+				console.log("gallerymap empty", data);
 			});
 
 			waitsForJqPromise(promise);

@@ -51,7 +51,7 @@ class ClassName
 		if ($c != $culture) return false;
 
 		$p = pathinfo($file);
-		
+
 		if (isset($p['extension']))
 		{
 			$e = strtolower($p['extension']);
@@ -66,7 +66,7 @@ class ClassName
 
 
 	function getfiles($path, $culture){
-		if ($handle = opendir($path)) {
+		if (is_dir($path) && $handle = opendir($path)) {
 			$arr = null;
 			while (false !== ($file = readdir($handle))) {
 				if ($file != "." && $file != "..") {

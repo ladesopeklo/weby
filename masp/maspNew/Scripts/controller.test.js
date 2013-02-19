@@ -2,11 +2,27 @@ function test($scope, galleryApi, menuApi) {
 	var api = new ApiWrapper(galleryApi, menuApi);
 	$scope.menu = [];
 
-	api.menu().then(function (data) {
-		console.log(data);
-		$scope.menu = data;
-	});
+	var loadGalleries = function (menuItemIndex, links) {
+		api.galleryMap(links.items).then(function (data) {
+			$scope.menu[menuItemIndex].galleries = data;
+		});
+	};
 
+	api.menu().then(function (data) {
+		$scope.menu = data;
+
+		for (var i = 0; i < $scope.menu.length; i++) {
+			if ($scope.menu[i].items) {
+				var links = JSLINQ($scope.menu[i].items).Select(function (menuitem) {
+					return menuitem.link;
+				});
+
+				loadGalleries(i, links)
+			}
+		}
+		console.log($scope.menu);
+
+	});
 
 
 }

@@ -15,7 +15,7 @@
 					"cs": "[2011] dům na Vyhlídce",
 					"en": "[2011] Family house at Vyhlídka"
 				},
-				"href": "gallery/vyhlidka",
+				"href": "vyhlidka",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -26,7 +26,7 @@
 					"cs": "[2010] dům v Radzewicích",
 					"en": "[2010] House in Radzewice"
 				},
-				"href": "gallery/radzewice",
+				"href": "radzewice",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -37,7 +37,7 @@
 					"cs": "[2009] chata u jezera",
 					"en": "[2009] summer house by a lake "
 				},
-				"href": "gallery/dalov",
+				"href": "dalov",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -48,7 +48,7 @@
 					"cs": "[2007] úprava vrcholu Bradlo",
 					"en": "[2007] viewing platform at the Bradlo Peak "
 				},
-				"href": "gallery/bradlo",
+				"href": "bradlo",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -59,7 +59,7 @@
 					"cs": "[2006] Bergen wood festival",
 					"en": "[2006] Bergen wood festival"
 				},
-				"href": "gallery/bergen",
+				"href": "bergen",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -70,7 +70,7 @@
 					"cs": "[2006] ekologické WC na ostrově",
 					"en": "[2006] outhouse on Tamo"
 				},
-				"href": "gallery/tamo",
+				"href": "tamo",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -85,7 +85,7 @@
 			"cs": "PROJEKTY",
 			"en": "PROJECTS"
 		},
-		"href": "gallery/exalt",
+		"href": "exalt",
 		"title": {
 			"cs": "Projekty",
 			"en": "Projects"
@@ -97,7 +97,7 @@
 					"cs": "[2011] územní studie Chelčického",
 					"en": "[2011] urban study Chelčického"
 				},
-				"href": "gallery/chelcickeho",
+				"href": "chelcickeho",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -108,7 +108,7 @@
 					"cs": "[2011] úpravy rodinného domu",
 					"en": "[2011] family house adaptation"
 				},
-				"href": "gallery/sadova",
+				"href": "sadova",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -119,7 +119,7 @@
 					"cs": "[2011] areál firmy Exalt a.s.",
 					"en": "[2011] Exalt company headquarters"
 				},
-				"href": "gallery/exalt",
+				"href": "exalt",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -130,7 +130,7 @@
 					"cs": "[2011] rekonstrukce domu v Hodolanech",
 					"en": "[2011] reconstruction of a family house"
 				},
-				"href": "gallery/praslavska",
+				"href": "praslavska",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -141,7 +141,7 @@
 					"cs": "[2011] úprava podkroví činžovního domu",
 					"en": "[2011] attic conversion"
 				},
-				"href": "gallery/kozinova",
+				"href": "kozinova",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -152,7 +152,7 @@
 					"cs": "[2011] rodinný dům Olomouc",
 					"en": "[2011] family house in Olomouc"
 				},
-				"href": "gallery/repcin",
+				"href": "repcin",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -163,7 +163,7 @@
 					"cs": "[2010] gynekologická ordinace",
 					"en": "[2010] gynecologist´s office "
 				},
-				"href": "gallery/topic",
+				"href": "topic",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -174,7 +174,7 @@
 					"cs": "[2010] rozšíření typového domu",
 					"en": "[2010] type-house extension"
 				},
-				"href": "gallery/klosovi",
+				"href": "klosovi",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -185,7 +185,7 @@
 					"cs": "[2009] renovace domu a podkroví",
 					"en": "[2009] house renovation and attic conversion"
 				},
-				"href": "gallery/novakovi",
+				"href": "novakovi",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -196,7 +196,7 @@
 					"cs": "[2008] přístavba bazénu k RD, Poznań",
 					"en": "[2008] swimming pool, Poznań"
 				},
-				"href": "gallery/poznan",
+				"href": "poznan",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -207,7 +207,7 @@
 					"cs": "[2008] škola Srebrna Gora",
 					"en": "[2008] school in Srebrna Gora"
 				},
-				"href": "gallery/tamo",
+				"href": "tamo",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -218,7 +218,7 @@
 					"cs": "[2008] polyfunkční dům, Olomouc",
 					"en": "[2008] polyfunctional house Olomouc"
 				},
-				"href": "gallery/diplomka",
+				"href": "diplomka",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -229,7 +229,7 @@
 					"cs": "[2007] multifunkční objekt, Dědinka",
 					"en": "[2007] multifunctional structure, Dědinka"
 				},
-				"href": "gallery/dedinka",
+				"href": "dedinka",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -240,7 +240,7 @@
 					"cs": "[2007] plavecký bazén, Sczeczin",
 					"en": "[2007] swimming pool, Sczeczin"
 				},
-				"href": "gallery/bazen",
+				"href": "bazen",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -251,7 +251,7 @@
 					"cs": "[2005] administrativní dům Zlín",
 					"en": "[2005] administrative house in Zlín"
 				},
-				"href": "gallery/bakalarka",
+				"href": "bakalarka",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -262,7 +262,7 @@
 					"cs": "[2005] minimální podzemní dům",
 					"en": "[2005] minimal subterranean housing"
 				},
-				"href": "gallery/podzemni",
+				"href": "podzemni",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -287,7 +287,7 @@
 					"cs": "[2011] pf 2012",
 					"en": "[2011] pf 2012"
 				},
-				"href": "gallery/pf2012",
+				"href": "pf2012",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -298,7 +298,7 @@
 					"cs": "[2011] ci Matouš Pelikán, Advokát ",
 					"en": "[2011] CI Matouš Pelikán, Advocate "
 				},
-				"href": "gallery/matouspelikan",
+				"href": "matouspelikan",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -309,7 +309,7 @@
 					"cs": "[2011] ci Masparti ",
 					"en": "[2011] CI Masparti"
 				},
-				"href": "gallery/masparti",
+				"href": "masparti",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -320,7 +320,7 @@
 					"cs": "[2009] gril",
 					"en": "[2009] grill"
 				},
-				"href": "gallery/grill",
+				"href": "grill",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -331,7 +331,7 @@
 					"cs": "[2009] veletržní prezentace",
 					"en": "[2009] fair stands"
 				},
-				"href": "gallery/stands",
+				"href": "stands",
 				"title": {
 					"cs": "Realizace",
 					"en": "Realizace"
@@ -356,7 +356,7 @@
 					"cs": "exteriér",
 					"en": "exterier"
 				},
-				"href": "gallery/exterier",
+				"href": "exterier",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"
@@ -367,7 +367,7 @@
 					"cs": "interér",
 					"en": "interior"
 				},
-				"href": "gallery/interier",
+				"href": "interier",
 				"title": {
 					"cs": "Kontakt",
 					"en": "Contact"

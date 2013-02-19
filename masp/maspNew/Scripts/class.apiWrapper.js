@@ -21,8 +21,17 @@ var ApiWrapper = (function () {
 			deferred = $.Deferred();
 
 		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
-			///deferred.resolve(self.converter.rawDataToGallery(data));
-			deferred.resolve(data);
+			deferred.resolve(self.converter.rawDataToGalleryList(data));
+		});
+		return deferred;
+	};
+
+	ApiWrapper.prototype.galleryMap = function (gallerynames) {
+		var self = this,
+			deferred = $.Deferred();
+
+		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
+			deferred.resolve(self.converter.rawDataToGalleryMap(data));
 		});
 		return deferred;
 	};

@@ -9,6 +9,11 @@ var RawDataConverter = (function () {
 	 * @returns {Gallery}
 	 */
 	RawDataConverter.prototype.rawDataToGallery = function (data) {
+		if (!data.images) {
+			return null;
+		}
+
+		console.log(data)
 		var x = JSLINQ(data.images).Select(function (item) {
 			return new GalleryImage(item.name, item.title, data.thumb, null, null, data.full);
 		});

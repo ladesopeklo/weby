@@ -1,0 +1,10 @@
+<div class="container_12" ng-repeat="menuitem in menu">
+    <div class="grid_12"><h2>{{menuitem.text.cs}}</h2></div>
+
+    <div class="grid_2" ng-repeat="item in menuitem.items">
+        <div class="inside">
+            {{item.link}}
+        </div>
+
+    </div>
+</div>

@@ -1,9 +1,10 @@
 ﻿angular.module('apiModule', ['ngResource', 'appConfigModule'])
 	.factory('galleryApi', ['$resource', 'appConfig', function ($resource, appConfig) {
-		var x = $resource(appConfig.baseUrl + '/service/gallery.php',
+		var x = $resource(appConfig.baseUrl + '/service/:service',
 			{  },
 			{
-				gallery: { method: 'POST' }
+				gallery: { method: 'POST' },
+				galleryList: { method: 'POST' }
 			});
 
 		return x;

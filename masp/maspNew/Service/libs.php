@@ -1,12 +1,12 @@
 <?php
 if (!function_exists("preprint")) { 
-    function preprint($s, $return=false) { 
-        $x = "<pre>"; 
-        $x .= print_r($s, 1); 
-        $x .= "</pre>"; 
-        if ($return) return $x; 
-        else print $x; 
-    } 
+	function preprint($s, $return=false) { 
+		$x = "<pre>"; 
+		$x .= print_r($s, 1); 
+		$x .= "</pre>"; 
+		if ($return) return $x; 
+		else print $x; 
+	} 
 } 
 function fatal($message){
 	$list['error'] = $message; 
@@ -26,14 +26,14 @@ function isimage($file){
 }
 
 function curPageURL() {
- $pageURL = 'http';
- $pageURL .= "://";
- if ($_SERVER["SERVER_PORT"] != "80") {
-  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
- } else {
-  $pageURL .= $_SERVER["SERVER_NAME"];
- }
- return $pageURL;
+	$pageURL = 'http';
+	$pageURL .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+	} else {
+		$pageURL .= $_SERVER["SERVER_NAME"];
+	}
+	return $pageURL;
 }
 
 

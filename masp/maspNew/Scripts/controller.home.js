@@ -1,4 +1,4 @@
-function test($scope, galleryApi, menuApi) {
+function homeController($scope, galleryApi, menuApi) {
 	var api = new ApiWrapper(galleryApi, menuApi);
 	$scope.menu = [];
 

@@ -1,3 +1,4 @@
+/*global JSLINQ*/
 var Usages = (function () {
 
 	function Usages(width, height) {
@@ -10,8 +11,16 @@ var Usages = (function () {
 		return new Position();
 	};
 
-	Usages.prototype.findFirstEmptyHorizontal = function (squareItemToPut) {
-		return new Position();
+	Usages.prototype.mostBottomOn = function (x) {
+		var mostBottom = new SquareItem();
+
+		JSLINQ(this.usages).Select(function (item) {
+			if (x >= item.position.x1 && x <= item.position.x2 && item.position.y2 >= mostBottom.position.y2) {
+				mostBottom = item;
+			}
+		});
+
+		return mostBottom;
 	};
 
 	Usages.prototype.generate = function (items) {
@@ -23,7 +32,6 @@ var Usages = (function () {
 		}
 		return this.usages;
 	};
-
 
 	Usages.prototype.isEmpty = function () {
 		return this.usages.length === 0;
@@ -49,6 +57,50 @@ var Usages = (function () {
 			this.usages.push(position);
 		}
 	};
+
+
+	Usages.prototype.findMostBottom = function (x1, x2) {
+		var max = new SquareItem();
+		var x = this.itemsInInterval(x1, x2);
+
+		JSLINQ(x).Where(function (item) {
+			var pos = item.position,
+				isMoreBellow = pos.y2 > max.position.y2;
+
+			if (isMoreBellow) {
+				max = item;
+			}
+			return isMoreBellow;
+		});
+		return max;
+	};
+
+	Usages.prototype.itemsInInterval = function (x1, x2) {
+		var inInterval = JSLINQ(this.usages).Where(function (item) {
+			var pos = item.position;
+			return pos.x1 >= x1 && pos.x1 <= x2;
+		});
+		return inInterval.items;
+	};
+
+	Usages.prototype.addSquare = function (squareItem) {
+		var last = this.getLastItemPosition(),
+			newPosition = new Position();
+
+//		if (last.x2 + squareItem.width > this.maxWidth) {
+			newPosition.x1 = last.x2 + squareItem.width > this.maxWidth ? 0 : last.x2;
+			newPosition.x2 = newPosition.x1 + squareItem.width;
+			newPosition.y1 = this.findMostBottom(newPosition.x1, newPosition.x2).position.y2;
+			newPosition.y2 = squareItem.height + newPosition.y1;
+//		} else {
+//			newPosition = new Position(last.x2, last.y1, last.x2 + squareItem.width, last.y1 + squareItem.height);
+//		}
+		squareItem.position = newPosition;
+
+		this.addUsage(squareItem);
+		return squareItem;
+	};
+
 	Usages.prototype.addUsagePixo = function (position) {
 		if (position instanceof Position) {
 			var item = new SquareItem();
@@ -57,26 +109,9 @@ var Usages = (function () {
 		}
 	};
 
-	Usages.prototype.addSquare = function (squareItem) {
-		var last = this.getLastItemPosition(),
-			newPosition = new Position();
-
-		if (last.x2 + squareItem.width > this.maxWidth) {
-			newPosition.x1 = 0;
-			newPosition.x2 = squareItem.width;
-			newPosition.y1 = 50;
-			newPosition.y2 = squareItem.height + 50;
-		} else {
-			newPosition = new Position(last.x2, last.y1, last.x2 + squareItem.width, last.y1 + squareItem.height);
-		}
-		squareItem.position = newPosition;
-
-		this.addUsage(squareItem);
-		return squareItem;
-	};
-
 	return Usages;
-})();
+})
+	();
 
 var SquareItem = (function () {
 

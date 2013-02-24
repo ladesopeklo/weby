@@ -107,19 +107,67 @@ describe("Usages tests", function () {
 
 
 	it("last from left L ", function () {
-		var b = anUsage();
-		b.widthLeftL();
-		var usage = b.build();
+		var b = anUsage(),
+			usage,
+			found;
 
-		var found = usage.getLastItemPosition();
+		b.widthLeftL();
+		usage = b.build();
+
+		found = usage.getLastItemPosition();
 		console.log('L ', found.toString());
 		expect(found.toString()).toBe("0,10,10,20");
 
-		var s = new SquareItem(10, 10);
-		var square = usage.addSquare(s);
+		var s = new SquareItem(10, 10),
+			square = usage.addSquare(s);
+
 		expect(usage.getLastItemPosition().toString()).toBe(square.position.toString());
+		expect(square.position.toString()).toBe("10,10,20,20")
 
 
+	});
+
+
+	it("widthLineFull  - create new line ", function () {
+		var b = anUsage(),
+			usage,
+			squareUsage,
+			found;
+
+		b.widthLineFull();
+		usage = b.build();
+
+		found = usage.getLastItemPosition();
+		expect(found.toString()).toBe("90,0,100,10");
+
+		squareUsage = usage.addSquare(new SquareItem(10, 10));
+
+		//expect(usage.getLastItemPosition().toString()).toBe(squareUsage.position.toString());
+		//expect(squareUsage.position.toString()).toBe("0,10,10,10");
+
+	});
+
+	it("find items in interval - horizontal", function () {
+		var usage = anUsage()
+			.widthLeftL()
+			.build();
+
+		expect(usage.itemsInInterval(0, 15).length).toBe(3);
+		expect(usage.itemsInInterval(0, 10).length).toBe(3);
+		expect(usage.itemsInInterval(0, 9).length).toBe(2);
+	});
+
+	it("find most bottom items in interval - horizontal", function () {
+		var usage = anUsage()
+			.widthLeftL()
+			.build();
+
+		var a = usage.findMostBottom(0, 10);
+		console.log( a);
+
+		expect(usage.findMostBottom(0, 10).position.y2).toBe(20);
+		expect(usage.findMostBottom(10, 20).position.y2).toBe(10);
+		expect(usage.findMostBottom(12, 18).position.y2).toBe(10);
 	});
 
 });

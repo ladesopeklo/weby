@@ -5,20 +5,50 @@
 		top: 0px;
 		background-color: #e9e9e9;
 		-webkit-transform: translate3d(140px, 124px, 0px);
-		border: 1px solid red;
 		opacity: 0.7;
+        -webkit-transition-duration: 0.8s;
 	}
 
 	.container {
-		width: 900px;
 		margin: 0px auto;
-		border: 1px solid greenyellow;
 		position: relative;
 	}
 
 </style>
 
-<div class="container">
+<div style="position: fixed">
+    sirka viewportu :
+    <button ng-click="aaa(1200)">1200</button>
+    <button ng-click="aaa(900)">900</button>
+    <button ng-click="aaa(500)">500</button>
+<div>
+
+    <label>offset bunek prvniho radku shora
+        <input ng-model="newLineOffsetTop" type="text"/>
+    </label>
+</div>
+<div>
+    <label>offset prvni bunky radku zleva
+        <input ng-model="newLineOffset" type="text"/>
+    </label>
+</div>
+<div>
+    <label>offset mezi bunkama horizontalne
+        <input ng-model="widthOffset" type="text"/>
+    </label>
+</div>
+<div>
+    <label>offset mezi bunkama verikalne
+        <input ng-model="heightOffset" type="text"/>
+    </label>
+    <p>(nastavi mnozinu ze ktere se generuje nahodne cislo)</p>
+
+</div>
+<button ng-click="setRandom()">set</button>
+</div>
+
+
+<div class="container" style="width:{{width}}px">
 	<div ng-repeat="item in data">
 		<div class="boxi"
 			 style="width:{{getWidth(item)}}px; height: {{getHeight(item)}}px; -webkit-transform: translate3d({{item.position.x1}}px, {{item.position.y1}}px, 0px) ">

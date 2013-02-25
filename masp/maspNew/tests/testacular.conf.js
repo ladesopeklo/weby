@@ -18,11 +18,8 @@ files = [
 	"Scripts/module.appConfig.js",
 	"Scripts/module.apiModule.js",
 	"Scripts/module.masparti.js",
-	"Scripts/class.Gallery.js",
-	"Scripts/class.GalleryImage.js",
-	"Scripts/class.MenuItem.js",
-	"Scripts/class.rawDataConverter.js",
-	"Scripts/class.apiWrapper.js",
+	"Scripts/class.*.js",
+
 
 	JASMINE,
 	JASMINE_ADAPTER,
@@ -58,7 +55,7 @@ colors = true;
 
 // level of logging
 // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_DEBUG;
+logLevel = LOG_INFO;
 
 
 // enable / disable watching file and executing tests whenever any file changes

@@ -1,0 +1,29 @@
+<style>
+	.boxi {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		background-color: #e9e9e9;
+		-webkit-transform: translate3d(140px, 124px, 0px);
+		border: 1px solid red;
+		opacity: 0.7;
+	}
+
+	.container {
+		width: 900px;
+		margin: 0px auto;
+		border: 1px solid greenyellow;
+		position: relative;
+	}
+
+</style>
+
+<div class="container">
+	<div ng-repeat="item in data">
+		<div class="boxi"
+			 style="width:{{getWidth(item)}}px; height: {{getHeight(item)}}px; -webkit-transform: translate3d({{item.position.x1}}px, {{item.position.y1}}px, 0px) ">
+			{{$index}}
+		</div>
+	</div>
+
+</div>

@@ -2,13 +2,9 @@ var module = angular.module("masparti", ['apiModule']);
 
 module.config(['$routeProvider', '$provide', function ($routeProvider, $provide) {
 	$routeProvider
-		.when('/gallery', {
-			controller: galleryController,
-			templateUrl: 'gallery.html'}
-		)
-		.when('', {
-			controller: homeController,
-			templateUrl: 'home.html'}
-		)
-		.otherwise({redirectTo: ''});
+		.when('/gallery', {controller: galleryController, templateUrl: 'gallery.html'})
+		.when('/home', {controller: homeController, templateUrl: 'home.html'})
+		.when('/x', {controller: xController, templateUrl: 'x.html'})
+
+		.otherwise({redirectTo: '/home'});
 }]);

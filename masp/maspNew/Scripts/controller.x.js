@@ -3,13 +3,14 @@ function xController($scope, galleryApi, menuApi) {
 
 	var boxes = [],
 		usages = new Usages($scope.width);
+		usages.setRandom(1000, 500, 60, 50);
 
 	$scope.width = 900;
 
-	$scope.widthOffset = 0;
-	$scope.newLineOffset = 0;
-	$scope.heightOffset = 0;
-	$scope.newLineOffsetTop = 0;
+	$scope.widthOffset = 10;
+	$scope.newLineOffset = 30;
+	$scope.heightOffset = 10;
+	$scope.newLineOffsetTop = 40;
 
 	for (var i =0 ; i< 50; i++){
 		var x = Math.floor((Math.random()*100)+30);
@@ -18,8 +19,13 @@ function xController($scope, galleryApi, menuApi) {
 
 	$scope.data = usages.generate(boxes, $scope.width);
 
+	setTimeout(function () {
+		usages.setRandom($scope.widthOffset, $scope.newLineOffset, $scope.heightOffset, $scope.newLineOffsetTop);
+		$scope.data = usages.generate(boxes, $scope.width);
+		$scope.$apply();
+	},  100);
+
 	$scope.aaa = function (newWidth){
-		//$scope.width = newWidth;
 		$scope.data = usages.generate(boxes, newWidth);
 	};
 

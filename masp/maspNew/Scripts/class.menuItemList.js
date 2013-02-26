@@ -5,18 +5,21 @@ var MenuItemList = (function () {
 		this.items = menuItems || [];
 	}
 
-
 	MenuItemList.prototype.xxx = function (type) {
 
 	};
 
 	/**
 	 *
-	 * @param {MenuItem.ItemTypes} type
-	 * @constructor
+	 * @public
 	 */
-	MenuItemList.prototype.links = function (type) {
-		console.log(this.items)
+	MenuItemList.prototype.allGalleryLinks = function () {
+		var links = [];
+
+		for (var i = 0; i < this.items.length; i++) {
+			links = links.concat(this.items[i].childrenItemsLinks(MenuItem.ItemTypes.Gallery));
+		}
+		return links;
 	};
 
 	return MenuItemList;

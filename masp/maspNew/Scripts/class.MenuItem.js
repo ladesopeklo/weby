@@ -36,8 +36,6 @@ var MenuItem = (function () {
 			} else {
 				return menuItem.linkValue();
 			}
-
-
 		});
 		return links.items;
 	};

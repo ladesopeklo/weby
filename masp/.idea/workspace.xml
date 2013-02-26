@@ -17,7 +17,7 @@
     <file path="/test.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360790725824" ignored="false" />
     <file path="/galery.php.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360791690124" ignored="false" />
     <file path="/angular-resource.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360963516885" ignored="false" />
-    <file path="/gallery.php.tests.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361876444337" ignored="false" />
+    <file path="/gallery.php.tests.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361892187211" ignored="false" />
     <file path="/*.regexp" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360925233384" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/parser/parser.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
@@ -46,7 +46,7 @@
     <file path="/class.usgaes.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361891637211" ignored="false" />
     <file path="/class.usages.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361790274388" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813399672" ignored="false" />
-    <file path="/class.menuItemList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361876340533" ignored="false" />
+    <file path="/class.menuItemList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361892405883" ignored="false" />
     <file path="/controller.home.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813354584" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/controllers/editor_controller.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,7 +71,16 @@
       <file leaf-file-name="gallery.php.tests.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="42" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
+            <state line="19" column="33" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.home.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,19 +89,8 @@
       <file leaf-file-name="class.MenuItem.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+            <state line="27" column="6" selection-start="619" selection-end="623" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.usgaes.test.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="7" selection-start="2603" selection-end="2603" vertical-scroll-proportion="0.7880126">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -100,25 +98,16 @@
       <file leaf-file-name="class.usages.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="31" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
+            <state line="76" column="0" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.MenuItem.test.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.menuItemList.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="class.menuItemList.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="7" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+            <state line="15" column="58" selection-start="257" selection-end="257" vertical-scroll-proportion="0.15141957">
               <folding />
             </state>
           </provider>
@@ -140,16 +129,16 @@
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.rawDataConverter.js" />
         <option value="$PROJECT_DIR$/maspNew/index.html" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/controller.home.js" />
         <option value="$PROJECT_DIR$/maspNew/x.html" />
         <option value="$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js" />
-        <option value="$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js" />
-        <option value="$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js" />
         <option value="$PROJECT_DIR$/maspNew/tests/module/builderUsageBuilder.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.usages.js" />
         <option value="$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/controller.home.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js" />
       </list>
     </option>
   </component>
@@ -378,11 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/Content/menu.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="10" selection-start="1610" selection-end="1610" vertical-scroll-proportion="-7.68" />
@@ -397,33 +381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="84" selection-start="1193" selection-end="1193" vertical-scroll-proportion="-13.44" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="7" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="42" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+        <state line="21" column="84" selection-start="1193" selection-end="1193" vertical-scroll-proportion="-13.44">
           <folding />
         </state>
       </provider>
@@ -437,19 +395,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="31" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
+        <state line="47" column="54" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.47444794">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="7" selection-start="2603" selection-end="2603" vertical-scroll-proportion="0.7880126">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="54" column="29" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.5451104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="6" selection-start="619" selection-end="623" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="33" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="58" selection-start="257" selection-end="257" vertical-scroll-proportion="0.15141957">
+          <folding />
         </state>
       </provider>
     </entry>

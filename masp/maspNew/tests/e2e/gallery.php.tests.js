@@ -78,6 +78,7 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 
 	});
 	describe("menu api tests ", function () {
+
 		it('check instance of menu', function () {
 			var promise = api.menu();
 			promise.done(function (data) {
@@ -96,6 +97,17 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			});
 			waitsForJqPromise(promise);
 		});
+
+		it('all links', function () {
+			var promise = api.menu();
+			promise.done(function (data) {
+				console.log(data.allGalleryLinks());
+			});
+			waitsForJqPromise(promise);
+		});
+
+
+
 	});
 
 

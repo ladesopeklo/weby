@@ -19,11 +19,10 @@ function homeController($scope, galleryApi, menuApi) {
 		for (var i = 0; i < $scope.menu.length; i++) {
 			if ($scope.menu[i]) {
 				var links = $scope.menu[i].childrenItemsLinks();
-				loadGalleries(i, links)
+				loadGalleries(i, links);
 			}
 		}
 		console.log($scope.menu);
-		menuObject.xxx()
 
 	});
 

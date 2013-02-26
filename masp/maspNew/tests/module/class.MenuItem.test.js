@@ -41,6 +41,7 @@ describe("api wrapper tests", function () {
 		expect(links instanceof Array).toBeTruthy();
 	});
 
+
 	it("try childrenItemsLinks with no children ", function () {
 		var children,
 			item = new MenuItem("text", "link", "title", children),
@@ -49,8 +50,6 @@ describe("api wrapper tests", function () {
 		expect(links.length).toBe(0);
 		expect(links instanceof Array).toBeTruthy();
 
-
-		console.log(links)
 	});
 
 	it("try childrenItemsLinks with no children ", function () {

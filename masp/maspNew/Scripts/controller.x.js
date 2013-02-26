@@ -1,4 +1,4 @@
-/*global Usages*/
+/*global Usages, SquareItem*/
 function xController($scope, galleryApi, menuApi) {
 
 	var boxes = [],

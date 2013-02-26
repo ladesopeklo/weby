@@ -17,13 +17,13 @@
     <file path="/test.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360790725824" ignored="false" />
     <file path="/galery.php.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360791690124" ignored="false" />
     <file path="/angular-resource.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360963516885" ignored="false" />
-    <file path="/gallery.php.tests.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361256268601" ignored="false" />
+    <file path="/gallery.php.tests.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361876444337" ignored="false" />
     <file path="/*.regexp" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360925233384" ignored="false" />
-    <file path="C:/TRUNKPhoenix/web/phoenix/resources/parser/parser.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
-    <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
+    <file path="C:/TRUNKPhoenix/web/phoenix/resources/parser/parser.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
+    <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.toolbar.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/renderer/renderer.paragraphRenderer.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
-    <file path="/SpecRunner.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361127675970" ignored="false" />
+    <file path="/SpecRunner.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361875897794" ignored="false" />
     <file path="/a.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360961504771" ignored="false" />
     <file path="/controller.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361269972598" ignored="false" />
     <file path="/class.apiWrapper.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813306422" ignored="false" />
@@ -36,18 +36,19 @@
     <file path="/fluid_grid.css" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361135278390" ignored="false" />
     <file path="/masparti-responsive.css" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361135067040" ignored="false" />
     <file path="/class.MenuItemsList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361269228906" ignored="false" />
-    <file path="/class.MenuItem.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361271414147" ignored="false" />
-    <file path="/class.MenuItem.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361271142534" ignored="false" />
+    <file path="/class.MenuItem.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361877134311" ignored="false" />
+    <file path="/class.MenuItem.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361877281099" ignored="false" />
     <file path="/controller.gallery.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361559114703" ignored="false" />
     <file path="/controller.x.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361811330120" ignored="false" />
     <file path="/gallery.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361608005907" ignored="false" />
-    <file path="/x.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361790922436" ignored="false" />
+    <file path="/x.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361867091137" ignored="false" />
     <file path="/class.boxi.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361609076512" ignored="false" />
     <file path="/class.usgaes.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361737248919" ignored="false" />
     <file path="/class.usages.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361790274388" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813399672" ignored="false" />
-    <file path="/class.menuItemList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813171371" ignored="false" />
+    <file path="/class.menuItemList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361876340533" ignored="false" />
     <file path="/controller.home.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813354584" ignored="false" />
+    <file path="C:/TRUNKPhoenix/web/phoenix/controllers/editor_controller.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,41 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controller.home.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+      <file leaf-file-name="gallery.php.tests.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="39" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1301653">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="111" selection-start="358" selection-end="358" vertical-scroll-proportion="-5.6666665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.apiWrapper.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.rawDataConverter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.rawDataConverter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="31" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+            <state line="57" column="42" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -112,8 +82,39 @@
       <file leaf-file-name="class.MenuItem.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="109" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
+            <state line="34" column="26" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.usgaes.test.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.23217666">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.usages.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="72" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.MenuItem.test.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,25 +122,7 @@
       <file leaf-file-name="class.menuItemList.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="72" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Content/menu.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="module.masparti.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/module.masparti.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="42" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="16" column="7" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,30 +138,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/maspNew/Scripts/controller.test.js" />
-        <option value="$PROJECT_DIR$/maspNew/home.html" />
-        <option value="$PROJECT_DIR$/maspNew/gallery.html" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.boxi.js" />
         <option value="$PROJECT_DIR$/maspNew/tests/testacular.conf.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/module.masparti.js" />
-        <option value="$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.usages.js" />
-        <option value="$PROJECT_DIR$/maspNew/x.html" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/controller.x.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.rawDataConverter.js" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js" />
         <option value="$PROJECT_DIR$/maspNew/index.html" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/controller.home.js" />
+        <option value="$PROJECT_DIR$/maspNew/x.html" />
+        <option value="$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/module/builderUsageBuilder.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1170" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1216" />
+    <option name="height" value="1770" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -211,7 +194,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -222,7 +205,43 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maspNew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -281,17 +300,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
+    <frame x="-8" y="-8" width="1216" height="1770" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17923036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17841971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="2" y="6" width="1675" height="978" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32836747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1286" y="363" width="1675" height="978" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -364,47 +383,35 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/core-scripting.rnc">
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="86" selection-start="856" selection-end="856" vertical-scroll-proportion="0.57473683">
+        <state line="46" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/960.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="114" selection-end="114" vertical-scroll-proportion="0.15473685" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/testacular.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="571" selection-end="571" vertical-scroll-proportion="0.55263156" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.x.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="114" selection-start="411" selection-end="411" vertical-scroll-proportion="0.34710744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="5" selection-start="525" selection-end="525" vertical-scroll-proportion="0.021694215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="31" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.6745868">
+        <state line="20" column="0" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/x.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="86" selection-start="575" selection-end="575" vertical-scroll-proportion="0.58208954">
+        <state line="27" column="12" selection-start="587" selection-end="587" vertical-scroll-proportion="-17.28">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -413,62 +420,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Content/menu.json">
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/module.masparti.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/Content/menu.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="91" column="10" selection-start="1610" selection-end="1610" vertical-scroll-proportion="-7.68">
+          <folding>
+            <element signature="e#25#76#0" expanded="false" />
+            <element signature="e#120#168#0" expanded="false" />
+            <element signature="e#181#1457#0" expanded="false" />
+            <element signature="e#186#416#0" expanded="false" />
+            <element signature="e#200#314#0" expanded="false" />
+            <element signature="e#361#411#0" expanded="false" />
+            <element signature="e#421#645#0" expanded="false" />
+            <element signature="e#435#543#0" expanded="false" />
+            <element signature="e#590#640#0" expanded="false" />
+            <element signature="e#650#844#0" expanded="false" />
+            <element signature="e#664#741#0" expanded="false" />
+            <element signature="e#789#839#0" expanded="false" />
+            <element signature="e#849#1062#0" expanded="false" />
+            <element signature="e#863#959#0" expanded="false" />
+            <element signature="e#1003#1057#0" expanded="false" />
+            <element signature="e#1067#1280#0" expanded="false" />
+            <element signature="e#1081#1180#0" expanded="false" />
+            <element signature="e#1225#1275#0" expanded="false" />
+            <element signature="e#1285#1453#0" expanded="false" />
+            <element signature="e#1299#1353#0" expanded="false" />
+            <element signature="e#1398#1448#0" expanded="false" />
+            <element signature="e#1477#1523#0" expanded="false" />
+            <element signature="e#1563#1609#0" expanded="false" />
+            <element signature="e#1622#5148#0" expanded="false" />
+            <element signature="e#1627#1823#0" expanded="false" />
+            <element signature="e#1641#1719#0" expanded="false" />
+            <element signature="e#1764#1818#0" expanded="false" />
+            <element signature="e#1828#2013#0" expanded="false" />
+            <element signature="e#1842#1908#0" expanded="false" />
+            <element signature="e#1954#2008#0" expanded="false" />
+            <element signature="e#2018#2214#0" expanded="false" />
+            <element signature="e#2032#2105#0" expanded="false" />
+            <element signature="e#2155#2209#0" expanded="false" />
+            <element signature="e#2219#2439#0" expanded="false" />
+            <element signature="e#2233#2328#0" expanded="false" />
+            <element signature="e#2380#2434#0" expanded="false" />
+            <element signature="e#2444#2659#0" expanded="false" />
+            <element signature="e#2458#2558#0" expanded="false" />
+            <element signature="e#2600#2654#0" expanded="false" />
+            <element signature="e#2664#2855#0" expanded="false" />
+            <element signature="e#2678#2752#0" expanded="false" />
+            <element signature="e#2796#2850#0" expanded="false" />
+            <element signature="e#2860#3068#0" expanded="false" />
+            <element signature="e#2874#2962#0" expanded="false" />
+            <element signature="e#3009#3063#0" expanded="false" />
+            <element signature="e#3073#3265#0" expanded="false" />
+            <element signature="e#3087#3162#0" expanded="false" />
+            <element signature="e#3206#3260#0" expanded="false" />
+            <element signature="e#3270#3490#0" expanded="false" />
+            <element signature="e#3284#3388#0" expanded="false" />
+            <element signature="e#3435#3485#0" expanded="false" />
+            <element signature="e#3495#3696#0" expanded="false" />
+            <element signature="e#3509#3595#0" expanded="false" />
+            <element signature="e#3641#3691#0" expanded="false" />
+            <element signature="e#3701#3899#0" expanded="false" />
+            <element signature="e#3715#3799#0" expanded="false" />
+            <element signature="e#3844#3894#0" expanded="false" />
+            <element signature="e#3904#4103#0" expanded="false" />
+            <element signature="e#3918#4004#0" expanded="false" />
+            <element signature="e#4048#4098#0" expanded="false" />
+            <element signature="e#4108#4327#0" expanded="false" />
+            <element signature="e#4122#4225#0" expanded="false" />
+            <element signature="e#4272#4322#0" expanded="false" />
+            <element signature="e#4332#4519#0" expanded="false" />
+            <element signature="e#4346#4414#0" expanded="false" />
+            <element signature="e#4464#4514#0" expanded="false" />
+            <element signature="e#4524#4733#0" expanded="false" />
+            <element signature="e#4538#4633#0" expanded="false" />
+            <element signature="e#4678#4728#0" expanded="false" />
+            <element signature="e#4738#4957#0" expanded="false" />
+            <element signature="e#4752#4855#0" expanded="false" />
+            <element signature="e#4902#4952#0" expanded="false" />
+            <element signature="e#4962#5144#0" expanded="false" />
+            <element signature="e#4976#5045#0" expanded="false" />
+            <element signature="e#5089#5139#0" expanded="false" />
+            <element signature="e#5167#5209#0" expanded="false" />
+            <element signature="e#5250#5294#0" expanded="false" />
+            <element signature="e#5312#5482#0" expanded="false" />
+            <element signature="e#5326#5382#0" expanded="false" />
+            <element signature="e#5427#5477#0" expanded="false" />
+            <element signature="e#5487#5699#0" expanded="false" />
+            <element signature="e#5501#5597#0" expanded="false" />
+            <element signature="e#5644#5694#0" expanded="false" />
+            <element signature="e#5704#5914#0" expanded="false" />
+            <element signature="e#5718#5807#0" expanded="false" />
+            <element signature="e#5859#5909#0" expanded="false" />
+            <element signature="e#5919#6087#0" expanded="false" />
+            <element signature="e#5933#5987#0" expanded="false" />
+            <element signature="e#6032#6082#0" expanded="false" />
+            <element signature="e#6092#6260#0" expanded="false" />
+            <element signature="e#6106#6160#0" expanded="false" />
+            <element signature="e#6205#6255#0" expanded="false" />
+            <element signature="e#6265#6451#0" expanded="false" />
+            <element signature="e#6279#6349#0" expanded="false" />
+            <element signature="e#6396#6446#0" expanded="false" />
+            <element signature="e#6474#6529#0" expanded="false" />
+            <element signature="e#6575#6619#0" expanded="false" />
+            <element signature="e#6632#7740#0" expanded="false" />
+            <element signature="e#6638#6833#0" expanded="false" />
+            <element signature="e#6652#6730#0" expanded="false" />
+            <element signature="e#6778#6828#0" expanded="false" />
+            <element signature="e#6838#7046#0" expanded="false" />
+            <element signature="e#6852#6938#0" expanded="false" />
+            <element signature="e#6991#7041#0" expanded="false" />
+            <element signature="e#7051#7216#0" expanded="false" />
+            <element signature="e#7065#7115#0" expanded="false" />
+            <element signature="e#7161#7211#0" expanded="false" />
+            <element signature="e#7221#7389#0" expanded="false" />
+            <element signature="e#7235#7287#0" expanded="false" />
+            <element signature="e#7334#7384#0" expanded="false" />
+            <element signature="e#7394#7562#0" expanded="false" />
+            <element signature="e#7408#7460#0" expanded="false" />
+            <element signature="e#7507#7557#0" expanded="false" />
+            <element signature="e#7568#7736#0" expanded="false" />
+            <element signature="e#7582#7634#0" expanded="false" />
+            <element signature="e#7681#7731#0" expanded="false" />
+            <element signature="e#7747#8597#0" expanded="false" />
+            <element signature="e#7759#7802#0" expanded="false" />
+            <element signature="e#7815#7859#0" expanded="false" />
+            <element signature="e#7872#8594#0" expanded="false" />
+            <element signature="e#7877#8040#0" expanded="false" />
+            <element signature="e#7891#7940#0" expanded="false" />
+            <element signature="e#7985#8035#0" expanded="false" />
+            <element signature="e#8045#8209#0" expanded="false" />
+            <element signature="e#8059#8108#0" expanded="false" />
+            <element signature="e#8154#8204#0" expanded="false" />
+            <element signature="e#8214#8379#0" expanded="false" />
+            <element signature="e#8228#8278#0" expanded="false" />
+            <element signature="e#8324#8374#0" expanded="false" />
+            <element signature="e#8384#8590#0" expanded="false" />
+            <element signature="e#8398#8450#0" expanded="false" />
+            <element signature="e#8535#8585#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="111" selection-start="358" selection-end="358" vertical-scroll-proportion="-5.6666665">
+        <state line="5" column="74" selection-start="200" selection-end="200" vertical-scroll-proportion="-3.2">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="109" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
+        <state line="21" column="84" selection-start="1193" selection-end="1193" vertical-scroll-proportion="-13.44">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.rawDataConverter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="72" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+        <state line="16" column="7" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1301653">
+        <state line="57" column="42" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="26" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="72" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/builderUsageBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="5" selection-start="142" selection-end="142" vertical-scroll-proportion="0.060567822">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.23217666">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

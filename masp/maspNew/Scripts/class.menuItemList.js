@@ -5,12 +5,18 @@ var MenuItemList = (function () {
 		this.items = menuItems || [];
 	}
 
+
 	MenuItemList.prototype.xxx = function (type) {
 
 	};
 
-	MenuItemList.prototype.xxx = function (type) {
-		console.log("knasdk")
+	/**
+	 *
+	 * @param {MenuItem.ItemTypes} type
+	 * @constructor
+	 */
+	MenuItemList.prototype.links = function (type) {
+		console.log(this.items)
 	};
 
 	return MenuItemList;

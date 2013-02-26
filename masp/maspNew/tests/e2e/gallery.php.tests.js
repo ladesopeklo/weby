@@ -1,12 +1,14 @@
-/*global apiWrapper*/
+/*global apiWrapper, expect, it, describe, waitsFor, ApiWrapper, Gallery, MenuItemList*/
 var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menuApi) {
-	var api = new ApiWrapper(galleryApi, menuApi);
+	"use strict";
 
-	var waitsForJqPromise = function (promise) {
-		waitsFor(function () {
-			return promise.state() == "resolved" || promise.state() === "rejected";
-		})
-	};
+	var api = new ApiWrapper(galleryApi, menuApi),
+
+		waitsForJqPromise = function (promise) {
+			waitsFor(function () {
+				return promise.state() === "resolved" || promise.state() === "rejected";
+			});
+		};
 
 	describe("jasmine run in angular controller ", function () {
 		it('gallery.php - gallery ', function () {
@@ -15,15 +17,6 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			promise.done(function (data) {
 				expect(data).toBeDefined();
 				expect(data.images.length).toBeGreaterThan(5);
-				console.log(data)
-			});
-
-			waitsForJqPromise(promise);
-		});
-		it('get menu', function () {
-			var promise = api.menu();
-
-			promise.done(function (data) {
 				console.log(data)
 			});
 
@@ -59,7 +52,8 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			waitsForJqPromise(promise);
 		});
 		it('wrong params - gallerylist, gallerymap', function () {
-			var promise = api.galleryList();
+			var list,
+				promise = api.galleryList();
 
 			promise.done(function (data) {
 				expect(data).toBeDefined();
@@ -68,18 +62,42 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 				console.log("gallerylist empty", data);
 			});
 
-			var list = api.galleryMap();
+			list = api.galleryMap();
 
 			list.done(function (data) {
 				expect(data).toBeDefined();
-				expect(data instanceof Array).toBeTruthy();
-
 				console.log("gallerymap empty", data);
 			});
 
 			waitsForJqPromise(promise);
 		});
-	})
+
+		it('get MenuItemsList', function () {
+
+		});
+
+	});
+	describe("menu api tests ", function () {
+		it('check instance of menu', function () {
+			var promise = api.menu();
+			promise.done(function (data) {
+				expect(data instanceof MenuItemList).toBeTruthy();
+				expect(data.items.length).toBeGreaterThan(0);
+				console.log(data);
+			});
+			waitsForJqPromise(promise);
+		});
+
+		it('check instance of menu', function () {
+			var promise = api.menu();
+			promise.done(function (data) {
+
+				console.log(data.items[0]);
+			});
+			waitsForJqPromise(promise);
+		});
+	});
+
 
 }];
 

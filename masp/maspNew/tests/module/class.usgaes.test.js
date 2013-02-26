@@ -1,65 +1,11 @@
-/*global expect*/
-
-var UsagesBuilder = (function () {
-
-	function UsagesBuilder() {
-		this.usages = new Usages(100)
-	}
-
-	// |xxxxx.....|
-	UsagesBuilder.prototype.widthLineFiveItems = function () {
-		this.usages.addUsagePixo(new Position(0, 0, 10, 10));
-		this.usages.addUsagePixo(new Position(10, 0, 20, 10));
-		this.usages.addUsagePixo(new Position(20, 0, 30, 10));
-		this.usages.addUsagePixo(new Position(30, 0, 40, 10));
-		this.usages.addUsagePixo(new Position(40, 0, 50, 10));
-		return this;
-	};
-	// |xxxxx.....|
-	// |xxxxx.....|
-	UsagesBuilder.prototype.widthTwoFiveItemLines = function () {
-		this.widthLineFiveItems();
-
-		this.usages.addUsagePixo(new Position(0, 10, 10, 20));
-		this.usages.addUsagePixo(new Position(10, 10, 20, 20));
-		this.usages.addUsagePixo(new Position(20, 10, 30, 20));
-		this.usages.addUsagePixo(new Position(30, 10, 40, 20));
-		this.usages.addUsagePixo(new Position(40, 10, 50, 20));
-		return this;
-	};
-	// |xxxxxxxxxx|
-	UsagesBuilder.prototype.widthLineFull = function () {
-		this.widthLineFiveItems();
-
-		this.usages.addUsagePixo(new Position(50, 0, 60, 10));
-		this.usages.addUsagePixo(new Position(60, 0, 70, 10));
-		this.usages.addUsagePixo(new Position(70, 0, 80, 10));
-		this.usages.addUsagePixo(new Position(80, 0, 90, 10));
-		this.usages.addUsagePixo(new Position(90, 0, 100, 10));
-
-		return this;
-	};
-
-	// |xxxxx.....|
-	// |x.........|
-	UsagesBuilder.prototype.widthLeftL = function () {
-		this.widthLineFiveItems();
-		this.usages.addUsagePixo(new Position(0, 10, 10, 20));
-		return this;
-	};
-
-	UsagesBuilder.prototype.build = function () {
-		return this.usages;
-	};
-
-	return UsagesBuilder;
-})();
-
+/*global expect, it, describe, Usages, module, Position, SquareItem, UsagesBuilder */
 var anUsage = function () {
 	return new UsagesBuilder();
 };
 
 describe("Usages tests", function () {
+	"use strict";
+
 	beforeEach(module('appConfigModule', function () {
 	}));
 
@@ -122,9 +68,7 @@ describe("Usages tests", function () {
 			square = usage.addSquare(s);
 
 		expect(usage.getLastItemPosition().toString()).toBe(square.position.toString());
-		expect(square.position.toString()).toBe("10,10,20,20")
-
-
+		expect(square.position.toString()).toBe("10,10,20,20");
 	});
 
 
@@ -142,8 +86,8 @@ describe("Usages tests", function () {
 
 		squareUsage = usage.addSquare(new SquareItem(10, 10));
 
-		//expect(usage.getLastItemPosition().toString()).toBe(squareUsage.position.toString());
-		//expect(squareUsage.position.toString()).toBe("0,10,10,10");
+		expect(usage.getLastItemPosition().toString()).toBe(squareUsage.position.toString());
+		expect(squareUsage.position.toString()).toBe("0,10,10,10");
 
 	});
 
@@ -153,7 +97,7 @@ describe("Usages tests", function () {
 			.build();
 
 		expect(usage.itemsInInterval(0, 15).length).toBe(3);
-		expect(usage.itemsInInterval(0, 10).length).toBe(3);
+		expect(usage.itemsInInterval(0, 10).length).toBe(2);
 		expect(usage.itemsInInterval(0, 9).length).toBe(2);
 	});
 
@@ -163,7 +107,7 @@ describe("Usages tests", function () {
 			.build();
 
 		var a = usage.findMostBottom(0, 10);
-		console.log( a);
+		console.log(a);
 
 		expect(usage.findMostBottom(0, 10).position.y2).toBe(20);
 		expect(usage.findMostBottom(10, 20).position.y2).toBe(10);

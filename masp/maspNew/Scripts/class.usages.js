@@ -125,8 +125,8 @@ var Usages = (function () {
 
 		newLineOffsetRandom = this.newLineOffset ? Math.floor((Math.random()*this.newLineOffset) + 1) : 0;
 		newLineOffsetTopRandom = this.newLineOffsetTop ? Math.floor((Math.random()*this.newLineOffsetTop) + 1) : 0;
-		widthOffsetRandom = this.widthOffset ? Math.floor((Math.random()*this.widthOffset) + 1) : 2;
-		heightOffsetRandom = this.heightOffset ? Math.floor((Math.random()*this.heightOffset) + 1) : 2;
+		widthOffsetRandom = this.widthOffset ? Math.floor((Math.random()*this.widthOffset) + 1) : 0;
+		heightOffsetRandom = this.heightOffset ? Math.floor((Math.random()*this.heightOffset) + 1) : 0;
 
 
 		newPosition.x1 = last.x2 + squareItem.width > this.maxWidth ? 0  : last.x2 + widthOffsetRandom;

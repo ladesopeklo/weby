@@ -1,4 +1,4 @@
-/*global expect, it, describe, Usages, module, Position, SquareItem, UsagesBuilder */
+/*global expect, it, describe, Usages, module, Position, SquareItem, UsagesBuilder, beforeEach */
 var anUsage = function () {
 	return new UsagesBuilder();
 };
@@ -20,16 +20,19 @@ describe("Usages tests", function () {
 	});
 
 	it("childrenItemsLinks", function () {
-		var a = anUsage().build();
+		var a = anUsage().build(),
+			found,
+			last;
+
 
 		a.addUsagePixo(new Position(0, 0, 10, 10));
 		a.addUsagePixo(new Position(10, 0, 20, 10));
 		a.addUsagePixo(new Position(20, 0, 30, 15));
 
-		var last = new Position(10, 10, 20, 20);
+		last = new Position(10, 10, 20, 20);
 		a.addUsagePixo(last);
 
-		var found = a.getLastItemPosition();
+		found = a.getLastItemPosition();
 		expect(found.toString()).toBe("10,10,20,20");
 		console.log(found.toString())
 	});
@@ -43,10 +46,11 @@ describe("Usages tests", function () {
 	});
 
 	it("last item of two 5 item lines ", function () {
-		var a = anUsage();
+		var a = anUsage(),
+			found;
 
 		a.widthTwoFiveItemLines();
-		var found = a.build().getLastItemPosition();
+		found = a.build().getLastItemPosition();
 		console.log("2 lines", found.toString());
 		expect(found.toString()).toBe("40,10,50,20");
 	});
@@ -87,7 +91,7 @@ describe("Usages tests", function () {
 		squareUsage = usage.addSquare(new SquareItem(10, 10));
 
 		expect(usage.getLastItemPosition().toString()).toBe(squareUsage.position.toString());
-		expect(squareUsage.position.toString()).toBe("0,10,10,10");
+		expect(squareUsage.position.toString()).toBe("0,10,10,20");
 
 	});
 
@@ -107,7 +111,6 @@ describe("Usages tests", function () {
 			.build();
 
 		var a = usage.findMostBottom(0, 10);
-		console.log(a);
 
 		expect(usage.findMostBottom(0, 10).position.y2).toBe(20);
 		expect(usage.findMostBottom(10, 20).position.y2).toBe(10);

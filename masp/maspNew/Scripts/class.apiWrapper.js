@@ -1,3 +1,4 @@
+/*global MenuItemList, RawDataConverter*/
 var ApiWrapper = (function () {
 
 	function ApiWrapper(galleryApi, menuApi) {
@@ -38,13 +39,15 @@ var ApiWrapper = (function () {
 
 	ApiWrapper.prototype.menu = function () {
 		var self = this,
+			menuList,
 			deferred = $.Deferred();
 
 		this.menuApi.getAll(function (data) {
-			deferred.resolve(self.converter.rawDataToMenu(data));
+			menuList = new MenuItemList(self.converter.rawDataToMenu(data));
+			deferred.resolve(menuList);
 		});
 		return deferred;
 	};
 
 	return ApiWrapper;
-})();
+}());

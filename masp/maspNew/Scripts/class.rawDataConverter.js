@@ -1,4 +1,6 @@
+/*global MenuItem, GalleryImage*/
 var RawDataConverter = (function () {
+	"use strict";
 
 	function RawDataConverter() {
 	}
@@ -9,12 +11,12 @@ var RawDataConverter = (function () {
 	 * @returns {Gallery}
 	 */
 	RawDataConverter.prototype.rawDataToGallery = function (data) {
+		var x ;
+
 		if (!data.images) {
 			return null;
 		}
-
-		console.log(data)
-		var x = JSLINQ(data.images).Select(function (item) {
+		x = JSLINQ(data.images).Select(function (item) {
 			return new GalleryImage(item.name, item.title, data.thumb, null, null, data.full);
 		});
 		return new Gallery(x.items);
@@ -26,11 +28,14 @@ var RawDataConverter = (function () {
 	 * @returns {Array.<MenuItem>}
 	 */
 	RawDataConverter.prototype.rawDataToMenu = function (data) {
-		var self = this;
+		var x,
+			self = this;
+
 		if (!data) {
 			return  [];
 		}
-		var x = JSLINQ(data.items).Select(function (item) {
+
+		x = new JSLINQ(data.items).Select(function (item) {
 			var children = item && item.items ? self.rawDataToMenu(item) : [];
 			return new MenuItem(item.text, item.href, item.title, children)
 		});
@@ -42,10 +47,11 @@ var RawDataConverter = (function () {
 	 * @param data
 	 */
 	RawDataConverter.prototype.rawDataToGalleryMap = function (data) {
+		var xx = {};
+
 		if (!data) {
 			return {};
 		}
-		var xx = {};
 
 		for (var gallery in data) {
 			if (data.hasOwnProperty(gallery) && data[gallery].images) {

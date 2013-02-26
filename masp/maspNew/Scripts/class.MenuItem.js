@@ -1,8 +1,7 @@
 var MenuItem = (function () {
+	"use strict";
 
-
-
-	function MenuItem (text, link, title, children) {
+	function MenuItem(text, link, title, children) {
 		this.link = link || "";
 		this.text = text || {};
 		this.title = title || {};
@@ -11,7 +10,7 @@ var MenuItem = (function () {
 
 	MenuItem.prototype.childrenItemsLinks = function (type) {
 
-		var links =  JSLINQ(this.items).Select(function (menuItem) {
+		var links = JSLINQ(this.items).Select(function (menuItem) {
 			var split = menuItem.link ? menuItem.link.split("/") : [];
 			var value = split.length > 1 ? split[1] : split[0];
 			var itemLinkType = split.length > 1 ? split[0] : null;
@@ -27,9 +26,9 @@ var MenuItem = (function () {
 	};
 
 	MenuItem.itemTypes = {
-		Gallery : "gallery",
-		Content : "content"
+		Gallery: "gallery",
+		Content: "content"
 	};
 
 	return MenuItem;
-})();
+}());

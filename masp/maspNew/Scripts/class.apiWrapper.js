@@ -1,4 +1,4 @@
-/*global MenuItemList, RawDataConverter*/
+/*global MenuItemList, RawDataConverter, GalleryList*/
 var ApiWrapper = (function () {
 
 	function ApiWrapper(galleryApi, menuApi) {
@@ -22,7 +22,9 @@ var ApiWrapper = (function () {
 			deferred = $.Deferred();
 
 		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
-			deferred.resolve(self.converter.rawDataToGalleryList(data));
+			var galleryList = new GalleryList(self.converter.rawDataToGalleryMap(data));
+			deferred.resolve(galleryList);
+
 		});
 		return deferred;
 	};

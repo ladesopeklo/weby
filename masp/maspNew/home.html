@@ -5,7 +5,9 @@
 	}
 </style>
 
-<div class="container_12" ng-repeat="menuitem in menu">
+{{galleryList.opava.images[0].name}}
+
+<div class="container_12" ng-repeat="menuitem in menu.items">
 	<div class="grid_12"> <h2>{{menuitem.text.cs}}</h2></div>
 
 	<div class="grid_2" ng-repeat="item in menuitem.items">

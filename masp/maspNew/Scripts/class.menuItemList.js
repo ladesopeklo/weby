@@ -1,6 +1,11 @@
 var MenuItemList = (function () {
 	"use strict";
 
+	/**
+	 *
+	 * @param menuItems
+	 * @constructor
+	 */
 	function MenuItemList(menuItems) {
 		this.items = menuItems || [];
 	}

@@ -1,4 +1,4 @@
-/*global apiWrapper, expect, it, describe, waitsFor, ApiWrapper, Gallery, MenuItemList*/
+/*global runs, apiWrapper, expect, it, describe, waitsFor, ApiWrapper, Gallery, MenuItemList, GalleryList*/
 var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menuApi) {
 	"use strict";
 
@@ -10,6 +10,44 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			});
 		};
 
+	describe("Gallery List tests ", function () {
+
+		it('gallerylist', function () {
+			var promise = api.galleryList(["exalt", "dalov", "chuj"]);
+
+			promise.done(function (data) {
+				expect(data).toBeDefined();
+				expect(data instanceof GalleryList).toBeTruthy();
+				expect(data.length).toBeGreaterThan(0);
+
+				console.log("gallerylist", data);
+			});
+
+			waitsForJqPromise(promise);
+		});
+
+		it('gallerylist', function () {
+			var promise = api.galleryList(["exalt", "dalov", "chuj"]),
+				galleryList = {};
+
+			promise.done(function (data) {
+				galleryList = data;
+				return data;
+			});
+
+			waitsForJqPromise(promise);
+
+			runs(function () {
+				expect(galleryList.length).toBe(2);
+
+				var exalt = galleryList.get("exalt");
+				expect(exalt).toBeDefined();
+				expect(exalt.images.length).toBeGreaterThan(0);
+			});
+
+		});
+	});
+
 	describe("jasmine run in angular controller ", function () {
 		it('gallery.php - gallery ', function () {
 			var promise = api.gallery("dalov");
@@ -17,7 +55,7 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			promise.done(function (data) {
 				expect(data).toBeDefined();
 				expect(data.images.length).toBeGreaterThan(5);
-				console.log(data)
+				console.log(data);
 			});
 
 			waitsForJqPromise(promise);
@@ -38,26 +76,13 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			waitsForJqPromise(promise);
 		});
 
-		it('gallerylist', function () {
-			var promise = api.galleryList(["exalt", "dalov", "chuj"]);
-
-			promise.done(function (data) {
-				expect(data).toBeDefined();
-				expect(data instanceof Array).toBeTruthy();
-				expect(data.length).toBeGreaterThan(0);
-
-				console.log("gallerylist", data);
-			});
-
-			waitsForJqPromise(promise);
-		});
 		it('wrong params - gallerylist, gallerymap', function () {
 			var list,
 				promise = api.galleryList();
 
 			promise.done(function (data) {
 				expect(data).toBeDefined();
-				expect(data instanceof Array).toBeTruthy();
+				expect(data instanceof GalleryList).toBeTruthy();
 
 				console.log("gallerylist empty", data);
 			});
@@ -77,6 +102,7 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 		});
 
 	});
+
 	describe("menu api tests ", function () {
 
 		it('check instance of menu', function () {
@@ -105,7 +131,6 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			});
 			waitsForJqPromise(promise);
 		});
-
 
 
 	});

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js" line="12" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js" line="57" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="433c86f5-f086-4582-97e8-8081a3ede6eb" name="Default" comment="" />
@@ -26,7 +26,7 @@
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.toolbar.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/renderer/renderer.paragraphRenderer.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1360908998843" ignored="false" />
-    <file path="/SpecRunner.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361962012344" ignored="false" />
+    <file path="/SpecRunner.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362050236585" ignored="false" />
     <file path="/a.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361961141929" ignored="false" />
     <file path="/controller.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361269972598" ignored="false" />
     <file path="/class.apiWrapper.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361986309711" ignored="false" />
@@ -47,18 +47,20 @@
     <file path="/x.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361867091137" ignored="false" />
     <file path="/class.boxi.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361609076512" ignored="false" />
     <file path="/class.usgaes.test.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361891637211" ignored="false" />
-    <file path="/class.usages.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361790274388" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361813399672" ignored="false" />
+    <file path="/class.usages.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362050145203" ignored="false" />
     <file path="/class.menuItemList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361892405883" ignored="false" />
-    <file path="/controller.home.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362001361207" ignored="false" />
+    <file path="/controller.home.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362049791647" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/controllers/editor_controller.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361871858639" ignored="false" />
     <file path="/class.maspartiData.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361994934821" ignored="false" />
-    <file path="/home.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362001436440" ignored="false" />
+    <file path="/home.html" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362049180607" ignored="false" />
     <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/editor.flowHighlighter.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361961454451" ignored="false" />
     <file path="/a.dummy" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361961814800" ignored="false" />
-    <file path="/class.galleryList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362001103462" ignored="false" />
+    <file path="/class.galleryList.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362047478451" ignored="false" />
     <file path="/class.Gallery.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1361995058709" ignored="false" />
-    <file path="/class.GalleryImage.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362000462543" ignored="false" />
+    <file path="/class.GalleryImage.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362047567022" ignored="false" />
+    <file path="C:/TRUNKPhoenix/web/phoenix/resources/editor/highlighter/highlighter.flowHighlighter.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362045717443" ignored="false" />
+    <file path="C:/TRUNKPhoenix/web/phoenix/css/phoenix.editor.flows.less" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362045566558" ignored="false" />
+    <file path="/highlighter.flowHighlighter.js" changelist="433c86f5-f086-4582-97e8-8081a3ede6eb" time="1362045717443" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,10 +80,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="x.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/x.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="52" selection-start="938" selection-end="938" vertical-scroll-proportion="-26.24">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="35" selection-start="660" selection-end="660" vertical-scroll-proportion="-14.72">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="controller.home.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="66" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
+            <state line="21" column="28" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecRunner.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="0" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.36399603">
               <folding />
             </state>
           </provider>
@@ -90,39 +125,10 @@
       <file leaf-file-name="class.GalleryImage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.GalleryImage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="57" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builderUsageBuilder.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/tests/module/builderUsageBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
+            <state line="12" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.usages.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="50" selection-start="2764" selection-end="2815" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.apiWrapper.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="103" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -130,25 +136,25 @@
       <file leaf-file-name="class.galleryList.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.galleryList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="65" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+            <state line="19" column="44" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/index.html">
+      <file leaf-file-name="class.Gallery.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.Gallery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="73" selection-start="730" selection-end="730" vertical-scroll-proportion="-8.466666">
+            <state line="10" column="22" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/maspNew/home.html">
+      <file leaf-file-name="class.usages.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="42" selection-start="484" selection-end="484" vertical-scroll-proportion="0.35501066">
+            <state line="64" column="60" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,23 +163,17 @@
       <file leaf-file-name="controller.x.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.x.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="78" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="12" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="x.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maspNew/x.html">
+      <file leaf-file-name="class.maspartiData.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.maspartiData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="28" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-22.866667">
-              <folding>
-                <element signature="tag#label#0;tag#div#3;tag#div#0" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state line="7" column="7" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,30 +188,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.usages.js" />
-        <option value="$PROJECT_DIR$/maspNew/tests/module/class.usgaes.test.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js" />
         <option value="$PROJECT_DIR$/maspNew/tests/module/class.MenuItem.test.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.menuItemList.js" />
         <option value="$PROJECT_DIR$/maspNew/index.html" />
-        <option value="$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html" />
         <option value="$PROJECT_DIR$/maspNew/tests/e2e/gallery.php.tests.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.maspartiData.js" />
         <option value="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.Gallery.js" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/class.GalleryImage.js" />
         <option value="$PROJECT_DIR$/maspNew/Scripts/class.galleryList.js" />
-        <option value="$PROJECT_DIR$/maspNew/Scripts/controller.home.js" />
+        <option value="$PROJECT_DIR$/maspNew/x.html" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/class.GalleryImage.js" />
         <option value="$PROJECT_DIR$/maspNew/home.html" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/controller.home.js" />
+        <option value="$PROJECT_DIR$/maspNew/Scripts/class.usages.js" />
+        <option value="$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1170" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1216" />
+    <option name="height" value="1770" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -268,14 +268,14 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSLint" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/jsLinters/jslint.xml" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/jsLinters/jslint.xml" />
     <property name="FullScreen" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.testacular masp">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -293,7 +293,7 @@
       <setting name="preferredDebugBrowser" value="CHROME" />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$" coffeescript-run="false">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -303,7 +303,7 @@
       </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
-    <configuration default="false" name="testacular masp" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="$USER_HOME$/AppData/Roaming/npm/node_modules/testacular/bin/testacular" application-parameters="start testacular.conf.js" working-dir="$PROJECT_DIR$/maspNew/tests">
+    <configuration default="false" name="testacular masp" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="$USER_HOME$/AppData/Roaming/npm/node_modules/testacular/bin/testacular" application-parameters="start testacular.conf.js" working-dir="$PROJECT_DIR$/maspNew/tests" coffeescript-run="false">
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
@@ -322,11 +322,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
+    <frame x="-8" y="-8" width="1216" height="1770" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32774675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17841971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -337,7 +338,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -382,7 +382,6 @@
     <option name="UPDATE_FILTER_SCOPE_NAME" />
     <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
     <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
@@ -406,20 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.MenuItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.maspartiData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/jsLinters/jslint.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="103" selection-start="270" selection-end="270" vertical-scroll-proportion="0.17355372">
@@ -434,96 +419,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.Gallery.js">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml.orig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="93" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.16410257">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.apiWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="103" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.121135645">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="50" selection-start="2764" selection-end="2815" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/tests/module/builderUsageBuilder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="73" selection-start="730" selection-end="730" vertical-scroll-proportion="-8.466666">
+        <state line="2" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.020189274">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.GalleryImage.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.maspartiData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="57" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
+        <state line="7" column="7" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml.orig">
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.Gallery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.x.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="78" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.galleryList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="65" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+        <state line="10" column="22" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/x.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="28" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-22.866667">
+        <state line="41" column="52" selection-start="938" selection-end="938" vertical-scroll-proportion="-26.24">
           <folding>
-            <element signature="tag#label#0;tag#div#3;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.GalleryImage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="66" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
+        <state line="12" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.x.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.galleryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="44" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maspNew/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="42" selection-start="484" selection-end="484" vertical-scroll-proportion="0.35501066">
+        <state line="23" column="35" selection-start="660" selection-end="660" vertical-scroll-proportion="-14.72">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/class.usages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="60" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/Scripts/controller.home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="28" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maspNew/tests/e2e/SpecRunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.36399603">
           <folding />
         </state>
       </provider>

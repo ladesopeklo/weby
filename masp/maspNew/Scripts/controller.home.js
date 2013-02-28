@@ -1,13 +1,44 @@
-/*global ApiWrapper, MaspartiData*/
+/*global ApiWrapper, MaspartiData, Usages*/
 var galleryList;
 function homeController($scope, galleryApi, menuApi) {
 	var api = new ApiWrapper(galleryApi, menuApi),
-		maspartiData = new MaspartiData(api);
+		maspartiData = new MaspartiData(api),
+		usages,
+		usagesSettings;
+
+	usagesSettings = {
+		containerOffset: -360,
+		randoms: {
+			boxOffsetWidth: 200,
+			boxOffsetHeight: 200,
+			lineOffsetTop: 10,
+			lineOffsetStart: 10
+		}
+	};
+
+	usages = new Usages(usagesSettings);
+
+	$scope.widthOffset = 3;
+	$scope.heightOffset = 3;
+	$scope.newLineOffset = 30;
+	$scope.newLineOffsetTop = 40;
+	$scope.width = 900;
+
 
 	$.when(maspartiData.menuAsync(), maspartiData.galleryListAsync()).done(function (menu, galleries) {
 		$scope.menu = menu;
 		$scope.galleryList = galleries;
-		console.log(galleries.galleriesArray)
+
+		$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
+
+		setTimeout(function () {
+			usages.setRandom($scope.widthOffset, $scope.heightOffset,$scope.newLineOffset, $scope.newLineOffsetTop);
+			usages.settings.containerOffset = 0;
+
+			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), $scope.width);
+			$scope.$apply();
+		},  100);
+
 	});
 
 	/**
@@ -18,19 +49,10 @@ function homeController($scope, galleryApi, menuApi) {
 		var galleryList = $scope.galleryList;
 
 		if (!galleryList.get(menuItem.linkValue())){
-			return "kjbadkjbas"
+			return "xxx"
 		}
 		return  galleryList.get(menuItem.linkValue()).galleryThumb();
 	};
 
-	$scope.galleryThumb = function(gallery) {
-
-		if (!galleryList.get(menuItem.linkValue())){
-			return "kjbadkjbas"
-		}
-		return  galleryList.get(menuItem.linkValue()).galleryThumb();
-	};
-
-//	$scope.galleryList = maspartiData.galleryListAsync();
 
 }

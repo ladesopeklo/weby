@@ -1,3 +1,4 @@
+/*galobal Position*/
 var GalleryImage = (function () {
 
 	function GalleryImage(name, title, thumbsUrl, small, medium, large) {
@@ -7,8 +8,9 @@ var GalleryImage = (function () {
 		this.smallUrl = small || null;
 		this.mediumUrl = medium || null;
 		this.largeUrl = large || null;
+		this.position = new Position();
 
-		var random =  Math.random()*3;
+		var random =  Math.random()*2.5;
 		this.width = Math.floor( random * 90) + 45;
 		this.height = Math.floor( random * 50) + 25;
 	}
@@ -22,4 +24,4 @@ var GalleryImage = (function () {
 	};
 
 	return GalleryImage;
-})();
+}());

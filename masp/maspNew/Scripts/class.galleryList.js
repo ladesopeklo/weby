@@ -4,7 +4,7 @@ var GalleryList = (function () {
 	/**
 	 *
 	 * @constructor
-	 * @param galleriesMap
+	 * @param {Object.<Gallery>} galleriesMap
 	 */
 	function GalleryList(galleriesMap) {
 		this.galleriesMap = galleriesMap || {};
@@ -38,6 +38,18 @@ var GalleryList = (function () {
 
 	GalleryList.prototype.get = function (name) {
 		return this.galleriesMap[name];
+	};
+
+	GalleryList.prototype.galleryThumbs = function () {
+		var property,
+			result = [];
+
+		for (property in this.galleriesMap) {
+			if (this.galleriesMap.hasOwnProperty(property)) {
+				result.push(this.galleriesMap[property].galleryThumb());
+			}
+		}
+		return result;
 	};
 
 	return GalleryList;

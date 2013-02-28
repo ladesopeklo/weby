@@ -31,27 +31,40 @@ var SquareItem = (function () {
 var Usages = (function () {
 	"use strict";
 
-	function Usages(width, height) {
+	function Usages(settings, width, height) {
 		this.usages = [];
-		this.maxWidth = width || 0;
-		this.maxHeight = height;
 		this.widthOffset = 0;
 		this.newLineOffset = 0;
 		this.newLineOffsetTop = 0;
 		this.heightOffset = 0;
+
+		//defaults
+		this.settings = $.extend({
+			containerOffset : 0,
+			randoms: {
+				boxOffsetWidth: 0,
+				boxOffsetHeight: 0,
+				lineOffsetTop: 0,
+				lineOffsetStart: 0
+			}
+		}, settings || {});
+
+		this.maxWidth = width || 0;
+		this.maxHeight = height;
 	}
 
-	Usages.prototype.setRandom = function (widthOffset, newLineOffset,heightOffset, newLineOffsetTop) {
-		this.widthOffset = widthOffset;
-		this.newLineOffset = newLineOffset;
-		this.heightOffset = heightOffset;
-		this.newLineOffsetTop = newLineOffsetTop;
+	Usages.prototype.setRandom = function (widthOffset, heightOffset, newLineOffset, newLineOffsetTop) {
+		this.settings.randoms.boxOffsetWidth = widthOffset;
+		this.settings.randoms.boxOffsetHeight = heightOffset;
+		this.settings.randoms.lineOffsetStart = newLineOffset;
+		this.settings.randoms.lineOffsetTop = newLineOffsetTop;
+		return this;
 	};
 
 
-	Usages.prototype.generate = function (items, newwidth) {
-		if (newwidth) {
-			this.maxWidth = newwidth;
+	Usages.prototype.generate = function (items, newWidth) {
+		if (newWidth) {
+			this.maxWidth = newWidth;
 		}
 
 		var i = 0,
@@ -85,9 +98,7 @@ var Usages = (function () {
 	};
 
 	Usages.prototype.addUsage = function (position) {
-		if (position instanceof SquareItem) {
-			this.usages.push(position);
-		}
+		this.usages.push(position);
 	};
 
 	Usages.prototype.findMostBottom = function (x1, x2) {
@@ -114,23 +125,29 @@ var Usages = (function () {
 		return inInterval.items;
 	};
 
+	Usages.prototype.getRandomFromProperty = function (property) {
+		return  property ? Math.floor((Math.random()*property) + 1) : 0;
+	}
+
 	Usages.prototype.addSquare = function (squareItem) {
 		var last = this.getLastItemPosition(),
 			newLineOffsetRandom,
 			newLineOffsetTopRandom,
 			heightOffsetRandom,
 			widthOffsetRandom,
+			containerOffset = this.settings.containerOffset,
+			settingsRandoms = this.settings.randoms,
 			newPosition = new Position();
+		console.log(containerOffset)
+
+		newLineOffsetRandom = this.getRandomFromProperty(settingsRandoms.lineOffsetStart);
+		newLineOffsetTopRandom = this.getRandomFromProperty(settingsRandoms.lineOffsetTop);
+		widthOffsetRandom = this.getRandomFromProperty(settingsRandoms.boxOffsetWidth);
+		heightOffsetRandom = this.getRandomFromProperty(settingsRandoms.boxOffsetHeight);
 
 
-		newLineOffsetRandom = this.newLineOffset ? Math.floor((Math.random()*this.newLineOffset) + 1) : 0;
-		newLineOffsetTopRandom = this.newLineOffsetTop ? Math.floor((Math.random()*this.newLineOffsetTop) + 1) : 0;
-		widthOffsetRandom = this.widthOffset ? Math.floor((Math.random()*this.widthOffset) + 1) : 0;
-		heightOffsetRandom = this.heightOffset ? Math.floor((Math.random()*this.heightOffset) + 1) : 0;
-
-
-		newPosition.x1 = last.x2 + squareItem.width > this.maxWidth ? 0  : last.x2 + widthOffsetRandom;
-		if (newPosition.x1 === 0 || last.x2 === 0) {
+		newPosition.x1 = last.x2 + squareItem.width > this.maxWidth + containerOffset ? containerOffset  : last.x2 + widthOffsetRandom;
+		if (newPosition.x1 === containerOffset || last.x2 === 0) {
 			newPosition.x1 += newLineOffsetRandom;
 		}
 

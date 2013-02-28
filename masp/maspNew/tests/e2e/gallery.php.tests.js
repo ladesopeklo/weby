@@ -19,7 +19,6 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 				expect(data).toBeDefined();
 				expect(data instanceof GalleryList).toBeTruthy();
 				expect(data.length).toBeGreaterThan(0);
-
 				console.log("gallerylist", data);
 			});
 

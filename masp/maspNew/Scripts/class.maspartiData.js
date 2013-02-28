@@ -16,8 +16,7 @@ var MaspartiData = (function (){
 		return this.menuAsync().then(function(menuList) {
 			var links = menuList.allGalleryLinks();
 
-			return self.api.galleryMap(links).then(function (data) {
-				console.log(data);
+			return self.api.galleryList(links).then(function (data) {
 				return data;
 			});
 

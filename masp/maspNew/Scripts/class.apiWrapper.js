@@ -17,14 +17,13 @@ var ApiWrapper = (function () {
 		return deferred;
 	};
 
-	ApiWrapper.prototype.galleryList = function (gallerynames) {
+	ApiWrapper.prototype.galleryList = function (galleryNames) {
 		var self = this,
 			deferred = $.Deferred();
 
-		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
+		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: galleryNames, culture: "cz"} , function (data) {
 			var galleryList = new GalleryList(self.converter.rawDataToGalleryMap(data));
 			deferred.resolve(galleryList);
-
 		});
 		return deferred;
 	};

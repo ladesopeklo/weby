@@ -29,5 +29,11 @@ var MaspartiData = (function (){
 		});
 	};
 
+	MaspartiData.prototype.gallery = function (galleryId) {
+		return this.api.gallery(galleryId).then(function (data) {
+			return data;
+		});
+	};
+
 	return MaspartiData;
 }());

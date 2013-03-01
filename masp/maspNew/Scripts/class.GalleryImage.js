@@ -13,6 +13,8 @@ var GalleryImage = (function () {
 		var random =  Math.random()*2.5;
 		this.width = Math.floor( random * 90) + 45;
 		this.height = Math.floor( random * 50) + 25;
+
+		this.galleryId = "xxx";
 	}
 
 	GalleryImage.prototype.thumb = function () {
@@ -21,6 +23,10 @@ var GalleryImage = (function () {
 
 	GalleryImage.prototype.large = function () {
 		return this.largeUrl + this.name;
+	};
+
+	GalleryImage.prototype.setGalleryId = function (id) {
+		return this.galleryId = id;
 	};
 
 	return GalleryImage;

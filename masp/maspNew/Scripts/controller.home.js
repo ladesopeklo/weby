@@ -1,8 +1,7 @@
 /*global ApiWrapper, MaspartiData, Usages*/
 var galleryList;
 function homeController($scope, galleryApi, menuApi) {
-	var api = new ApiWrapper(galleryApi, menuApi),
-		maspartiData = new MaspartiData(api),
+	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, menuApi)),
 		usages,
 		usagesSettings;
 
@@ -28,8 +27,11 @@ function homeController($scope, galleryApi, menuApi) {
 	$.when(maspartiData.menuAsync(), maspartiData.galleryListAsync()).done(function (menu, galleries) {
 		$scope.menu = menu;
 		$scope.galleryList = galleries;
-
 		$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
+
+		console.log($scope.menu)
+		console.log($scope.galleryList)
+		console.log($scope.galleryThumbs)
 
 		setTimeout(function () {
 			usages.setRandom($scope.widthOffset, $scope.heightOffset,$scope.newLineOffset, $scope.newLineOffsetTop);

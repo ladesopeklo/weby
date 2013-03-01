@@ -38,9 +38,11 @@ describe("Usages tests", function () {
 	});
 
 	it("last from half line ", function () {
-		var a = anUsage();
+		var a = anUsage(),
+			found;
+
 		a.widthLineFiveItems();
-		var found = a.build().getLastItemPosition();
+		found = a.build().getLastItemPosition();
 		console.log("1 line", found.toString());
 		expect(found.toString()).toBe("40,0,50,10");
 	});

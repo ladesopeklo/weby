@@ -33,12 +33,8 @@ var Usages = (function () {
 
 	function Usages(settings, width, height) {
 		this.usages = [];
-		this.widthOffset = 0;
-		this.newLineOffset = 0;
-		this.newLineOffsetTop = 0;
-		this.heightOffset = 0;
 
-		//defaults
+			//defaults
 		this.settings = $.extend({
 			containerOffset : 0,
 			randoms: {
@@ -49,7 +45,7 @@ var Usages = (function () {
 			}
 		}, settings || {});
 
-		this.maxWidth = width || 0;
+		this.maxWidth = width || 960;
 		this.maxHeight = height;
 	}
 
@@ -138,7 +134,6 @@ var Usages = (function () {
 			containerOffset = this.settings.containerOffset,
 			settingsRandoms = this.settings.randoms,
 			newPosition = new Position();
-		console.log(containerOffset)
 
 		newLineOffsetRandom = this.getRandomFromProperty(settingsRandoms.lineOffsetStart);
 		newLineOffsetTopRandom = this.getRandomFromProperty(settingsRandoms.lineOffsetTop);
@@ -156,7 +151,6 @@ var Usages = (function () {
 		if (newPosition.y1 - heightOffsetRandom === 0) {
 			newPosition.y1 += newLineOffsetTopRandom;
 		}
-
 
 		newPosition.y2 = squareItem.height + newPosition.y1;
 

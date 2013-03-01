@@ -8,8 +8,10 @@ var Gallery = (function () {
 		this.images = galleryImages || [];
 	}
 
-	Gallery.prototype.galleryThumb = function () {
-		return this.images[0];
+	Gallery.prototype.galleryThumb = function (galleryId) {
+		var image = this.images[0];
+		image.setGalleryId(galleryId);
+		return image;
 	};
 
 	return Gallery;

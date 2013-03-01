@@ -46,7 +46,7 @@ var GalleryList = (function () {
 
 		for (property in this.galleriesMap) {
 			if (this.galleriesMap.hasOwnProperty(property)) {
-				result.push(this.galleriesMap[property].galleryThumb());
+				result.push(this.galleriesMap[property].galleryThumb(property));
 			}
 		}
 		return result;

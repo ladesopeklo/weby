@@ -1,7 +1,7 @@
 /*global ApiWrapper, MaspartiData, Usages*/
 var galleryList;
-function homeController($scope, galleryApi, menuApi) {
-	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, menuApi)),
+function homeController($scope, galleryApi, resourcesApi) {
+	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi)),
 		usages,
 		usagesSettings;
 
@@ -24,33 +24,44 @@ function homeController($scope, galleryApi, menuApi) {
 	$scope.width = 900;
 
 
-	$.when(maspartiData.menuAsync(), maspartiData.galleryListAsync()).done(function (menu, galleries) {
-		$scope.menu = menu;
-		$scope.galleryList = galleries;
-		$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
+	$.when(
+			maspartiData.menuAsync(),
+			maspartiData.galleryListAsync()
+		).done(function (menu, galleries) {
+			$scope.menu = menu;
 
-		console.log($scope.menu)
-		console.log($scope.galleryList)
-		console.log($scope.galleryThumbs)
+			$scope.galleryList = galleries;
+			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
 
-		setTimeout(function () {
-			usages.setRandom($scope.widthOffset, $scope.heightOffset,$scope.newLineOffset, $scope.newLineOffsetTop);
-			usages.settings.containerOffset = 0;
+			console.log($scope.menu)
+			console.log($scope.galleryList)
+			console.log($scope.galleryThumbs)
 
-			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), $scope.width);
-			$scope.$apply();
-		},  100);
+			setTimeout(function () {
+				usages.setRandom($scope.widthOffset, $scope.heightOffset, $scope.newLineOffset, $scope.newLineOffsetTop);
+				usages.settings.containerOffset = 0;
+				usages.generate(galleries.galleryThumbs(), $scope.width);
+				$scope.$apply();
+			}, 100);
 
-	});
+		});
+
+	$scope.chujclick = function () {
+		usages.setRandom(200, 200, 400, 400);
+		usages.settings.containerOffset = 0;
+		usages.generate($scope.galleryThumbs, 1900);
+		return false;
+		//$scope.$apply();
+	}
 
 	/**
 	 *
 	 * @param {MenuItem} menuItem
 	 */
-	$scope.galleryThumbUrl = function(menuItem) {
+	$scope.galleryThumbUrl = function (menuItem) {
 		var galleryList = $scope.galleryList;
 
-		if (!galleryList.get(menuItem.linkValue())){
+		if (!galleryList.get(menuItem.linkValue())) {
 			return "xxx"
 		}
 		return  galleryList.get(menuItem.linkValue()).galleryThumb();

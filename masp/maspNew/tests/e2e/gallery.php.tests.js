@@ -1,8 +1,8 @@
-/*global runs, apiWrapper, expect, it, describe, waitsFor, ApiWrapper, Gallery, MenuItemList, GalleryList*/
-var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menuApi) {
+/*global runs, apiWrapper, expect, it, describe, waitsFor, ApiWrapper, Gallery, MenuItemList, GalleryList, Locales*/
+var xxx = ['$scope', 'galleryApi', 'resourcesApi', function ($scope, galleryApi, resourcesApi) {
 	"use strict";
 
-	var api = new ApiWrapper(galleryApi, menuApi),
+	var api = new ApiWrapper(galleryApi, resourcesApi),
 
 		waitsForJqPromise = function (promise) {
 			waitsFor(function () {
@@ -95,11 +95,6 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 
 			waitsForJqPromise(promise);
 		});
-
-		it('get MenuItemsList', function () {
-
-		});
-
 	});
 
 	describe("menu api tests ", function () {
@@ -130,10 +125,27 @@ var xxx = ['$scope', 'galleryApi', 'menuApi', function ($scope, galleryApi, menu
 			});
 			waitsForJqPromise(promise);
 		});
-
-
+		it('TEMP - convert menuItemsList to locales', function () {
+			var promise = api.menu();
+			promise.done(function (data) {
+				console.log(JSON.stringify(data.toLocales("cs")));
+				console.log(JSON.stringify(data.toLocales("en")));
+			});
+			waitsForJqPromise(promise);
+		});
 	});
 
+	describe("Resources api ", function () {
+		it('check instance of locales', function () {
+			var promise = api.locales("en-us");
+			promise.done(function (data) {
+				expect(data instanceof Locales).toBeTruthy();
+				expect(data.items).toBeDefined();
+				console.log(data);
+			});
+			waitsForJqPromise(promise);
+		});
+	});
 
 }];
 

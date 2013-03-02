@@ -1,0 +1,167 @@
+{"gallery": {
+	"nadrazni": {
+		"title": "Contact",
+		"text": "12 apartment renovation (under construction)"
+	},
+	"vyhlidka": {
+		"title": "Contact",
+		"text": "11 house with a view (under construction)"
+	},
+	"radzewice": {
+		"title": "Contact",
+		"text": "10 house in Radzewice"
+	},
+	"dalov": {
+		"title": "Realizace",
+		"text": "09 summer house by a lake in Dalov"
+	},
+	"bradlo": {
+		"title": "Contact",
+		"text": "07 viewing platform at the Bradlo Peak "
+	},
+	"bergen": {
+		"title": "Contact",
+		"text": "06 Bergen"
+	},
+	"lipina": {
+		"title": "Realizace",
+		"text": "13 single storey house"
+	},
+	"litovel": {
+		"title": "Realizace",
+		"text": "12 garden house"
+	},
+	"komentskeho": {
+		"title": "Realizace",
+		"text": "12 apartment interior"
+	},
+	"schweitzerova": {
+		"title": "Realizace",
+		"text": "12 attic apartment with a terrace"
+	},
+	"dup": {
+		"title": "Realizace",
+		"text": "12 historical dance hall extension"
+	},
+	"opava": {
+		"title": "Realizace",
+		"text": "12 senior living"
+	},
+	"hlasnice": {
+		"title": "Realizace",
+		"text": "12 family house in the hills"
+	},
+	"exalt": {
+		"title": "Projects",
+		"text": "projects"
+	},
+	"kozinova": {
+		"title": "Contact",
+		"text": "11 rental house´s attic conversion"
+	},
+	"repcinI": {
+		"title": "Contact",
+		"text": "11 uptown family house II"
+	},
+	"repcin": {
+		"title": "Contact",
+		"text": "11 uptown family house I"
+	},
+	"topic": {
+		"title": "Contact",
+		"text": "10 gynecologist´s office "
+	},
+	"novakovi": {
+		"title": "Contact",
+		"text": "09 family house´s attic conversion"
+	},
+	"diplomka os": {
+		"title": "Contact",
+		"text": "09 floating spa"
+	},
+	"poznan": {
+		"title": "Contact",
+		"text": "08 family house extension: swimming pool"
+	},
+	"diplomka": {
+		"title": "Contact",
+		"text": "08 polyfunctional house at the gap site"
+	},
+	"bazen": {
+		"title": "Contact",
+		"text": "07 swimming pool"
+	},
+	"pf2012": {
+		"title": "Contact",
+		"text": "11 pf 2012"
+	},
+	"bullhorn": {
+		"title": "Contact",
+		"text": "11 Bullhorn design competition"
+	},
+	"matouspelikan": {
+		"title": "Contact",
+		"text": "11 Matouš Pelikán, Advocate"
+	},
+	"nissan": {
+		"title": "Contact",
+		"text": "09 Nissan"
+	},
+	"prefab": {
+		"title": "Contact",
+		"text": "08 Prefab"
+	},
+	"jeseniky": {
+		"title": "Contact",
+		"text": "07 Rally Jeseníky"
+	},
+	"12 polsko": {
+		"title": "Contact",
+		"text": "12 Drzymaly+Grodziska"
+	},
+	"12 munkkiniemi": {
+		"title": "Contact",
+		"text": "12 Munkkiniemi+Lautasaari"
+	},
+	"11 zlin": {
+		"title": "Contact",
+		"text": "11 Zlín"
+	},
+	"11 losov": {
+		"title": "Contact",
+		"text": "11 Lošov"
+	},
+	"10 praha": {
+		"title": "Contact",
+		"text": "10 Praha"
+	},
+	"09 opole": {
+		"title": "Contact",
+		"text": "09 Opole"
+	}
+}, "content": {
+	"realizace": {
+		"title": "Realizace",
+		"text": "realizations"
+	},
+	"design": {
+		"title": "Contact",
+		"text": "design"
+	},
+	"vizualizace": {
+		"title": "Contact",
+		"text": "vizualizations"
+	},
+	"profil": {
+		"title": "Contact",
+		"text": "profile"
+	},
+	"oceneni": {
+		"title": "Contact",
+		"text": "awards"
+	},
+	"kontakt": {
+		"title": "Contact",
+		"text": "contact"
+	}
+}}

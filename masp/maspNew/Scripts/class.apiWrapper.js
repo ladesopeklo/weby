@@ -1,9 +1,9 @@
 /*global MenuItemList, RawDataConverter, GalleryList*/
 var ApiWrapper = (function () {
 
-	function ApiWrapper(galleryApi, menuApi) {
+	function ApiWrapper(galleryApi, resourcesApi) {
 		this.galleryApi = galleryApi;
-		this.menuApi = menuApi;
+		this.resourcesApi = resourcesApi;
 		this.converter = new RawDataConverter();
 	}
 
@@ -43,9 +43,18 @@ var ApiWrapper = (function () {
 			menuList,
 			deferred = $.Deferred();
 
-		this.menuApi.getAll(function (data) {
+		this.resourcesApi.getAll({resourceName : "menu" }, function (data) {
 			menuList = new MenuItemList(self.converter.rawDataToMenu(data));
 			deferred.resolve(menuList);
+		});
+		return deferred;
+	};
+
+	ApiWrapper.prototype.locales = function (culture) {
+		var	deferred = $.Deferred();
+
+		this.resourcesApi.getAllLocales({resourceName : culture }, function (data) {
+			deferred.resolve(new Locales(data, culture));
 		});
 		return deferred;
 	};

@@ -1,2 +1,5 @@
 {{gallery.locales.title}}
 {{gallery.locales.text}}
+<span ng-repeat="image in gallery.images">
+	<img src="{{image.thumb()}}"/>
+</span>

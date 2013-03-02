@@ -12,6 +12,16 @@ var Locales = (function () {
 		this.items = items || {};
 	}
 
+	Locales.prototype.allGalleryLinks = function () {
+		var galleryIds = [];
+
+		for (var property in this.items.gallery) {
+			if (this.items.gallery.hasOwnProperty(property)){
+				galleryIds.push(property);
+			}
+		}
+		return galleryIds;
+	};
 	/**
 	 *
 	 * @param {string} key

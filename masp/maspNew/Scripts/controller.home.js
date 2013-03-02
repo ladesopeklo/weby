@@ -25,10 +25,8 @@ function homeController($scope, galleryApi, resourcesApi) {
 
 
 	$.when(
-			maspartiData.menuAsync(),
-			maspartiData.galleryListAsync()
-		).done(function (menu, galleries) {
-			$scope.menu = menu;
+			maspartiData.galleryListLocalizedAsync()
+		).done(function (galleries) {
 
 			$scope.galleryList = galleries;
 			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
@@ -45,6 +43,9 @@ function homeController($scope, galleryApi, resourcesApi) {
 			}, 100);
 
 		});
+
+
+
 
 	$scope.chujclick = function () {
 		usages.setRandom(200, 200, 400, 400);

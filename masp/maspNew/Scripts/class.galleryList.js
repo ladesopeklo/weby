@@ -10,6 +10,7 @@ var GalleryList = (function () {
 		this.galleriesMap = galleriesMap || {};
 		this.length = this.length();
 		this.galleriesArray = this.toArray();
+
 	}
 
 	GalleryList.prototype.length = function () {
@@ -37,7 +38,18 @@ var GalleryList = (function () {
 	};
 
 	GalleryList.prototype.get = function (name) {
-		return this.galleriesMap[name];
+		var gallery = this.galleriesMap[name];
+		gallery.locales = this.locales.t("gallery")[name];
+		return gallery;
+	};
+
+	/**
+	 *
+	 * @param {Locales} locales
+	 * @returns {*}
+	 */
+	GalleryList.prototype.loadLocalizations = function (locales) {
+		this.locales = locales;
 	};
 
 	GalleryList.prototype.galleryThumbs = function () {

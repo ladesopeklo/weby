@@ -24,7 +24,6 @@ describe("Usages tests", function () {
 			found,
 			last;
 
-
 		a.addUsagePixo(new Position(0, 0, 10, 10));
 		a.addUsagePixo(new Position(10, 0, 20, 10));
 		a.addUsagePixo(new Position(20, 0, 30, 15));
@@ -71,7 +70,8 @@ describe("Usages tests", function () {
 		expect(found.toString()).toBe("0,10,10,20");
 
 		var s = new SquareItem(10, 10),
-			square = usage.addSquare(s);
+			square = usage.calculateSquare(s);
+		usage.addUsage(square);
 
 		expect(usage.getLastItemPosition().toString()).toBe(square.position.toString());
 		expect(square.position.toString()).toBe("10,10,20,20");
@@ -90,7 +90,8 @@ describe("Usages tests", function () {
 		found = usage.getLastItemPosition();
 		expect(found.toString()).toBe("90,0,100,10");
 
-		squareUsage = usage.addSquare(new SquareItem(10, 10));
+		squareUsage = usage.calculateSquare(new SquareItem(10, 10));
+		usage.addUsage(squareUsage);
 
 		expect(usage.getLastItemPosition().toString()).toBe(squareUsage.position.toString());
 		expect(squareUsage.position.toString()).toBe("0,10,10,20");
@@ -111,8 +112,6 @@ describe("Usages tests", function () {
 		var usage = anUsage()
 			.widthLeftL()
 			.build();
-
-		var a = usage.findMostBottom(0, 10);
 
 		expect(usage.findMostBottom(0, 10).position.y2).toBe(20);
 		expect(usage.findMostBottom(10, 20).position.y2).toBe(10);

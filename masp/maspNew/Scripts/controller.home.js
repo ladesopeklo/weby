@@ -6,12 +6,12 @@ function homeController($scope, galleryApi, resourcesApi) {
 		usagesSettings;
 
 	usagesSettings = {
-		containerOffset: -360,
+		containerOffset: -0,
 		randoms: {
-			boxOffsetWidth: 200,
-			boxOffsetHeight: 200,
-			lineOffsetTop: 10,
-			lineOffsetStart: 10
+			boxOffsetWidth: 00,
+			boxOffsetHeight: 00,
+			lineOffsetTop: 0,
+			lineOffsetStart: 0
 		}
 	};
 
@@ -38,7 +38,8 @@ function homeController($scope, galleryApi, resourcesApi) {
 			setTimeout(function () {
 				usages.setRandom($scope.widthOffset, $scope.heightOffset, $scope.newLineOffset, $scope.newLineOffsetTop);
 				usages.settings.containerOffset = 0;
-				usages.generate(galleries.galleryThumbs(), $scope.width);
+				usages.settings.width = 900;
+				usages.refreshUsages();
 				$scope.$apply();
 			}, 100);
 
@@ -48,12 +49,24 @@ function homeController($scope, galleryApi, resourcesApi) {
 
 
 	$scope.chujclick = function () {
-		usages.setRandom(200, 200, 400, 400);
+		//usages.setRandom(2, 2, 0, 0);
+		console.log(usages.usages[4].position)
+		usages.usages[4].position.x1 = 0
+		usages.usages[4].width = 900;
+		usages.usages[4].height = 400;
+
+		console.log(usages.usages[4].position)
+
 		usages.settings.containerOffset = 0;
-		usages.generate($scope.galleryThumbs, 1900);
-		return false;
-		//$scope.$apply();
-	}
+		usages.refreshUsages();
+	};
+
+	$scope.showGallery= function (item) {
+		item.position.x1 = 0;
+		item.width = 900;
+		item.height = 400;
+		usages.refreshUsages();
+	};
 
 	/**
 	 *

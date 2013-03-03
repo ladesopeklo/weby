@@ -24,19 +24,19 @@ var SquareItem = (function () {
 		this.width = width;
 		this.height = height;
 	}
-
 	return SquareItem;
 }());
 
 var Usages = (function () {
 	"use strict";
 
-	function Usages(settings, width, height) {
+	function Usages(settings) {
 		this.usages = [];
-
-			//defaults
+		//defaults
 		this.settings = $.extend({
-			containerOffset : 0,
+			containerOffset: 0,
+			width: 900,
+			height: null,
 			randoms: {
 				boxOffsetWidth: 0,
 				boxOffsetHeight: 0,
@@ -44,9 +44,6 @@ var Usages = (function () {
 				lineOffsetStart: 0
 			}
 		}, settings || {});
-
-		this.maxWidth = width || 960;
-		this.maxHeight = height;
 	}
 
 	Usages.prototype.setRandom = function (widthOffset, heightOffset, newLineOffset, newLineOffsetTop) {
@@ -58,18 +55,38 @@ var Usages = (function () {
 	};
 
 
-	Usages.prototype.generate = function (items, newWidth) {
-		if (newWidth) {
-			this.maxWidth = newWidth;
-		}
-
+	Usages.prototype.refreshUsages = function () {
 		var i = 0,
-			len = items.length;
+			items = this.usages,
+			len = items.length,
+			last = this.getLastItemPosition(),
+			square;
 
 		this.usages = [];
 
 		for (i; i < len; i++) {
-			this.addSquare(items[i]);
+			square = this.calculateSquareAfter(items[i], last);
+			this.addUsage(square);
+			last = square.position;
+		}
+		return this.usages;
+	};
+
+	Usages.prototype.generate = function (items, newWidth) {
+		var i = 0,
+			len = items.length,
+			last = null, //this.getLastItemPosition(),
+			square;
+
+		if (newWidth) {
+			this.settings.width = newWidth;
+		}
+		this.usages = [];
+
+		for (i; i < len; i++) {
+			square = this.calculateSquare(items[i], last);
+			this.addUsage(square);
+			last = square.position;
 		}
 		return this.usages;
 	};
@@ -122,12 +139,11 @@ var Usages = (function () {
 	};
 
 	Usages.prototype.getRandomFromProperty = function (property) {
-		return  property ? Math.floor((Math.random()*property) + 1) : 0;
-	}
+		return  property ? Math.floor((Math.random() * property) + 1) : 0;
+	};
 
-	Usages.prototype.addSquare = function (squareItem) {
-		var last = this.getLastItemPosition(),
-			newLineOffsetRandom,
+	Usages.prototype.calculateSquareAfter = function (squareItem, last) {
+		var newLineOffsetRandom,
 			newLineOffsetTopRandom,
 			heightOffsetRandom,
 			widthOffsetRandom,
@@ -141,7 +157,7 @@ var Usages = (function () {
 		heightOffsetRandom = this.getRandomFromProperty(settingsRandoms.boxOffsetHeight);
 
 
-		newPosition.x1 = last.x2 + squareItem.width > this.maxWidth + containerOffset ? containerOffset  : last.x2 + widthOffsetRandom;
+		newPosition.x1 = last.x2 + squareItem.width > this.settings.width + containerOffset ? containerOffset : last.x2 + widthOffsetRandom;
 		if (newPosition.x1 === containerOffset || last.x2 === 0) {
 			newPosition.x1 += newLineOffsetRandom;
 		}
@@ -151,13 +167,15 @@ var Usages = (function () {
 		if (newPosition.y1 - heightOffsetRandom === 0) {
 			newPosition.y1 += newLineOffsetTopRandom;
 		}
-
 		newPosition.y2 = squareItem.height + newPosition.y1;
-
 		squareItem.position = newPosition;
-
-		this.addUsage(squareItem);
 		return squareItem;
+
+	};
+
+	Usages.prototype.calculateSquare = function (squareItem) {
+		var last = this.getLastItemPosition();
+		return this.calculateSquareAfter(squareItem, last);
 	};
 
 	Usages.prototype.addUsagePixo = function (position) {

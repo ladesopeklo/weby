@@ -14,13 +14,11 @@ module.directive("ngcGalleryItem", function () {
 		galleryItem: "=",
 		link: function (scope, iElement, tAttrs, controller) {
 			var item = scope.item;
-			var pos = scope.item.position;
 
-			console.log(scope)
-			scope.$watch("item.position.x1", function (a, b) {
-				console.log("chuj", a, b, item.position);
+			scope.$watch("item.position", function (newposition, oldposition) {
+				var pos = newposition;
 
-				iElement.css("-webkit-transform", "translate3d(" + a + "px, " + pos.y1 + "px, 0px)");
+				iElement.css("-webkit-transform", "translate3d(" + pos.x1 + "px, " + pos.y1 + "px, 0px)");
 				iElement.css("width", item.width + "px");
 				iElement.css("height", item.height + "px");
 

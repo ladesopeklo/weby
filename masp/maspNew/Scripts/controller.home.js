@@ -6,7 +6,8 @@ function homeController($scope, galleryApi, resourcesApi) {
 		usagesSettings;
 
 	usagesSettings = {
-		containerOffset: -0,
+		containerOffset: -360,
+		width: 1300,
 		randoms: {
 			boxOffsetWidth: 00,
 			boxOffsetHeight: 00,
@@ -19,8 +20,8 @@ function homeController($scope, galleryApi, resourcesApi) {
 
 	$scope.widthOffset = 3;
 	$scope.heightOffset = 3;
-	$scope.newLineOffset = 30;
-	$scope.newLineOffsetTop = 40;
+	$scope.newLineOffset = 0;
+	$scope.newLineOffsetTop = 10;
 	$scope.width = 900;
 
 
@@ -31,14 +32,13 @@ function homeController($scope, galleryApi, resourcesApi) {
 			$scope.galleryList = galleries;
 			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
 
-			console.log($scope.menu)
 			console.log($scope.galleryList)
 			console.log($scope.galleryThumbs)
 
 			setTimeout(function () {
 				usages.setRandom($scope.widthOffset, $scope.heightOffset, $scope.newLineOffset, $scope.newLineOffsetTop);
 				usages.settings.containerOffset = 0;
-				usages.settings.width = 900;
+				usages.settings.width = $scope.width;
 				usages.refreshUsages();
 				$scope.$apply();
 			}, 100);
@@ -46,40 +46,28 @@ function homeController($scope, galleryApi, resourcesApi) {
 		});
 
 
+	$scope.currentGallery = {ref: null, value: null, index: 0};
 
+	$scope.showGallery = function (item, index) {
+		if ($scope.currentGallery.value) {
+			var x = $scope.galleryThumbs[$scope.currentGallery.index];
+			var zaloha = $scope.currentGallery.value;
+			x.width = zaloha.width;
+			x.height = zaloha.height;
+			x.chuj = false;
+		}
 
-	$scope.chujclick = function () {
-		//usages.setRandom(2, 2, 0, 0);
-		console.log(usages.usages[4].position)
-		usages.usages[4].position.x1 = 0
-		usages.usages[4].width = 900;
-		usages.usages[4].height = 400;
+		item.chuj = true;
+		$scope.currentGallery.value = $.extend(true, {}, item);
+		$scope.currentGallery.data = item;
+		$scope.currentGallery.index = index;
 
-		console.log(usages.usages[4].position)
-
-		usages.settings.containerOffset = 0;
-		usages.refreshUsages();
-	};
-
-	$scope.showGallery= function (item) {
-		item.position.x1 = 0;
-		item.width = 900;
+		///item.position.x1 = 0;
+		item.width = 400;
 		item.height = 400;
 		usages.refreshUsages();
+		console.log($scope.currentGallery);
+
 	};
-
-	/**
-	 *
-	 * @param {MenuItem} menuItem
-	 */
-	$scope.galleryThumbUrl = function (menuItem) {
-		var galleryList = $scope.galleryList;
-
-		if (!galleryList.get(menuItem.linkValue())) {
-			return "xxx"
-		}
-		return  galleryList.get(menuItem.linkValue()).galleryThumb();
-	};
-
 
 }

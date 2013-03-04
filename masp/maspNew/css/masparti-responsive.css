@@ -3,7 +3,7 @@
         font-size: 100%;
     }
 
-    .container_12 {
+    .container_12, .container {
         border: 1px solid red;
         max-width: 960px;
         margin-left: auto;
@@ -16,7 +16,7 @@
         font-size: 80%;
     }
 
-    .container_12 {
+    .container_12, .container {
         border: 1px solid green;
     }
 }
@@ -26,7 +26,7 @@
         font-size: 70%;
     }
 
-    .container_12 {
+    .container_12, .container {
         border: 1px solid blue;
     }
 }
@@ -35,7 +35,7 @@
         font-size: 60%;
     }
 
-    .container_12 {
+    .container_12, .container {
         border: 1px solid yellow;
     }
 

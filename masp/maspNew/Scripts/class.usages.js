@@ -55,7 +55,8 @@ var Usages = (function () {
 	};
 
 
-	Usages.prototype.refreshUsages = function () {
+	Usages.prototype.refreshUsages = function (newSettings) {
+
 		var i = 0,
 			items = this.usages,
 			len = items.length,
@@ -63,6 +64,8 @@ var Usages = (function () {
 			square;
 
 		this.usages = [];
+
+		this.settings = $.extend(this.settings, newSettings || {});
 
 		for (i; i < len; i++) {
 			square = this.calculateSquareAfter(items[i], last);
@@ -155,7 +158,6 @@ var Usages = (function () {
 		newLineOffsetTopRandom = this.getRandomFromProperty(settingsRandoms.lineOffsetTop);
 		widthOffsetRandom = this.getRandomFromProperty(settingsRandoms.boxOffsetWidth);
 		heightOffsetRandom = this.getRandomFromProperty(settingsRandoms.boxOffsetHeight);
-
 
 		newPosition.x1 = last.x2 + squareItem.width > this.settings.width + containerOffset ? containerOffset : last.x2 + widthOffsetRandom;
 		if (newPosition.x1 === containerOffset || last.x2 === 0) {

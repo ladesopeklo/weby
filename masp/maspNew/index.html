@@ -30,8 +30,8 @@
 	<script type="text/javascript" src="Scripts/controller.gallery.js"></script>
 	<script type="text/javascript" src="Scripts/controller.x.js"></script>
 
-	<link rel="stylesheet" href="Resources/css/fluid_grid.css"/>
-	<link rel="stylesheet" href="Resources/css/masparti-responsive.css"/>
+	<link rel="stylesheet" href="css/fluid_grid.css"/>
+	<link rel="stylesheet" href="css/masparti-responsive.css"/>
 
 
 </head>
@@ -41,18 +41,15 @@
 		position: absolute;
 		left: 0px;
 		top: 0px;
-		border: 2px solid green;
+		border: 1px solid #888888;
 		background-color: #e9e9e9;
 		-webkit-transform: translate3d(140px, 124px, 0px);
 		-webkit-transition-duration: 0.8s;
 	}
 
-
 	.container {
 		margin: 0px auto;
 		position: relative;
-		width: 900px;
-		border: 1px solid red;
 	}
 
 </style>
@@ -70,7 +67,6 @@
 		<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">
 			<img ng-hide="item.chuj" src="{{item.thumb()}}" width="100%" height="100%"/>
 			<div ng-show="item.chuj">
-
 				<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>
 				<div class="ccc" ng-repeat="im in galleryList.get(item.galleryId).images">
 					<img src="{{im.thumb()}}" />
@@ -80,7 +76,13 @@
 		</div>
 	</div>
 </div>
+
+
+<script>
+</script>
 </body>
+
+
 
 </html>
 

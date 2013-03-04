@@ -1,14 +1,20 @@
-function galleryController($scope, galleryApi, menuApi, $routeParams) {
+function galleryController($scope, galleryApi, resourcesApi, $routeParams) {
 	var galleryId = $routeParams.galleryId,
-		maspartiData = new MaspartiData(new ApiWrapper(galleryApi, menuApi));
+		maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi));
 
-	$.when(maspartiData.menuAsync(), maspartiData.gallery(galleryId)).done(function (menu, gallery) {
-		$scope.menu = menu;
-		$scope.gallery = gallery;
-		console.log($scope.menu)
-		console.log($scope.gallery)
+	maspartiData.galleryWithInfo(galleryId).done(function (data) {
+		$scope.gallery = data;
+		console.log(data)
+	})
 
-	});
+//	$.when(
+//			maspartiData.menuAsync(), maspartiData.gallery(galleryId)).done(function (menu, gallery) {
+//		$scope.menu = menu;
+//		$scope.gallery = gallery;
+//		console.log($scope.menu)
+//		console.log($scope.gallery)
+//
+//	});
 
 
 }

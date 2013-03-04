@@ -1,17 +1,18 @@
 /*global ApiWrapper, MaspartiData, Usages*/
 var galleryList;
-function homeController($scope, galleryApi, menuApi) {
-	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, menuApi)),
+function homeController($scope, galleryApi, resourcesApi) {
+	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi)),
 		usages,
 		usagesSettings;
 
 	usagesSettings = {
 		containerOffset: -360,
+		width: 1300,
 		randoms: {
-			boxOffsetWidth: 200,
-			boxOffsetHeight: 200,
-			lineOffsetTop: 10,
-			lineOffsetStart: 10
+			boxOffsetWidth: 00,
+			boxOffsetHeight: 00,
+			lineOffsetTop: 0,
+			lineOffsetStart: 0
 		}
 	};
 
@@ -19,42 +20,54 @@ function homeController($scope, galleryApi, menuApi) {
 
 	$scope.widthOffset = 3;
 	$scope.heightOffset = 3;
-	$scope.newLineOffset = 30;
-	$scope.newLineOffsetTop = 40;
+	$scope.newLineOffset = 0;
+	$scope.newLineOffsetTop = 10;
 	$scope.width = 900;
 
 
-	$.when(maspartiData.menuAsync(), maspartiData.galleryListAsync()).done(function (menu, galleries) {
-		$scope.menu = menu;
-		$scope.galleryList = galleries;
-		$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
+	$.when(
+			maspartiData.galleryListLocalizedAsync()
+		).done(function (galleries) {
 
-		console.log($scope.menu)
-		console.log($scope.galleryList)
-		console.log($scope.galleryThumbs)
+			$scope.galleryList = galleries;
+			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), 1900);
 
-		setTimeout(function () {
-			usages.setRandom($scope.widthOffset, $scope.heightOffset,$scope.newLineOffset, $scope.newLineOffsetTop);
-			usages.settings.containerOffset = 0;
+			console.log($scope.galleryList)
+			console.log($scope.galleryThumbs)
 
-			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs(), $scope.width);
-			$scope.$apply();
-		},  100);
+			setTimeout(function () {
+				usages.setRandom($scope.widthOffset, $scope.heightOffset, $scope.newLineOffset, $scope.newLineOffsetTop);
+				usages.settings.containerOffset = 0;
+				usages.settings.width = $scope.width;
+				usages.refreshUsages();
+				$scope.$apply();
+			}, 100);
 
-	});
+		});
 
-	/**
-	 *
-	 * @param {MenuItem} menuItem
-	 */
-	$scope.galleryThumbUrl = function(menuItem) {
-		var galleryList = $scope.galleryList;
 
-		if (!galleryList.get(menuItem.linkValue())){
-			return "xxx"
+	$scope.currentGallery = {ref: null, value: null, index: 0};
+
+	$scope.showGallery = function (item, index) {
+		if ($scope.currentGallery.value) {
+			var x = $scope.galleryThumbs[$scope.currentGallery.index];
+			var zaloha = $scope.currentGallery.value;
+			x.width = zaloha.width;
+			x.height = zaloha.height;
+			x.chuj = false;
 		}
-		return  galleryList.get(menuItem.linkValue()).galleryThumb();
-	};
 
+		item.chuj = true;
+		$scope.currentGallery.value = $.extend(true, {}, item);
+		$scope.currentGallery.data = item;
+		$scope.currentGallery.index = index;
+
+		///item.position.x1 = 0;
+		item.width = 400;
+		item.height = 400;
+		usages.refreshUsages();
+		console.log($scope.currentGallery);
+
+	};
 
 }

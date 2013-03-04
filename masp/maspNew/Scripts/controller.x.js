@@ -1,5 +1,5 @@
 /*global Usages, SquareItem*/
-function xController($scope, galleryApi, menuApi) {
+function xController($scope, galleryApi, resourcesApi) {
 
 	var boxes = [],
 		usages = new Usages($scope.width);

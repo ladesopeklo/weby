@@ -3,8 +3,13 @@ var UsagesBuilder = (function () {
 	"use strict";
 
 	function UsagesBuilder() {
-		this.usages = new Usages({}, 100);
+		this.usages = new Usages({
+			width: 100
+		});
+
+
 	}
+
 
 	// |xxxxx.....|
 	UsagesBuilder.prototype.widthLineFiveItems = function () {

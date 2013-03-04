@@ -16,12 +16,14 @@
 
 </style>
 
+<button ng-click="chujclick()">xxx</button>
 <div class="container">
 	<!--<div ng-repeat="item in galleryList.galleriesArray">-->
 	<div ng-repeat="item in galleryThumbs">
-		<a href="#/gallery/{{item.galleryId}}">
+		{{galleryList.get(item.galleryId).locales.text}}
+		<a  href="#/gallery/{{item.galleryId}}">
 
-			<img class="boxi" src="{{item.thumb()}}"
+			<img  class="boxi" src="{{item.thumb()}}"
 				 style="-webkit-transform: translate3d({{item.position.x1}}px, {{item.position.y1}}px, 0px)"
 				 width="{{item.width}}"
 				 height="{{item.height}}"/>

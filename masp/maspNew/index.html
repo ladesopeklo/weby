@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="Scripts/module.apiModule.js"></script>
 	<script type="text/javascript" src="Scripts/module.appConfig.js"></script>
 
+	<script type="text/javascript" src="Scripts/class.locales.js"></script>
 	<script type="text/javascript" src="Scripts/class.Gallery.js"></script>
 	<script type="text/javascript" src="Scripts/class.GalleryImage.js"></script>
 	<script type="text/javascript" src="Scripts/class.galleryList.js"></script>
@@ -34,10 +35,51 @@
 
 
 </head>
-<body>
-<div ng-view></div>
+<body ng-controller="homeController">
+<style>
+	.boxi {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		border: 2px solid green;
+		background-color: #e9e9e9;
+		-webkit-transform: translate3d(140px, 124px, 0px);
+		-webkit-transition-duration: 0.8s;
+	}
 
 
+	.container {
+		margin: 0px auto;
+		position: relative;
+		width: 900px;
+		border: 1px solid red;
+	}
+
+</style>
+
+<style>
+	.ccc{
+		display: inline-block;
+		border: 2px solid #2277DD;
+	}
+</style>
+
+<div class="container">
+
+	<div ng-repeat="item in galleryThumbs">
+		<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">
+			<img ng-hide="item.chuj" src="{{item.thumb()}}" width="100%" height="100%"/>
+			<div ng-show="item.chuj">
+
+				<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>
+				<div class="ccc" ng-repeat="im in galleryList.get(item.galleryId).images">
+					<img src="{{im.thumb()}}" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 
 </html>

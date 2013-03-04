@@ -27,5 +27,40 @@ var MenuItemList = (function () {
 		return links;
 	};
 
+	MenuItemList.prototype.convert = function (data, culture) {
+		var x,
+			self = this;
+
+		if (!data) {
+			return  [];
+		}
+
+		x = new JSLINQ(data).Select(function (item) {
+			item && item.items ? self.convert(item.items, culture) : [];
+
+			var linkType = item.linkType(),
+				linkValue = item.linkValue();
+
+			if (linkType && linkValue){
+				self.temp[linkType][linkValue] = {};
+				self.temp[linkType][linkValue].title = item.title[culture];
+				self.temp[linkType][linkValue].text = item.text[culture];
+			}
+		});
+		return x.items;
+
+	};
+
+
+	MenuItemList.prototype.toLocales = function (culture) {
+		this.temp = {
+			gallery : {},
+			content: {}
+		};
+
+		this.convert(this.items, culture);
+		return this.temp;
+	};
+
 	return MenuItemList;
 }());

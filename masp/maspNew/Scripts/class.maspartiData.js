@@ -1,4 +1,4 @@
-var MaspartiData = (function (){
+var MaspartiData = (function () {
 	"use strict";
 
 	/**
@@ -6,21 +6,26 @@ var MaspartiData = (function (){
 	 * @param {ApiWrapper} api
 	 * @constructor
 	 */
-	function MaspartiData (api) {
+	function MaspartiData(api) {
 		this.api = api;
 	}
 
-	MaspartiData.prototype.galleryListAsync = function () {
-		var self = this;
+	MaspartiData.prototype.galleryListLocalizedAsync = function () {
+		var self = this,
+			deferred = $.Deferred();
 
-		return this.menuAsync().then(function(menuList) {
-			var links = menuList.allGalleryLinks();
+		$.when(
+				this.api.locales("en-us")
+			)
+			.done(function (locales) {
+				var links = locales.allGalleryLinks();
 
-			return self.api.galleryList(links).then(function (data) {
-				return data;
+				self.api.galleryList(links).then(function (data) {
+					data.loadLocalizations(locales);
+					deferred.resolve(data);
+				});
 			});
-
-		});
+		return deferred;
 	};
 
 	MaspartiData.prototype.menuAsync = function () {
@@ -33,6 +38,19 @@ var MaspartiData = (function (){
 		return this.api.gallery(galleryId).then(function (data) {
 			return data;
 		});
+	};
+
+	MaspartiData.prototype.galleryWithInfo = function (galleryId) {
+		var deferred = $.Deferred();
+
+		$.when(
+				this.api.gallery(galleryId),
+				this.api.locales("en-us")
+			).done(function (gallery, locales) {
+				gallery.locales = locales.t("gallery")[galleryId];
+				deferred.resolve(gallery);
+			});
+		return deferred
 	};
 
 	return MaspartiData;

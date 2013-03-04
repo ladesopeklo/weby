@@ -6,6 +6,7 @@ var Gallery = (function () {
 	 */
 	function Gallery(galleryImages) {
 		this.images = galleryImages || [];
+		this.locales = null;
 	}
 
 	Gallery.prototype.galleryThumb = function (galleryId) {

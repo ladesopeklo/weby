@@ -18,7 +18,13 @@ module.directive("ngcGalleryItem", function () {
 			scope.$watch("item.position", function (newposition, oldposition) {
 				var pos = newposition;
 
-				iElement.css("-webkit-transform", "translate3d(" + pos.x1 + "px, " + pos.y1 + "px, 0px)");
+				var translate = "translate3d(" + pos.x1 + "px, " + pos.y1 + "px, 0px)";
+				iElement.css("-webkit-transform", translate );
+				iElement.css("-moz-transform", translate );
+				iElement.css("transform", translate );
+
+				iElement.css("-ms-transform", "translate(" + pos.x1 + "px, " + pos.y1 + "px)" );
+
 				iElement.css("width", item.width + "px");
 				iElement.css("height", item.height + "px");
 

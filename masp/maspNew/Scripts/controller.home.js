@@ -71,8 +71,11 @@ function homeController($scope, galleryApi, resourcesApi) {
 
 		item.width = 400;
 		item.height = 400;
-		usages.refreshUsages();
 		console.log($scope.currentGallery);
+		location.hash = "#/gallery/" + $scope.currentGallery.data.galleryId;
+
+
+		usages.refreshUsages();
 	};
 
 

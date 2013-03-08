@@ -3,33 +3,44 @@
 		position: absolute;
 		left: 0px;
 		top: 0px;
+		border: 1px solid #888888;
 		background-color: #e9e9e9;
-		-webkit-transform: translate3d(140px, 124px, 0px);
 		-webkit-transition-duration: 0.8s;
+		-moz-transition-duration: 0.8s;
+		-ms-transition-duration: 0.8s;
+		transition-duration: 800ms;
 	}
-
+	
 	.container {
 		margin: 0px auto;
 		position: relative;
-		width: 900px;
 	}
 
 </style>
 
-<button ng-click="chujclick()">xxx</button>
+<style>
+	.ccc {
+		display: inline-block;
+		border: 2px solid #2277DD;
+	}
+</style>
+
+
 <div class="container">
-	<!--<div ng-repeat="item in galleryList.galleriesArray">-->
 	<div ng-repeat="item in galleryThumbs">
-		{{galleryList.get(item.galleryId).locales.text}}
-		<a  href="#/gallery/{{item.galleryId}}">
+		<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">
+			<img ng-hide="item.chuj" src="{{item.thumb()}}" width="100%" height="100%"/>
 
-			<img  class="boxi" src="{{item.thumb()}}"
-				 style="-webkit-transform: translate3d({{item.position.x1}}px, {{item.position.y1}}px, 0px)"
-				 width="{{item.width}}"
-				 height="{{item.height}}"/>
-		</a>
+			<div ng-show="item.chuj">
+				<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>
+
+				<div class="ccc" ng-repeat="im in galleryList.get(item.galleryId).images">
+					<img src="{{im.thumb()}}"/>
+				</div>
+
+			</div>
+		</div>
 	</div>
-
 </div>
 
 

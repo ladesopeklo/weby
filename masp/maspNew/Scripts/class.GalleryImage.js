@@ -14,7 +14,7 @@ var GalleryImage = (function () {
 		this.width = Math.floor( random * 90) + 45;
 		this.height = Math.floor( random * 50) + 25;
 
-		this.galleryId = "xxx";
+		this.galleryId = undefined;
 	}
 
 	GalleryImage.prototype.thumb = function () {
@@ -26,7 +26,8 @@ var GalleryImage = (function () {
 	};
 
 	GalleryImage.prototype.setGalleryId = function (id) {
-		return this.galleryId = id;
+		this.galleryId = id;
+		return id;
 	};
 
 	return GalleryImage;

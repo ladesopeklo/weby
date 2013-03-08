@@ -50,6 +50,7 @@ var MaspartiData = (function () {
 				gallery.locales = locales.t("gallery")[galleryId];
 				deferred.resolve(gallery);
 			});
+
 		return deferred
 	};
 

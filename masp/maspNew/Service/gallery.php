@@ -1,4 +1,6 @@
 <?php 
+
+
 require  '../config.php';
 require  'gallery.lib.php';
 

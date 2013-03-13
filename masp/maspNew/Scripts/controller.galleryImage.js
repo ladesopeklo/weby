@@ -1,12 +1,19 @@
 /*global MaspartiData, ApiWrapper*/
-function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, $route, chujFactory) {
+function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, cache) {
 	var galleryId = $routeParams.galleryId,
 		imageIndex = $routeParams.imageIndex,
-		maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi));
+		api = new ApiWrapper(galleryApi, resourcesApi, cache),
+		maspartiData = new MaspartiData(api);
 
-	maspartiData.galleryWithInfo(galleryId).done(function (data) {
-		$scope.gallery = data;
-		$scope.image = data.images[imageIndex];
+//	maspartiData.galleryWithInfo(galleryId).done(function (data) {
+//		$scope.gallery = data;
+//		$scope.image = data.images[imageIndex];
+//		$scope.ready = true;
+//	});
+
+	api.gDataGallery($scope.galleryId).done(function (gDataGallery) {
+		$scope.gallery = gDataGallery;
+		$scope.image = gDataGallery.images[imageIndex];
 		$scope.ready = true;
 	});
 
@@ -14,13 +21,13 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 	$scope.imageUrl = function () {
 		var x = "";
 		if ($scope.ready){
-			x = $scope.image.large();
+			x = $scope.image.fullsize.url;
 		}
 		return x;
 	};
 
 	$scope.close = function () {
-		location.hash = "#/gallery/" + galleryId;
+		location.hash = "#/g/" + galleryId;
 	};
 
 	$scope.next = function () {
@@ -31,7 +38,7 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 			imageIndex = 0;
 		}
 
-		location.hash = "#/gallery/" + galleryId +"/" + imageIndex;
+		location.hash = "#/g/" + galleryId +"/" + imageIndex;
 	};
 
 	$scope.prev = function () {
@@ -42,7 +49,7 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 			imageIndex = length - 1;
 		}
 
-		location.hash = "#/gallery/" + galleryId +"/" + imageIndex;
+		location.hash = "#/g/" + galleryId +"/" + imageIndex;
 	};
 }
 

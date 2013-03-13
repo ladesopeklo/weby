@@ -23,7 +23,7 @@ Zend_Loader::loadClass('Zend_Gdata_AuthSub');
 
 
 function getCurrentUrl() {
-return "http://localhost:85/weby/masp/maspNew/Service/g.php";
+return "http://localhost:88/weby/masp/maspNew/Service/g.php";
 }
 function getAuthSubUrl()
 {

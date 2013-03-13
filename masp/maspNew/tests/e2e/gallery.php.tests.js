@@ -128,8 +128,8 @@ var xxx = ['$scope', 'galleryApi', 'resourcesApi', function ($scope, galleryApi,
 		it('TEMP - convert menuItemsList to locales', function () {
 			var promise = api.menu();
 			promise.done(function (data) {
-				console.log(JSON.stringify(data.toLocales("cs")));
-				console.log(JSON.stringify(data.toLocales("en")));
+//				console.log(JSON.stringify(data.toLocales("cs")));
+//				console.log(JSON.stringify(data.toLocales("en")));
 			});
 			waitsForJqPromise(promise);
 		});
@@ -146,12 +146,11 @@ var xxx = ['$scope', 'galleryApi', 'resourcesApi', function ($scope, galleryApi,
 			waitsForJqPromise(promise);
 		});
 	});
+
 	describe("GData api ", function () {
-		it('check instance of locales', function () {
+		it('ggjhgsadhjagsdjagjh ga', function () {
 			var promise = api.gDataGallery("en-us");
 			promise.done(function (data) {
-				expect(data instanceof Locales).toBeTruthy();
-				expect(data.items).toBeDefined();
 				console.log(data);
 			});
 			waitsForJqPromise(promise);

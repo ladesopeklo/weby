@@ -17,3 +17,24 @@ var Gallery = (function () {
 
 	return Gallery;
 }());
+
+var GDataGallery = (function () {
+
+	/**
+	 *
+	 * @param {Array.<GDataImage >} galleryImages
+	 * @constructor
+	 */
+	function GDataGallery(galleryImages) {
+		this.images = galleryImages || [];
+		this.locales = null;
+	}
+
+	Gallery.prototype.galleryThumb = function (galleryId) {
+		var image = this.images[0];
+		image.setGalleryId(galleryId);
+		return image;
+	};
+
+	return GDataGallery;
+}());

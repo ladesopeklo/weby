@@ -1,5 +1,5 @@
 ﻿angular.module('apiModule', ['ngResource', 'appConfigModule'])
-	.factory('galleryApi', ['$resource', 'appConfig', function ($resource, appConfig) {
+	.factory('galleryApi', ['$resource', 'appConfig', function ($resource, appConfig, $cacheFactory) {
 		var x = $resource(appConfig.baseUrl + '/Service/:service',
 			{  },
 			{

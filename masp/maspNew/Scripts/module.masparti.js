@@ -1,9 +1,14 @@
 var module = angular.module("masparti", ['apiModule']);
 
+module.factory('cache', ['$cacheFactory', function ($cacheFactory) {
+	return $cacheFactory("masparti");
+}]);
+
 module.config(['$routeProvider', '$provide', function ($routeProvider) {
 	$routeProvider
+		.when('/g/:galleryId', {controller: gController, templateUrl: 'g.html'})
 		.when('/gallery/:galleryId', {controller: galleryController, templateUrl: 'gallery.html'})
-		.when('/gallery/:galleryId/:imageIndex', {controller: galleryImageController, templateUrl: 'galleryImage.html'})
+		.when('/g/:galleryId/:imageIndex', {controller: galleryImageController, templateUrl: 'galleryImage.html'})
 		.when('/home', {controller: homeController, templateUrl: 'home.html'})
 		.when('/x', {controller: xController, templateUrl: 'x.html'})
 
@@ -39,17 +44,18 @@ module.directive("ngcResponsiveImg", function () {
 	};
 
 	var imageByWindowSize = function (windowWidth, galleryImage) {
-		var imageUrl = galleryImage.large();
+		console.log(galleryImage)
+		var imageUrl = galleryImage.getLarge();
 
 		if (windowWidth >= 768 && windowWidth < 1200) {
-			imageUrl = galleryImage.large();
+			imageUrl = galleryImage.getLarge();
 		}
 		if (windowWidth >= 480 && windowWidth < 768) {
-			imageUrl = galleryImage.large();
+			imageUrl = galleryImage.getLarge();
 		}
 
 		if (windowWidth < 480) {
-			imageUrl = galleryImage.thumb();
+			imageUrl = galleryImage.getSmall();
 		}
 
 		return imageUrl;

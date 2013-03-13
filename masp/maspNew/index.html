@@ -67,22 +67,22 @@
 </style>
 
 
-<div class="container" ng-controller="homeController">
-	<div ng-repeat="item in galleryThumbs">
-		<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">
-			<img ng-hide="item.chuj" src="{{item.thumb()}}" width="100%" height="100%"/>
+<!--<div class="container" ng-controller="homeController">-->
+	<!--<div ng-repeat="item in galleryThumbs">-->
+		<!--<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">-->
+			<!--<img ng-hide="item.chuj" src="{{item.thumb()}}" width="100%" height="100%"/>-->
 
-			<div ng-show="item.chuj">
-				<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>
+			<!--<div ng-show="item.chuj">-->
+				<!--<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>-->
 
-				<div class="ccc" ng-repeat="im in galleryList.get(item.galleryId).images">
-					<img src="{{im.thumb()}}"/>
-				</div>
+				<!--<div class="ccc" ng-repeat="im in galleryList.get(item.galleryId).images">-->
+					<!--<img src="{{im.thumb()}}"/>-->
+				<!--</div>-->
 
-			</div>
-		</div>
-	</div>
-</div>
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</div>-->
 
 
 <div ng-view></div>

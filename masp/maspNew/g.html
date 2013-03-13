@@ -1,0 +1,7 @@
+{{gallery.locales.title}}
+{{gallery.locales.text}}
+<span ng-repeat="image in gallery.images">
+	<a href="#/g/{{galleryId}}/{{$index}}">
+		<img src="{{image.small.url}}"/>
+	</a>
+</span>

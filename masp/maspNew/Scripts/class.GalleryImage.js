@@ -35,9 +35,9 @@ var GalleryImage = (function () {
 
 var WebImage = (function () {
 	function WebImage(url, width, height) {
-		this.url = url;
-		this.width = width;
-		this.height = height;
+		this.url = url || "";
+		this.width = Number(width, 10) || -1;
+		this.height = Number(height, 10) || -1;
 	}
 	return WebImage;
 }());
@@ -47,10 +47,10 @@ var GDataImage = (function () {
 
 	function GDataImage() {
 		this.id;
-		this.albumId;
-		this.version;
-		this.title;
-		this.keywords;
+		this.albumId = null;
+		this.version = -1;
+		this.title = null;
+		this.keywords = "";
 
 		this.small;
 		this.medium;
@@ -60,6 +60,33 @@ var GDataImage = (function () {
 
 		this.position = new Position();
 	}
+
+	GDataImage.prototype.fromRawGData = function (i) {
+		this.id = i.id;
+		this.albumId = i.albumId;
+		this.version = Number(i.version, 10) || -1;
+		this.title = i.title;
+		this.keywords = i.keywords !== undefined ? i.keywords.split(",") : [];
+		this.description = i.description;
+
+		this.small = i.small !== undefined ? new WebImage(i.small.url, i.small.width, i.small.height) : null;
+		this.medium = i.medium !== undefined ? new WebImage(i.medium.url, i.medium.width, i.medium.height) : null;
+		this.large = i.large !== undefined ? new WebImage(i.large.url, i.large.width, i.large.height) : null;
+		this.xlarge = i.xlarge !== undefined ? new WebImage(i.xlarge.url, i.xlarge.width, i.xlarge.height) : null;
+		this.fullsize = i.fullsize !== undefined ? new WebImage(i.fullsize.url, i.fullsize.width, i.fullsize.height) : null;
+
+		return this;
+
+	};
+
+	GDataImage.prototype.getSmall = function () {
+		return this.small.url;
+	};
+
+	GDataImage.prototype.getLarge = function () {
+		return this.fullsize.url;
+	};
+
 
 	return GDataImage;
 }());

@@ -8,6 +8,23 @@ var RawDataConverter = (function () {
 	/**
 	 *
 	 * @param data
+	 * @returns {GDataGallery}
+	 */
+	RawDataConverter.prototype.rawDataToGDataGallery = function (data) {
+		var x;
+
+		if (!data) {
+			return null;
+		}
+		x = JSLINQ(data).Select(function (i) {
+			return new GDataImage().fromRawGData(i);
+		});
+		return new GDataGallery(x.items);
+	};
+
+	/**
+	 *
+	 * @param data
 	 * @returns {Gallery}
 	 */
 	RawDataConverter.prototype.rawDataToGallery = function (data) {

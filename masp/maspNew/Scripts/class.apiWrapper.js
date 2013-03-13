@@ -1,11 +1,21 @@
 /*global MenuItemList, RawDataConverter, GalleryList*/
 var ApiWrapper = (function () {
 
-	function ApiWrapper(galleryApi, resourcesApi) {
+	function ApiWrapper(galleryApi, resourcesApi, cache) {
 		this.galleryApi = galleryApi;
 		this.resourcesApi = resourcesApi;
+		this.cache = cache;
 		this.converter = new RawDataConverter();
 	}
+
+	ApiWrapper.prototype.getFromCache = function (key) {
+		return this.cache ? this.cache.get(key) : null;
+	};
+	ApiWrapper.prototype.putCache = function (key, value) {
+		if (this.cache) {
+			this.cache.put(key, value);
+		}
+	};
 
 	ApiWrapper.prototype.gallery = function (name) {
 		var self = this,
@@ -19,12 +29,20 @@ var ApiWrapper = (function () {
 
 	ApiWrapper.prototype.gDataGallery = function (name) {
 		var self = this,
+			key = "gdataGalley"+name,
+			cached= this.getFromCache(key),
 			deferred = $.Deferred();
 
-		this.galleryApi.gDataGallery({service: "GDataGallery.php"}, {location: name, culture: "cz"}, function (data) {
+		if (cached){
+			deferred.resolve(cached);
+			console.log("cached")
+			return deferred;
+		}
 
-			console.log(data);
-			//deferred.resolve(self.converter.rawDataToGallery(data));
+		this.galleryApi.gDataGallery({service: "GDataGallery.php"}, {location: name, culture: "cz"}, function (data) {
+			var rs = self.converter.rawDataToGDataGallery(data);
+			self.putCache(key, rs);
+			deferred.resolve(rs);
 		});
 		return deferred;
 	};

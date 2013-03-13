@@ -1,5 +1,5 @@
 /*global MaspartiData, ApiWrapper*/
-function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, $route) {
+function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, $route, chujFactory) {
 	var galleryId = $routeParams.galleryId,
 		imageIndex = $routeParams.imageIndex,
 		maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi));
@@ -8,17 +8,6 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 		$scope.gallery = data;
 		$scope.image = data.images[imageIndex];
 		$scope.ready = true;
-	});
-
-	var timeOut;
-	$scope.windowWidth = $(window).width();
-
-	$(window).resize(function() {
-		var self = this;
-		clearTimeout(timeOut);
-		timeOut = setTimeout( function () {
-			$scope.windowWidth = $(self).width();
-		}, 500);
 	});
 
 

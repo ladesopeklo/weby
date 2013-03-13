@@ -4,6 +4,7 @@
 			{  },
 			{
 				gallery: { method: 'POST' },
+				gDataGallery: { method: 'POST', isArray: true },
 				galleryList: { method: 'POST' }
 			});
 

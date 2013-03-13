@@ -39,7 +39,9 @@ var GalleryList = (function () {
 
 	GalleryList.prototype.get = function (name) {
 		var gallery = this.galleriesMap[name];
-		gallery.locales = this.locales.t("gallery")[name];
+		if (this.locales) {
+			gallery.locales = this.locales.t("gallery")[name];
+		}
 		return gallery;
 	};
 

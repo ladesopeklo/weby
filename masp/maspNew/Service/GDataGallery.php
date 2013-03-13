@@ -77,7 +77,10 @@ $query->setAlbumName($location);
 
 $albumFeed = $gp->getAlbumFeed($query);
 
+
 $image;
+$imagesList;
+
 $thumbs;
 
 foreach ($albumFeed as $albumEntry) {
@@ -85,7 +88,7 @@ foreach ($albumFeed as $albumEntry) {
     $image["albumId"] = $albumEntry->getGphotoAlbumId()->getText();
     $image["version"] = $albumEntry->getGphotoVersion()->getText();
     $image["title"] = $albumEntry->getTitle()->getText();
-    $image["keywords"] = $albumEntry->getTitle()->getText();
+    $image["keywords"] = $albumEntry->getMediaGroup()->getKeywords()->getText();
     $image["description"] = $albumEntry->getMediaGroup()->getDescription()->getText();
     
     $thumbs = $albumEntry->getMediaGroup()->getThumbnail();
@@ -100,11 +103,11 @@ foreach ($albumFeed as $albumEntry) {
     //udelat replacovani url
     $image["fullsize"]["url"] = $image["large"]["url"];
 
+    $imagesList[] = $image;
     //echo $albumEntry->getGphotoId()->getText(); "<br />\n";
-    //preprint($albumEntry->getMediaGroup()->getThumbnail());
  //   echo json_encode($image);
-	preprint($image);
-//    preprint($albumEntry);
+//    preprint($albumEntry->getMediaGroup());
 }
+echo json_encode($imagesList);
 
 ?>

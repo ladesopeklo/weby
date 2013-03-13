@@ -17,6 +17,18 @@ var ApiWrapper = (function () {
 		return deferred;
 	};
 
+	ApiWrapper.prototype.gDataGallery = function (name) {
+		var self = this,
+			deferred = $.Deferred();
+
+		this.galleryApi.gDataGallery({service: "GDataGallery.php"}, {location: name, culture: "cz"}, function (data) {
+
+			console.log(data);
+			//deferred.resolve(self.converter.rawDataToGallery(data));
+		});
+		return deferred;
+	};
+
 	ApiWrapper.prototype.galleryList = function (galleryNames) {
 		var self = this,
 			deferred = $.Deferred();

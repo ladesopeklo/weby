@@ -32,3 +32,35 @@ var GalleryImage = (function () {
 
 	return GalleryImage;
 }());
+
+var WebImage = (function () {
+	function WebImage(url, width, height) {
+		this.url = url;
+		this.width = width;
+		this.height = height;
+	}
+	return WebImage;
+}());
+
+
+var GDataImage = (function () {
+
+	function GDataImage() {
+		this.id;
+		this.albumId;
+		this.version;
+		this.title;
+		this.keywords;
+
+		this.small;
+		this.medium;
+		this.large;
+		this.xlarge;
+		this.fullsize;
+
+		this.position = new Position();
+	}
+
+	return GDataImage;
+}());
+

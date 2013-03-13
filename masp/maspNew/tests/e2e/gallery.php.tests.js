@@ -146,6 +146,17 @@ var xxx = ['$scope', 'galleryApi', 'resourcesApi', function ($scope, galleryApi,
 			waitsForJqPromise(promise);
 		});
 	});
+	describe("GData api ", function () {
+		it('check instance of locales', function () {
+			var promise = api.gDataGallery("en-us");
+			promise.done(function (data) {
+				expect(data instanceof Locales).toBeTruthy();
+				expect(data.items).toBeDefined();
+				console.log(data);
+			});
+			waitsForJqPromise(promise);
+		});
+	});
 
 }];
 

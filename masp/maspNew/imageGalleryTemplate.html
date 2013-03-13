@@ -1,5 +1,5 @@
-<div style="border: 3px solid #009F00; margin: 0px auto;width:{{containerWidth}} ">
-	<button ng-click="showFullSize()" style="position: absolute" >{{containerWidth}}fullsize .{{fullSize}}.</button>
+<div style="border: 3px solid #009F00; margin: 0px auto;width:{{getCssWidth(containerWidth)}}">
+	<button ng-click="showFullSize()" style="position: absolute" >{{containerWidth}}  ..{{isFullSize()}}. ///{{isFullSizeCssClass()}}</button>
 
 	<img src="{{source}}" width="100%"/>
 </div>

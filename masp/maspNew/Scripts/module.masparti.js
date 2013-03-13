@@ -20,11 +20,11 @@ module.directive("ngcGalleryItem", function () {
 				var pos = newposition;
 
 				var translate = "translate3d(" + pos.x1 + "px, " + pos.y1 + "px, 0px)";
-				iElement.css("-webkit-transform", translate );
-				iElement.css("-moz-transform", translate );
-				iElement.css("transform", translate );
+				iElement.css("-webkit-transform", translate);
+				iElement.css("-moz-transform", translate);
+				iElement.css("transform", translate);
 
-				iElement.css("-ms-transform", "translate(" + pos.x1 + "px, " + pos.y1 + "px)" );
+				iElement.css("-ms-transform", "translate(" + pos.x1 + "px, " + pos.y1 + "px)");
 
 				iElement.css("width", item.width + "px");
 				iElement.css("height", item.height + "px");
@@ -35,55 +35,64 @@ module.directive("ngcGalleryItem", function () {
 
 module.directive("ngcResponsiveImg", function () {
 	var getWidth = function (scope) {
-		console.log(scope.windowWidth)
 		return scope.windowWidth;
 	};
 
 	var imageByWindowSize = function (windowWidth, galleryImage) {
 		var imageUrl = galleryImage.large();
 
-
-		if (windowWidth >= 768 && windowWidth < 1200){
+		if (windowWidth >= 768 && windowWidth < 1200) {
 			imageUrl = galleryImage.large();
 		}
-		if (windowWidth >= 480 && windowWidth < 768){
+		if (windowWidth >= 480 && windowWidth < 768) {
 			imageUrl = galleryImage.large();
 		}
 
-		if (windowWidth < 480){
+		if (windowWidth < 480) {
 			imageUrl = galleryImage.thumb();
 		}
 
 		return imageUrl;
 	};
 
-	var renderImage = function (scope, galleryImage, element) {
+	var getImage = function (url, scope) {
 		var image = new Image(),
-			windowWidth = getWidth(scope.$parent);
+			x;
 
-		image.src = imageByWindowSize(windowWidth, galleryImage);
+		image.src = url;
+		x = $.Deferred();
+
 		$(image).load(function () {
-			var imageWidth = this.width,
-				zmenseno = false,
-				imageHeight = this.height;
+			x.resolve(this);
+		});
 
-			if (windowWidth < imageWidth){
-				zmenseno = true;
-				imageWidth = windowWidth;
-			}
+		return x.promise();
+	};
 
-			//$(element.children()[0]).width(imageWidth);
+	var renderImage = function (scope) {
+		var imageOverFlows = getWidth(scope) < scope.imageWidth;
 
-			if (zmenseno) {
-				scope.containerWidth = "100%";
-			} else {
-				scope.containerWidth = imageWidth + "px";
-			}
+		if (imageOverFlows) {
+			scope.containerWidth = null;
+		} else {
+			scope.containerWidth = scope.imageWidth;
+		}
+	};
 
-			scope.fullSize = zmenseno;
+	var renderImageFullSize = function (scope) {
+		scope.containerWidth = scope.imageWidth;
+	};
+
+	var refreshImage = function (scope, galleryImage) {
+		var windowWidth = getWidth(scope),
+			url = imageByWindowSize(windowWidth, galleryImage);
+
+		getImage(url, scope).then(function (image) {
+			scope.imageWidth = image.width;
+			renderImage(scope);
+			scope.source = url;
 			scope.$apply();
 		});
-		return image.src;
 	};
 
 	return {
@@ -91,28 +100,51 @@ module.directive("ngcResponsiveImg", function () {
 			galleryImage: "="
 		},
 		controller: function ($scope) {
-			$scope.containerWidth = "55px";
+			$scope.containerWidth = "55";
+			$scope.windowWidth = $(window).width();
+			$scope.isFullSize = function () {
+				return $scope.imageWidth <= $scope.containerWidth;
+			};
 
-			$scope.showFullSize = function (){
+			$scope.isFullSizeCssClass = function () {
+				if ($scope.isFullSize() && $scope.windowWidth < $scope.imageWidth ){
+					return "show low";
+				}
+				if (!$scope.isFullSize()){
+					return "show full";
+				}
+				return "hide";
+			};
 
+			$scope.showFullSize = function () {
+				if ($scope.isFullSize()) {
+					renderImage($scope);
+				}
+				else {
+					renderImageFullSize($scope);
+				}
+			};
+			$scope.getCssWidth = function (width) {
+				return width === null ? "auto" : width + "px";
 			};
 		},
 		restrict: "E",
-		templateUrl : "imageGalleryTemplate.html",
+		templateUrl: "imageGalleryTemplate.html",
 
-		link: function postLink(scope, iElement, iAttrs) {
-			scope.$watch("galleryImage", function(galleryImage , oldValue){
+		link: function (scope, iElement, iAttrs) {
+			scope.$watch("galleryImage", function (galleryImage, oldValue) {
 				if (galleryImage === undefined) {
 					scope.source = "/loader.jpg";
 					return;
 				}
-
-				scope.source = renderImage(scope, galleryImage, iElement);
+				refreshImage(scope, galleryImage)
 			});
-//			scope.$watch("containerWidth", function(containerWidth , oldValue){
-//				console.log("laskbndklasndklas", containerWidth)
-//				//scope.containerWidth = containerWidth;
-//			});
+
+			scope.$on("windowChanged", function (x, data) {
+				scope.windowWidth = data.width;
+				refreshImage(scope, scope.galleryImage)
+			});
+
 		}
 	};
 });

@@ -82,8 +82,10 @@ function homeController($scope, galleryApi, resourcesApi) {
 	var timeOut;
 	$(window).resize(function() {
 		clearTimeout(timeOut);
+		var self = this;
 		timeOut = setTimeout( function () {
 			$scope.width = container.width();
+			$scope.$root.$broadcast("windowChanged", {width: $(self).width(), height: $(self).height()});
 			refreshScreen();
 		}, 500);
 

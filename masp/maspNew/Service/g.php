@@ -39,9 +39,11 @@ function getAuthSubUrl()
         $session);
 }
 
+echo $_GET['token'];
 
 function getAuthSubHttpClient()
 {
+    
     if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
         echo '<a href="' . getAuthSubUrl() . '">Login!</a>';
         exit;
@@ -69,7 +71,7 @@ $query->setAlbumName("xxx");
 $albumFeed = $gp->getAlbumFeed($query);
 
 foreach ($albumFeed as $albumEntry) {
-    echo $albumEntry->getKeywords() . "<br />\n";
+//    echo $albumEntry->getKeywords() . "<br />\n";
     
 	preprint($albumEntry->getMediaGroup());
 }

@@ -23,7 +23,7 @@ Zend_Loader::loadClass('Zend_Gdata_AuthSub');
 
 
 function getCurrentUrl() {
-return "http://localhost:88/weby/masp/maspNew/Service/g.php";
+return "http://localhost:85/weby/masp/maspNew/Service/GDataGallery.php";
 }
 function getAuthSubUrl()
 {
@@ -33,22 +33,33 @@ function getAuthSubUrl()
     $scope = 'https://picasaweb.google.com/data';
     $secure = false;
     $session = true;
-    return Zend_Gdata_AuthSub::getAuthSubTokenUri($next, $scope, $secure,
-        $session);
+    return Zend_Gdata_AuthSub::getAuthSubTokenUri($next, $scope, $secure, $session);
 }
 
 
+function getAccesToken() { 
+    $token = "ya29.AHES6ZRRKp5AuvyEV0hZM7p6LnrDoQKq1U4P6UrC9ztgSbTsprQ_Vg";
+    $refreshtoken = "1\/NNpSEoFxE0ZIPGcsJuO2pkl89gVVGvbOdPoG_sE636Y";
+    return $token;
+}
+
 function getAuthSubHttpClient()
 {
-    if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
+    $token = getAccesToken();
+   // $token = $_SESSION['sessionToken'];
+    echo $token;
+
+    /*if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
         echo '<a href="' . getAuthSubUrl() . '">Login!</a>';
         exit;
     } else if (!isset($_SESSION['sessionToken']) && isset($_GET['token'])) {
         $_SESSION['sessionToken'] = Zend_Gdata_AuthSub::getAuthSubSessionToken($_GET['token']);
-    }
+    }*/
     
-    $client = Zend_Gdata_AuthSub::getHttpClient($_SESSION['sessionToken']);
+    $client = Zend_Gdata_AuthSub::getHttpClient($token);
+    preprint(Zend_Gdata_AuthSub::getAuthSubTokenInfo($token));
     return $client;
+
 }
 
 function getThumb($thumb) { 

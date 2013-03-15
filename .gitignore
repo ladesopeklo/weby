@@ -20,3 +20,4 @@ masp/maspNew/Content/*/*/*.swf
 masp/.idea/workspace.xml
 masp/maspNew/Service/GData/library/*
 masp/maspNew/.idea/*
+masp/maspNew/Service/OAuth2/*

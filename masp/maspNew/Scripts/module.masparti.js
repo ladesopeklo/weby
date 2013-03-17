@@ -38,6 +38,21 @@ module.directive("ngcGalleryItem", function () {
 	};
 });
 
+module.directive("ngcLazyImage", function () {
+	return {
+		scope: {
+			ngcLazyImage: "="
+		},
+		link: function (scope, element) {
+			scope.$watch("ngcLazyImage", function (url, oldValue) {
+				if (url !== undefined){
+					element.attr("src", url);
+				}
+			});
+		}
+	}
+});
+
 module.directive("ngcResponsiveImg", function () {
 	var getWidth = function (scope) {
 		return scope.windowWidth;
@@ -61,7 +76,7 @@ module.directive("ngcResponsiveImg", function () {
 		return imageUrl;
 	};
 
-	var getImage = function (url, scope) {
+	var getImage = function (url) {
 		var image = new Image(),
 			x;
 
@@ -136,11 +151,9 @@ module.directive("ngcResponsiveImg", function () {
 		},
 		restrict: "E",
 		templateUrl: "imageGalleryTemplate.html",
-
 		link: function (scope, iElement, iAttrs) {
 			scope.$watch("galleryImage", function (galleryImage, oldValue) {
 				if (galleryImage === undefined) {
-					scope.source = "/loader.jpg";
 					return;
 				}
 				refreshImage(scope, galleryImage)

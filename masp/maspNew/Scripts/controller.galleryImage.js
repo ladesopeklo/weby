@@ -11,6 +11,7 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 //		$scope.ready = true;
 //	});
 
+
 	api.gDataGallery($scope.galleryId).done(function (gDataGallery) {
 		$scope.gallery = gDataGallery;
 		$scope.image = gDataGallery.images[imageIndex];
@@ -20,7 +21,7 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 
 	$scope.imageUrl = function () {
 		var x = "";
-		if ($scope.ready){
+		if ($scope.ready) {
 			x = $scope.image.fullsize.url;
 		}
 		return x;
@@ -33,23 +34,23 @@ function galleryImageController($scope, galleryApi, resourcesApi, $routeParams, 
 	$scope.next = function () {
 		var length = $scope.gallery.images.length;
 
-		imageIndex ++;
-		if (imageIndex >= length){
+		imageIndex++;
+		if (imageIndex >= length) {
 			imageIndex = 0;
 		}
 
-		location.hash = "#/g/" + galleryId +"/" + imageIndex;
+		location.hash = "#/g/" + galleryId + "/" + imageIndex;
 	};
 
 	$scope.prev = function () {
 		var length = $scope.gallery.images.length;
 
 		imageIndex--;
-		if (imageIndex <= 0){
+		if (imageIndex <= 0) {
 			imageIndex = length - 1;
 		}
 
-		location.hash = "#/g/" + galleryId +"/" + imageIndex;
+		location.hash = "#/g/" + galleryId + "/" + imageIndex;
 	};
 }
 

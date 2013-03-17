@@ -25,6 +25,14 @@ function isimage($file){
 	return false;
 }
 
+function ExceptionToJson($ex) {
+	
+	$rs["message"] = $ex->getMessage(); 
+	$rs["status"] = 0; 
+
+	return json_encode($rs);
+}
+
 function curPageURL() {
 	$pageURL = 'http';
 	$pageURL .= "://";

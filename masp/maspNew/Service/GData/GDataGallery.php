@@ -14,38 +14,50 @@ class GDataImage {
 		$this->ratio = $origWidth / $origHeight;
 	}
 
-	private function getSizeNotation($width, $height) {
-		if ($width == $height) {
-			return "s".$width;
-		}
-		if ($height == 0) {
-			return "w".$height;
-		}
-		if ($width == 0) {
-			return "h".$width;
-		}
-		return "s".$width;
-	}
-	
-	private function updateUrl($width, $height) {
-
+	private function updateUrl($sizeDefinition) {
 		$split = explode("/", $this->urlTemplate);
 		$index = count($split) - 2;
 		if ($index > 0) {
-			$split[$index] = $this->getSizeNotation($width, $height);
+			$split[$index] = $sizeDefinition;
 		} 
 		return implode("/", $split);
 	}
 
-	public function getImage($dimensions) {
-		$x["url"] = $this->updateUrl($dimensions["w"], $dimensions["h"]);
-		$x["width"] = $dimensions["w"];
-		$x["height"] = ceil( $dimensions["w"] / $this->ratio);
+	public function getImage($type, $value) {
+		$width = 0;
+		$height = 0;
+
+		if ($type == "s") {
+			if ($this->origWidth > $this->origHeight) { 
+				$width = $value;
+				$height = ceil($value / $this->ratio);
+			} else {
+				$height = $value;
+				$width = ceil($value * $this->ratio);
+			}
+		}
+
+		if ($type == "h") {
+			$width = ceil($value * $this->ratio);
+			$height = $value;
+		}
+
+		if ($type == "w") {
+			$width = $value;
+			$height = ceil($value / $this->ratio);
+		}
+
+
+		$x["url"] = $this->updateUrl($type.$value);
+		$x["width"] = $width;
+		$x["height"] = $height;
 		return $x;
 	}
 
 	public function getFullsizeImage() {
-		$x["url"] = $this->updateUrl($this->origWidth, $this->origHeight);
+		$sizeDefinition = "w".$this->origWidth;
+
+		$x["url"] = $this->updateUrl($sizeDefinition);
 		$x["width"] = $this->origWidth;
 		$x["height"] = $this->origHeight;
 		return $x;
@@ -60,17 +72,17 @@ class GDataGallery {
 
 	function __construct($gdataPhotos) {
 		$this->gp = $gdataPhotos;
-		$this->settings["small"]["w"] = 144;
-		$this->settings["small"]["h"] = 48;
-		
-		$this->settings["medium"]["w"] = 48;
-		$this->settings["medium"]["h"] = 48;
-		
-		$this->settings["large"]["w"] = 48;
-		$this->settings["large"]["h"] = 48;
-		
-		$this->settings["xlarge"]["w"] = 48;
-		$this->settings["xlarge"]["h"] = 48;
+		$this->settings["small"]["value"] = 89;
+		$this->settings["small"]["type"] = "h";
+
+		$this->settings["medium"]["value"] = 288;
+		$this->settings["medium"]["type"] = "h";
+
+		$this->settings["large"]["value"] = 512;
+		$this->settings["large"]["type"] = "w";
+
+		$this->settings["xlarge"]["value"] = 1024;
+		$this->settings["xlarge"]["type"] = "s";
 	}
 
 	private function getThumb($thumb) { 
@@ -111,10 +123,10 @@ class GDataGallery {
 			$gdataImage = new GDataImage($thumb->getUrl(), $albumEntry->getGphotoWidth()->getText(), $albumEntry->getGphotoHeight()->getText());
 
 
-			$image["small"] = $gdataImage->getImage($this->settings["small"]);
-			$image["medium"] = $this->getThumb($thumbs[1]);
-			$image["large"] = $this->getThumb($thumbs[2]);
-			$image["xlarge"] = $this->getThumb($content[0]);
+			$image["small"] = $gdataImage->getImage($this->settings["small"]["type"], $this->settings["small"]["value"]);
+			$image["medium"] = $gdataImage->getImage($this->settings["medium"]["type"], $this->settings["medium"]["value"]);
+			$image["large"] = $gdataImage->getImage($this->settings["large"]["type"], $this->settings["large"]["value"]);
+			$image["xlarge"] = $gdataImage->getImage($this->settings["xlarge"]["type"], $this->settings["xlarge"]["value"]);
 			$image["fullsize"] = $gdataImage->getFullsizeImage();
 
 

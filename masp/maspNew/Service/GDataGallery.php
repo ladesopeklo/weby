@@ -2,7 +2,7 @@
 require  '../config.php';
 require  'libs.php';
 //ini_set('display_errors', '0');
-error_reporting(E_ALL ^ E_STRICT);
+error_reporting(E_ALL^E_STRICT);
 
 $clientLibraryPath = 'GData/library';
 $oldPath = set_include_path(get_include_path() . PATH_SEPARATOR . $clientLibraryPath);
@@ -24,7 +24,6 @@ function getAuthSubHttpClient()
         exit(1);
     }
 
-
     /*if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
         echo '<a href="' . getAuthSubUrl() . '">Login!</a>';
         exit;
@@ -38,14 +37,10 @@ function getAuthSubHttpClient()
 }
 
 
-
 session_start();
 
-//$data = json_decode(file_get_contents('php://input'));
-//$location = $data->{"location"};
-//echo $location;
-
-$location = "xxx";
+$data = json_decode(file_get_contents('php://input'));
+$location = $data->{"location"};
 
 $gp = new Zend_Gdata_Photos(getAuthSubHttpClient(), "Google-DevelopersGuide-1.0");
 $gallery = new GDataGallery($gp);

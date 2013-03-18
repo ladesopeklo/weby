@@ -17,6 +17,12 @@ var ApiWrapper = (function () {
 		}
 	};
 
+	/**
+	 *
+	 * @param name
+	 * @returns {*}
+	 * @obsolete
+	 */
 	ApiWrapper.prototype.gallery = function (name) {
 		var self = this,
 			deferred = $.Deferred();
@@ -35,7 +41,6 @@ var ApiWrapper = (function () {
 
 		if (cached){
 			deferred.resolve(cached);
-			console.log("cached")
 			return deferred;
 		}
 

@@ -6,8 +6,7 @@ module.factory('cache', ['$cacheFactory', function ($cacheFactory) {
 
 module.config(['$routeProvider', '$provide', function ($routeProvider) {
 	$routeProvider
-		.when('/g/:galleryId', {controller: gController, templateUrl: 'g.html'})
-		.when('/gallery/:galleryId', {controller: galleryController, templateUrl: 'gallery.html'})
+		.when('/g/:galleryId', {controller: galleryController, templateUrl: 'template.g.html'})
 		.when('/g/:galleryId/:imageIndex', {controller: galleryImageController, templateUrl: 'galleryImage.html'})
 		.when('/home', {controller: homeController, templateUrl: 'home.html'})
 		.when('/x', {controller: xController, templateUrl: 'x.html'})

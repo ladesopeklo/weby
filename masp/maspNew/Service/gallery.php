@@ -1,6 +1,4 @@
 <?php 
-
-
 require  '../config.php';
 require  'gallery.lib.php';
 
@@ -13,7 +11,5 @@ $data = json_decode(file_get_contents('php://input'));
 
 $location = $data->{"location"};
 
-
 echo json_encode($x->getGallery($location, $culture));
-
 ?>

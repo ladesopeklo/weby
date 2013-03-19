@@ -1,50 +1,32 @@
 <?php 
-require  '../config.php';
-require  'libs.php';
+require_once  '../config.php';
+require_once  'libs.php';
+require_once  'GDataClientFactory.php';
 //ini_set('display_errors', '0');
 error_reporting(E_ALL^E_STRICT);
 
-$clientLibraryPath = 'GData/library';
-$oldPath = set_include_path(get_include_path() . PATH_SEPARATOR . $clientLibraryPath);
-require_once 'Zend/Loader.php';
-require_once 'GoogleClientWrapper.php';
-require_once 'GData/GDataGallery.php';
+session_start();
 
-Zend_Loader::loadClass('Zend_Gdata_Photos');
-Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-Zend_Loader::loadClass('Zend_Gdata_AuthSub');
+if (APP_DEBUG && isset($_GET["gallery"]))
+	$location = $_GET["gallery"];
+else {
+	$data = json_decode(file_get_contents('php://input'));
+	$location = $data->{"location"};
+}
 
-function getAuthSubHttpClient()
-{
-    $ccc = new GoogleClientWrapper();
-    try {
-        $token = $ccc->getAccessTokenId();
-    } catch (exception $ex) {
-        echo ExceptionToJson($ex);                
-        exit(1);
-    }
+try {
+	$client = new GDataClientFactory();
+	$gallery = new GDataGallery($client->getClient());
 
-    /*if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
-        echo '<a href="' . getAuthSubUrl() . '">Login!</a>';
-        exit;
-    } else if (!isset($_SESSION['sessionToken']) && isset($_GET['token'])) {
-        $_SESSION['sessionToken'] = Zend_Gdata_AuthSub::getAuthSubSessionToken($_GET['token']);
-    }*/
-    
-    $client = Zend_Gdata_AuthSub::getHttpClient($token);
-    return $client;
+	$response = $gallery->chuj($location);	
 
+	preprint($response);
+
+	echo json_encode($response);
+} catch(Exception $e) {
+	echo ExceptionToJson($e);
 }
 
 
-session_start();
-
-$data = json_decode(file_get_contents('php://input'));
-$location = $data->{"location"};
-
-$gp = new Zend_Gdata_Photos(getAuthSubHttpClient(), "Google-DevelopersGuide-1.0");
-$gallery = new GDataGallery($gp);
-
-echo json_encode($gallery->chuj($location));
 
 ?>

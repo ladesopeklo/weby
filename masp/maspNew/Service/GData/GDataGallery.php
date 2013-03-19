@@ -73,7 +73,10 @@ class GDataGallery {
 	function __construct($gdataPhotos) {
 		$this->gp = $gdataPhotos;
 		$this->settings["small"]["value"] = 89;
-		$this->settings["small"]["type"] = "h";
+		$this->settings["small"]["type"] = "s";
+
+		$this->settings["thumb"]["value"] = 89;
+		$this->settings["thumb"]["type"] = "s";
 
 		$this->settings["medium"]["value"] = 288;
 		$this->settings["medium"]["type"] = "h";
@@ -84,15 +87,6 @@ class GDataGallery {
 		$this->settings["xlarge"]["value"] = 1024;
 		$this->settings["xlarge"]["type"] = "s";
 	}
-
-	private function getThumb($thumb) { 
-		$x["url"] = $thumb->getUrl();
-		$x["width"] = $thumb->getWidth();
-		$x["height"] = $thumb->getHeight();
-		return $x;
-	}
-
-
 
 	public function chuj($location)
 	{
@@ -109,19 +103,20 @@ class GDataGallery {
 		$thumbs;
 
 		foreach ($albumFeed as $albumEntry) {
+			$media = $albumEntry->getMediaGroup();
+
 			$image["id"] = $albumEntry->getGphotoId()->getText();
 			$image["albumId"] = $albumEntry->getGphotoAlbumId()->getText();
 			$image["version"] = $albumEntry->getGphotoVersion()->getText();
 			$image["title"] = $albumEntry->getTitle()->getText();
-			$image["keywords"] = $albumEntry->getMediaGroup()->getKeywords()->getText();
-			$image["description"] = $albumEntry->getMediaGroup()->getDescription()->getText();
+			$image["keywords"] = $media->getKeywords()->getText();
+			$image["description"] = json_decode($media->getDescription()->getText());
 
-			$thumbs = $albumEntry->getMediaGroup()->getThumbnail();
-			$content = $albumEntry->getMediaGroup()->getContent();
+			$thumbs = $media->getThumbnail();
+			$content = $media->getContent();
 
 			$thumb = $thumbs[0];
 			$gdataImage = new GDataImage($thumb->getUrl(), $albumEntry->getGphotoWidth()->getText(), $albumEntry->getGphotoHeight()->getText());
-
 
 			$image["small"] = $gdataImage->getImage($this->settings["small"]["type"], $this->settings["small"]["value"]);
 			$image["medium"] = $gdataImage->getImage($this->settings["medium"]["type"], $this->settings["medium"]["value"]);
@@ -129,11 +124,7 @@ class GDataGallery {
 			$image["xlarge"] = $gdataImage->getImage($this->settings["xlarge"]["type"], $this->settings["xlarge"]["value"]);
 			$image["fullsize"] = $gdataImage->getFullsizeImage();
 
-
 			$imagesList[] = $image;
-    //echo $albumEntry->getGphotoId()->getText(); "<br />\n";
- //   echo json_encode($image);
-//    preprint($albumEntry->getMediaGroup());
 		}
 
 		//preprint($imagesList);

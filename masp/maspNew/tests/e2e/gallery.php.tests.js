@@ -149,7 +149,7 @@ var xxx = ['$scope', 'galleryApi', 'resourcesApi', function ($scope, galleryApi,
 
 	describe("GData api ", function () {
 		it('ggjhgsadhjagsdjagjh ga', function () {
-			var promise = api.gDataGallery("en-us");
+			var promise = api.gDataGallery("xxx");
 			promise.done(function (data) {
 				console.log(data);
 			});

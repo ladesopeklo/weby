@@ -88,6 +88,32 @@ class GDataGallery {
 		$this->settings["xlarge"]["type"] = "s";
 	}
 
+	private function getImage($key, $albumEntry)
+	{
+		$gdataImage = $this->gDataImageFactory($albumEntry);
+
+		$image = $gdataImage->getImage(
+			$this->settings[$key]["type"], 
+			$this->settings[$key]["value"]
+			);
+
+		return $image;
+	}
+
+	private function gDataImageFactory($albumEntry) {
+		$media = $albumEntry->getMediaGroup();
+
+		$thumbs = $media->getThumbnail();
+		$thumb = $thumbs[0];
+
+		return new GDataImage(
+			$thumb->getUrl(), 
+			$albumEntry->getGphotoWidth()->getText(), 
+			$albumEntry->getGphotoHeight()->getText()
+			);
+	}
+
+
 	public function chuj($location)
 	{
 		$query = $this->gp->newAlbumQuery();
@@ -112,16 +138,14 @@ class GDataGallery {
 			$image["keywords"] = $media->getKeywords()->getText();
 			$image["description"] = json_decode($media->getDescription()->getText());
 
-			$thumbs = $media->getThumbnail();
 			$content = $media->getContent();
 
-			$thumb = $thumbs[0];
-			$gdataImage = new GDataImage($thumb->getUrl(), $albumEntry->getGphotoWidth()->getText(), $albumEntry->getGphotoHeight()->getText());
+			$image["small"] = $this->getImage("small", $albumEntry);
+			$image["medium"] = $this->getImage("medium", $albumEntry);
+			$image["large"] = $this->getImage("large", $albumEntry);
+			$image["xlarge"] = $this->getImage("xlarge", $albumEntry);
 
-			$image["small"] = $gdataImage->getImage($this->settings["small"]["type"], $this->settings["small"]["value"]);
-			$image["medium"] = $gdataImage->getImage($this->settings["medium"]["type"], $this->settings["medium"]["value"]);
-			$image["large"] = $gdataImage->getImage($this->settings["large"]["type"], $this->settings["large"]["value"]);
-			$image["xlarge"] = $gdataImage->getImage($this->settings["xlarge"]["type"], $this->settings["xlarge"]["value"]);
+			$gdataImage = $this->gDataImageFactory($albumEntry);
 			$image["fullsize"] = $gdataImage->getFullsizeImage();
 
 			$imagesList[] = $image;

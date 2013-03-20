@@ -14,13 +14,28 @@ else {
 	$location = $data->{"location"};
 }
 
+
+function xxx($keywordsArray) {
+	foreach ($keywordsArray as $value) {
+		$ok = preg_match('/^(small|medium|large|xlarge):([s|w|h]\d+[-c]*)$/i', $value, $matches);
+		preprint($ok);
+		preprint($matches);
+		$xxx[$value] = $value;				
+	}
+	return $xxx;
+}
+
 try {
 	$client = new GDataClientFactory();
 	$gallery = new GDataGallery($client->getClient());
 
 	$response = $gallery->chuj($location);	
 
-	//preprint($response);
+	$aaa = array("SMall:s5454-c", "small:sdsd" , "xsmall:s5151:");
+
+	preprint(xxx($aaa));
+
+	//preprint($response); 
 
 	echo json_encode($response);
 } catch(Exception $e) {

@@ -1,29 +1,28 @@
 /*global ApiWrapper, MaspartiData, Usages*/
 var galleryList;
-function homeController($scope, galleryApi, resourcesApi) {
-	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi)),
+function homeController($scope, galleryApi, resourcesApi, cache) {
+	var maspartiData = new MaspartiData(new ApiWrapper(galleryApi, resourcesApi, cache)),
 		usages,
 		usagesSettings,
 		container = $(".container");
-
 
 	usagesSettings = {
 		containerOffset: -360,
 		width: container.width() * 3,
 		randoms: {
-			boxOffsetWidth: 0,
-			boxOffsetHeight: 0,
-			lineOffsetTop: 0,
-			lineOffsetStart: 0
+			boxOffsetWidth: 100,
+			boxOffsetHeight: 100,
+			lineOffsetTop: -50,
+			lineOffsetStart: 100
 		}
 	};
 
 	usages = new Usages(usagesSettings);
 
-	$scope.widthOffset = 3;
-	$scope.heightOffset = 3;
-	$scope.newLineOffset = 0;
-	$scope.newLineOffsetTop = 10;
+	$scope.boxOffsetWidth = 10;
+	$scope.boxOffsetHeight = 10;
+	$scope.lineOffsetStart = 0;
+	$scope.lineOffsetTop = 10;
 	$scope.width = container.width();
 
 
@@ -31,33 +30,30 @@ function homeController($scope, galleryApi, resourcesApi) {
 		usages.settings.width = $scope.width;
 		usages.refreshUsages();
 		$scope.$apply();
-
 	}
 
 	$.when(
-			maspartiData.galleryListLocalizedAsync()
-		).done(function (galleries) {
-
-			$scope.galleryList = galleries;
-			$scope.galleryThumbs = usages.generate(galleries.galleryThumbs());
-
-			console.log($scope.galleryList);
-			console.log($scope.galleryThumbs);
+			maspartiData.gDataGallery("home")
+		).done(function (data) {
+			console.log(data);
+			$scope.galleryThumbs = usages.generate(data.images);
 
 			setTimeout(function () {
-				usages.setRandom($scope.widthOffset, $scope.heightOffset, $scope.newLineOffset, $scope.newLineOffsetTop);
+				usages.setRandom($scope.boxOffsetWidth, $scope.boxOffsetHeight, $scope.lineOffsetStart, $scope.lineOffsetTop);
 				usages.settings.containerOffset = 0;
 				refreshScreen();
 			}, 100);
 
 		});
 
-
 	$scope.currentGallery = {ref: null, value: null, index: 0};
 
 	$scope.showGallery = function (item, index) {
+		return;
+
+
 		if ($scope.currentGallery.value) {
-			var x = $scope.galleryThumbs[$scope.currentGallery.index];
+			var x = $scope.galleryThumbs.images[$scope.currentGallery.index];
 			var zaloha = $scope.currentGallery.value;
 			x.width = zaloha.width;
 			x.height = zaloha.height;
@@ -73,7 +69,6 @@ function homeController($scope, galleryApi, resourcesApi) {
 		item.height = 400;
 		console.log($scope.currentGallery);
 		location.hash = "#/gallery/" + $scope.currentGallery.data.galleryId;
-
 
 		usages.refreshUsages();
 	};

@@ -75,6 +75,9 @@ var GDataImage = (function () {
 		this.xlarge = i.xlarge !== undefined ? new WebImage(i.xlarge.url, i.xlarge.width, i.xlarge.height) : null;
 		this.fullsize = i.fullsize !== undefined ? new WebImage(i.fullsize.url, i.fullsize.width, i.fullsize.height) : null;
 
+		this.width = this.small.width;
+		this.height = this.small.height;
+
 		return this;
 
 	};

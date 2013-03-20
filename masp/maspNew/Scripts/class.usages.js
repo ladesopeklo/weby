@@ -142,7 +142,7 @@ var Usages = (function () {
 	};
 
 	Usages.prototype.getRandomFromProperty = function (property) {
-		return  property ? Math.floor((Math.random() * property) + 1) : 0;
+		return  property ? Math.floor((Math.random() * property) + 3) : 0;
 	};
 
 	Usages.prototype.calculateSquareAfter = function (squareItem, last) {

@@ -20,7 +20,7 @@ try {
 
 	$response = $gallery->chuj($location);	
 
-	preprint($response);
+	//preprint($response);
 
 	echo json_encode($response);
 } catch(Exception $e) {

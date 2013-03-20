@@ -40,6 +40,12 @@ var MaspartiData = (function () {
 		});
 	};
 
+	MaspartiData.prototype.gDataGallery = function (galleryId) {
+		return this.api.gDataGallery(galleryId).then(function (data) {
+			return data;
+		});
+	};
+
 	MaspartiData.prototype.galleryWithInfo = function (galleryId) {
 		var deferred = $.Deferred();
 

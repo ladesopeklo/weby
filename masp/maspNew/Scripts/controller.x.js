@@ -14,7 +14,7 @@ function xController($scope, galleryApi, resourcesApi) {
 
 	for (var i =0 ; i< 50; i++){
 		var x = Math.floor((Math.random()*100)+30);
-		boxes.push( new SquareItem(x,x));
+		boxes.push(new SquareItem(x,x));
 	}
 
 	$scope.data = usages.generate(boxes, $scope.width);

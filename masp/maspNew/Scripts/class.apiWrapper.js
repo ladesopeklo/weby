@@ -35,20 +35,24 @@ var ApiWrapper = (function () {
 
 	ApiWrapper.prototype.gDataGallery = function (name) {
 		var self = this,
-			key = "gdataGalley"+name,
-			cached= this.getFromCache(key),
+			key = "gdataGalley" + name,
+			cached = this.getFromCache(key),
 			deferred = $.Deferred();
 
-		if (cached){
+		if (cached) {
 			deferred.resolve(cached);
 			return deferred;
 		}
 
 		this.galleryApi.gDataGallery({service: "GDataGallery.php"}, {location: name, culture: "cz"}, function (data) {
-			var rs = self.converter.rawDataToGDataGallery(data);
-			self.putCache(key, rs);
-			deferred.resolve(rs);
-		});
+				console.log(data);
+				var rs = self.converter.rawDataToGDataGallery(data);
+				self.putCache(key, rs);
+				deferred.resolve(rs);
+			},
+			function (status) {
+				console.log(status);
+			});
 		return deferred;
 	};
 
@@ -56,7 +60,7 @@ var ApiWrapper = (function () {
 		var self = this,
 			deferred = $.Deferred();
 
-		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: galleryNames, culture: "cz"} , function (data) {
+		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: galleryNames, culture: "cz"}, function (data) {
 			var galleryList = new GalleryList(self.converter.rawDataToGalleryMap(data));
 			deferred.resolve(galleryList);
 		});
@@ -67,7 +71,7 @@ var ApiWrapper = (function () {
 		var self = this,
 			deferred = $.Deferred();
 
-		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"} , function (data) {
+		this.galleryApi.galleryList({service: "gallerylist.php"}, {location: gallerynames, culture: "cz"}, function (data) {
 			deferred.resolve(self.converter.rawDataToGalleryMap(data));
 		});
 		return deferred;
@@ -78,7 +82,7 @@ var ApiWrapper = (function () {
 			menuList,
 			deferred = $.Deferred();
 
-		this.resourcesApi.getAll({resourceName : "menu" }, function (data) {
+		this.resourcesApi.getAll({resourceName: "menu" }, function (data) {
 			menuList = new MenuItemList(self.converter.rawDataToMenu(data));
 			deferred.resolve(menuList);
 		});
@@ -86,9 +90,9 @@ var ApiWrapper = (function () {
 	};
 
 	ApiWrapper.prototype.locales = function (culture) {
-		var	deferred = $.Deferred();
+		var deferred = $.Deferred();
 
-		this.resourcesApi.getAllLocales({resourceName : culture }, function (data) {
+		this.resourcesApi.getAllLocales({resourceName: culture }, function (data) {
 			deferred.resolve(new Locales(data, culture));
 		});
 		return deferred;

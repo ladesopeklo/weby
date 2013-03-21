@@ -28,7 +28,7 @@
 <div class="container">
 	<div ng-repeat="item in galleryThumbs">
 		<div ngc-gallery-item="item" class="boxi" ng-click="showGallery(item, $index)">
-			<img ngc-lazy-image="item.getSmall()" ng-hide="item.chuj" src="loader.jpg" width="100%"/>
+			<img ngc-lazy-image="item.getUrl()" ng-hide="item.chuj" src="loader.jpg" width="100%"/>
 
 			<div ng-show="item.chuj">
 				<h1>{{galleryList.get(item.galleryId).locales.text}}</h1>

@@ -38,7 +38,13 @@ var WebImage = (function () {
 		this.url = url || "";
 		this.width = Number(width, 10) || -1;
 		this.height = Number(height, 10) || -1;
+		this.position = new Position();
 	}
+
+	WebImage.prototype.getUrl = function () {
+		return this.url;
+	};
+
 	return WebImage;
 }());
 
@@ -46,19 +52,17 @@ var WebImage = (function () {
 var GDataImage = (function () {
 
 	function GDataImage() {
-		this.id;
+		this.id = 0;
 		this.albumId = null;
 		this.version = -1;
 		this.title = null;
 		this.keywords = "";
 
-		this.small;
-		this.medium;
-		this.large;
-		this.xlarge;
-		this.fullsize;
-
-		this.position = new Position();
+		this.small = null;
+		this.medium = null;
+		this.large= null;
+		this.xlarge = null;
+		this.fullsize= null;
 	}
 
 	GDataImage.prototype.fromRawGData = function (i) {
@@ -74,16 +78,7 @@ var GDataImage = (function () {
 		this.large = i.large !== undefined ? new WebImage(i.large.url, i.large.width, i.large.height) : null;
 		this.xlarge = i.xlarge !== undefined ? new WebImage(i.xlarge.url, i.xlarge.width, i.xlarge.height) : null;
 		this.fullsize = i.fullsize !== undefined ? new WebImage(i.fullsize.url, i.fullsize.width, i.fullsize.height) : null;
-
-		this.width = this.small.width;
-		this.height = this.small.height;
-
 		return this;
-
-	};
-
-	GDataImage.prototype.getSmall = function () {
-		return this.small.url;
 	};
 
 	GDataImage.prototype.getLarge = function () {

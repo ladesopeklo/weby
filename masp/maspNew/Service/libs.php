@@ -29,7 +29,7 @@ function ExceptionToJson($ex) {
 	
 	$rs["message"] = $ex->getMessage(); 
 	$rs["status"] = 0; 
-
+	header(':', true, 404);
 	return json_encode($rs);
 }
 

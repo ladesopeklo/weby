@@ -12,7 +12,7 @@ function homeController($scope, galleryApi, resourcesApi, cache) {
 		randoms: {
 			boxOffsetWidth: 100,
 			boxOffsetHeight: 100,
-			lineOffsetTop: -50,
+			lineOffsetTop: 150,
 			lineOffsetStart: 100
 		}
 	};
@@ -22,11 +22,11 @@ function homeController($scope, galleryApi, resourcesApi, cache) {
 	$scope.boxOffsetWidth = 10;
 	$scope.boxOffsetHeight = 10;
 	$scope.lineOffsetStart = 0;
-	$scope.lineOffsetTop = 10;
+	$scope.lineOffsetTop = -50;
 	$scope.width = container.width();
 
 
-	function refreshScreen () {
+	function refreshScreen() {
 		usages.settings.width = $scope.width;
 		usages.refreshUsages();
 		$scope.$apply();
@@ -36,7 +36,7 @@ function homeController($scope, galleryApi, resourcesApi, cache) {
 			maspartiData.gDataGallery("home")
 		).done(function (data) {
 			console.log(data);
-			$scope.galleryThumbs = usages.generate(data.images);
+			$scope.galleryThumbs = usages.generateFromSmall(data.images);
 
 			setTimeout(function () {
 				usages.setRandom($scope.boxOffsetWidth, $scope.boxOffsetHeight, $scope.lineOffsetStart, $scope.lineOffsetTop);
@@ -50,7 +50,6 @@ function homeController($scope, galleryApi, resourcesApi, cache) {
 
 	$scope.showGallery = function (item, index) {
 		return;
-
 
 		if ($scope.currentGallery.value) {
 			var x = $scope.galleryThumbs.images[$scope.currentGallery.index];
@@ -75,10 +74,10 @@ function homeController($scope, galleryApi, resourcesApi, cache) {
 
 
 	var timeOut;
-	$(window).resize(function() {
+	$(window).resize(function () {
 		clearTimeout(timeOut);
 		var self = this;
-		timeOut = setTimeout( function () {
+		timeOut = setTimeout(function () {
 			$scope.width = container.width();
 			$scope.$root.$broadcast("windowChanged", {width: $(self).width(), height: $(self).height()});
 			refreshScreen();

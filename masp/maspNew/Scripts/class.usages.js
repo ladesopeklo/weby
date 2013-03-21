@@ -75,6 +75,14 @@ var Usages = (function () {
 		return this.usages;
 	};
 
+	Usages.prototype.generateFromSmall = function (GDataImages, newWidth) {
+		var x = new JSLINQ(GDataImages).Select(function (item) {
+			return item.small;
+		});
+
+		return this.generate(x.items);
+	};
+
 	Usages.prototype.generate = function (items, newWidth) {
 		var i = 0,
 			len = items.length,

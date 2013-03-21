@@ -64,8 +64,6 @@ class GDataImage {
 			$value = $this->settings[$key]["value"];
 		}
 
-
-
 		$width = 0;
 		$height = 0;
 

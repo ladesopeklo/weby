@@ -6,12 +6,42 @@ class GDataImage {
 	private $origHeight;
 	private $urlTemplate;
 	private $ratio;
+	private $keywordsMap;
+	private $settings;
 
-	function __construct($urlTemplate, $origWidth, $origHeight) {
-		$this->origHeight = $origHeight;
-		$this->origWidth = $origWidth;
-		$this->urlTemplate = $urlTemplate;
-		$this->ratio = $origWidth / $origHeight;
+	function __construct($albumEntry, $settings) {
+		$this->settings = $settings;
+		$this->loadData($albumEntry);
+	}
+
+	private function loadData($albumEntry) {
+		$media = $albumEntry->getMediaGroup();
+
+		$thumbs = $media->getThumbnail();
+		$thumb = $thumbs[0];
+
+		$this->origHeight = $albumEntry->getGphotoHeight()->getText();
+		$this->origWidth = $albumEntry->getGphotoWidth()->getText();
+		
+		$this->urlTemplate = $thumb->getUrl();
+		$this->ratio = $this->origWidth / $this->origHeight;
+		
+		$keywordsArray = explode(",", $media->getKeywords()->getText());
+		$this->keywordsMap = $this->keywordsToMap($keywordsArray);
+	}
+	
+	private function keywordsToMap($keywordsArray) {
+		$xxx = array();
+		foreach ($keywordsArray as $value) {
+			$ok = preg_match('/^(small|medium|large|xlarge):([s|w|h])(\d+)([-c]*)$/i', $value, $matches);
+			if ($ok) {
+				$key = strtolower($matches[1]); 
+				$xxx[$key]["type"] = strtolower($matches[2]);				
+				$xxx[$key]["value"] = strtolower($matches[3]);				
+				$xxx[$key]["suffix"] = strtolower($matches[4]);				
+			}
+		}
+		return $xxx;
 	}
 
 	private function updateUrl($sizeDefinition) {
@@ -23,7 +53,19 @@ class GDataImage {
 		return implode("/", $split);
 	}
 
-	public function getImage($type, $value) {
+	public function getImage($key) {
+		
+		if (isset($this->keywordsMap[$key])) {
+			$k = $this->keywordsMap[$key];
+			$type = $k["type"];
+			$value = $k["value"];
+		} else {
+			$type = $this->settings[$key]["type"];
+			$value = $this->settings[$key]["value"];
+		}
+
+
+
 		$width = 0;
 		$height = 0;
 
@@ -88,10 +130,9 @@ class GDataGallery {
 		$this->settings["xlarge"]["type"] = "s";
 	}
 
-	private function getImage($key, $albumEntry)
-	{
-		$gdataImage = $this->gDataImageFactory($albumEntry);
 
+	private function getImage($key, $gdataImage)
+	{
 		$image = $gdataImage->getImage(
 			$this->settings[$key]["type"], 
 			$this->settings[$key]["value"]
@@ -99,20 +140,6 @@ class GDataGallery {
 
 		return $image;
 	}
-
-	private function gDataImageFactory($albumEntry) {
-		$media = $albumEntry->getMediaGroup();
-
-		$thumbs = $media->getThumbnail();
-		$thumb = $thumbs[0];
-
-		return new GDataImage(
-			$thumb->getUrl(), 
-			$albumEntry->getGphotoWidth()->getText(), 
-			$albumEntry->getGphotoHeight()->getText()
-			);
-	}
-
 
 	public function chuj($location)
 	{
@@ -139,14 +166,14 @@ class GDataGallery {
 			$image["description"] = json_decode($media->getDescription()->getText());
 
 			$content = $media->getContent();
+			$gdataImage = new GDataImage($albumEntry, $this->settings);
 
-			$image["small"] = $this->getImage("small", $albumEntry);
-			$image["medium"] = $this->getImage("medium", $albumEntry);
-			$image["large"] = $this->getImage("large", $albumEntry);
-			$image["xlarge"] = $this->getImage("xlarge", $albumEntry);
+			$image["small"] = $gdataImage->getImage("small");
+			$image["medium"] = $gdataImage->getImage("medium");
+			$image["large"] = $gdataImage->getImage("large");
+			$image["xlarge"] = $gdataImage->getImage("xlarge");
 
-			$gdataImage = $this->gDataImageFactory($albumEntry);
-			$image["fullsize"] = $gdataImage->getFullsizeImage();
+			//$image["fullsize"] = $gdataImage->getFullsizeImage($gdataImage);
 
 			$imagesList[] = $image;
 		}
